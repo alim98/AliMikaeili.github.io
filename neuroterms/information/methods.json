@@ -20,7 +20,9 @@
    "label": "Megas et al., Celcomen, Nat Commun (2026), PMID 41851134",
    "url": "https://pubmed.ncbi.nlm.nih.gov/41851134/"
   },
-  "status": "qualified"
+  "status": "qualified",
+  "decisionRule": "Separate explanatory correlates from causal effects: assess spatially matched controls, explicit assumptions and held-out perturbations before interpreting Celcomen parameters as intervention effects.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "method-1",
@@ -43,7 +45,9 @@
    "label": "Megas et al., Celcomen, Nat Commun (2026), PMID 41851134",
    "url": "https://pubmed.ncbi.nlm.nih.gov/41851134/"
   },
-  "status": "qualified"
+  "status": "qualified",
+  "decisionRule": "Ask whether the changed feature is intrinsic to a cell (genotype or internal state) or associated with neighborhood signals; compare matched cell types across different niches to test an extrinsic effect.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "method-2",
@@ -66,7 +70,9 @@
    "label": "Shen et al., Spatial Perturb-Seq, Nat Commun (2026)",
    "url": "https://doi.org/10.1038/s41467-026-69677-6"
   },
-  "status": "verified"
+  "status": "verified",
+  "decisionRule": "A spatial perturbation assay needs an identified intervention per cell or clone, spatial readout and suitable controls. Co-localization without perturbation supports association only.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "method-3",
@@ -139,7 +145,8 @@
   "secondaryReference": {
    "label": "Crinier et al., Blood (2020), PMID 32271902",
    "url": "https://pubmed.ncbi.nlm.nih.gov/32271902/"
-  }
+  },
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "method-4",
@@ -162,7 +169,9 @@
    "label": "Dries et al., Giotto, Genome Biol (2021), PMID 33685491",
    "url": "https://pubmed.ncbi.nlm.nih.gov/33685491/"
   },
-  "status": "verified"
+  "status": "verified",
+  "decisionRule": "Use Giotto to measure spatial enrichment, domain boundaries or ligand–receptor *co-occurrence*; confirm signaling separately with protein or perturbation evidence.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "method-5",
@@ -185,7 +194,9 @@
    "label": "Dries et al., Giotto, Genome Biol (2021), PMID 33685491",
    "url": "https://pubmed.ncbi.nlm.nih.gov/33685491/"
   },
-  "status": "background"
+  "status": "background",
+  "decisionRule": "Two tissues may have identical cell-type proportions but different adjacency graphs. Examine cell–cell neighborhoods and spatial organization instead of counts alone.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "method-6",
@@ -197,18 +208,25 @@
   "takeaway": "ResolVI is a probabilistic correction model applied to initial expression counts and spatial positions produced by an upstream quantification/segmentation pipeline.",
   "explanation": "A segmentation algorithm assigns molecules to cells; ResolVI models expression affected by misassignment and nuisance variation.",
   "caution": "ResolVI does not segment raw microscopy images de novo and depends on the quality of initial cell estimates.",
-  "question": "What is the input to ResolVI?",
+  "question": "A Xenium dataset has molecules assigned to segmented cells. You want ResolVI to correct contamination. Which pipeline is appropriate?",
   "options": [
-   "Initially quantified cell expression and spatial context",
-   "Only raw histology pixels",
-   "Patient survival time alone"
+   "Run segmentation and initial quantification first, then model cell expression and misassignment with ResolVI",
+   "Run ResolVI directly on raw pixel intensities and get cell boundaries",
+   "Use ResolVI to infer chromosomal copy number from DNA-only imaging"
   ],
   "correct": 0,
   "reference": {
    "label": "Ergen & Yosef, ResolVI, Nat Methods (2026)",
    "url": "https://doi.org/10.1038/s41592-026-03212-9"
   },
-  "status": "verified"
+  "status": "verified",
+  "decisionRule": "Check the input: ResolVI follows a segmentation/molecule-assignment pipeline and takes quantified cell-by-gene observations with spatial context. It cannot replace segmentation of raw images.",
+  "auditVersion": "evidence-first-v2",
+  "optionFeedback": [
+   "Correct: ResolVI models cell-level spatial transcript counts downstream of segmentation and quantification.",
+   "Incorrect: the method is not a raw-image cell segmentation algorithm.",
+   "Incorrect: the intended inference is expression/misassignment, not DNA chromosome counting."
+  ]
  },
  {
   "id": "method-7",
@@ -220,18 +238,25 @@
   "takeaway": "Apparent RNA in one cell may include molecules misassigned from neighbors through segmentation, tissue leakage or three-dimensional overlap.",
   "explanation": "A neuron-associated transcript may be falsely counted in a nearby microglial segment.",
   "caution": "A correction model's outputs are estimated, not direct ground-truth molecular ownership.",
-  "question": "Why might a neuronal marker appear inside a segmented microglial cell?",
+  "question": "A segment annotated as microglia contains a few neuronal transcripts near a large neurite. What is the strongest first interpretation?",
   "options": [
-   "Molecule misassignment or overlapping geometry",
-   "A proven transdifferentiation event",
-   "A guaranteed mutation in the marker gene"
+   "Test geometry, RNA spillover and assignment errors before asserting a biological hybrid state",
+   "Confirm conversion from a neuron to microglia from one shared marker",
+   "Discard microglial identity because one neuronal transcript is present"
   ],
   "correct": 0,
   "reference": {
    "label": "Ergen & Yosef, ResolVI, Nat Methods (2026)",
    "url": "https://doi.org/10.1038/s41592-026-03212-9"
   },
-  "status": "verified"
+  "status": "verified",
+  "decisionRule": "Audit marker molecules against cellular boundaries, 3D overlap, local diffusion and negatives. A surprising mixed transcript signal can be technical before biological.",
+  "auditVersion": "evidence-first-v2",
+  "optionFeedback": [
+   "Correct: molecules can be misassigned because cells and processes overlap in 3D, especially in spatial imaging.",
+   "Incorrect: genuine transdifferentiation needs substantially stronger independent evidence.",
+   "Incorrect: low-level mixed transcripts can occur even when the cell-type assignment is otherwise plausible."
+  ]
  },
  {
   "id": "method-8",
@@ -254,7 +279,9 @@
    "label": "Ergen & Yosef, ResolVI, Nat Methods (2026)",
    "url": "https://doi.org/10.1038/s41592-026-03212-9"
   },
-  "status": "verified"
+  "status": "verified",
+  "decisionRule": "Identify measurement modality: barcoded spatial sequencing gives regional RNA counts, while imaging locates probe-labeled molecules; read length, panel and cell-assignment constraints differ.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "method-9",
@@ -277,7 +304,9 @@
    "label": "Tejada-Lapuerta et al., Nicheformer, Nat Methods (2025)",
    "url": "https://doi.org/10.1038/s41592-025-02814-z"
   },
-  "status": "verified"
+  "status": "verified",
+  "decisionRule": "Nicheformer leverages both spatial and dissociated transcriptomic corpora with technology/species context. Learned representations do not re-create known true coordinates for dissociated cells.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "method-10",
@@ -301,7 +330,9 @@
    "label": "Tejada-Lapuerta et al., Nicheformer, Nat Methods (2025)",
    "url": "https://doi.org/10.1038/s41592-025-02814-z"
   },
-  "status": "qualified"
+  "status": "qualified",
+  "decisionRule": "Compare input/tokenization and pretraining loss rather than model names: Geneformer uses rank-encoded genes; scGPT and Nicheformer use different expression and context encodings.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "method-11",
@@ -325,7 +356,9 @@
    "label": "Tejada-Lapuerta et al., Nicheformer, Nat Methods (2025)",
    "url": "https://doi.org/10.1038/s41592-025-02814-z"
   },
-  "status": "verified"
+  "status": "verified",
+  "decisionRule": "Ask whether spatial coordinates were measured before dissociation. Without them, any reconstructed neighborhood is inferred, not directly observed.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "method-12",
@@ -348,7 +381,9 @@
    "label": "Tejada-Lapuerta et al., Nicheformer, Nat Methods (2025)",
    "url": "https://doi.org/10.1038/s41592-025-02814-z"
   },
-  "status": "verified"
+  "status": "verified",
+  "decisionRule": "Inspect held-out technology, tissue and donor evaluation after pretraining. A 110-million-cell corpus alone does not establish accurate GBM transfer.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "method-13",
@@ -371,7 +406,9 @@
    "label": "GBM spatial atlas, Nature (2026)",
    "url": "https://doi.org/10.1038/s41586-026-11234-8"
   },
-  "status": "qualified"
+  "status": "qualified",
+  "decisionRule": "For malignant status or chromosome gains, prefer a variant- or copy-number assay that directly measures DNA; use RNA-derived CNVs as a screening hypothesis.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "method-14",
@@ -394,7 +431,9 @@
    "label": "Ergen & Yosef, ResolVI, Nat Methods (2026)",
    "url": "https://doi.org/10.1038/s41592-026-03212-9"
   },
-  "status": "background"
+  "status": "background",
+  "decisionRule": "An FFPE assay with a fixed probe panel reports only targeted transcripts. Missing gene measurements must be labeled unobserved or imputed, not treated as zeros or ground truth.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "method-15",
@@ -407,18 +446,25 @@
   "takeaway": "Classic Visium aggregates expression over spots that can contain multiple cells; Xenium, CosMx and MERFISH locate targeted individual RNA molecules.",
   "explanation": "A cell-segmentation step can assign imaged molecules to cellular regions.",
   "caution": "Molecule-level imaging still has panel, detection, assignment and 3D-overlap limitations.",
-  "question": "What is a typical difference between classic Visium and Xenium?",
+  "question": "Visium and Xenium profile adjacent GBM sections. Which is a correct statement about what they directly observe?",
   "options": [
-   "Visium spots may aggregate cells, Xenium localizes individual molecules",
-   "Xenium always measures every gene without panels",
-   "Visium directly yields exact cell boundaries"
+   "Classic Visium gives mixed spot expression; Xenium localizes targeted RNA molecules before cell assignment",
+   "Both provide exact full-transcriptome counts for every cell",
+   "Visium directly records each RNA molecule's 3D source cell and Xenium never needs segmentation"
   ],
   "correct": 0,
   "reference": {
    "label": "Ståhl et al., spatial transcriptomics, Science (2016)",
    "url": "https://pubmed.ncbi.nlm.nih.gov/27365449/"
   },
-  "status": "qualified"
+  "status": "qualified",
+  "decisionRule": "Classic Visium measures mixed multicellular spots, whereas Xenium/CosMx/MERFISH image individual targeted transcripts and depend on segmentation to get cell-level counts.",
+  "auditVersion": "evidence-first-v2",
+  "optionFeedback": [
+   "Correct: the direct observation is a spot-count matrix versus imaged probe-based molecule coordinates.",
+   "Incorrect: imaging spatial assays are panel-limited and classic Visium spots may include multiple cells.",
+   "Incorrect: the two assays have different resolution and assignment constraints; neither guarantees perfect cell ownership."
+  ]
  },
  {
   "id": "method-16",
@@ -441,7 +487,9 @@
    "label": "La Manno et al., RNA velocity, Nature (2018)",
    "url": "https://pubmed.ncbi.nlm.nih.gov/30089906/"
   },
-  "status": "unverified"
+  "status": "unverified",
+  "decisionRule": "For RNA velocity, inspect BAM/read structure for intronic coverage and compute usable gene-specific spliced/unspliced counts; 2D resolution alone is not an impossibility proof.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "method-17",
@@ -464,7 +512,9 @@
    "label": "Kendiukhov, J Biomed Inform (2026), PMID 42155660",
    "url": "https://pubmed.ncbi.nlm.nih.gov/42155660/"
   },
-  "status": "qualified"
+  "status": "qualified",
+  "decisionRule": "Check the sparsity constraint (for example L1 or top-k), reconstruction error and stability across random seeds. A sparse latent factor is not automatically a regulatory mechanism.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "method-18",
@@ -476,18 +526,25 @@
   "takeaway": "Cell type captures a relatively persistent identity, while state captures context-dependent activity or condition.",
   "explanation": "A microglial cell retains lineage identity while adopting an activated inflammatory state.",
   "caution": "Type/state separation is an analytical abstraction, and plasticity can blur some categories.",
-  "question": "Which is more naturally a cell state?",
+  "question": "A malignant GBM cell expresses astrocytic markers, while a nearby normal astrocyte activates injury-response genes. Which labels are supported?",
   "options": [
-   "Actively dividing",
-   "Oligodendrocyte lineage",
-   "Neuron lineage"
+   "Malignant cell: AC-like transcriptional state; normal astrocyte: reactive state, if independently identified",
+   "Both cells must be normal astrocytes",
+   "Both cells must be malignant AC-like cells"
   ],
   "correct": 0,
   "reference": {
    "label": "GBM spatial atlas, Nature (2026)",
    "url": "https://doi.org/10.1038/s41586-026-11234-8"
   },
-  "status": "background"
+  "status": "background",
+  "decisionRule": "Within the same microglial lineage, activated versus resting signatures indicate cell states; neuron versus microglia refers to cell types. Malignant mimics require extra identification.",
+  "auditVersion": "evidence-first-v2",
+  "optionFeedback": [
+   "Correct: type/lineage and transient expression state are different axes; malignant identity must be separately validated.",
+   "Incorrect: a tumor cell can resemble a normal astrocyte transcriptomically without becoming normal.",
+   "Incorrect: injury-response marker expression alone cannot prove an astrocyte is malignant."
+  ]
  },
  {
   "id": "method-19",
@@ -510,7 +567,9 @@
    "label": "Stuart & Satija, Nat Rev Genet (2019)",
    "url": "https://doi.org/10.1038/s41576-019-0093-7"
   },
-  "status": "background"
+  "status": "background",
+  "decisionRule": "Confirm genome build (for example GRCh38) and GENCODE version before interpreting exon junctions or transcript coordinates; annotation does not measure expression.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "method-20",
@@ -522,18 +581,25 @@
   "takeaway": "Single-cell multi-omics assays or integrations combine RNA with other measurements such as chromatin accessibility or proteins.",
   "explanation": "Paired modalities can characterize a cell more richly than RNA alone.",
   "caution": "Not every 'multimodal' paper assays all modalities in the same cells; paired versus integrated data differ.",
-  "question": "What should a methods paper clarify?",
+  "question": "A study integrates scRNA-seq from donor A and scATAC-seq from donor B and calls the result 'multimodal'. What must you verify before claiming cell-level RNA–ATAC concordance?",
   "options": [
-   "Whether modalities are measured in the same cell or integrated across samples",
-   "Only the figure colors",
-   "Only the species label"
+   "Whether both modalities were measured in the very same indexed cells or computationally aligned across samples",
+   "Whether the two UMAPs have similar axis names",
+   "Whether both assays used the same gene symbols"
   ],
   "correct": 0,
   "reference": {
    "label": "Stuart & Satija, Nat Rev Genet (2019)",
    "url": "https://doi.org/10.1038/s41576-019-0093-7"
   },
-  "status": "qualified"
+  "status": "qualified",
+  "decisionRule": "Paired multiome assays measure different modalities in the same indexed nucleus; separate scRNA and scATAC cohorts merely integrated computationally are not same-cell ground truth.",
+  "auditVersion": "evidence-first-v2",
+  "optionFeedback": [
+   "Correct: multi-omics measured in the same cell is different from computational cross-assay integration.",
+   "Incorrect: matching visualization axes does not establish matching biological cells.",
+   "Incorrect: shared gene symbols allow mapping but not evidence of paired cell-level observation."
+  ]
  },
  {
   "id": "method-21",
@@ -556,7 +622,9 @@
    "label": "Kendiukhov, J Biomed Inform (2026), PMID 42155660",
    "url": "https://pubmed.ncbi.nlm.nih.gov/42155660/"
   },
-  "status": "unverified"
+  "status": "unverified",
+  "decisionRule": "Find a peer-reviewed journal publication for the exact claims/figures, not just an arXiv identifier; version and publication date matter.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "method-22",
@@ -579,7 +647,9 @@
    "label": "Kendiukhov, J Biomed Inform (2026), PMID 42155660",
    "url": "https://pubmed.ncbi.nlm.nih.gov/42155660/"
   },
-  "status": "verified"
+  "status": "verified",
+  "decisionRule": "Compare a new SAE–scGPT feature-analysis proposal with Kendiukhov's peer-reviewed 2026 methodology and evaluations before claiming novelty.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "method-23",
@@ -591,18 +661,25 @@
   "takeaway": "Alveolar type 1 (AT1) and type 2 (AT2) cells are different alveolar epithelial populations.",
   "explanation": "AT2 cells synthesize pulmonary surfactant; AT1 cells contribute to the thin gas-exchange interface.",
   "caution": "Their markers and differentiation relationships are context-dependent; they are not brain glia.",
-  "question": "Which alveolar type produces surfactant?",
+  "question": "Human lung scRNA-seq: one epithelial population has high SFTPC/SFTPB, another AGER-associated signatures. Which interpretation is most supported?",
   "options": [
-   "AT2",
-   "AT1 exclusively",
-   "Endothelial pericytes"
+   "First is AT2-like surfactant-producing epithelium; second is AT1-like gas-exchange epithelium",
+   "First is AT1 because surfactant synthesis defines AT1",
+   "Both are endothelial cells because they reside in alveoli"
   ],
   "correct": 0,
   "reference": {
    "label": "Stuart & Satija, Nat Rev Genet (2019)",
    "url": "https://doi.org/10.1038/s41576-019-0093-7"
   },
-  "status": "background"
+  "status": "background",
+  "decisionRule": "Human AT1 cells are generally associated with gas-exchange membrane programs (such as AGER), while AT2 cells with surfactant genes (such as SFTPC); use a panel, not one marker alone.",
+  "auditVersion": "evidence-first-v2",
+  "optionFeedback": [
+   "Correct: surfactant protein gene programs are typical of AT2, whereas AGER is associated with human AT1 cells.",
+   "Incorrect: AT2 cells are the major pulmonary surfactant-producing alveolar epithelial cells.",
+   "Incorrect: alveolar epithelial cells are not defined as vascular endothelium by their anatomical location."
+  ]
  },
  {
   "id": "method-24",
@@ -625,7 +702,9 @@
    "label": "Bernstein et al., Solo, Cell Syst (2020), PMID 32592658",
    "url": "https://pubmed.ncbi.nlm.nih.gov/32592658/"
   },
-  "status": "verified"
+  "status": "verified",
+  "decisionRule": "Solo generates artificial doublets from observed profiles and trains a discriminator on learned scVI representations. Predicted doublet probability is a model score, not a counted second cell.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "method-25",
@@ -638,18 +717,25 @@
   "takeaway": "An autoencoder learns a deterministic representation and reconstruction; a variational autoencoder fits a probabilistic latent-variable model with regularization.",
   "explanation": "VAEs use an approximate posterior and a generative likelihood, whereas a basic AE minimizes reconstruction loss.",
   "caution": "Both families have many architectures; an AE is not necessarily linear and a VAE is not guaranteed to model biological causation.",
-  "question": "What distinguishes a basic VAE from a standard AE?",
+  "question": "An AE and a VAE both reconstruct the same scRNA-seq matrix. Which observation most directly distinguishes the VAE objective?",
   "options": [
-   "A probabilistic latent-variable objective including KL regularization",
-   "A requirement for spatial coordinates",
-   "No encoder at all"
+   "An approximate posterior q(z|x), a prior p(z) and a KL-divergence term in the loss",
+   "Low-dimensional latent embeddings, which only VAEs can produce",
+   "A decoder network, which standard AEs do not contain"
   ],
   "correct": 0,
   "reference": {
    "label": "Stuart & Satija, Nat Rev Genet (2019)",
    "url": "https://doi.org/10.1038/s41576-019-0093-7"
   },
-  "status": "background"
+  "status": "background",
+  "decisionRule": "AE: encode a point z and reconstruct x. VAE: infer a distribution q(z|x), sample z, optimize reconstruction plus a KL regularizer against a prior. Both can be nonlinear.",
+  "auditVersion": "evidence-first-v2",
+  "optionFeedback": [
+   "Correct: the probabilistic latent-variable formulation and ELBO-style objective distinguish the standard VAE from a plain AE.",
+   "Incorrect: both autoencoders and variational autoencoders learn latent representations.",
+   "Incorrect: both families normally include a decoder."
+  ]
  },
  {
   "id": "method-26",
@@ -661,17 +747,24 @@
   "takeaway": "Under specific objectives and constraints, a linear autoencoder can recover the principal subspace of PCA.",
   "explanation": "SVD finds orthogonal principal components that explain variance of centered data.",
   "caution": "Not every linear autoencoder returns the unique PCA loadings or uses the transpose of its encoder matrix.",
-  "question": "Which claim is suitably qualified?",
+  "question": "A centered expression matrix is analyzed with PCA and a linear AE with squared reconstruction error. Their latent subspaces match, but weights differ. Is this surprising?",
   "options": [
-   "Linear AEs can span the PCA subspace under appropriate assumptions",
-   "Every AE is exactly PCA",
-   "PCA always trains a nonlinear decoder"
+   "No; the linear AE can recover the PCA subspace without returning the same uniquely oriented loadings",
+   "Yes; all learned AE weights must exactly equal PCA eigenvectors",
+   "No; PCA always uses a nonlinear objective unrelated to reconstruction"
   ],
   "correct": 0,
   "reference": {
    "label": "Linear autoencoders and PCA — scientific reference search",
    "url": "https://scholar.google.com/scholar?q=linear+autoencoders+principal+component+analysis"
   },
-  "status": "qualified"
+  "status": "qualified",
+  "decisionRule": "PCA is a linear orthogonal variance-maximizing subspace (with centering); a linear AE can span that subspace under appropriate loss and constraints, but its raw weights need not equal PCA loadings.",
+  "auditVersion": "evidence-first-v2",
+  "optionFeedback": [
+   "Correct: matching subspaces does not require matching coordinates or raw encoder weights.",
+   "Incorrect: linear AE weight matrices can differ under basis transformations and parameterization.",
+   "Incorrect: PCA is a linear subspace method that can be framed through reconstruction error."
+  ]
  }
 ]
