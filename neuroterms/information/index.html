@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f8fafc"><title>NeuroInsights — Active Research Learning</title><meta name="description" content="Evidence-aware active recall from 141 research highlights in the Information glossary.">
+<style>
+:root{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;background:#f7f9fc;color:#192940;font-synthesis:none}
+*{box-sizing:border-box}
+body{margin:0}
+button,input,select{font:inherit}
+button{cursor:pointer}
+a{text-decoration:none;color:#4962ce}
+a:hover{text-decoration:underline}
+.wrapper{max-width:1200px;margin:auto;padding:26px 24px 80px}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:15px}
+.wordmark{font-size:21px;font-weight:840;letter-spacing:-.8px;color:#253855}
+.wordmark b{color:#6073d5}
+.mini{color:#91a0b5;font-size:12px}
+.links{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.navlink{font-size:13px;border:1px solid #e3e8f2;border-radius:11px;background:#fff;padding:10px 13px;font-weight:700}
+.hero{padding:64px 0 30px;display:flex;justify-content:space-between;align-items:end;gap:25px;flex-wrap:wrap}
+.eyebrow{color:#7284a3;font-size:11px;text-transform:uppercase;letter-spacing:2px;font-weight:800}
+h1{margin:14px 0;line-height:1.06;letter-spacing:-2.4px;font-size:clamp(39px,6vw,64px)}
+h1 em{color:#6578df;font-style:normal}
+.hero p{max-width:625px;line-height:1.65;color:#6b7a91}
+.summary{display:flex;gap:11px;flex-wrap:wrap}
+.kpi{min-width:115px;background:#fff;border:1px solid #e4e9f3;border-radius:15px;padding:15px 17px}
+.kpi strong{font-size:25px;display:block;letter-spacing:-.7px}
+.kpi small{font-size:11px;color:#8694a8}
+.workspace{display:grid;grid-template-columns:235px minmax(0,1fr);gap:22px}
+.sidebar,.main{background:#fff;border:1px solid #e4e9f2;border-radius:22px;box-shadow:0 15px 50px #1e2b4708}
+.sidebar{padding:16px;align-self:start;position:sticky;top:20px}
+.menu{display:grid;gap:5px}
+.menu button{background:none;border:0;border-radius:11px;padding:13px 12px;text-align:left;color:#6b7d97;font-weight:730;display:flex;align-items:center;gap:10px}
+.menu button.active{background:#edf0ff;color:#4259bf}
+.ico{font-size:17px;min-width:20px}
+.rule{height:1px;background:#eff1f7;margin:17px 0}
+.side-label{color:#94a0b1;font-size:11px;letter-spacing:1px;font-weight:780;text-transform:uppercase;margin:5px 6px 12px}
+input,select{width:100%;background:#fafbff;border:1px solid #e2e7ef;border-radius:11px;padding:12px;color:#324665;outline:none}
+input:focus,select:focus{border-color:#7e8ff2;box-shadow:0 0 0 3px #748cf124}
+.sidehelp{font-size:11px;color:#92a0b2;line-height:1.6;margin:17px 7px 4px}
+.main{padding:29px;min-height:505px}
+h2{font-size:25px;letter-spacing:-.7px;margin:0 0 8px}
+.sub{font-size:13px;margin:0 0 22px;color:#79879b;line-height:1.6}
+.row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.chip{display:inline-block;background:#edf1ff;color:#5066c1;font-size:11px;padding:7px 10px;border-radius:8px;font-weight:730}
+.chip.amber{background:#fff6e8;color:#96621d}
+.chip.red{background:#fff0ef;color:#a94d4b}
+.chip.green{background:#ebf9ef;color:#24774c}
+.kicker{color:#8c99ad;font-size:11px;text-transform:uppercase;letter-spacing:1.1px;font-weight:800}
+.progress{height:6px;background:#eff2f8;border-radius:20px;overflow:hidden;margin:19px 0}
+.progress div{height:100%;background:#6b7ae9;transition:width .2s}
+.flash{min-height:275px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:linear-gradient(145deg,#fcfdff,#eff3ff);border:1px solid #e2e9f7;border-radius:19px;padding:30px;margin-bottom:16px;cursor:pointer}
+.flash h3{font-size:clamp(24px,4vw,37px);letter-spacing:-1px;line-height:1.2;margin:16px auto 12px;max-width:680px}
+.flash p{line-height:1.65;color:#63748d;max-width:675px;margin:8px auto}
+.flash .tip{font-size:11px;color:#8da0b8;margin-top:22px}
+.info{background:#f5f7fc;border-radius:13px;padding:16px 19px;margin:11px 0}
+.info label{display:block;text-transform:uppercase;font-size:10px;letter-spacing:1.2px;font-weight:800;color:#607395;margin-bottom:7px}
+.info div{font-size:14px;color:#405370;line-height:1.65;white-space:pre-line}
+.buttons{display:flex;gap:10px;margin-top:17px;flex-wrap:wrap}
+.btn{background:#fff;border:1px solid #dfe5f0;border-radius:12px;color:#334867;padding:13px 17px;font-weight:750;flex:1;min-width:110px}
+.btn.primary{color:#fff;background:#596bd8;border-color:#596bd8}
+.btn.again{background:#fff3f1;color:#b25d51}
+.btn.hard{background:#fff9e8;color:#a27c29}
+.btn.good{background:#ecf8f0;color:#3d805b}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.choices{display:grid;gap:10px;margin-top:15px}
+.choice{text-align:left;width:100%;border:1px solid #e1e7ef;border-radius:13px;background:#fff;color:#314660;padding:17px;font-weight:600;line-height:1.5}
+.choice:hover:not(:disabled){background:#f7f9ff;border-color:#a1aef1}
+.choice:disabled{cursor:default}
+.choice.right{background:#eaf8f0;border-color:#73bc96}
+.choice.wrong{background:#fff0ed;border-color:#e6a6a0}
+.questionbox{background:#f7f9ff;border:1px solid #e7ecf7;padding:23px;border-radius:15px;margin:17px 0}
+.questionbox p{font-size:21px;line-height:1.5;font-weight:680;color:#263856;margin:15px 0 0}
+.library{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:15px}
+.item{background:#fff;border:1px solid #e4eaf2;border-radius:13px;text-align:left;padding:17px;min-width:0}
+.item:hover{border-color:#9caaf3}
+.item h3{font-size:15px;margin:10px 0 5px;color:#283c58}
+.item p{font-size:12px;line-height:1.55;color:#75849a;margin:0}
+.status{display:inline-block;font-size:11px;color:#7a89a1}
+.empty{text-align:center;padding:75px 20px;color:#8b9aad}
+.hidden{display:none!important}
+.feedback{background:#f4f6fc;padding:17px 18px;border-radius:14px;margin:15px 0;line-height:1.65;color:#435674}
+.feedback strong{display:block;color:#223957;margin-bottom:8px}
+.source-links{display:flex;flex-wrap:wrap;gap:11px;font-size:12px;font-weight:750;margin-top:14px}
+dialog{width:min(710px,calc(100% - 24px));border:1px solid #dce4f0;border-radius:23px;padding:25px;box-shadow:0 30px 120px #0d1b3545;color:#243853}
+dialog::backdrop{background:#1927448a}
+dialog h2{margin-top:12px}
+.close{float:right;border:0;border-radius:9px;background:#eff2f9;color:#4d607b;font-size:25px;width:36px;height:36px}
+.original{font-size:13px;line-height:1.6;color:#65768f;border-left:3px solid #d5dcf4;padding-left:12px;max-height:110px;overflow:auto;margin:10px 0}
+.footer{font-size:12px;color:#99a5b6;line-height:1.8;margin:23px 6px}
+@media(max-width:900px){.hero{padding-top:40px}.workspace{grid-template-columns:1fr}.sidebar{position:static}.menu{display:flex;overflow:auto}.menu button{min-width:max-content}.sidehelp,.side-label,.rule{display:none}.sidebar select{margin-top:10px}.main{padding:20px}}
+@media(max-width:540px){.wrapper{padding:18px 13px 50px}.hero{padding:33px 0 22px}h1{font-size:39px}.kpi{flex:1;min-width:76px;padding:12px}.kpi strong{font-size:21px}.kpi small{font-size:10px}.main{padding:16px}.flash{min-height:255px;padding:20px}.flash h3{font-size:26px}.buttons{gap:7px}.btn{min-width:calc(50% - 5px)}.library{grid-template-columns:1fr}.questionbox p{font-size:18px}}
+</style></head><body>
+<div class="wrapper">
+<nav class="nav"><div class="wordmark">neuro<b>insights</b> <span class="mini">/ learning studio</span></div><div class="links"><a class="navlink" href="../">← Terms</a><a class="navlink" href="https://app.notion.com/p/3df0932cac3881168c1ad8e302064034" target="_blank" rel="noopener">Notion ↗</a></div></nav>
+<div class="hero"><div><div class="eyebrow">From saved highlights to scientific reasoning</div><h1>Read less twice.<br><em>Understand more.</em></h1><p>Learn biology, glioblastoma, spatial omics and computational methods through active recall. Every lesson links back to its original highlight and separates supported claims from qualifications.</p></div>
+<div class="summary"><div class="kpi"><strong id="total">—</strong><small>Lessons</small></div><div class="kpi"><strong id="studied">—</strong><small>Studied</small></div><div class="kpi"><strong id="due">—</strong><small>Due</small></div><div class="kpi"><strong id="accuracy">—</strong><small>Quiz score</small></div></div></div>
+<div class="workspace"><aside class="sidebar"><div class="menu">
+<button class="active" id="nav-cards"><span class="ico">▣</span>Flashcards</button>
+<button id="nav-quiz"><span class="ico">◉</span>Concept quiz</button>
+<button id="nav-critical"><span class="ico">◇</span>Critical reading</button>
+<button id="nav-library"><span class="ico">▤</span>All lessons</button>
+</div><div class="rule"></div><div class="side-label">Filter topics</div><select id="topic" aria-label="Topic"><option value="all">All topics</option></select>
+<p class="sidehelp">Saved in this browser. Review intervals are heuristic (10 minutes to days), not validated FSRS. Source links distinguish original highlights from peer-reviewed supporting literature.</p></aside>
+<main class="main"><section id="load"><h2>Loading learning material</h2><p class="sub">Opening curated lessons and their original Information highlights…</p></section>
+<section id="cards" class="hidden"><div class="row"><div><h2>Active recall cards</h2><p class="sub">Explain the core idea before revealing the answer.</p></div><select id="pool" style="max-width:190px"><option value="all">All lessons</option><option value="due">Due now</option><option value="new">New lessons</option><option value="hard">Difficult / missed</option></select></div>
+<div id="cardActive"><div class="row"><span class="kicker" id="cardPosition"></span><span id="cardCategory" class="chip"></span></div><div class="progress"><div id="cardProgress"></div></div>
+<div class="flash" tabindex="0" role="button" aria-label="Reveal flashcard" id="flash"><span class="kicker" id="face">PROMPT</span><h3 id="flashTitle"></h3><p id="flashBody"></p><span class="tip">Tap or press Enter to flip</span></div>
+<div id="details" class="hidden"></div>
+<div class="buttons" id="cardControls"><button class="btn" id="skip">Skip →</button><button class="btn primary" id="reveal">Reveal & explain</button></div>
+<div class="buttons hidden" id="grades"><button class="btn again" data-grade="again">Again</button><button class="btn hard" data-grade="hard">Hard</button><button class="btn good" data-grade="good">Good</button><button class="btn primary" data-grade="easy">Easy</button></div></div>
+<div id="cardEmpty" class="empty hidden"><h2>Session complete</h2><p>Your selected pool is complete. You can study another category or start a quiz.</p><button class="btn primary" id="restartCards">Study again</button></div></section>
+<section id="quiz" class="hidden"><div class="row"><div><h2>Concept quiz</h2><p class="sub">Test whether you can apply the idea, not merely recognize a term.</p></div><select id="quizSize" style="max-width:165px"><option value="10">10 questions</option><option value="20">20 questions</option><option value="all">All lessons</option></select></div>
+<div id="quizActive"><div class="row"><span class="kicker" id="quizPosition"></span><span class="chip" id="quizCategory"></span></div><div class="progress"><div id="quizProgress"></div></div><div class="questionbox"><span class="kicker">Applied understanding</span><p id="quizQuestion"></p></div><div class="choices" id="choices"></div><div id="feedback" class="feedback hidden"></div><div class="buttons"><button class="btn" id="restartQuiz">New quiz</button><button class="btn primary" id="nextQuiz" disabled>Next →</button></div></div>
+<div id="quizFinished" class="empty hidden"><h2 id="score"></h2><p id="scoreText"></p><div class="buttons"><button class="btn primary" id="quizAgain">Try again</button><button class="btn" id="reviewMissed">Review missed</button></div></div></section>
+<section id="critical" class="hidden"><div class="row"><div><h2>Critical reading lab</h2><p class="sub">Recognize assumptions, claims that need evidence, and overinterpretations.</p></div><span class="chip amber" id="criticalCount">—</span></div><p class="sub">This mode prioritizes corrected, unverified and context-dependent claims. The same multiple-choice feedback applies.</p><div class="buttons"><button class="btn primary" id="criticalStart">Start critical-reading quiz →</button><button class="btn" id="criticalCards">Study critical cards</button></div><div id="criticalItems" class="library"></div></section>
+<section id="library" class="hidden"><div class="row"><div><h2>Learning library</h2><p class="sub">Browse, search, and audit each lesson against its saved highlights.</p></div><span class="chip" id="libraryCount">—</span></div><input id="search" placeholder="Search concepts, examples and caveats…" aria-label="Search"><p class="mini" id="searchInfo"></p><div class="library" id="lessonGrid"></div></section>
+</main></div><footer class="footer">Created from 141 saved Information records. Related/repeated fragments become 85 lessons, including image-only highlights linked to neighboring concepts. Evidence-status labels describe the scope of review, not clinical validation. <a href="../">Open NeuroTerms ↗</a></footer></div>
+<dialog id="dialog"><button class="close" id="close" aria-label="Close">×</button><span id="dialogCategory" class="chip"></span><span id="dialogStatus" class="chip"></span><h2 id="dialogTitle"></h2><div id="dialogContent"></div><div id="dialogSources"></div></dialog>
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+const key="neuroinsights-v1";
+let lessons=[],originals=[],progress={},totals={correct:0,attempted:0},topic="all",mode="cards",cards=[],cardAt=0,flipped=false,quiz=[],qAt=0,qCorrect=0,qMissed=[],answered=false;
+const day=86400000;
+const label={verified:"Peer-reviewed source",qualified:"Context dependent",background:"General background",corrected:"Corrected claim",unverified:"Needs verification"};
+const cls={verified:"green",qualified:"",background:"",corrected:"amber",unverified:"red"};
+const shuffle=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const normalize=s=>String(s||"").toLowerCase().normalize("NFKD").replace(/\s+/g," ").trim();
+const row=t=>progress[t.id]||(progress[t.id]={seen:0,reps:0,interval:0,due:0,wrong:0,last:""});
+function persist(){try{localStorage.setItem(key,JSON.stringify({progress,totals}))}catch{}stats()}
+function restore(){try{const x=JSON.parse(localStorage.getItem(key)||"null");if(x){progress=x.progress||{};totals=x.totals||totals}}catch{}}
+function stats(){const now=Date.now();$("total").textContent=lessons.length;$("studied").textContent=lessons.filter(t=>row(t).seen).length;$("due").textContent=lessons.filter(t=>row(t).seen&&row(t).due<=now).length;$("accuracy").textContent=totals.attempted?Math.round(totals.correct/totals.attempted*100)+"%":"—"}
+const relevant=()=>lessons.filter(t=>topic==="all"||t.category===topic);
+function setMode(next){mode=next;["cards","quiz","critical","library"].forEach(n=>{$(n).classList.toggle("hidden",n!==next);$("nav-"+n).classList.toggle("active",n===next)});if(next==="cards")startCards();if(next==="quiz")startQuiz();if(next==="critical")renderCritical();if(next==="library")renderLibrary()}
+function cardCandidates(){const a=relevant();const p=$("pool").value;if(p==="due")return a.filter(t=>row(t).seen&&row(t).due<=Date.now());if(p==="new")return a.filter(t=>!row(t).seen);if(p==="hard")return a.filter(t=>row(t).wrong>0||["again","hard"].includes(row(t).last));return a}
+function startCards(custom){cards=custom||shuffle(cardCandidates());cardAt=0;flipped=false;renderCard()}
+function renderCard(){const t=cards[cardAt];$("cardActive").classList.toggle("hidden",!t);$("cardEmpty").classList.toggle("hidden",!!t);if(!t)return;$("cardPosition").textContent="LESSON "+(cardAt+1)+" OF "+cards.length;$("cardCategory").textContent=t.category;$("cardProgress").style.width=(100*(cardAt+1)/cards.length)+"%";$("face").textContent=flipped?"CORE IDEA":"RETRIEVAL PROMPT";$("flashTitle").textContent=t.title;$("flashBody").textContent=flipped?t.takeaway:"Before flipping, explain what this claim means and name one important limitation.";$("details").classList.toggle("hidden",!flipped);$("cardControls").classList.toggle("hidden",flipped);$("grades").classList.toggle("hidden",!flipped);if(flipped)renderDetails($("details"),t)}
+function flip(){if(!cards[cardAt])return;flipped=!flipped;renderCard()}
+function nextCard(){cardAt++;flipped=false;renderCard()}
+function grade(t,g){const p=row(t);p.seen=Date.now();if(g==="again"){p.reps=0;p.interval=1/144;p.wrong++}else if(g==="hard"){p.reps++;p.interval=Math.max(1,p.interval*1.2)}else if(g==="good"){p.reps++;p.interval=p.interval>=1?p.interval*2.1:2}else{p.reps++;p.interval=p.interval>=1?p.interval*2.7:5}p.last=g;p.due=Date.now()+p.interval*day;persist()}
+function elem(tag,text,css){const x=document.createElement(tag);if(text!==undefined)x.textContent=text;if(css)x.className=css;return x}
+function block(parent,title,text){const d=elem("div",undefined,"info");d.appendChild(elem("label",title));d.appendChild(elem("div",text));parent.appendChild(d)}
+function addLink(parent,text,url){const a=elem("a",text+" ↗");a.href=url;a.target="_blank";a.rel="noopener";parent.appendChild(a)}
+function statusSpan(t){return elem("span",label[t.status]||"Unrated","chip "+(cls[t.status]||""))}
+function renderDetails(parent,t){parent.replaceChildren();const badge=elem("div");badge.appendChild(statusSpan(t));parent.appendChild(badge);block(parent,"Meaning / evidence",t.explanation);block(parent,"What not to conclude",t.caution);const links=elem("div",undefined,"source-links");if(t.reference)addLink(links,t.reference.label,t.reference.url);const orig=originals[t.ids[0]];if(orig)addLink(links,"Original Information highlight",orig.url);parent.appendChild(links)}
+function makeQuiz(items){quiz=shuffle(items);qAt=0;qCorrect=0;qMissed=[];$("quizFinished").classList.add("hidden");$("quizActive").classList.remove("hidden");mode="quiz";["cards","quiz","critical","library"].forEach(n=>{$(n).classList.toggle("hidden",n!=="quiz");$("nav-"+n).classList.toggle("active",n==="quiz")});renderQuiz()}
+function startQuiz(){const max=$("quizSize").value;makeQuiz(relevant().slice().sort(()=>Math.random()-.5).slice(0,max==="all"?Infinity:Number(max)))}
+function renderQuiz(){const t=quiz[qAt];if(!t){$("quizActive").classList.add("hidden");$("quizFinished").classList.remove("hidden");$("score").textContent=qCorrect+" / "+quiz.length+" correct";$("scoreText").textContent=qMissed.length?qMissed.length+" concepts need another look.":"Great work. Free recall is a useful harder next step.";return}answered=false;$("quizPosition").textContent="QUESTION "+(qAt+1)+" OF "+quiz.length;$("quizCategory").textContent=t.category;$("quizProgress").style.width=100*(qAt+1)/quiz.length+"%";$("quizQuestion").textContent=t.question;$("choices").replaceChildren();$("feedback").classList.add("hidden");$("nextQuiz").disabled=true;$("nextQuiz").textContent="Next →";const choices=shuffle(t.options.map((text,i)=>({text,correct:i===t.correct})));choices.forEach((c,i)=>{const btn=elem("button",String.fromCharCode(65+i)+". "+c.text,"choice");btn.dataset.correct=String(c.correct);btn.onclick=()=>choose(btn,t);$("choices").appendChild(btn)})}
+function choose(selected,t){if(answered)return;answered=true;const correct=selected.dataset.correct==="true";totals.attempted++;if(correct)totals.correct++;else{qMissed.push(t);const p=row(t);p.wrong++;p.last="again";p.due=Date.now();p.seen=Date.now()}persist();[...$("choices").children].forEach(b=>{b.disabled=true;if(b.dataset.correct==="true")b.classList.add("right");else if(b===selected)b.classList.add("wrong")});const f=$("feedback");f.replaceChildren();f.appendChild(elem("strong",correct?"Correct · "+t.title:"Not quite · "+t.title));f.appendChild(elem("p",t.takeaway));f.appendChild(elem("p","Important limitation: "+t.caution));const source=elem("div",undefined,"source-links");source.appendChild(statusSpan(t));if(t.reference)addLink(source,"Supporting reference",t.reference.url);f.appendChild(source);f.classList.remove("hidden");$("nextQuiz").disabled=false;$("nextQuiz").textContent=qAt+1===quiz.length?"See results →":"Next →"}
+function criticalLessons(){return lessons.filter(t=>["unverified","corrected","qualified"].includes(t.status))}
+function renderCritical(){const a=criticalLessons();$("criticalCount").textContent=a.length+" caution cards";$("criticalItems").replaceChildren();a.forEach(t=>{$("criticalItems").appendChild(tile(t))})}
+function tile(t){const b=elem("button",undefined,"item");b.appendChild(statusSpan(t));b.appendChild(elem("h3",t.title));const p=elem("p",t.takeaway);b.appendChild(p);b.onclick=()=>openDialog(t);return b}
+function renderLibrary(){const search=normalize($("search").value);const a=relevant().filter(t=>normalize(t.title+" "+t.takeaway+" "+t.explanation+" "+t.caution).includes(search));$("libraryCount").textContent=a.length+" lessons";$("searchInfo").textContent="Each lesson links to the saved highlight and, where available, supporting research.";$("lessonGrid").replaceChildren();a.forEach(t=>$("lessonGrid").appendChild(tile(t)));if(!a.length)$("lessonGrid").appendChild(elem("div","No matching concepts","empty"))}
+function openDialog(t){$("dialogTitle").textContent=t.title;$("dialogCategory").textContent=t.category;$("dialogStatus").textContent=label[t.status];$("dialogStatus").className="chip "+(cls[t.status]||"");$("dialogContent").replaceChildren();block($("dialogContent"),"Core idea",t.takeaway);block($("dialogContent"),"Explanation",t.explanation);block($("dialogContent"),"Limitation / correction",t.caution);block($("dialogContent"),"Practice question",t.question);const sourceArea=$("dialogSources");sourceArea.replaceChildren();if(t.reference){const links=elem("div",undefined,"source-links");addLink(links,t.reference.label,t.reference.url);sourceArea.appendChild(links)}const shown=t.ids.slice(0,12);shown.forEach((i,k)=>{const s=originals[i];if(!s)return;const p=elem("p",s.highlight.slice(0,400), "original");sourceArea.appendChild(p);const l=elem("div",undefined,"source-links");addLink(l,"Saved highlight #"+(i+1),s.url);if(s.source?.startsWith("http")&&s.source.length<1800)addLink(l,"Original source page",s.source);sourceArea.appendChild(l)});$("dialog").showModal()}
+async function init(){try{const paths=["highlights.json","biology.json","tumor.json","methods.json"];const raw=await Promise.all(paths.map(async p=>{const r=await fetch("./"+p,{cache:"no-cache"});if(!r.ok)throw Error(p+" HTTP "+r.status);return await r.json()}));originals=raw[0].records;lessons=[...raw[1],...raw[2],...raw[3]];if(originals.length!==141||lessons.length!==85)throw Error("Lesson dataset incomplete");let used=new Set();for(const t of lessons){if(!t.title||!t.takeaway||!t.explanation||!t.caution||!t.question||!t.reference?.url||t.options?.length!==3||t.ids?.length<1||used.has(t.id))throw Error("Invalid lesson "+t.id);used.add(t.id)}restore();const topics=[...new Set(lessons.map(t=>t.category))].sort();topics.forEach(t=>{const o=elem("option",t);o.value=t;$("topic").appendChild(o)});$("load").classList.add("hidden");stats();setMode("cards")}catch(err){$("load").replaceChildren(elem("h2","Data could not load"),elem("p",String(err)+". Confirm both data and HTML files are published on GitHub Pages."))}}
+["cards","quiz","critical","library"].forEach(t=>$("nav-"+t).onclick=()=>setMode(t));
+$("topic").onchange=e=>{topic=e.target.value;setMode(mode)};
+$("pool").onchange=()=>startCards();
+$("flash").onclick=flip;$("flash").onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();flip()}};
+$("reveal").onclick=()=>{flipped=true;renderCard()};$("skip").onclick=nextCard;$("restartCards").onclick=()=>{$("pool").value="all";startCards()};
+document.querySelectorAll("[data-grade]").forEach(b=>b.onclick=()=>{grade(cards[cardAt],b.dataset.grade);nextCard()});
+$("quizSize").onchange=startQuiz;$("restartQuiz").onclick=startQuiz;$("nextQuiz").onclick=()=>{qAt++;renderQuiz()};$("quizAgain").onclick=startQuiz;
+$("reviewMissed").onclick=()=>{if(!qMissed.length){setMode("cards");return}mode="cards";["cards","quiz","critical","library"].forEach(n=>{$(n).classList.toggle("hidden",n!=="cards");$("nav-"+n).classList.toggle("active",n==="cards")});startCards(shuffle(qMissed))};
+$("criticalStart").onclick=()=>{const a=criticalLessons();makeQuiz(a)};$("criticalCards").onclick=()=>{mode="cards";["cards","quiz","critical","library"].forEach(n=>{$(n).classList.toggle("hidden",n!=="cards");$("nav-"+n).classList.toggle("active",n==="cards")});startCards(shuffle(criticalLessons()))};
+$("search").oninput=renderLibrary;$("close").onclick=()=>$("dialog").close();init();
+</script></body></html>
