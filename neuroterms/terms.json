@@ -1,0 +1,1023 @@
+{
+  "version": 2,
+  "updated": "2026-11-11",
+  "source": {
+    "name": "Notion Glassory / Terms",
+    "url": "https://app.notion.com/p/3df0932cac388145948cee2d54bc0202",
+    "total": 75,
+    "excluded": 5,
+    "duplicates": 9
+  },
+  "terms": [
+    {
+      "id": "term-0",
+      "title": "Glucocorticoid receptor (GR)",
+      "category": "Therapy & Drug Response",
+      "definition": "A ligand-activated transcription regulator encoded by NR3C1 that mediates glucocorticoid signaling.",
+      "application": "A steroid enters a cell, binds its intracellular receptor, and changes transcription of responsive genes.",
+      "caution": "GR activation is context-dependent; observing GR target genes does not prove a specific drug exposure.",
+      "reference": {
+        "label": "Pathophysiology of Glucocorticoid Signaling (2018)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/29685454/"
+      },
+      "notion": [
+        "https://app.notion.com/p/4130932cac38814ab422ddba76ee39fc"
+      ],
+      "aliases": [
+        "GR",
+        "NR3C1"
+      ]
+    },
+    {
+      "id": "term-1",
+      "title": "Pembrolizumab",
+      "category": "Therapy & Drug Response",
+      "definition": "A therapeutic monoclonal antibody that binds PD-1 and blocks an inhibitory immune checkpoint.",
+      "application": "An antibody prevents PD-1 signaling on T cells to support antitumor immunity in some cancers.",
+      "caution": "It targets PD-1, not PD-L1 directly; benefit is tumor- and context-dependent.",
+      "reference": {
+        "label": "Topalian et al., NEJM (2012), PD-1 mechanism",
+        "url": "https://doi.org/10.1056/NEJMoa1200690"
+      },
+      "notion": [
+        "https://app.notion.com/p/4130932cac38815f9a6ce787d30bb16a"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-2",
+      "title": "Dexamethasone",
+      "category": "Therapy & Drug Response",
+      "definition": "A potent synthetic glucocorticoid used, among other indications, to manage vasogenic edema around brain tumors.",
+      "application": "A patient with tumor-associated brain edema receives a steroid that changes inflammatory signaling.",
+      "caution": "Reducing edema is not equivalent to treating malignant cells; it can confound immune transcriptomes.",
+      "reference": {
+        "label": "The management of brain edema in brain tumors (2004)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/15627023/"
+      },
+      "notion": [
+        "https://app.notion.com/p/4130932cac388141854acccb7af70901"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-3",
+      "title": "Mural cells",
+      "category": "Cell Types",
+      "definition": "Vessel-associated support cells, primarily pericytes and vascular smooth-muscle cells.",
+      "application": "Cells surrounding vascular endothelium help stabilize a small vessel.",
+      "caution": "Mural cells are not synonymous with endothelial cells.",
+      "reference": {
+        "label": "Gulati et al., single-cell & spatial review (2025)",
+        "url": "https://www.nature.com/articles/s41580-024-00768-2"
+      },
+      "notion": [
+        "https://app.notion.com/p/4130932cac388176a9bfc6fdae03bf3f"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-4",
+      "title": "Tumor stroma",
+      "category": "Tumor Microenvironment",
+      "definition": "Nonmalignant supporting elements of a tumor, including extracellular matrix and context-dependent stromal or vascular cells.",
+      "application": "A tumor section contains extracellular matrix, vascular support cells, and fibroblastic populations.",
+      "caution": "Stroma composition varies by tissue; it does not include malignant cells by definition.",
+      "reference": {
+        "label": "Gulati et al., single-cell & spatial review (2025)",
+        "url": "https://www.nature.com/articles/s41580-024-00768-2"
+      },
+      "notion": [
+        "https://app.notion.com/p/4130932cac388107abade51adba7ac26"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-5",
+      "title": "Myeloid cells",
+      "category": "Cell Types",
+      "definition": "A broad immune-cell grouping including monocytes, macrophages, granulocytes and some dendritic cells.",
+      "application": "A brain tumor contains macrophage-like immune populations and infiltrating monocytes.",
+      "caution": "Microglia are distinct resident CNS macrophages but are often grouped with myeloid populations analytically.",
+      "reference": {
+        "label": "GBM spatial trajectory, Nature (2026)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42983086/"
+      },
+      "notion": [
+        "https://app.notion.com/p/4130932cac388147be7cf692759530dc",
+        "https://app.notion.com/p/40f0932cac38812984abf84c720aa985"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-6",
+      "title": "Fibroblasts",
+      "category": "Cell Types",
+      "definition": "Stromal cells that produce and remodel extracellular matrix components.",
+      "application": "A connective-tissue cell deposits collagen and modifies surrounding matrix.",
+      "caution": "Marker expression can overlap with other stromal cells; context is needed for annotation.",
+      "reference": {
+        "label": "Gulati et al., single-cell & spatial review (2025)",
+        "url": "https://www.nature.com/articles/s41580-024-00768-2"
+      },
+      "notion": [
+        "https://app.notion.com/p/4130932cac3881858fa1f687520fc60e"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-7",
+      "title": "Endothelial cells",
+      "category": "Cell Types",
+      "definition": "Cells lining the inner surfaces of blood and lymphatic vessels.",
+      "application": "Cells form the vascular barrier between circulating blood and tissue.",
+      "caution": "Endothelium is distinct from pericytes and smooth-muscle mural cells.",
+      "reference": {
+        "label": "Gulati et al., single-cell & spatial review (2025)",
+        "url": "https://www.nature.com/articles/s41580-024-00768-2"
+      },
+      "notion": [
+        "https://app.notion.com/p/4130932cac388175b912fd7757bc917e"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-8",
+      "title": "Single-cell multiome",
+      "category": "Spatial Omics",
+      "definition": "Joint measurement of multiple molecular modalities from the same cell or nucleus, often RNA expression plus chromatin accessibility.",
+      "application": "One nucleus yields both its transcriptome and ATAC accessibility profile.",
+      "caution": "Paired single-cell multiome does not automatically preserve spatial location.",
+      "reference": {
+        "label": "Stuart & Satija, Nat Rev Genet (2019)",
+        "url": "https://www.nature.com/articles/s41576-019-0093-7"
+      },
+      "notion": [
+        "https://app.notion.com/p/40f0932cac3881ada723dd86e1cd7a41",
+        "https://app.notion.com/p/40f0932cac3881bb9413e1232d26b4ed"
+      ],
+      "aliases": [
+        "Multiome"
+      ]
+    },
+    {
+      "id": "term-9",
+      "title": "Proliferative state",
+      "category": "GBM Cell States",
+      "definition": "A cellular state with active cell-cycle, DNA-replication, or mitotic transcriptional programs.",
+      "application": "A malignant cluster has high MKI67 and other S/G2M-associated transcripts.",
+      "caution": "A proliferative program can overlap with other malignant cell-state identities.",
+      "reference": {
+        "label": "GBM spatial trajectory, Nature (2026)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42983086/"
+      },
+      "notion": [
+        "https://app.notion.com/p/40f0932cac38819db974f2702f74614c"
+      ],
+      "aliases": [
+        "Proliferative"
+      ]
+    },
+    {
+      "id": "term-10",
+      "title": "AC–gliosis–hypoxia continuum",
+      "category": "GBM Cell States",
+      "definition": "A study-specific continuum of astrocytic-like, glial injury-response and hypoxia-associated malignant expression states.",
+      "application": "A GBM atlas orders astrocytic-like programs toward gliosis and hypoxic transcription.",
+      "caution": "This is a particular GBM atlas interpretation, not a universal class or proven trajectory for every cell.",
+      "reference": {
+        "label": "GBM spatial trajectory, Nature (2026)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42983086/"
+      },
+      "notion": [
+        "https://app.notion.com/p/40f0932cac38811bb607d0048c46a7b4"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-11",
+      "title": "NPC–neuronal-like state",
+      "category": "GBM Cell States",
+      "definition": "A GBM malignant-cell program resembling neural progenitor and neuronal differentiation features.",
+      "application": "A malignant subgroup shows developmental neuronal markers such as DCX or STMN2.",
+      "caution": "Transcriptional resemblance does not mean the malignant cell became a normal neuron.",
+      "reference": {
+        "label": "GBM spatial trajectory, Nature (2026)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42983086/"
+      },
+      "notion": [
+        "https://app.notion.com/p/40f0932cac38816e80d9f032c15ad1a9"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-12",
+      "title": "NPC–OPC-like state",
+      "category": "GBM Cell States",
+      "definition": "A GBM malignant program resembling neural progenitors and oligodendrocyte precursor cells.",
+      "application": "A malignant cluster expresses an OPC-associated program including OLIG genes or PDGFRA.",
+      "caution": "This state name is study-specific and does not independently establish a normal cell lineage.",
+      "reference": {
+        "label": "GBM spatial trajectory, Nature (2026)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42983086/"
+      },
+      "notion": [
+        "https://app.notion.com/p/40f0932cac38814fbeeecb99c8e4b7ff"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-13",
+      "title": "Oligodendrocytes",
+      "category": "Cell Types",
+      "definition": "Central nervous system glial cells that produce and maintain myelin around axons.",
+      "application": "A mature CNS glial cell wraps axons in myelin to support efficient signal conduction.",
+      "caution": "Oligodendrocytes are different from OPCs, which are progenitor cells.",
+      "reference": {
+        "label": "GBM spatial trajectory, Nature (2026)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42983086/"
+      },
+      "notion": [
+        "https://app.notion.com/p/40f0932cac3881a38a3fd5c12c5b0213"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-14",
+      "title": "Lymphocytes",
+      "category": "Cell Types",
+      "definition": "Immune cells including T cells, B cells and natural killer cells.",
+      "application": "A tissue immune compartment contains CD3-positive T cells and other lymphoid populations.",
+      "caution": "Natural killer cells are lymphocytes but are not T cells.",
+      "reference": {
+        "label": "Gulati et al., single-cell & spatial review (2025)",
+        "url": "https://www.nature.com/articles/s41580-024-00768-2"
+      },
+      "notion": [
+        "https://app.notion.com/p/40f0932cac388160baa3cf805fd24668"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-16",
+      "title": "Clonal organization",
+      "category": "Genomics & Epigenetics",
+      "definition": "The spatial or hierarchical arrangement of genetically related cell populations within a tumor.",
+      "application": "Somatic variants distinguish subclones that intermingle across tumor sections.",
+      "caution": "A transcriptional state is not necessarily a genetic clone.",
+      "reference": {
+        "label": "GBM spatial trajectory, Nature (2026)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42983086/"
+      },
+      "notion": [
+        "https://app.notion.com/p/40f0932cac3881f984c3ee269ba6e339"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-18",
+      "title": "Whole-genome sequencing (WGS)",
+      "category": "Genomics & Epigenetics",
+      "definition": "Sequencing of genomic DNA across the genome to detect genetic variation and structural changes.",
+      "application": "Researchers profile tumor DNA broadly to characterize SNVs and copy-number alterations.",
+      "caution": "WGS measures DNA, not RNA expression, and coverage or assay design limit what can be detected.",
+      "reference": {
+        "label": "GBM spatial trajectory, Nature (2026)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42983086/"
+      },
+      "notion": [
+        "https://app.notion.com/p/40f0932cac3881378abfe152ae85b6ce"
+      ],
+      "aliases": [
+        "WGS"
+      ]
+    },
+    {
+      "id": "term-19",
+      "title": "Immunohistochemistry (IHC)",
+      "category": "Experimental Methods",
+      "definition": "Detection and visualization of proteins in tissue using antibodies and a labeling system.",
+      "application": "Antibody staining identifies protein localization in preserved histological sections.",
+      "caution": "Protein staining is not a direct measurement of the corresponding RNA.",
+      "reference": {
+        "label": "Loughran et al., Curr Protoc (2022)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/36102926/"
+      },
+      "notion": [
+        "https://app.notion.com/p/40f0932cac3881c18330cc0bce1b54df"
+      ],
+      "aliases": [
+        "IHC"
+      ]
+    },
+    {
+      "id": "term-20",
+      "title": "Intratumor heterogeneity",
+      "category": "Cancer Pathology",
+      "definition": "Genetic, transcriptional, phenotypic or spatial variation within a single tumor.",
+      "application": "Two biopsies from one GBM show different mixtures of malignant states.",
+      "caution": "Intratumor variability is distinct from variation between patients.",
+      "reference": {
+        "label": "GBM spatial trajectory, Nature (2026)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42983086/"
+      },
+      "notion": [
+        "https://app.notion.com/p/40f0932cac3881a08215e6c27e868bb4"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-21",
+      "title": "Biopsy",
+      "category": "Cancer Pathology",
+      "definition": "Removal of cells or tissue from a living patient for diagnostic or research examination.",
+      "application": "A surgeon samples part of a brain lesion for histopathology.",
+      "caution": "A localized biopsy may not represent the full spatially heterogeneous tumor.",
+      "reference": {
+        "label": "WHO 2021 diffuse glioma classification review",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/35289001/"
+      },
+      "notion": [
+        "https://app.notion.com/p/40f0932cac388121908dfc6d6fd29fba"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-22",
+      "title": "IDH-wild-type",
+      "category": "Genomics & Epigenetics",
+      "definition": "A molecular designation indicating no qualifying IDH1/IDH2 mutation is detected under the relevant classification and testing criteria.",
+      "application": "A diffuse glioma is classified after evaluating its IDH mutation status.",
+      "caution": "A negative screen for only IDH1 R132H may not exclude rarer IDH1/2 mutations in all cases.",
+      "reference": {
+        "label": "WHO 2021 diffuse glioma classification review",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/35289001/"
+      },
+      "notion": [
+        "https://app.notion.com/p/40f0932cac3881ceb02fc254098f4c39"
+      ],
+      "aliases": [
+        "IDH-wt"
+      ]
+    },
+    {
+      "id": "term-23",
+      "title": "Spatial niche",
+      "category": "Tumor Microenvironment",
+      "definition": "A localized tissue neighborhood with characteristic cellular composition and molecular context.",
+      "application": "A vessel-adjacent tumor neighborhood combines mural cells, endothelial cells and nearby malignant cells.",
+      "caution": "Spatial co-occurrence alone does not prove functional cell-cell signaling.",
+      "reference": {
+        "label": "Gulati et al., Nat Rev Mol Cell Biol (2025)",
+        "url": "https://www.nature.com/articles/s41580-024-00768-2"
+      },
+      "notion": [
+        "https://app.notion.com/p/40f0932cac388156a9f6eca12d5be01c"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-24",
+      "title": "Tumor microenvironment (TME)",
+      "category": "Tumor Microenvironment",
+      "definition": "Nonmalignant cells, matrix, vasculature and extracellular signals that interact with tumor cells.",
+      "application": "Immune, vascular and stromal cells occupy the environment surrounding malignant cells.",
+      "caution": "TME varies across tumor regions and cannot be reduced to immune cells alone.",
+      "reference": {
+        "label": "Gulati et al., single-cell & spatial review (2025)",
+        "url": "https://www.nature.com/articles/s41580-024-00768-2"
+      },
+      "notion": [
+        "https://app.notion.com/p/40f0932cac3881299ab7e63cc4203167"
+      ],
+      "aliases": [
+        "TME"
+      ]
+    },
+    {
+      "id": "term-25",
+      "title": "Patient-derived xenograft (PDX)",
+      "category": "Experimental Methods",
+      "definition": "A model in which tumor tissue or cells from a patient are implanted into a host animal, usually immunodeficient.",
+      "application": "Human tumor cells are transplanted into a mouse to study growth and treatment response.",
+      "caution": "Host microenvironment and immune context can differ substantially from the patient's tumor.",
+      "reference": {
+        "label": "Neftel et al., Cell (2019)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/31327527/"
+      },
+      "notion": [
+        "https://app.notion.com/p/40f0932cac3881f6b96bf10ed8b7b26e"
+      ],
+      "aliases": [
+        "PDX"
+      ]
+    },
+    {
+      "id": "term-26",
+      "title": "Neural progenitor cells",
+      "category": "Cell Types",
+      "definition": "Immature neural-lineage cells capable of proliferation and differentiation into neural cell types, depending on context.",
+      "application": "A developmental cell generates downstream neuronal or glial descendants.",
+      "caution": "Progenitor potential varies by region and developmental stage; it is not identical to pluripotency.",
+      "reference": {
+        "label": "Neftel et al., Cell (2019)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/31327527/"
+      },
+      "notion": [
+        "https://app.notion.com/p/40f0932cac38815c8616c7b7d7eebab2"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-27",
+      "title": "Malignant cells",
+      "category": "Cancer Pathology",
+      "definition": "Neoplastic cells with cancer-associated features such as invasive growth and genetic or regulatory abnormalities.",
+      "application": "Single-cell tumor profiling separates cancer cells from normal immune and vascular cells.",
+      "caution": "A single marker rarely establishes malignancy; genetic and tissue context are important.",
+      "reference": {
+        "label": "Neftel et al., Cell (2019)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/31327527/"
+      },
+      "notion": [
+        "https://app.notion.com/p/40f0932cac3881b997acfbd3c1314259"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-28",
+      "title": "Injury-response states",
+      "category": "GBM Cell States",
+      "definition": "Transcriptional states enriched for programs also activated by tissue stress, inflammation or wound responses.",
+      "application": "Malignant cells express wound-associated or reactive-glia-like genes.",
+      "caution": "Expression resemblance to an injury response does not prove an injury happened to each cell.",
+      "reference": {
+        "label": "GBM spatial trajectory, Nature (2026)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42983086/"
+      },
+      "notion": [
+        "https://app.notion.com/p/40f0932cac388182867dc998302f218d"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-29",
+      "title": "Mesenchymal-like (MES-like)",
+      "category": "GBM Cell States",
+      "definition": "A tumor transcriptional phenotype with mesenchymal-associated and often inflammatory or injury-response genes.",
+      "application": "A GBM malignant population expresses CD44, VIM or CHI3L1-associated programs.",
+      "caution": "MES-like does not mean conversion into fibroblasts or necessarily canonical epithelial-to-mesenchymal transition.",
+      "reference": {
+        "label": "GBM spatial trajectory, Nature (2026)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42983086/"
+      },
+      "notion": [
+        "https://app.notion.com/p/40f0932cac3881e3958ef2edc91f23d2"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-30",
+      "title": "Cellular postal-code problem",
+      "category": "Cell Biology",
+      "definition": "A conceptual analogy for how molecular guidance cues direct cells to particular tissue destinations.",
+      "application": "A migrating cell interprets receptor-ligand cues to reach its tissue target.",
+      "caution": "This is a conceptual research problem, not a defined experimental assay.",
+      "reference": {
+        "label": "Gulati et al., single-cell & spatial review (2025)",
+        "url": "https://www.nature.com/articles/s41580-024-00768-2"
+      },
+      "notion": [
+        "https://app.notion.com/p/40d0932cac388184912be20ff92b34d5"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-31",
+      "title": "Spatially resolved transcriptomics",
+      "category": "Spatial Omics",
+      "definition": "RNA measurement technologies that retain location information within tissue.",
+      "application": "A tumor section yields expression values along with spatial coordinates.",
+      "caution": "Some technologies profile multi-cellular spots rather than individual cells.",
+      "reference": {
+        "label": "Ståhl et al., Science (2016)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/27365449/"
+      },
+      "notion": [
+        "https://app.notion.com/p/40d0932cac3881f7a77ce352aef8e9f1"
+      ],
+      "aliases": [
+        "SRT",
+        "Spatial transcriptomics"
+      ]
+    },
+    {
+      "id": "term-32",
+      "title": "In situ hybridization (ISH)",
+      "category": "Experimental Methods",
+      "definition": "Localization of specific DNA or RNA sequences in preserved cells or tissues using complementary probes.",
+      "application": "A labeled RNA probe reveals where a target transcript is located in a tissue section.",
+      "caution": "Probe hybridization detects nucleic acid, not protein.",
+      "reference": {
+        "label": "Gulati et al., Nat Rev Mol Cell Biol (2025)",
+        "url": "https://www.nature.com/articles/s41580-024-00768-2"
+      },
+      "notion": [
+        "https://app.notion.com/p/3f30932cac388126be03fc37201a2464"
+      ],
+      "aliases": [
+        "ISH"
+      ]
+    },
+    {
+      "id": "term-33",
+      "title": "Cellular interactions",
+      "category": "Tumor Microenvironment",
+      "definition": "Direct or indirect influences between cells, through contact, soluble factors or other mechanisms.",
+      "application": "A ligand-expressing cell may influence receptor-bearing neighbors.",
+      "caution": "Co-expression and spatial proximity support hypotheses but do not themselves prove signaling.",
+      "reference": {
+        "label": "Gulati et al., Nat Rev Mol Cell Biol (2025)",
+        "url": "https://www.nature.com/articles/s41580-024-00768-2"
+      },
+      "notion": [
+        "https://app.notion.com/p/3f30932cac38814da4b3ff41b5634eff"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-34",
+      "title": "Spatial expression patterns",
+      "category": "Spatial Omics",
+      "definition": "Variations in RNA or protein abundance across locations in a tissue.",
+      "application": "One gene is enriched near the necrotic margin, another around vessels.",
+      "caution": "A patterned map can reflect changing cell composition rather than regulation within a cell type.",
+      "reference": {
+        "label": "Ståhl et al., Science (2016)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/27365449/"
+      },
+      "notion": [
+        "https://app.notion.com/p/3f30932cac38817a9ce2d4a1068c79d4"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-35",
+      "title": "Tissue composition",
+      "category": "Tumor Microenvironment",
+      "definition": "The identities and abundances of cell populations and structural constituents in a tissue sample.",
+      "application": "An analyst estimates the relative fractions of immune, vascular and malignant cells.",
+      "caution": "Composition estimates depend on measurement resolution and annotation quality.",
+      "reference": {
+        "label": "Gulati et al., single-cell & spatial review (2025)",
+        "url": "https://www.nature.com/articles/s41580-024-00768-2"
+      },
+      "notion": [
+        "https://app.notion.com/p/3f30932cac388119a4f1cb3bcfb8ce92"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-36",
+      "title": "Microenvironment",
+      "category": "Tumor Microenvironment",
+      "definition": "The immediate cellular, molecular and extracellular surroundings of a cell or tissue region.",
+      "application": "A macrophage experiences neighboring cells, soluble factors and matrix stiffness.",
+      "caution": "Microenvironment is a broader concept than tumor microenvironment.",
+      "reference": {
+        "label": "Gulati et al., single-cell & spatial review (2025)",
+        "url": "https://www.nature.com/articles/s41580-024-00768-2"
+      },
+      "notion": [
+        "https://app.notion.com/p/3f30932cac388149bf47e55d11f6e70c",
+        "https://app.notion.com/p/3e10932cac388147ab4cfd143ae62930"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-37",
+      "title": "Reverse transcription",
+      "category": "Molecular Biology",
+      "definition": "Synthesis of complementary DNA (cDNA) from an RNA template using reverse transcriptase.",
+      "application": "An RNA-seq library workflow converts RNA to cDNA before amplification.",
+      "caution": "This is RNA-to-DNA; conventional transcription is DNA-to-RNA.",
+      "reference": {
+        "label": "Stark et al., Nat Rev Genet (2019)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/31341269/"
+      },
+      "notion": [
+        "https://app.notion.com/p/3ee0932cac38818594caea271c772312"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-38",
+      "title": "Spliceosome",
+      "category": "Molecular Biology",
+      "definition": "The dynamic RNA-protein machinery that removes introns from many eukaryotic pre-mRNA transcripts.",
+      "application": "snRNP-containing machinery recognizes splice sites and joins flanking exons.",
+      "caution": "Not every intron in biology uses the major spliceosome.",
+      "reference": {
+        "label": "Wilkinson et al., Annu Rev Biochem (2020)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/31794245/"
+      },
+      "notion": [
+        "https://app.notion.com/p/3ee0932cac38810e9b73fde1450f6654"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-39",
+      "title": "Spatial proteomics",
+      "category": "Spatial Omics",
+      "definition": "Methods measuring protein abundance or location with spatial context preserved.",
+      "application": "Multiplexed antibody imaging maps tissue protein signals across cells.",
+      "caution": "Measured proteins and detectable targets depend on the assay panel.",
+      "reference": {
+        "label": "Gulati et al., Nat Rev Mol Cell Biol (2025)",
+        "url": "https://www.nature.com/articles/s41580-024-00768-2"
+      },
+      "notion": [
+        "https://app.notion.com/p/3ed0932cac38811587c7c280f1d76be7"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-40",
+      "title": "Multimodal spatial data",
+      "category": "Spatial Omics",
+      "definition": "Spatially anchored measurements from two or more modalities, such as RNA, proteins or histology.",
+      "application": "A tissue region has matched expression, cell morphology and antibody-staining features.",
+      "caution": "Different modalities may come from adjacent sections rather than exactly the same cells.",
+      "reference": {
+        "label": "Gulati et al., Nat Rev Mol Cell Biol (2025)",
+        "url": "https://www.nature.com/articles/s41580-024-00768-2"
+      },
+      "notion": [
+        "https://app.notion.com/p/3ec0932cac3881f4a4f3c815716e2596"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-41",
+      "title": "Gene expression imputation",
+      "category": "Computational Methods",
+      "definition": "Computational estimation of missing or unmeasured expression values from available data and assumptions.",
+      "application": "A model predicts genes absent from a spatial panel using a reference atlas.",
+      "caution": "Predicted RNA is not experimentally measured ground truth.",
+      "reference": {
+        "label": "Stuart & Satija, Nat Rev Genet (2019)",
+        "url": "https://www.nature.com/articles/s41576-019-0093-7"
+      },
+      "notion": [
+        "https://app.notion.com/p/3e90932cac38818eb920e9563f1501c0"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-42",
+      "title": "In situ",
+      "category": "Experimental Methods",
+      "definition": "Latin for 'in the original place'; in biology, measurements or processes examined within their native spatial context.",
+      "application": "Investigators detect RNA directly in preserved tissue rather than after dissociation.",
+      "caution": "'In situ' describes location or context; it is not one specific assay.",
+      "reference": {
+        "label": "Gulati et al., Nat Rev Mol Cell Biol (2025)",
+        "url": "https://www.nature.com/articles/s41580-024-00768-2"
+      },
+      "notion": [
+        "https://app.notion.com/p/3e90932cac388147ac6cf1338b9ea866"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-43",
+      "title": "Heterogeneity",
+      "category": "Biology",
+      "definition": "Variation among cells, tissue regions or samples in measured characteristics.",
+      "application": "Different regions or cells differ in expression or morphology.",
+      "caution": "Always specify the level of variation: within tumor, between patients or across cells.",
+      "reference": {
+        "label": "Gulati et al., single-cell & spatial review (2025)",
+        "url": "https://www.nature.com/articles/s41580-024-00768-2"
+      },
+      "notion": [
+        "https://app.notion.com/p/3e90932cac3881f38bf6c8c74a30cb0b"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-44",
+      "title": "Bulk RNA sequencing",
+      "category": "RNA & Transcriptomics",
+      "definition": "RNA sequencing of a pooled cell population, yielding aggregate expression per sample.",
+      "application": "A tissue lysate produces one expression profile combining immune and tumor cells.",
+      "caution": "Bulk data do not directly identify which cell expressed a transcript.",
+      "reference": {
+        "label": "Stark et al., Nat Rev Genet (2019)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/31341269/"
+      },
+      "notion": [
+        "https://app.notion.com/p/3e90932cac3881b3b211e67c941888da"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-45",
+      "title": "Nucleotide",
+      "category": "Molecular Biology",
+      "definition": "A nitrogenous base linked to a pentose sugar and one or more phosphate groups.",
+      "application": "DNA and RNA polymers are assembled from nucleotide building blocks.",
+      "caution": "A nucleoside lacks the phosphate group present in a nucleotide.",
+      "reference": {
+        "label": "Wilkinson et al., Annu Rev Biochem (2020)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/31794245/"
+      },
+      "notion": [
+        "https://app.notion.com/p/3e80932cac3881d492d9c51cc5141c79",
+        "https://app.notion.com/p/3df0932cac388148b545f0098aff08aa"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-46",
+      "title": "MGMT",
+      "category": "Therapy & Drug Response",
+      "definition": "O6-methylguanine-DNA methyltransferase, a repair protein removing alkyl lesions from O6-guanine.",
+      "application": "Some alkylating-agent-induced DNA damage is repaired by a direct-reversal enzyme.",
+      "caution": "MGMT promoter methylation is a biomarker; it is not identical to measuring protein activity.",
+      "reference": {
+        "label": "Hegi et al., NEJM (2005)",
+        "url": "https://doi.org/10.1056/NEJMoa043331"
+      },
+      "notion": [
+        "https://app.notion.com/p/3e80932cac3881e2a299f4016796b362"
+      ],
+      "aliases": [
+        "O6-methylguanine DNA methyltransferase"
+      ]
+    },
+    {
+      "id": "term-47",
+      "title": "Tumor infiltration",
+      "category": "Cancer Pathology",
+      "definition": "The invasion and spread of tumor cells into adjacent nonmalignant tissue.",
+      "application": "Malignant glioma cells extend away from the dense tumor core into surrounding brain.",
+      "caution": "Infiltration is not equivalent to metastatic dissemination to another organ.",
+      "reference": {
+        "label": "WHO 2021 diffuse glioma classification review",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/35289001/"
+      },
+      "notion": [
+        "https://app.notion.com/p/3e80932cac388180ad1ad1e974e454eb"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-48",
+      "title": "Necrosis",
+      "category": "Cancer Pathology",
+      "definition": "Cell or tissue death accompanied by loss of membrane integrity and structural breakdown.",
+      "application": "A tumor histology section contains a region of dead tissue.",
+      "caution": "Necrosis is not equivalent to apoptosis, and its morphology requires interpretation.",
+      "reference": {
+        "label": "WHO 2021 diffuse glioma classification review",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/35289001/"
+      },
+      "notion": [
+        "https://app.notion.com/p/3e80932cac38818fb730e37cf8ed473e"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-49",
+      "title": "Cellular debris",
+      "category": "Cancer Pathology",
+      "definition": "Remnants of damaged, dying or dead cells, including fragments of membranes and organelles.",
+      "application": "Histological regions contain fragments of cells after tissue damage.",
+      "caution": "Debris is not a distinct viable cell type.",
+      "reference": {
+        "label": "Loughran et al., Curr Protoc (2022)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/36102926/"
+      },
+      "notion": [
+        "https://app.notion.com/p/3e70932cac38818ca72be304084a3ce0"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-50",
+      "title": "Neurons",
+      "category": "Cell Types",
+      "definition": "Excitable nervous-system cells specialized for information processing through electrical and chemical signaling.",
+      "application": "A cortical cell propagates action potentials and releases neurotransmitters at synapses.",
+      "caution": "Not every neuron fires classic action potentials in the same manner.",
+      "reference": {
+        "label": "Gulati et al., single-cell & spatial review (2025)",
+        "url": "https://www.nature.com/articles/s41580-024-00768-2"
+      },
+      "notion": [
+        "https://app.notion.com/p/3e70932cac38810989eac317b9fd7f30"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-51",
+      "title": "Identity covariance matrix",
+      "category": "Statistics & ML",
+      "definition": "A covariance matrix equal to the identity: each component has variance one and distinct components have zero covariance.",
+      "application": "A multivariate distribution uses Σ = I as its covariance structure.",
+      "caution": "Zero covariance does not generally imply independence except under additional assumptions such as joint Gaussianity.",
+      "reference": null,
+      "notion": [
+        "https://app.notion.com/p/3e20932cac388141bbb3ddf9a47d3dcd"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-52",
+      "title": "Multivariate standard normal distribution",
+      "category": "Statistics & ML",
+      "definition": "A multivariate Gaussian distribution with zero mean vector and identity covariance matrix.",
+      "application": "A d-dimensional random vector follows N(0, I_d).",
+      "caution": "Its components are independent standard normals because the joint distribution is Gaussian.",
+      "reference": null,
+      "notion": [
+        "https://app.notion.com/p/3e20932cac3881c0905dfdddc9811b55"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-53",
+      "title": "DNA methylation",
+      "category": "Genomics & Epigenetics",
+      "definition": "Covalent addition of a methyl group to DNA bases, commonly cytosine at CpG sites in mammals.",
+      "application": "CpG methylation patterns are profiled to study gene regulation and tumor biology.",
+      "caution": "Methylation does not uniformly silence every gene; effects depend on genomic context.",
+      "reference": {
+        "label": "Smith et al., Nat Rev Genet (2025)",
+        "url": "https://www.nature.com/articles/s41576-024-00760-8"
+      },
+      "notion": [
+        "https://app.notion.com/p/3e20932cac3881ddbcbdc34349c48194"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-54",
+      "title": "Copy-number variation (CNV)",
+      "category": "Genomics & Epigenetics",
+      "definition": "A genomic DNA segment present in different copy numbers relative to a comparison genome or cellular baseline.",
+      "application": "One tumor clone gains a chromosomal segment, another loses a segment.",
+      "caution": "RNA-based CNV inference is indirect and should not be treated as DNA ground truth.",
+      "reference": {
+        "label": "DNA copy number variation review (2021)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8640565/"
+      },
+      "notion": [
+        "https://app.notion.com/p/3e20932cac3881e59665edb468290223",
+        "https://app.notion.com/p/3e20932cac3881d4bc6bd292bc8980c4",
+        "https://app.notion.com/p/3e20932cac388147bcb2e7c0c606ed4a",
+        "https://app.notion.com/p/3e20932cac38816eb397d2ef14658fdc"
+      ],
+      "aliases": [
+        "CNV",
+        "copy number variations"
+      ]
+    },
+    {
+      "id": "term-58",
+      "title": "Introns",
+      "category": "Molecular Biology",
+      "definition": "Sequences transcribed into precursor RNA and usually removed during splicing.",
+      "application": "The spliceosome excises an intervening region between exons.",
+      "caution": "Introns may have regulatory functions; not all transcripts are spliced in the same way.",
+      "reference": {
+        "label": "Wilkinson et al., Annu Rev Biochem (2020)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/31794245/"
+      },
+      "notion": [
+        "https://app.notion.com/p/3e20932cac3881a2b7a9cae16331dd78"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-59",
+      "title": "Exons",
+      "category": "Molecular Biology",
+      "definition": "Transcribed regions retained in a mature RNA product after splicing.",
+      "application": "Two coding segments are joined after an intervening intron is removed.",
+      "caution": "Exons may include untranslated regions; exon does not mean protein-coding.",
+      "reference": {
+        "label": "Wilkinson et al., Annu Rev Biochem (2020)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/31794245/"
+      },
+      "notion": [
+        "https://app.notion.com/p/3e20932cac3881d19144c0d43ba35d30"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-60",
+      "title": "Spliced RNA",
+      "category": "RNA & Transcriptomics",
+      "definition": "RNA molecules in which designated intronic regions have been removed through splicing.",
+      "application": "Sequencing detects reads spanning exon-exon junctions.",
+      "caution": "Spliced RNA is not necessarily older, translated or exported from the nucleus.",
+      "reference": {
+        "label": "Wilkinson et al., Annu Rev Biochem (2020)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/31794245/"
+      },
+      "notion": [
+        "https://app.notion.com/p/3e20932cac38811b9128cc25fffd8a7d"
+      ],
+      "aliases": [
+        "Spliced RNA"
+      ]
+    },
+    {
+      "id": "term-61",
+      "title": "Macrophage-rich regions",
+      "category": "Tumor Microenvironment",
+      "definition": "Tissue areas with an elevated relative abundance of macrophages.",
+      "application": "A histology or spatial RNA map shows a concentrated myeloid macrophage compartment.",
+      "caution": "Marker-based regional enrichment may mix macrophages and other myeloid populations.",
+      "reference": {
+        "label": "GBM spatial trajectory, Nature (2026)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42983086/"
+      },
+      "notion": [
+        "https://app.notion.com/p/3e10932cac3881f9b82ee1b76ddc7434",
+        "https://app.notion.com/p/3e10932cac388130946bfdac8504beb5",
+        "https://app.notion.com/p/3e10932cac3881bba1d9e131818b73f6"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-64",
+      "title": "Hypoxia / hypoxic",
+      "category": "Tumor Microenvironment",
+      "definition": "A biological state or environment with reduced oxygen availability.",
+      "application": "A poorly oxygenated tissue zone activates oxygen-response transcriptional programs.",
+      "caution": "Hypoxia-associated gene expression is not itself a direct oxygen measurement.",
+      "reference": {
+        "label": "GBM spatial trajectory, Nature (2026)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42983086/"
+      },
+      "notion": [
+        "https://app.notion.com/p/3e10932cac38818cac9fc8e9af1955c4"
+      ],
+      "aliases": [
+        "Hypoxia"
+      ]
+    },
+    {
+      "id": "term-67",
+      "title": "Ribonucleotides",
+      "category": "Molecular Biology",
+      "definition": "RNA building blocks containing ribose, a nitrogenous base and phosphate group(s).",
+      "application": "A polymerase extends an RNA strand using ribonucleotide triphosphates.",
+      "caution": "RNA uses uracil rather than thymine as a canonical base; ribose differs from deoxyribose.",
+      "reference": {
+        "label": "Stark et al., Nat Rev Genet (2019)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/31341269/"
+      },
+      "notion": [
+        "https://app.notion.com/p/3df0932cac3881e980b8e3394084d3b8"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-68",
+      "title": "Single-stranded nucleic acid",
+      "category": "Molecular Biology",
+      "definition": "A nucleic acid with one polynucleotide strand rather than a paired duplex.",
+      "application": "Many RNA molecules are single-stranded but fold into local base-paired structures.",
+      "caution": "Single-stranded does not imply absence of intramolecular base pairing.",
+      "reference": {
+        "label": "Wilkinson et al., Annu Rev Biochem (2020)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/31794245/"
+      },
+      "notion": [
+        "https://app.notion.com/p/3df0932cac3881a7be2ae46840fe3fb3"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "term-74",
+      "title": "Histopathology",
+      "category": "Cancer Pathology",
+      "definition": "Microscopic examination of tissue architecture and cellular morphology for disease characterization.",
+      "application": "A pathologist examines H&E-stained tumor tissue for cellular atypia and necrosis.",
+      "caution": "Histopathological appearance and molecular diagnosis may provide complementary information.",
+      "reference": {
+        "label": "Loughran et al., Curr Protoc (2022)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/36102926/"
+      },
+      "notion": [
+        "https://app.notion.com/p/3df0932cac38818786a4f3949afe3302"
+      ],
+      "aliases": []
+    }
+  ]
+}
