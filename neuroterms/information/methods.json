@@ -85,11 +85,11 @@
   "takeaway": "Cytotoxicity genes do not identify lineage. Use a coherent T-cell receptor/CD3 program (CD3D, CD3E, CD3G, TRAC/TRBC1/2) together with CD8A/CD8B to support CD8 T identity; a conventional NK population has an NK-receptor program without a conventional TCR. A single absent transcript is not proof.",
   "explanation": "NKG7, GNLY, PRF1 and GZMB are effector-program genes shared by NK and cytotoxic T cells. In contrast, a coherent CD3/TCR program, especially TRAC and TRBC with CD3 genes, supports αβ T-cell lineage. CD8A/CD8B further supports a CD8 T-cell phenotype. Conventional NK cells are often enriched for KLRD1 (CD94), NCR1 (NKp46), NCAM1 (CD56), FCGR3A (CD16), KLRC1, TYROBP or FCER1G, but expression varies by subtype and some are not exclusive to NK. Importantly, cytotoxic glioma-infiltrating CD8 T cells can express KLRD1, KLRB1 and other NK receptors. Prioritize T-cell receptor evidence over a single NK-associated marker.",
   "caution": "NKG7, GNLY, GZMB, PRF1, KLRD1, CD161/KLRB1 and CD56 are not individually decisive. Sparse RNA assays can miss CD3/TCR transcripts. FCGR3A can also be expressed by myeloid cells. Co-occurring TCR and NK signatures can reflect NK-like T cells, NKT cells, doublets or contamination; check coordinated markers and, where possible, TCR sequencing plus CD3/CD8/CD56 protein. This is for human data; mouse markers require separate evaluation.",
-  "question": "Human GBM scRNA-seq: a lymphocyte expresses CD3D, CD3E, TRAC, CD8A, CD8B, NKG7 and KLRD1. Which annotation is best supported?",
+  "question": "Two human GBM cytotoxic lymphocytes both express NKG7 and KLRD1. Cell A: CD3E+, TRAC+, CD8B+. Cell B: NCAM1+, NCR1+, FCER1G+, with no detected TCR transcripts. Which interpretation is best supported?",
   "options": [
-   "Cytotoxic CD8 T cell with NK-associated receptor expression",
-   "Conventional NK cell because KLRD1 is expressed",
-   "Cannot be a T cell because NKG7 is expressed"
+   "A is a cytotoxic CD8 T cell with an NK-associated program; B is an NK candidate that needs confirmation",
+   "Both are NK cells because KLRD1 is expressed in each",
+   "A must be an NKT cell, while B is definitively conventional NK based on absent TCR reads"
   ],
   "correct": 0,
   "reference": {
@@ -138,9 +138,9 @@
    }
   ],
   "optionFeedback": [
-   "Correct: the coordinated TCR/CD3 and CD8 program supports T lineage. KLRD1 is not NK-exclusive in glioma.",
-   "Incorrect: Mathewson et al. demonstrated KLRD1 and other NK receptors in glioma-infiltrating CD8 T cells. KLRD1 alone does not override TCR evidence.",
-   "Incorrect: NKG7 is part of a shared cytotoxicity program expressed by both NK cells and cytotoxic CD8 T cells."
+   "Correct: A has coherent TCR/CD8 lineage evidence despite KLRD1. B has a coordinated NK-associated pattern, but nondetection of TCR can reflect RNA dropout and needs orthogonal validation.",
+   "Incorrect: KLRD1 is also expressed by glioma-infiltrating CD8 T cells; it cannot override a coherent CD3/TCR signature.",
+   "Incorrect: an NK-like cytotoxic program does not prove invariant NKT identity in A, and sparse negative TCR reads do not definitively establish NK identity in B."
   ],
   "secondaryReference": {
    "label": "Crinier et al., Blood (2020), PMID 32271902",
