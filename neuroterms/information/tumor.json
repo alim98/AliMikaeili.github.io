@@ -20,7 +20,9 @@
    "label": "A spatiotemporal cancer cell trajectory, Nature (2026)",
    "url": "https://doi.org/10.1038/s41586-026-11234-8"
   },
-  "status": "qualified"
+  "status": "qualified",
+  "decisionRule": "Record the actual 32 genes and score definition, then test matched irradiation, untreated and alternative-stress controls. A high score alone identifies a program, not treatment history.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "tumor-1",
@@ -43,7 +45,9 @@
    "label": "GBM state and trajectory literature",
    "url": "https://www.nature.com/articles/s41586-026-11234-8"
   },
-  "status": "background"
+  "status": "background",
+  "decisionRule": "Compare CDKN1A/MDM2-associated arrest or feedback targets with pro-apoptotic p53 targets and observed viability; context, TP53 status and treatment affect the response.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "tumor-2",
@@ -66,7 +70,9 @@
    "label": "Stupp et al., NEJM (2005), PMID 15758009",
    "url": "https://pubmed.ncbi.nlm.nih.gov/15758009/"
   },
-  "status": "background"
+  "status": "background",
+  "decisionRule": "Radiation dose and field are exposure metadata; DNA-damage transcription alone cannot distinguish RT from other genotoxic stresses.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "tumor-3",
@@ -79,18 +85,25 @@
   "takeaway": "The 2026 GBM atlas distinguishes NPC–OPC-like and NPC–neuronal-like malignant programs resembling distinct neural developmental states.",
   "explanation": "A tumor may contain malignant cells with different neural progenitor-like transcription.",
   "caution": "These are transcriptional analogies within a specific atlas, not proof of normal-cell lineage.",
-  "question": "What does NPC–OPC-like describe?",
+  "question": "You detect two genetically malignant GBM clusters. Cluster A: OLIG1, PDGFRA and SOX6-associated program. Cluster B: DCX, STMN2 and SOX11-associated program. Which interpretation is best?",
   "options": [
-   "A malignant expression program resembling neural and oligodendrocyte precursors",
-   "A normal oligodendrocyte by definition",
-   "A DNA copy-number mutation named NPC"
+   "A resembles the NPC–OPC-like program; B resembles NPC–neuronal-like transcription",
+   "A is necessarily a normal OPC and B is necessarily a normal neuron",
+   "The programs prove two independently traced cell lineages"
   ],
   "correct": 0,
   "reference": {
    "label": "A spatiotemporal cancer cell trajectory, Nature (2026)",
    "url": "https://doi.org/10.1038/s41586-026-11234-8"
   },
-  "status": "verified"
+  "status": "verified",
+  "decisionRule": "Compare NPC–OPC-like modules (for example OLIG-family/PDGFRA-associated programs) against NPC–neuronal-like modules (for example STMN2/DCX/SOX11-associated programs), while verifying malignant identity separately.",
+  "auditVersion": "evidence-first-v2",
+  "optionFeedback": [
+   "Correct: these are comparative malignant transcriptional programs in a specific GBM atlas, not mature-cell identity claims.",
+   "Incorrect: independently established malignant cells can express developmental programs without becoming normal progenitors or neurons.",
+   "Incorrect: expression classes alone do not constitute lineage tracing."
+  ]
  },
  {
   "id": "tumor-4",
@@ -113,7 +126,9 @@
    "label": "A spatiotemporal cancer cell trajectory, Nature (2026)",
    "url": "https://doi.org/10.1038/s41586-026-11234-8"
   },
-  "status": "verified"
+  "status": "verified",
+  "decisionRule": "Inspect cell-type panels: myeloid markers such as LST1; vascular PECAM1/VWF; astrocytic AQP4/GFAP; T-cell CD3D/E. Assignments need co-expression and contamination checks.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "tumor-5",
@@ -137,7 +152,9 @@
    "label": "A spatiotemporal cancer cell trajectory, Nature (2026)",
    "url": "https://doi.org/10.1038/s41586-026-11234-8"
   },
-  "status": "qualified"
+  "status": "qualified",
+  "decisionRule": "Compare cells of a matched genetic clone across neighborhoods or perturb the niche and measure state changes; a genotype–environment correlation alone is not causal.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "tumor-6",
@@ -160,7 +177,9 @@
    "label": "A spatiotemporal cancer cell trajectory, Nature (2026)",
    "url": "https://doi.org/10.1038/s41586-026-11234-8"
   },
-  "status": "qualified"
+  "status": "qualified",
+  "decisionRule": "A UMAP or cross-sectional pseudotime orders expression profiles; actual direction and rate require lineage information, experimental perturbation or longitudinal observations.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "tumor-7",
@@ -183,7 +202,9 @@
    "label": "Neftel et al., Cell (2019), PMID 31327527",
    "url": "https://pubmed.ncbi.nlm.nih.gov/31327527/"
   },
-  "status": "verified"
+  "status": "verified",
+  "decisionRule": "Distinguish reprogramming within a lineage from selection of pre-existing states using genetic barcodes, clone-aware sampling or lineage-linked repeated measurements.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "tumor-8",
@@ -206,7 +227,9 @@
    "label": "Neftel et al., Cell (2019), PMID 31327527",
    "url": "https://pubmed.ncbi.nlm.nih.gov/31327527/"
   },
-  "status": "verified"
+  "status": "verified",
+  "decisionRule": "Count independent patients, not cells. Compare state proportions per tumor with patient-aware uncertainty; different samples do not prove universal subtype rules.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "tumor-9",
@@ -231,7 +254,9 @@
    "label": "A spatiotemporal cancer cell trajectory, Nature (2026)",
    "url": "https://doi.org/10.1038/s41586-026-11234-8"
   },
-  "status": "verified"
+  "status": "verified",
+  "decisionRule": "Map histological region and malignant program together. Co-localized gliosis/hypoxia and dev-like states support a spatial pattern but not a tracked path for each individual cell.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "tumor-10",
@@ -255,7 +280,9 @@
    "label": "A spatiotemporal cancer cell trajectory, Nature (2026)",
    "url": "https://doi.org/10.1038/s41586-026-11234-8"
   },
-  "status": "verified"
+  "status": "verified",
+  "decisionRule": "Measure stress/ECM programs such as VIM/CD44/CHI3L1 and verify malignant genetics. Reactive nonmalignant glia can express overlapping injury-response genes.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "tumor-11",
@@ -278,7 +305,9 @@
    "label": "Stupp et al., NEJM (2005), PMID 15758009",
    "url": "https://pubmed.ncbi.nlm.nih.gov/15758009/"
   },
-  "status": "unverified"
+  "status": "unverified",
+  "decisionRule": "Before quoting 79%, identify the paper, recurrence cohort, surgery/RT fields, and definition of 'local', 'in-field' or 'first' recurrence. Without those, do not use the percentage as established.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "tumor-12",
@@ -301,7 +330,9 @@
    "label": "La Manno et al., Nature (2018), PMID 30089906",
    "url": "https://pubmed.ncbi.nlm.nih.gov/30089906/"
   },
-  "status": "unverified"
+  "status": "unverified",
+  "decisionRule": "An absolute 'first study' or 'never applied' claim requires a search dated to the claim with assay synonyms, tissue definitions, code/data registries and preprints; one paper cannot prove absence.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "tumor-13",
@@ -324,7 +355,9 @@
    "label": "La Manno et al., Nature (2018), PMID 30089906",
    "url": "https://pubmed.ncbi.nlm.nih.gov/30089906/"
   },
-  "status": "verified"
+  "status": "verified",
+  "decisionRule": "Velocity arrows follow a kinetic model fitted to spliced/unspliced abundances. Assess transcript capture, residuals, steady-state/dynamical assumptions and perturbation/lineage evidence.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "tumor-14",
@@ -336,18 +369,25 @@
   "takeaway": "Shifts in cell-state proportions between two samples can arise from transitions, differential survival or proliferation.",
   "explanation": "A state becoming more abundant after treatment could reflect selective killing rather than conversion.",
   "caution": "Distinguishing mechanisms can require lineage, proliferation/death and genotype-anchored data.",
-  "question": "What is an alternative to state conversion when one state increases?",
+  "question": "Within one GBM, the MES-like fraction is 20% before therapy and 40% after therapy. Which conclusion is defensible without lineage information?",
   "options": [
-   "Selective survival of cells already in that state",
-   "The RNA alphabet changes",
-   "The microscope creates new clones"
+   "The measured fraction changed; switching versus selection is unresolved",
+   "20% of malignant cells necessarily converted into MES-like state",
+   "Every surviving MES-like cell arose only after treatment"
   ],
   "correct": 0,
   "reference": {
    "label": "A spatiotemporal cancer cell trajectory, Nature (2026)",
    "url": "https://doi.org/10.1038/s41586-026-11234-8"
   },
-  "status": "qualified"
+  "status": "qualified",
+  "decisionRule": "Example: MES-like increases from 20% to 40% after therapy. This is consistent with switching, differential survival, proliferation or sampling; lineage tracing or matched clonal controls separate hypotheses.",
+  "auditVersion": "evidence-first-v2",
+  "optionFeedback": [
+   "Correct: a proportion change can reflect cell-state transitions, differential survival, proliferation, sampling or mixtures.",
+   "Incorrect: the difference in proportions is not a fraction of cells proven to have switched.",
+   "Incorrect: pre-existing MES-like cells may preferentially survive or expand."
+  ]
  },
  {
   "id": "tumor-15",
@@ -361,18 +401,25 @@
   "takeaway": "Transcriptomic patterns may suggest large-scale copy-number alterations, but scRNA-seq does not directly count DNA copies.",
   "explanation": "Chr7 gain and chr10 loss are frequent GBM-associated patterns that may support malignant-cell annotation.",
   "caution": "Hypoxia, cell state, expression noise and normal reference choice may confound inferred CNVs.",
-  "question": "What best validates a malignant CNV call inferred from RNA?",
+  "question": "A scRNA-seq cluster shows broad chr7-high/chr10-low expression. What is the strongest evidence for tumor-specific DNA copy changes?",
   "options": [
-   "An orthogonal DNA-based copy-number measurement",
-   "A larger font on a UMAP label",
-   "Stronger expression of one hypoxia gene"
+   "Matched DNA-level CNV profiling or validated FISH signal",
+   "High RNA-derived CNV score alone, regardless of cell state",
+   "A UMAP cluster separated from normal immune cells"
   ],
   "correct": 0,
   "reference": {
    "label": "Neftel et al., Cell (2019), PMID 31327527",
    "url": "https://pubmed.ncbi.nlm.nih.gov/31327527/"
   },
-  "status": "qualified"
+  "status": "qualified",
+  "decisionRule": "Chromosome 7 expression enrichment plus chromosome 10 depletion can suggest a malignant CNV profile, but DNA sequencing or FISH establishes copy number more directly.",
+  "auditVersion": "evidence-first-v2",
+  "optionFeedback": [
+   "Correct: DNA-based assays measure genomic gains/losses rather than using expression as a surrogate.",
+   "Incorrect: RNA-derived regional expression patterns can be affected by state and technical effects.",
+   "Incorrect: embedding distance does not prove a specific genomic alteration."
+  ]
  },
  {
   "id": "tumor-16",
@@ -385,18 +432,25 @@
   "takeaway": "Glucocorticoids used for symptomatic brain edema can change immune, inflammatory and tumor-associated expression.",
   "explanation": "Two samples receiving different steroid exposure may exhibit expression differences unrelated to the treatment of interest.",
   "caution": "Not every GBM patient receives dexamethasone, and dose/timing matter.",
-  "question": "Why record steroid exposure in therapy-response studies?",
+  "question": "Two matched recurrent GBM samples differ in immune-gene expression; one patient received high-dose dexamethasone around surgery. How should RT attribution be handled?",
   "options": [
-   "It can independently alter transcription and immune state",
-   "It guarantees tumor shrinkage",
-   "It directly counts chromosomal copies"
+   "Treat steroid exposure as an alternative explanation and model/check dose and timing",
+   "Ignore steroid use because dexamethasone only removes extracellular water",
+   "Attribute all immune-expression differences to radiotherapy"
   ],
   "correct": 0,
   "reference": {
    "label": "Stupp et al., NEJM (2005), PMID 15758009",
    "url": "https://pubmed.ncbi.nlm.nih.gov/15758009/"
   },
-  "status": "qualified"
+  "status": "qualified",
+  "decisionRule": "Collect dexamethasone dose, timing and indication for each tissue sample; compare steroid-matched groups or include treatment covariates before attributing immune-state differences to another therapy.",
+  "auditVersion": "evidence-first-v2",
+  "optionFeedback": [
+   "Correct: glucocorticoids regulate immune and transcriptional pathways; exposure timing and dose matter.",
+   "Incorrect: dexamethasone has direct receptor-mediated immunoregulatory effects.",
+   "Incorrect: without accounting for a strong co-exposure, RT-specific attribution is unsupported."
+  ]
  },
  {
   "id": "tumor-17",
@@ -420,7 +474,9 @@
    "label": "Hegi et al., NEJM (2005), PMID 15758010",
    "url": "https://pubmed.ncbi.nlm.nih.gov/15758010/"
   },
-  "status": "verified"
+  "status": "verified",
+  "decisionRule": "Separate TMZ-induced O6-methylguanine and other lesions from MGMT-specific direct reversal. Promoter methylation is a biomarker, not a direct functional assay of every lesion.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "tumor-18",
@@ -443,7 +499,9 @@
    "label": "Stupp et al., NEJM (2005), PMID 15758009",
    "url": "https://pubmed.ncbi.nlm.nih.gov/15758009/"
   },
-  "status": "verified"
+  "status": "verified",
+  "decisionRule": "Separate antitumor RT/TMZ treatment from supportive dexamethasone. Confirm whether the clinical schedule includes concomitant and adjuvant TMZ rather than inferring it from the patient's diagnosis.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "tumor-19",
@@ -463,18 +521,25 @@
   "takeaway": "Hypoxia-related states often appear near necrotic GBM areas, but oxygen supply depends on vascular function, diffusion and consumption.",
   "explanation": "The 2026 atlas reports spatial segregation between infiltrated dev-like regions and gliosis/hypoxia-associated regions.",
   "caution": "The stored vessel→oxygen→necrosis cartoon is not a universal one-dimensional spatial order; distances alone do not directly measure oxygen.",
-  "question": "Does distance from a mapped vessel determine oxygen uniquely?",
+  "question": "A perinecrotic region is hypoxic, but a nearby stained vessel lies only 15 µm away. What is the best next interpretation?",
   "options": [
-   "No; perfusion, vessel function and local demand also matter",
-   "Yes; every tumor is one straight oxygen gradient",
-   "Yes; necrosis can only occur at one fixed distance"
+   "Vessel proximity does not guarantee oxygen delivery; check perfusion and consumption",
+   "The hypoxia measurement must be wrong because distance is short",
+   "The staining proves the vessel delivers normal oxygen to every neighbor"
   ],
   "correct": 0,
   "reference": {
    "label": "A spatiotemporal cancer cell trajectory, Nature (2026)",
    "url": "https://doi.org/10.1038/s41586-026-11234-8"
   },
-  "status": "corrected"
+  "status": "corrected",
+  "decisionRule": "Measure regional hypoxia (for example oxygen-sensitive probes or validated indicators), perfusion and vessel quality; 2D distance to a stained vessel is not an oxygen measurement.",
+  "auditVersion": "evidence-first-v2",
+  "optionFeedback": [
+   "Correct: abnormal vascular function and demand can decouple 2D vessel distance from actual oxygen availability.",
+   "Incorrect: observing a nearby vessel does not falsify independently measured low oxygen.",
+   "Incorrect: endothelial staining does not assess perfusion or local oxygen transport."
+  ]
  },
  {
   "id": "tumor-20",
@@ -498,7 +563,9 @@
    "label": "A spatiotemporal cancer cell trajectory, Nature (2026)",
    "url": "https://doi.org/10.1038/s41586-026-11234-8"
   },
-  "status": "background"
+  "status": "background",
+  "decisionRule": "Neuron: neuronal differentiation/synapse markers; oligodendrocyte: myelin markers; microglia: resident-myeloid programs; astrocyte: glial programs. Malignant cells can partially mimic each program.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "tumor-21",
@@ -521,7 +588,9 @@
    "label": "Neftel et al., Cell (2019), PMID 31327527",
    "url": "https://pubmed.ncbi.nlm.nih.gov/31327527/"
   },
-  "status": "background"
+  "status": "background",
+  "decisionRule": "A bulk or spatial spot signal may reflect malignant, immune and normal cells. Use cell-resolved transcriptomics plus genomic identity or reliable deconvolution before attributing it to tumor cells.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "tumor-22",
@@ -544,7 +613,9 @@
    "label": "Neftel et al., Cell (2019), PMID 31327527",
    "url": "https://pubmed.ncbi.nlm.nih.gov/31327527/"
   },
-  "status": "verified"
+  "status": "verified",
+  "decisionRule": "Classify malignant cells by independent genetic evidence, then score NPC/OPC/AC/MES programs; similarity to a normal cell type is not proof of that lineage.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "tumor-23",
@@ -557,18 +628,25 @@
   "takeaway": "Some injury-associated gene programs can be shared between malignant cells and reactive nonmalignant glia.",
   "explanation": "A nonmalignant astrocyte and a malignant cell may express overlapping stress-related genes.",
   "caution": "Shared genes do not prove the two cell types are biologically identical.",
-  "question": "What is unsafe when detecting VIM or injury-related expression?",
+  "question": "An astrocyte-like cell near necrosis expresses CD44, VIM and a hypoxia program. Is that sufficient to label it malignant GBM?",
   "options": [
-   "Assigning malignancy from that program alone",
-   "Checking DNA alterations",
-   "Considering neighboring cells"
+   "No; confirm malignant genotype or other independent cancer-cell identity evidence",
+   "Yes; CD44 and VIM are cancer-specific markers",
+   "Yes; all cells adjacent to necrosis are malignant"
   ],
   "correct": 0,
   "reference": {
    "label": "A spatiotemporal cancer cell trajectory, Nature (2026)",
    "url": "https://doi.org/10.1038/s41586-026-11234-8"
   },
-  "status": "qualified"
+  "status": "qualified",
+  "decisionRule": "VIM/CD44/CHI3L1 or hypoxia/stress genes can be expressed in reactive glia. Use orthogonal malignant identity, such as DNA copy-number alterations, before labeling a cell as malignant.",
+  "auditVersion": "evidence-first-v2",
+  "optionFeedback": [
+   "Correct: reactive nonmalignant glia can share stress and injury-response genes with GBM programs.",
+   "Incorrect: CD44/VIM and hypoxia-associated genes are not exclusive to malignant cells.",
+   "Incorrect: regions around necrosis can contain nonmalignant immune, vascular and glial cells."
+  ]
  },
  {
   "id": "tumor-24",
@@ -591,7 +669,9 @@
    "label": "A spatiotemporal cancer cell trajectory, Nature (2026)",
    "url": "https://doi.org/10.1038/s41586-026-11234-8"
   },
-  "status": "qualified"
+  "status": "qualified",
+  "decisionRule": "Pre/post MES-like enrichment is a difference in composition, not per-cell reprogramming. Compare clone-aware longitudinal data, proliferation and survival signals to test competing mechanisms.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "tumor-25",
@@ -616,7 +696,9 @@
    "label": "Neftel et al., Cell (2019), PMID 31327527",
    "url": "https://pubmed.ncbi.nlm.nih.gov/31327527/"
   },
-  "status": "verified"
+  "status": "verified",
+  "decisionRule": "Check EGFR, PDGFRA and CDK4 alteration status against graded state scores within patients and clones; genotype-to-state relations are tendencies rather than categorical labels.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "tumor-26",
@@ -642,7 +724,9 @@
    "label": "Dang et al., Nature (2009), PMID 19935646",
    "url": "https://pubmed.ncbi.nlm.nih.gov/19935646/"
   },
-  "status": "verified"
+  "status": "verified",
+  "decisionRule": "Check the exact IDH1/IDH2 variant and D-2-hydroxyglutarate evidence: canonical glioma-associated neomorphic substitutions differ from benign or loss-of-function IDH variation.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "tumor-27",
@@ -665,7 +749,9 @@
    "label": "EGFRvIII references — further verification recommended",
    "url": "https://pubmed.ncbi.nlm.nih.gov/?term=EGFRvIII+exons+2-7+glioblastoma"
   },
-  "status": "qualified"
+  "status": "qualified",
+  "decisionRule": "Distinguish EGFR gene amplification (copy-number gain) from EGFRvIII deletion-derived transcript/protein. They can coexist but neither implies the other in every tumor.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "tumor-28",
@@ -688,6 +774,8 @@
    "label": "A spatiotemporal cancer cell trajectory, Nature (2026)",
    "url": "https://doi.org/10.1038/s41586-026-11234-8"
   },
-  "status": "verified"
+  "status": "verified",
+  "decisionRule": "Use 12 as the independent tumor count when analyzing patient-level replication; 97 sections are repeated spatial samples nested within those tumors.",
+  "auditVersion": "evidence-first-v2"
  }
 ]
