@@ -258,7 +258,29 @@
   },
   "status": "background",
   "decisionRule": "Ask whether a membrane-bound nucleus exists, rather than classifying an organism solely by cell size.",
-  "auditVersion": "evidence-first-v2"
+  "auditVersion": "evidence-first-v2",
+  "contrastLabels": [
+   "Eukaryotic cell",
+   "Typical bacterial cell"
+  ],
+  "contrast": [
+   {
+    "feature": "Compartment",
+    "left": "Membrane-bound nucleus",
+    "right": "No membrane-bound nucleus"
+   },
+   {
+    "feature": "DNA/ribosomes",
+    "left": "Nuclear genomic DNA; translation mostly cytosolic",
+    "right": "DNA in nucleoid region; translation in cytoplasm"
+   },
+   {
+    "feature": "Can size decide?",
+    "left": "Not reliably; sizes vary",
+    "right": "Not reliably; some bacteria are large"
+   }
+  ],
+  "contrastTitle": "Evidence and measurement differences"
  },
  {
   "id": "bio-10",
@@ -395,7 +417,29 @@
   },
   "status": "verified",
   "decisionRule": "Identify whether the library yields short cDNA-derived fragments, long native RNA reads, or another chemistry; fragment coverage biases transcript abundance estimates.",
-  "auditVersion": "evidence-first-v2"
+  "auditVersion": "evidence-first-v2",
+  "contrastLabels": [
+   "Conventional short-read RNA-seq",
+   "Long-read / direct-RNA protocols"
+  ],
+  "contrast": [
+   {
+    "feature": "Molecule observation",
+    "left": "Short fragments that must be assigned to transcripts",
+    "right": "Longer transcript-spanning reads; platform/chemistry dependent"
+   },
+   {
+    "feature": "Isoform evidence",
+    "left": "Often ambiguous for highly similar isoforms",
+    "right": "Potentially better transcript connectivity, with other error biases"
+   },
+   {
+    "feature": "What is still inferred?",
+    "left": "Expression counts and isoforms from sampled reads",
+    "right": "Abundance and isoforms still require calibration/analysis"
+   }
+  ],
+  "contrastTitle": "Evidence and measurement differences"
  },
  {
   "id": "bio-15",
@@ -530,6 +574,40 @@
    "Correct: accessibility, transcript abundance and protein abundance must be assessed separately.",
    "Incorrect: an accessible site is not proof of binding by a particular transcription factor.",
    "Incorrect: neither ATAC accessibility nor proximity guarantees protein expression."
+  ],
+  "contrastLabels": [
+   "DNA sequencing",
+   "RNA sequencing"
+  ],
+  "contrast": [
+   {
+    "feature": "What is observed?",
+    "left": "DNA fragments/variants and possibly DNA copy number",
+    "right": "RNA-derived reads or molecule counts"
+   },
+   {
+    "feature": "Main biological question",
+    "left": "What genotype or copy changes exist?",
+    "right": "Which transcripts are detected and at what abundance?"
+   },
+   {
+    "feature": "What it cannot directly prove",
+    "left": "Current transcription or protein function",
+    "right": "Genomic copy number, protein concentration or activity"
+   }
+  ],
+  "contrastTitle": "Evidence and measurement differences",
+  "workedExamples": [
+   {
+    "profile": "EGFR copy-number gain by WGS; EGFR RNA unchanged in RNA-seq",
+    "answer": "Genomic amplification without confirmed proportional transcriptional increase",
+    "why": "DNA-level gene dosage and RNA production are separable properties."
+   },
+   {
+    "profile": "EGFR RNA high but no DNA-based amplification detected",
+    "answer": "High expression alone does not establish genomic amplification",
+    "why": "RNA abundance can vary through regulatory and cell-state effects."
+   }
   ]
  },
  {
@@ -586,7 +664,29 @@
   },
   "status": "background",
   "decisionRule": "Distinguish observed accessibility peaks from measured RNA and proteins. ATAC does not prove TF binding; RNA does not directly quantify protein.",
-  "auditVersion": "evidence-first-v2"
+  "auditVersion": "evidence-first-v2",
+  "contrastLabels": [
+   "ATAC-seq",
+   "RNA-seq"
+  ],
+  "contrast": [
+   {
+    "feature": "Direct assay target",
+    "left": "Accessible chromatin fragments",
+    "right": "RNA transcripts"
+   },
+   {
+    "feature": "Typical representation",
+    "left": "Genomic accessibility peaks per sample/cell",
+    "right": "Gene/transcript counts per sample/cell"
+   },
+   {
+    "feature": "Not a direct measurement of",
+    "left": "TF occupancy at a specific locus",
+    "right": "Protein abundance or chromatin accessibility"
+   }
+  ],
+  "contrastTitle": "Evidence and measurement differences"
  },
  {
   "id": "bio-22",
@@ -668,6 +768,40 @@
    "Correct: kinetic RNA velocity can suggest dynamics but direct lineage or longitudinal evidence is needed for the stronger fate claim.",
    "Incorrect: RNA processing kinetics differ among genes and populations; a ratio alone is not a demonstrated trajectory.",
    "Incorrect: visualization of a fitted velocity vector is model-based; it does not substitute for measured transitions."
+  ],
+  "contrastLabels": [
+   "Unspliced RNA",
+   "Spliced RNA"
+  ],
+  "contrast": [
+   {
+    "feature": "Observed feature",
+    "left": "Reads assigned to intronic/nascent contexts",
+    "right": "Exon–exon junctions or other spliced assignments"
+   },
+   {
+    "feature": "Interpretation in models",
+    "left": "One substrate in transcription/splicing kinetics",
+    "right": "One product in transcription/splicing kinetics"
+   },
+   {
+    "feature": "What you cannot infer",
+    "left": "Exact age of an individual molecule",
+    "right": "Exact age or future fate of its cell"
+   }
+  ],
+  "contrastTitle": "Evidence and measurement differences",
+  "workedExamples": [
+   {
+    "profile": "A cell has more unspliced than spliced counts for GENE X",
+    "answer": "A kinetic signal, not a timestamp",
+    "why": "An elevated precursor fraction may arise from transcription, splicing, degradation or sampling differences; the model must be fitted and checked."
+   },
+   {
+    "profile": "One cluster has a velocity vector pointing toward another",
+    "answer": "Model-inferred dynamics, not direct lineage tracing",
+    "why": "An RNA-velocity arrow is calculated from count patterns and kinetic assumptions, not repeated observations of a tracked cell."
+   }
   ]
  },
  {
