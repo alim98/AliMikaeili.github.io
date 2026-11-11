@@ -12,8 +12,8 @@
   "question": "Which is a valid inference from an elevated P53CORE score?",
   "options": [
    "Genes in the chosen p53-associated program are relatively upregulated",
-   "Radiotherapy exposure is proven for that cell",
-   "Every cell has a TP53 mutation"
+   "Radiotherapy exposure is uniquely identified by the program",
+   "TP53 mutation status is directly determined by expression of the program"
   ],
   "correct": 0,
   "reference": {
@@ -118,8 +118,8 @@
   "question": "Which belongs to the tumor microenvironment?",
   "options": [
    "Vascular and immune cells",
-   "Only malignant cells",
-   "Only RNA polymerase molecules"
+   "Immune cells and malignant cells, but not vascular or matrix compartments",
+   "Immune and vascular cells, but not extracellular matrix or soluble signals"
   ],
   "correct": 0,
   "reference": {
@@ -144,8 +144,8 @@
   "question": "Which evidence would strengthen a causal niche claim?",
   "options": [
    "A controlled perturbation changing the niche while tracking cell states",
-   "Only a UMAP plot",
-   "Only cell-type counts from one sample"
+   "A spatial ligand–receptor association replicated in multiple untreated tumors",
+   "A matching expression gradient within the same tumor without perturbation"
   ],
   "correct": 0,
   "reference": {
@@ -219,8 +219,8 @@
   "question": "What is a between-tumor state-composition difference?",
   "options": [
    "One tumor contains more of a measured state than another",
-   "A single cell has different DNA in its nucleus and cytoplasm",
-   "Every tumor has identical fractions"
+   "Differences between two regions of the same patient's tumor only",
+   "Differences between cells caused by dissociation-induced stress only"
   ],
   "correct": 0,
   "reference": {
@@ -272,8 +272,8 @@
   "question": "Why is 'MES-like = fibroblast' incorrect?",
   "options": [
    "It is a transcriptional resemblance, not proof of transdifferentiation",
-   "All GBM cells are fibroblasts",
-   "MES is an immune-cell gene"
+   "MES-like cells must have undergone an irreversible lineage conversion",
+   "Expression of MES-associated genes is restricted to malignant cells"
   ],
   "correct": 0,
   "reference": {
@@ -347,8 +347,8 @@
   "question": "Does a velocity arrow directly track a cell in time?",
   "options": [
    "No, it is model-based inference",
-   "Yes, it follows a physical cell over hours",
-   "Yes, it establishes metastasis"
+   "A velocity vector is direct lineage tracing of the same cell across time",
+   "A modeled vector proves that the predicted endpoint must occur"
   ],
   "correct": 0,
   "reference": {
@@ -491,8 +491,8 @@
   "question": "Which is the conventional sequence?",
   "options": [
    "Maximal safe surgery → RT plus TMZ → adjuvant TMZ",
-   "Dexamethasone alone → no surgery → TMZ never",
-   "Only diagnostic MRI with no therapy"
+   "Maximal safe surgery → temozolomide alone → RT only at progression",
+   "RT plus temozolomide before any surgery → observation without adjuvant treatment"
   ],
   "correct": 0,
   "reference": {
@@ -580,8 +580,8 @@
   "question": "Why can bulk EGFR RNA be difficult to assign to one cell class?",
   "options": [
    "Bulk RNA pools transcripts from many cell types",
-   "All cells are necessarily malignant",
-   "EGFR can only be in neurons"
+   "High EGFR RNA identifies the exact malignant cell of origin in bulk data",
+   "Any tumor-enriched transcript must originate only from malignant cells"
   ],
   "correct": 0,
   "reference": {
@@ -741,8 +741,8 @@
   "question": "Which statement is defensible?",
   "options": [
    "EGFRvIII is a variant receptor, not a synonym for EGFR amplification",
-   "Every EGFR-amplified tumor must have EGFRvIII",
-   "EGFRvIII is an RNA-seq normalization method"
+   "EGFR amplification inevitably produces the vIII deletion",
+   "EGFRvIII and EGFR amplification cannot occur in the same tumor"
   ],
   "correct": 0,
   "reference": {
