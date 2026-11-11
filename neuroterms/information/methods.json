@@ -62,8 +62,8 @@
   "question": "Which observation is more causal than mere co-localization?",
   "options": [
    "A controlled perturbation and spatially resolved downstream readout",
-   "Two cells expressing complementary ligands",
-   "A colorful neighborhood plot"
+   "A spatial ligand–receptor correlation without an intervention identifier",
+   "A drug-versus-control map lacking spatially resolved perturbation assignments"
   ],
   "correct": 0,
   "reference": {
@@ -186,8 +186,8 @@
   "question": "What is lost when only cell-type counts are retained?",
   "options": [
    "Spatial organization and some functional context",
-   "The existence of cell types",
-   "The measured sample identity"
+   "The number of immune and malignant cells regardless of their coordinates",
+   "The percentage of cell types without any neighborhood or distance statistics"
   ],
   "correct": 0,
   "reference": {
@@ -322,8 +322,8 @@
   "question": "What must be compared to assess two cell foundation models?",
   "options": [
    "Tokenization, training data, objectives and evaluation",
-   "Only the word 'transformer' in the title",
-   "Only the number of layers"
+   "Architecture and parameter count alone, without looking at inputs or objectives",
+   "A single pooled benchmark score without assay-specific evaluation"
   ],
   "correct": 0,
   "reference": {
@@ -423,8 +423,8 @@
   "question": "Can a targeted 500-gene panel directly measure every transcriptome gene?",
   "options": [
    "No, only its measured targets",
-   "Yes, every unmeasured gene becomes ground truth",
-   "Yes, RNA velocity is automatic"
+   "Reference-based estimates of off-panel genes treated as directly measured",
+   "Assuming neighboring targets provide exact observed counts for missing genes"
   ],
   "correct": 0,
   "reference": {
@@ -504,8 +504,8 @@
   "question": "What makes an autoencoder 'sparse' in this context?",
   "options": [
    "An objective/constraint encouraging limited feature activation",
-   "Its encoder must have zero weights",
-   "Every latent feature must represent one gene"
+   "A feature appears in only one cell type, independent of the loss function",
+   "A latent variable correlates with a pathway without any sparsity constraint"
   ],
   "correct": 0,
   "reference": {
