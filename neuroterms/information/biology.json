@@ -1,0 +1,696 @@
+[
+ {
+  "id": "bio-0",
+  "ids": [
+   24
+  ],
+  "category": "RNA Biology",
+  "title": "Exons and protein domains",
+  "takeaway": "Protein domains can recur in different proteins; some exon boundaries correspond to structural or functional domains.",
+  "explanation": "Gene architecture can facilitate rearrangement of segments encoding protein modules.",
+  "caution": "Exons do not map one-to-one to protein domains universally.",
+  "question": "Why is a one-exon–one-domain rule unsafe?",
+  "options": [
+   "The correspondence varies among genes",
+   "Every exon encodes exactly one domain",
+   "Domains exist only in bacteria"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Wilkinson, Charenton & Nagai, Annu Rev Biochem (2020)",
+   "url": "https://doi.org/10.1146/annurev-biochem-091719-064225"
+  },
+  "status": "qualified"
+ },
+ {
+  "id": "bio-1",
+  "ids": [
+   25,
+   26
+  ],
+  "category": "RNA Biology",
+  "title": "Introns and exon shuffling",
+  "takeaway": "Introns may offer noncoding regions through which recombination can rearrange coding segments.",
+  "explanation": "Exon shuffling is one proposed route to new protein architectures.",
+  "caution": "Do not conclude that introns exist *because* evolution designed them for exon shuffling.",
+  "question": "What is defensible about exon shuffling?",
+  "options": [
+   "It is an evolutionary mechanism, not an exclusive explanation for introns",
+   "All modern genes are produced by it",
+   "Introns are invariably useless"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Wilkinson, Charenton & Nagai, Annu Rev Biochem (2020)",
+   "url": "https://doi.org/10.1146/annurev-biochem-091719-064225"
+  },
+  "status": "qualified"
+ },
+ {
+  "id": "bio-2",
+  "ids": [
+   27
+  ],
+  "category": "Genomics",
+  "title": "Gene length varies widely",
+  "takeaway": "Genes vary greatly in genomic span and can contain long introns.",
+  "explanation": "A protein of moderate size may be encoded by a gene that spans hundreds of thousands of DNA bases.",
+  "caution": "Specific numerical 'typical gene length' depends on annotation, species and definition; the stored example is not a universal constant.",
+  "question": "Why can gene span be much longer than the translated coding sequence?",
+  "options": [
+   "Introns and untranslated/regulatory regions occupy genomic space",
+   "Each amino acid requires thousands of bases",
+   "Every base is translated"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Wilkinson, Charenton & Nagai, Annu Rev Biochem (2020)",
+   "url": "https://doi.org/10.1146/annurev-biochem-091719-064225"
+  },
+  "status": "qualified"
+ },
+ {
+  "id": "bio-3",
+  "ids": [
+   28,
+   54
+  ],
+  "category": "RNA Biology",
+  "title": "How splice sites are recognized",
+  "takeaway": "The spliceosome recognizes sequence and regulatory cues to define intron boundaries and exon junctions.",
+  "explanation": "Splicing joins appropriate RNA exons while intronic sequences are removed.",
+  "caution": "Splice-site motifs alone do not fully explain tissue-dependent isoform selection.",
+  "question": "What does splice-site recognition determine?",
+  "options": [
+   "Which RNA junctions are cut and joined",
+   "Which DNA chromosomes replicate",
+   "Which cell receives a signal"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Wilkinson, Charenton & Nagai, Annu Rev Biochem (2020)",
+   "url": "https://doi.org/10.1146/annurev-biochem-091719-064225"
+  },
+  "status": "background"
+ },
+ {
+  "id": "bio-4",
+  "ids": [
+   29
+  ],
+  "category": "RNA Biology",
+  "title": "Pre-mRNA processing",
+  "takeaway": "Many eukaryotic protein-coding transcripts undergo 5′ capping, 3′-end formation and splicing.",
+  "explanation": "These processing steps help create export- and translation-competent mRNA.",
+  "caution": "The order and coupling of processing steps are more complex than a strict linear cartoon.",
+  "question": "Which set best describes typical mRNA processing?",
+  "options": [
+   "5′ capping, splicing, 3′-end cleavage/polyadenylation",
+   "DNA replication, chromosome segregation, myelination",
+   "Protein phosphorylation, glycolysis, translation"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Wilkinson, Charenton & Nagai, Annu Rev Biochem (2020)",
+   "url": "https://doi.org/10.1146/annurev-biochem-091719-064225"
+  },
+  "status": "background"
+ },
+ {
+  "id": "bio-5",
+  "ids": [
+   30,
+   36
+  ],
+  "category": "RNA Biology",
+  "title": "Nascent transcription",
+  "takeaway": "RNA chains emerge progressively as polymerase moves along the DNA template.",
+  "explanation": "Part of a transcript may be synthesized while earlier regions undergo processing.",
+  "caution": "The simplified statement 'the entire gene is transcribed' does not hold for every transcript and isoform.",
+  "question": "Why is a nascent transcript shorter than the final primary transcript?",
+  "options": [
+   "Polymerase has not yet transcribed the entire region",
+   "Its introns have become DNA",
+   "It is a protein rather than RNA"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Wilkinson, Charenton & Nagai, Annu Rev Biochem (2020)",
+   "url": "https://doi.org/10.1146/annurev-biochem-091719-064225"
+  },
+  "status": "background"
+ },
+ {
+  "id": "bio-6",
+  "ids": [
+   31,
+   32
+  ],
+  "category": "RNA Biology",
+  "title": "Alternative splicing creates isoforms",
+  "takeaway": "Different exon combinations or splice-site choices can yield distinct RNA isoforms from the same gene.",
+  "explanation": "Two cell types may favor different isoforms of a shared gene.",
+  "caution": "Different RNA isoforms do not always yield different proteins; some are noncoding or degraded.",
+  "question": "What can alternative splicing change?",
+  "options": [
+   "Transcript composition and sometimes protein sequence",
+   "The chromosomal copy number of the gene",
+   "The DNA bases of all cells"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Wilkinson, Charenton & Nagai, Annu Rev Biochem (2020)",
+   "url": "https://doi.org/10.1146/annurev-biochem-091719-064225"
+  },
+  "status": "background"
+ },
+ {
+  "id": "bio-7",
+  "ids": [
+   33,
+   34,
+   35,
+   121,
+   122
+  ],
+  "category": "RNA Biology",
+  "title": "Exons, introns and lengths",
+  "takeaway": "Typical splicing removes intronic regions and ligates exons; introns may be much longer than exons.",
+  "explanation": "Large genes can produce pre-mRNAs with numerous or lengthy introns.",
+  "caution": "This is a general pattern with exceptions; exon and intron definitions depend on transcript annotation.",
+  "question": "What remains after canonical intron excision?",
+  "options": [
+   "Joined exonic RNA segments",
+   "All original introns only",
+   "A duplicated DNA chromosome"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Wilkinson, Charenton & Nagai, Annu Rev Biochem (2020)",
+   "url": "https://doi.org/10.1146/annurev-biochem-091719-064225"
+  },
+  "status": "background"
+ },
+ {
+  "id": "bio-8",
+  "ids": [
+   37,
+   38
+  ],
+  "category": "Cell Biology",
+  "title": "Eukaryotic translation compartments",
+  "takeaway": "In eukaryotic cells, most protein-coding nuclear transcription occurs in the nucleus, while translation occurs on cytosolic or ER-associated ribosomes.",
+  "explanation": "Mature nuclear transcripts generally undergo export before cytoplasmic translation.",
+  "caution": "Mitochondria have their own transcription/translation; not every RNA follows the cartoon.",
+  "question": "Why are nuclear gene transcription and ribosomal translation spatially separated?",
+  "options": [
+   "The nucleus separates nuclear DNA from many ribosomes",
+   "Ribosomes translate DNA directly",
+   "All ribosomes reside inside the nucleus"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Wilkinson, Charenton & Nagai, Annu Rev Biochem (2020)",
+   "url": "https://doi.org/10.1146/annurev-biochem-091719-064225"
+  },
+  "status": "qualified"
+ },
+ {
+  "id": "bio-9",
+  "ids": [
+   39,
+   40,
+   41
+  ],
+  "category": "Cell Biology",
+  "title": "Eukaryotes versus prokaryotes",
+  "takeaway": "Eukaryotic cells have membrane-bound nuclei; bacteria lack such nuclei.",
+  "explanation": "A human leukocyte is eukaryotic, while a typical bacterial cell is prokaryotic.",
+  "caution": "Size alone is not a reliable definition; eukaryotes are not always larger than all bacteria.",
+  "question": "What most directly distinguishes eukaryotes?",
+  "options": [
+   "A membrane-bound nucleus",
+   "Being larger than one micrometre",
+   "Having no ribosomes"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Wilkinson, Charenton & Nagai, Annu Rev Biochem (2020)",
+   "url": "https://doi.org/10.1146/annurev-biochem-091719-064225"
+  },
+  "status": "background"
+ },
+ {
+  "id": "bio-10",
+  "ids": [
+   42
+  ],
+  "category": "Cell Biology",
+  "title": "Coupled transcription and translation in bacteria",
+  "takeaway": "In many bacteria, ribosomes can translate an mRNA while it is still being transcribed.",
+  "explanation": "A ribosome binds a growing bacterial transcript before RNA synthesis is complete.",
+  "caution": "This is a common bacterial organization, not a universal rule for all organisms.",
+  "question": "What permits transcription–translation coupling in bacteria?",
+  "options": [
+   "No nuclear envelope separates the processes",
+   "The RNA becomes DNA first",
+   "All bacterial mRNA must be exported from a nucleus"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Wilkinson, Charenton & Nagai, Annu Rev Biochem (2020)",
+   "url": "https://doi.org/10.1146/annurev-biochem-091719-064225"
+  },
+  "status": "background"
+ },
+ {
+  "id": "bio-11",
+  "ids": [
+   43
+  ],
+  "category": "Molecular Biology",
+  "title": "Translation converts RNA sequence to protein",
+  "takeaway": "Ribosomes interpret codons in an mRNA and assemble a polypeptide.",
+  "explanation": "A coding transcript specifies amino-acid order through its reading frame.",
+  "caution": "Not all RNA molecules are translated, and not every translated product remains functional.",
+  "question": "What is directly decoded during translation?",
+  "options": [
+   "mRNA codons",
+   "A histology image",
+   "DNA methylation marks"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Stark et al., Nat Rev Genet (2019)",
+   "url": "https://doi.org/10.1038/s41576-019-0150-2"
+  },
+  "status": "background"
+ },
+ {
+  "id": "bio-12",
+  "ids": [
+   44,
+   135
+  ],
+  "category": "Molecular Biology",
+  "title": "Transcription copies DNA information into RNA",
+  "takeaway": "RNA polymerases synthesize RNA using a DNA template.",
+  "explanation": "A cell produces a transcript of an expressed gene.",
+  "caution": "Transcription makes multiple kinds of RNA; it is not restricted to mature mRNA.",
+  "question": "Which enzyme catalyzes transcription?",
+  "options": [
+   "RNA polymerase",
+   "Ribosome",
+   "DNA ligase"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Stark et al., Nat Rev Genet (2019)",
+   "url": "https://doi.org/10.1038/s41576-019-0150-2"
+  },
+  "status": "background"
+ },
+ {
+  "id": "bio-13",
+  "ids": [
+   45,
+   46,
+   47,
+   48,
+   49
+  ],
+  "category": "RNA Sequencing",
+  "title": "Why RNA sequencing?",
+  "takeaway": "RNA-seq measures expressed transcripts instead of directly measuring DNA sequence variation.",
+  "explanation": "Two cells sharing a genotype can have distinct transcriptomes.",
+  "caution": "The image-only highlights cannot be checked from their text; this lesson uses the substantive RNA-seq question from the Note field.",
+  "question": "Why use RNA-seq when DNA is already known?",
+  "options": [
+   "To estimate transcriptional output in the sample",
+   "To read every protein directly",
+   "To map blood oxygen directly"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Stark et al., Nat Rev Genet (2019)",
+   "url": "https://doi.org/10.1038/s41576-019-0150-2"
+  },
+  "status": "qualified"
+ },
+ {
+  "id": "bio-14",
+  "ids": [
+   50,
+   51,
+   52
+  ],
+  "category": "RNA Sequencing",
+  "title": "Classical short-read RNA sequencing",
+  "takeaway": "Many conventional RNA-seq workflows prepare cDNA libraries and sequence fragments, then align or quantify reads.",
+  "explanation": "Transcript abundance is inferred from many short fragments rather than reading every full RNA molecule.",
+  "caution": "Long-read and direct-RNA sequencing exist; this workflow is not universal.",
+  "question": "Why are short-read RNA-seq counts estimates?",
+  "options": [
+   "The reads represent sampled fragments of molecules",
+   "The machine captures exactly one read per cell",
+   "Sequencing directly photographs proteins"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Stark et al., Nat Rev Genet (2019)",
+   "url": "https://doi.org/10.1038/s41576-019-0150-2"
+  },
+  "status": "verified"
+ },
+ {
+  "id": "bio-15",
+  "ids": [
+   53,
+   55,
+   56
+  ],
+  "category": "RNA Biology",
+  "title": "Mature mRNA export",
+  "takeaway": "Processed nuclear mRNA is often exported to the cytoplasm for translation.",
+  "explanation": "A transcript leaves the nucleus and can engage a cytoplasmic ribosome.",
+  "caution": "Export is regulated; some RNAs remain nuclear and mature does not automatically mean translated.",
+  "question": "Where do most cytoplasmic ribosomes translate mRNA?",
+  "options": [
+   "In the cytoplasm or on rough-ER-associated ribosomes",
+   "Inside the nuclear DNA helix",
+   "Within the extracellular matrix"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Wilkinson, Charenton & Nagai, Annu Rev Biochem (2020)",
+   "url": "https://doi.org/10.1146/annurev-biochem-091719-064225"
+  },
+  "status": "background"
+ },
+ {
+  "id": "bio-16",
+  "ids": [
+   57
+  ],
+  "category": "RNA Biology",
+  "title": "RNA polymerase II",
+  "takeaway": "RNA polymerase II transcribes most nuclear protein-coding genes in eukaryotes.",
+  "explanation": "Pol II makes a primary transcript that can undergo processing.",
+  "caution": "Other RNA polymerases transcribe different RNA classes.",
+  "question": "Which polymerase makes most eukaryotic pre-mRNAs?",
+  "options": [
+   "RNA polymerase II",
+   "DNA polymerase δ",
+   "Reverse transcriptase"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Wilkinson, Charenton & Nagai, Annu Rev Biochem (2020)",
+   "url": "https://doi.org/10.1146/annurev-biochem-091719-064225"
+  },
+  "status": "background"
+ },
+ {
+  "id": "bio-17",
+  "ids": [
+   58,
+   60
+  ],
+  "category": "Genomics",
+  "title": "DNA base pairing",
+  "takeaway": "DNA has four canonical bases and complementary pairing in a duplex: A–T and C–G.",
+  "explanation": "A DNA double helix has antiparallel strands whose sequences constrain one another.",
+  "caution": "Base pairing is not a complete explanation of chromatin, gene function or regulation.",
+  "question": "Which DNA pair is canonical?",
+  "options": [
+   "C–G",
+   "A–U in DNA",
+   "C–T"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Wilkinson, Charenton & Nagai, Annu Rev Biochem (2020)",
+   "url": "https://doi.org/10.1146/annurev-biochem-091719-064225"
+  },
+  "status": "background"
+ },
+ {
+  "id": "bio-18",
+  "ids": [
+   59,
+   125,
+   136
+  ],
+  "category": "Molecular Biology",
+  "title": "The central dogma is a simplified map",
+  "takeaway": "For protein-coding genes, DNA is transcribed into RNA and an appropriate mRNA can be translated into protein.",
+  "explanation": "A coding RNA carries a sequence of codons specifying a protein.",
+  "caution": "Many genes produce functional noncoding RNAs; reverse transcription also exists.",
+  "question": "Which statement avoids overgeneralizing the central dogma?",
+  "options": [
+   "Some RNAs function without being translated",
+   "All RNAs become proteins",
+   "DNA is directly read by human ribosomes"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Stark et al., Nat Rev Genet (2019)",
+   "url": "https://doi.org/10.1038/s41576-019-0150-2"
+  },
+  "status": "qualified"
+ },
+ {
+  "id": "bio-19",
+  "ids": [
+   61
+  ],
+  "category": "Multi-omics",
+  "title": "Genomics vs transcriptomics vs proteomics",
+  "takeaway": "DNA sequence, chromatin state, RNA abundance and protein abundance capture different aspects of molecular biology.",
+  "explanation": "A tumor sample can have stable genotype but changing expression and protein levels.",
+  "caution": "No single layer gives a complete readout of cell function.",
+  "question": "Which measurement directly assesses transcript abundance?",
+  "options": [
+   "RNA-seq",
+   "DNA copy-number profiling",
+   "H&E staining alone"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Stuart & Satija, Nat Rev Genet (2019)",
+   "url": "https://doi.org/10.1038/s41576-019-0093-7"
+  },
+  "status": "background"
+ },
+ {
+  "id": "bio-20",
+  "ids": [
+   62
+  ],
+  "category": "Epigenetics",
+  "title": "DNA methylation is context-dependent",
+  "takeaway": "Covalent DNA methylation can correlate with gene regulation depending on genomic location and cellular context.",
+  "explanation": "Promoter methylation is one possible mechanism associated with altered transcription.",
+  "caution": "Methylation does not silence every nearby gene or define protein abundance.",
+  "question": "Why is 'methylation always represses transcription' incorrect?",
+  "options": [
+   "Effects depend on genomic and cellular context",
+   "Methylation is not a chemical modification",
+   "Every methylation mark causes cell death"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "DNA methylation review — PubMed",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/?term=DNA+methylation+regulation+review"
+  },
+  "status": "qualified"
+ },
+ {
+  "id": "bio-21",
+  "ids": [
+   63,
+   64
+  ],
+  "category": "Multi-omics",
+  "title": "Complementary modalities",
+  "takeaway": "RNA, chromatin accessibility, proteins and imaging measure different properties of a cell or tissue.",
+  "explanation": "ATAC captures accessible chromatin while spatial imaging captures morphology.",
+  "caution": "ATAC accessibility does not alone prove transcription-factor binding; RNA does not measure protein directly.",
+  "question": "What would ATAC-seq primarily report?",
+  "options": [
+   "Accessible chromatin regions",
+   "Cell-surface protein copy number directly",
+   "Oxygen concentration"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Stuart & Satija, Nat Rev Genet (2019)",
+   "url": "https://doi.org/10.1038/s41576-019-0093-7"
+  },
+  "status": "background"
+ },
+ {
+  "id": "bio-22",
+  "ids": [
+   115
+  ],
+  "category": "RNA Sequencing",
+  "title": "Gene expression is not a complete cell fingerprint",
+  "takeaway": "A gene-expression profile captures observed RNA abundance and is useful for distinguishing cell types and states.",
+  "explanation": "A cell's marker-gene expression supports a transcriptomic annotation.",
+  "caution": "Transcriptome measurements are sparse and state-dependent; an expression profile does not uniquely identify every cell.",
+  "question": "What does gene expression typically measure?",
+  "options": [
+   "RNA abundance from genes",
+   "Exact DNA sequence at every locus",
+   "Direct protein activity"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Stark et al., Nat Rev Genet (2019)",
+   "url": "https://doi.org/10.1038/s41576-019-0150-2"
+  },
+  "status": "qualified"
+ },
+ {
+  "id": "bio-23",
+  "ids": [
+   117,
+   118
+  ],
+  "category": "Genomics",
+  "title": "Genomic gene span versus coding length",
+  "takeaway": "A gene's genomic span can be much larger than its protein-coding sequence because of introns and untranslated components.",
+  "explanation": "A receptor with a modest protein length can be encoded by a very large gene.",
+  "caution": "Numerical EGFR gene-length figures are build- and annotation-dependent and are not tested as universal facts.",
+  "question": "Why is gene genomic length not equal to coding length?",
+  "options": [
+   "Introns and untranslated regions contribute to its genomic span",
+   "Codons are thousands of nucleotides long",
+   "Protein length controls chromosome number"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Wilkinson, Charenton & Nagai, Annu Rev Biochem (2020)",
+   "url": "https://doi.org/10.1146/annurev-biochem-091719-064225"
+  },
+  "status": "qualified"
+ },
+ {
+  "id": "bio-24",
+  "ids": [
+   120,
+   124
+  ],
+  "category": "RNA Velocity",
+  "title": "Splicing status is not a timestamp",
+  "takeaway": "Unspliced and spliced RNA counts can inform kinetic models of transcription and processing.",
+  "explanation": "RNA velocity uses relative spliced/unspliced abundances and model assumptions to estimate expression dynamics.",
+  "caution": "'Unspliced = newly made; spliced = old' is an oversimplification, not a per-molecule age measurement.",
+  "question": "Can a spliced read be assigned a precise age from splicing alone?",
+  "options": [
+   "No; age depends on kinetics and context",
+   "Yes, it always predates every unspliced molecule",
+   "Yes, each splice removes one hour"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "La Manno et al., Nature (2018)",
+   "url": "https://doi.org/10.1038/s41586-018-0414-6"
+  },
+  "status": "corrected"
+ },
+ {
+  "id": "bio-25",
+  "ids": [
+   123
+  ],
+  "category": "RNA Biology",
+  "title": "Introns can have regulatory roles",
+  "takeaway": "Some intronic regions contain regulatory elements or affect RNA processing and gene expression.",
+  "explanation": "An intronic enhancer or splicing regulator can influence expression of a gene.",
+  "caution": "Not all introns have the same regulatory function.",
+  "question": "Which statement is supported?",
+  "options": [
+   "Some introns contain functional regulatory information",
+   "All introns are transcriptionally silent waste",
+   "Every intron encodes a protein domain"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Wilkinson, Charenton & Nagai, Annu Rev Biochem (2020)",
+   "url": "https://doi.org/10.1146/annurev-biochem-091719-064225"
+  },
+  "status": "background"
+ },
+ {
+  "id": "bio-26",
+  "ids": [
+   126
+  ],
+  "category": "Genomics",
+  "title": "Most cells share a genome, with exceptions",
+  "takeaway": "Cells in one person commonly share a germline genome but can differ in somatic variants, copy number and gene regulation.",
+  "explanation": "Tumor clones acquire somatic genetic alterations, while other cells diverge in expression.",
+  "caution": "The stored claim 'every cell carries the same DNA' is false as an absolute statement.",
+  "question": "Which is a real exception to identical DNA across a person's cells?",
+  "options": [
+   "Tumor-specific somatic mutations",
+   "A change in cytokine level alone",
+   "A change in cell shape alone"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Stuart & Satija, Nat Rev Genet (2019)",
+   "url": "https://doi.org/10.1038/s41576-019-0093-7"
+  },
+  "status": "corrected"
+ },
+ {
+  "id": "bio-27",
+  "ids": [
+   137,
+   140
+  ],
+  "category": "Molecular Biology",
+  "title": "Genes and proteins: what the picture omits",
+  "takeaway": "Protein-coding genes contain sequences used to produce RNA templates for protein synthesis; other genes produce noncoding RNAs.",
+  "explanation": "An mRNA-encoded protein performs a cellular activity after translation.",
+  "caution": "'Every gene encodes a protein' is incorrect; the original image was not available as machine-readable explanatory content.",
+  "question": "What makes a protein-coding gene special?",
+  "options": [
+   "Its transcript can be translated into a polypeptide",
+   "It never contains introns",
+   "It directly contains a finished protein"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Stark et al., Nat Rev Genet (2019)",
+   "url": "https://doi.org/10.1038/s41576-019-0150-2"
+  },
+  "status": "corrected"
+ },
+ {
+  "id": "bio-28",
+  "ids": [
+   138
+  ],
+  "category": "Genomics",
+  "title": "Sequencing does not directly prove gene function",
+  "takeaway": "DNA sequencing establishes sequence information and variants relative to reference, while functional regulation requires other evidence.",
+  "explanation": "A variant can be identified by sequencing but its functional effect may remain uncertain.",
+  "caution": "Original highlight overclaimed that sequencing alone identifies function and regulation.",
+  "question": "What can DNA sequencing directly establish?",
+  "options": [
+   "Nucleotide sequence and detectable variants",
+   "All gene functions experimentally",
+   "All protein-protein interactions"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Stuart & Satija, Nat Rev Genet (2019)",
+   "url": "https://doi.org/10.1038/s41576-019-0093-7"
+  },
+  "status": "corrected"
+ }
+]
