@@ -146,7 +146,13 @@
    "label": "Crinier et al., Blood (2020), PMID 32271902",
    "url": "https://pubmed.ncbi.nlm.nih.gov/32271902/"
   },
-  "auditVersion": "evidence-first-v2"
+  "auditVersion": "evidence-first-v2",
+  "contrastLabels": [
+   "Cytotoxic CD8 T cell",
+   "Conventional NK cell"
+  ],
+  "contrastTitle": "TCR/CD3 lineage markers versus NK-associated markers",
+  "contrastCaption": "Markers overlap; classify coherent programs and confirm with TCR/protein evidence where possible."
  },
  {
   "id": "method-4",
@@ -226,7 +232,29 @@
    "Correct: ResolVI models cell-level spatial transcript counts downstream of segmentation and quantification.",
    "Incorrect: the method is not a raw-image cell segmentation algorithm.",
    "Incorrect: the intended inference is expression/misassignment, not DNA chromosome counting."
-  ]
+  ],
+  "contrastLabels": [
+   "Segmentation",
+   "ResolVI"
+  ],
+  "contrast": [
+   {
+    "feature": "Input",
+    "left": "Images and/or segmented molecule coordinates",
+    "right": "Initially quantified cell-by-gene observations with spatial context"
+   },
+   {
+    "feature": "Primary output",
+    "left": "Cell boundaries or molecule-to-cell assignments",
+    "right": "Corrected latent representation/estimates accounting for misassignment"
+   },
+   {
+    "feature": "What it cannot guarantee",
+    "left": "Perfect ownership of each molecule",
+    "right": "Ground-truth ownership or perfect segmentation from raw pixels"
+   }
+  ],
+  "contrastTitle": "What exactly is different"
  },
  {
   "id": "method-7",
@@ -281,7 +309,29 @@
   },
   "status": "verified",
   "decisionRule": "Identify measurement modality: barcoded spatial sequencing gives regional RNA counts, while imaging locates probe-labeled molecules; read length, panel and cell-assignment constraints differ.",
-  "auditVersion": "evidence-first-v2"
+  "auditVersion": "evidence-first-v2",
+  "contrastLabels": [
+   "Sequencing-based spatial RNA",
+   "Imaging-based spatial RNA"
+  ],
+  "contrast": [
+   {
+    "feature": "Direct readout",
+    "left": "Barcoded region/capture-feature RNA counts",
+    "right": "Spatial coordinates of probe-detected RNA molecules"
+   },
+   {
+    "feature": "Common ambiguity",
+    "left": "Mixture of multiple cells inside a feature",
+    "right": "Molecule assignment to overlapping/adjacent cells"
+   },
+   {
+    "feature": "Typical trade-off",
+    "left": "Potentially broad transcriptome with coarser capture units",
+    "right": "Targeted genes and high coordinate resolution"
+   }
+  ],
+  "contrastTitle": "What exactly is different"
  },
  {
   "id": "method-9",
@@ -464,6 +514,40 @@
    "Correct: the direct observation is a spot-count matrix versus imaged probe-based molecule coordinates.",
    "Incorrect: imaging spatial assays are panel-limited and classic Visium spots may include multiple cells.",
    "Incorrect: the two assays have different resolution and assignment constraints; neither guarantees perfect cell ownership."
+  ],
+  "contrastLabels": [
+   "Classic Visium",
+   "Xenium / CosMx / MERFISH"
+  ],
+  "contrast": [
+   {
+    "feature": "Direct observations",
+    "left": "Per-spot RNA counts from 55-µm capture areas (classic platform)",
+    "right": "Individual detected RNA-molecule coordinates for target genes"
+   },
+   {
+    "feature": "Cell-resolution issue",
+    "left": "Spot can contain multiple cells",
+    "right": "Segmentation needed to convert molecules into cell-level counts"
+   },
+   {
+    "feature": "Gene coverage",
+    "left": "Sequencing chemistry with capture and depth biases",
+    "right": "Often predefined panels with probe-detection biases"
+   }
+  ],
+  "contrastTitle": "What exactly is different",
+  "workedExamples": [
+   {
+    "profile": "A spot counts EGFR=65 but contains 4 segmented cells",
+    "answer": "Classic Visium: mixed regional expression",
+    "why": "Cannot assign the 65 observed counts to one specific cell without additional information."
+   },
+   {
+    "profile": "A point list of EGFR molecules is detected near two overlapping cell boundaries",
+    "answer": "Molecule-resolved imaging with possible cell-assignment ambiguity",
+    "why": "Detection coordinates alone do not guarantee which cell produced each RNA molecule."
+   }
   ]
  },
  {
@@ -544,7 +628,29 @@
    "Correct: type/lineage and transient expression state are different axes; malignant identity must be separately validated.",
    "Incorrect: a tumor cell can resemble a normal astrocyte transcriptomically without becoming normal.",
    "Incorrect: injury-response marker expression alone cannot prove an astrocyte is malignant."
-  ]
+  ],
+  "contrastLabels": [
+   "Cell type",
+   "Cell state"
+  ],
+  "contrast": [
+   {
+    "feature": "What the label means",
+    "left": "Lineage/relatively persistent identity such as microglia",
+    "right": "Condition/program such as activated, cycling or hypoxic"
+   },
+   {
+    "feature": "Example",
+    "left": "An oligodendrocyte lineage cell",
+    "right": "An activated or injury-responsive oligodendrocyte"
+   },
+   {
+    "feature": "Pitfall",
+    "left": "Cell lineage can be ambiguous in malignancy",
+    "right": "A temporary program does not redefine normal or malignant lineage"
+   }
+  ],
+  "contrastTitle": "What exactly is different"
  },
  {
   "id": "method-19",
@@ -599,7 +705,29 @@
    "Correct: multi-omics measured in the same cell is different from computational cross-assay integration.",
    "Incorrect: matching visualization axes does not establish matching biological cells.",
    "Incorrect: shared gene symbols allow mapping but not evidence of paired cell-level observation."
-  ]
+  ],
+  "contrastLabels": [
+   "Paired same-cell multiomics",
+   "Computational cross-assay integration"
+  ],
+  "contrast": [
+   {
+    "feature": "Observed units",
+    "left": "Two or more modalities measured from same indexed cells/nuclei",
+    "right": "Different cells or samples mapped into a shared representation"
+   },
+   {
+    "feature": "Supports paired-cell concordance?",
+    "left": "Yes, subject to assay noise and QC",
+    "right": "Not without separately establishing pairing"
+   },
+   {
+    "feature": "Typical pitfall",
+    "left": "Assume no measurement error just because paired",
+    "right": "Treat an alignment as direct within-cell measurement"
+   }
+  ],
+  "contrastTitle": "What exactly is different"
  },
  {
   "id": "method-21",
@@ -679,7 +807,29 @@
    "Correct: surfactant protein gene programs are typical of AT2, whereas AGER is associated with human AT1 cells.",
    "Incorrect: AT2 cells are the major pulmonary surfactant-producing alveolar epithelial cells.",
    "Incorrect: alveolar epithelial cells are not defined as vascular endothelium by their anatomical location."
-  ]
+  ],
+  "contrastLabels": [
+   "Alveolar type 1 (AT1)",
+   "Alveolar type 2 (AT2)"
+  ],
+  "contrast": [
+   {
+    "feature": "Specialization",
+    "left": "Broad, thin epithelial gas-exchange interface",
+    "right": "Surfactant synthesis/secretion and epithelial repair roles"
+   },
+   {
+    "feature": "Supporting transcripts (human)",
+    "left": "AGER, HOPX-associated programs",
+    "right": "SFTPC, SFTPB, SFTPA1-associated programs"
+   },
+   {
+    "feature": "How to classify",
+    "left": "Use multi-gene signature and histology",
+    "right": "Use multi-gene signature, surfactant evidence, context"
+   }
+  ],
+  "contrastTitle": "What exactly is different"
  },
  {
   "id": "method-24",
@@ -704,7 +854,29 @@
   },
   "status": "verified",
   "decisionRule": "Solo generates artificial doublets from observed profiles and trains a discriminator on learned scVI representations. Predicted doublet probability is a model score, not a counted second cell.",
-  "auditVersion": "evidence-first-v2"
+  "auditVersion": "evidence-first-v2",
+  "contrastLabels": [
+   "Solo",
+   "Raw droplet QC only"
+  ],
+  "contrast": [
+   {
+    "feature": "Method",
+    "left": "Uses simulated doublets with learned scVI latent representation and classifier",
+    "right": "Filters cells by counts/UMIs/mitochondrial fraction"
+   },
+   {
+    "feature": "Detects doublets?",
+    "left": "Estimates potential doublet identity from transcriptomic combinations",
+    "right": "Flags suspicious counts but does not specifically learn doublet profiles"
+   },
+   {
+    "feature": "Limitation",
+    "left": "Predictive score not physical confirmation",
+    "right": "High-quality doublets can survive basic QC"
+   }
+  ],
+  "contrastTitle": "What exactly is different"
  },
  {
   "id": "method-25",
@@ -735,6 +907,40 @@
    "Correct: the probabilistic latent-variable formulation and ELBO-style objective distinguish the standard VAE from a plain AE.",
    "Incorrect: both autoencoders and variational autoencoders learn latent representations.",
    "Incorrect: both families normally include a decoder."
+  ],
+  "contrastLabels": [
+   "Basic autoencoder (AE)",
+   "Variational autoencoder (VAE)"
+  ],
+  "contrast": [
+   {
+    "feature": "Latent representation",
+    "left": "Typically deterministic z = encoder(x)",
+    "right": "Approximate posterior q(z|x), usually mean and variance parameters"
+   },
+   {
+    "feature": "Training objective",
+    "left": "Reconstruction loss",
+    "right": "Expected reconstruction log-likelihood and KL regularization"
+   },
+   {
+    "feature": "Sampling/generation",
+    "left": "Not inherently a normalized generative model",
+    "right": "Includes a latent prior p(z) and probabilistic generation assumptions"
+   }
+  ],
+  "contrastTitle": "What exactly is different",
+  "workedExamples": [
+   {
+    "profile": "Encoder outputs one fixed z vector and decoder minimizes ||x − x̂||²",
+    "answer": "Typical deterministic AE",
+    "why": "There is no explicit approximate posterior, latent prior or KL term in this example."
+   },
+   {
+    "profile": "Encoder outputs μ(x), σ(x); z is sampled and objective includes KL(q(z|x)||p(z))",
+    "answer": "Typical VAE",
+    "why": "A distribution over latent variables and an ELBO-style objective distinguish the VAE formulation."
+   }
   ]
  },
  {
@@ -765,6 +971,28 @@
    "Correct: matching subspaces does not require matching coordinates or raw encoder weights.",
    "Incorrect: linear AE weight matrices can differ under basis transformations and parameterization.",
    "Incorrect: PCA is a linear subspace method that can be framed through reconstruction error."
-  ]
+  ],
+  "contrastLabels": [
+   "PCA",
+   "Linear autoencoder"
+  ],
+  "contrast": [
+   {
+    "feature": "Learning criterion",
+    "left": "Orthogonal directions maximizing variance / minimizing linear reconstruction error",
+    "right": "Linear encoder/decoder minimizing reconstruction error"
+   },
+   {
+    "feature": "Parameter uniqueness",
+    "left": "Principal axes specified up to sign/degeneracy",
+    "right": "Equivalent latent subspace may have many weight parameterizations"
+   },
+   {
+    "feature": "What may coincide",
+    "left": "Top-k principal subspace",
+    "right": "Span of latent directions under suitable data/loss assumptions"
+   }
+  ],
+  "contrastTitle": "What exactly is different"
  }
 ]
