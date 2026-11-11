@@ -1,0 +1,1848 @@
+{
+ "updated": "2026-11-11",
+ "source": {
+  "name": "Glassory / Information",
+  "url": "https://app.notion.com/p/3df0932cac3881168c1ad8e302064034"
+ },
+ "count": 141,
+ "records": [
+  {
+   "i": 0,
+   "id": "4130932cac3881c8a7f8e9f151ac9979",
+   "url": "https://app.notion.com/p/4130932cac3881c8a7f8e9f151ac9979",
+   "highlight": "P53CORE یک مجموعه از ۳۲ ژن شناخته‌شده مرتبط با برنامه p53 و پاسخ به آسیب DNA است",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6af0e762-9d4c-83eb-b6e4-bd4caf8796ea#root:~:text=P53CORE%20%DB%8C%DA%A9%20%D9%85%D8%AC%D9%85%D9%88%D8%B9%D9%87%20%D8%A7%D8%B2%20%DB%B3%DB%B2%20%DA%98%D9%86,%D9%88%20%D9%BE%D8%A7%D8%B3%D8%AE%20%D8%A8%D9%87%20%D8%A2%D8%B3%DB%8C%D8%A8%20DNA%20%D8%A7%D8%B3%D8%AA",
+   "tags": [
+    "Therapy & Drug Response"
+   ],
+   "images": 0
+  },
+  {
+   "i": 1,
+   "id": "4130932cac3881b19c0ac2127187a8c0",
+   "url": "https://app.notion.com/p/4130932cac3881b19c0ac2127187a8c0",
+   "highlight": "p53 یک پروتئین سرکوبگر تومور و فاکتور رونویسی است که می‌تواند باعث موارد زیر شود:",
+   "note": "\\- توقف چرخه سلولی؛<br />- فعال‌شدن برنامه‌های ترمیم DNA؛<br />- القای senescence؛<br />- در شرایطی القای apoptosis.",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6af0e762-9d4c-83eb-b6e4-bd4caf8796ea#root:~:text=p53%20%DB%8C%DA%A9%20%D9%BE%D8%B1%D9%88%D8%AA%D8%A6%DB%8C%D9%86%20%D8%B3%D8%B1%DA%A9%D9%88%D8%A8%DA%AF%D8%B1%20%D8%AA%D9%88%D9%85%D9%88%D8%B1%20%D9%88,%DA%A9%D9%87%20%D9%85%DB%8C%E2%80%8C%D8%AA%D9%88%D8%A7%D9%86%D8%AF%20%D8%A8%D8%A7%D8%B9%D8%AB%20%D9%85%D9%88%D8%A7%D8%B1%D8%AF%20%D8%B2%DB%8C%D8%B1%20%D8%B4%D9%88%D8%AF%3A",
+   "tags": [
+    "Therapy & Drug Response"
+   ],
+   "images": 0
+  },
+  {
+   "i": 2,
+   "id": "4130932cac3881f29348f7daece2ac84",
+   "url": "https://app.notion.com/p/4130932cac3881f29348f7daece2ac84",
+   "highlight": "پرتودرمانی از پرتوهای یونیزان استفاده می‌کند.",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6af0e762-9d4c-83eb-b6e4-bd4caf8796ea#root:~:text=%D9%BE%D8%B1%D8%AA%D9%88%D8%AF%D8%B1%D9%85%D8%A7%D9%86%DB%8C%20%D8%A7%D8%B2%20%D9%BE%D8%B1%D8%AA%D9%88%D9%87%D8%A7%DB%8C%20%DB%8C%D9%88%D9%86%DB%8C%D8%B2%D8%A7%D9%86%20%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87%20%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF.",
+   "tags": [
+    "Therapy & Drug Response"
+   ],
+   "images": 0
+  },
+  {
+   "i": 3,
+   "id": "40f0932cac38814697c9c68083b788cc",
+   "url": "https://app.notion.com/p/40f0932cac38814697c9c68083b788cc",
+   "highlight": "Two main classes of GB cell states resembled distinct developmental progenitors: neural progenitor-like and oligodendrocyte progenitor-like (NPC-OPC-like) and neuronal progenitor-like and neuronal-like (NPC-neuronal-like) cells.",
+   "note": "",
+   "site": "nature.com",
+   "source": "https://www.nature.com/articles/s41586-026-11234-8#Sec3-content:~:text=Two%20main%20classes%20of%20GB%20cell,neuronal%20progenitor%2Dlike%20and%20neuronal%2Dlike%20(NPC%2Dneuronal%2Dlike)%20cells.",
+   "tags": [
+    "GBM Cell States"
+   ],
+   "images": 0
+  },
+  {
+   "i": 4,
+   "id": "40f0932cac38815eb67cf2a6156ab76f",
+   "url": "https://app.notion.com/p/40f0932cac38815eb67cf2a6156ab76f",
+   "highlight": "بعضی از سلول‌های سرطانی GBM برنامه‌های بیان ژنی مشابه سلول‌های نابالغ مغز دارند.اما این سلول‌ها همگی شبیه یک نوع progenitor نیستند؛ دو کلاس اصلی شناسایی شده‌اند که با برنامه‌های متفاوتی از رشد سیستم عصبی ارتباط دارند.Biological terms1. Neural progenitor cell (NPC)سلول پیش‌ساز عصبی که در طول تکامل سیستم عصبی می‌تواند تکثیر شود و بسته به مرحلهٔ رشد و نوع progenitor به سلول‌های عصبی یا گلیال تمایز پیدا کند.2. Oligodendrocyte progenitor cell (OPC)سلول پیش‌ساز الیگودندروسیت که می‌تواند به oligodendrocyte بالغ تمایز پیدا کند.Oligodendrocyte چیست؟نوعی سلول گلیال در سیستم عصبی مرکزی است که غلاف میلین را اطراف آکسون‌ها تشکیل می‌دهد. میلین به هدایت سریع‌تر پتانسیل عمل کمک می‌کند.3. Neuronal lineageمسیر رشد و تمایز سلول‌ها به سمت نورون‌ها.4. Developmental progenitorسلول نابالغی که هنوز ظرفیت تکثیر و تمایز به سلول‌های تخصص‌یافته‌تر را دارد.",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6aec55ff-1484-83ed-b895-357139d1d6df#root:~:text=%D8%A8%D8%B9%D8%B6%DB%8C%20%D8%A7%D8%B2%20%D8%B3%D9%84%D9%88%D9%84%E2%80%8C%D9%87%D8%A7%DB%8C%20%D8%B3%D8%B1%D8%B7%D8%A7%D9%86%DB%8C%20GBM%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C,%D8%AA%D9%85%D8%A7%DB%8C%D8%B2%20%D8%A8%D9%87%20%D8%B3%D9%84%D9%88%D9%84%E2%80%8C%D9%87%D8%A7%DB%8C%20%D8%AA%D8%AE%D8%B5%D8%B5%E2%80%8C%DB%8C%D8%A7%D9%81%D8%AA%D9%87%E2%80%8C%D8%AA%D8%B1%20%D8%B1%D8%A7%20%D8%AF%D8%A7%D8%B1%D8%AF.",
+   "tags": [
+    "GBM Cell States"
+   ],
+   "images": 0
+  },
+  {
+   "i": 5,
+   "id": "40f0932cac3881cfbbefc6fc3895cdbc",
+   "url": "https://app.notion.com/p/40f0932cac3881cfbbefc6fc3895cdbc",
+   "highlight": "اجزای مهم TME در GBM:Microglia و macrophagesT cellsAstrocytesEndothelial cells و pericytesExtracellular matrixCytokines و growth factors",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6aec55ff-1484-83ed-b895-357139d1d6df#root:~:text=%D8%A7%D8%AC%D8%B2%D8%A7%DB%8C%20%D9%85%D9%87%D9%85%20TME%20%D8%AF%D8%B1%20GBM%3AMicroglia%20%D9%88,%D9%88%20pericytesExtracellular%20matrixCytokines%20%D9%88%20growth%20factors",
+   "tags": [
+    "Tumor Microenvironment"
+   ],
+   "images": 0
+  },
+  {
+   "i": 6,
+   "id": "40f0932cac3881c481f6ccc0da637d95",
+   "url": "https://app.notion.com/p/40f0932cac3881c481f6ccc0da637d95",
+   "highlight": "Genetic heterogeneity1,2 and tumour microenvironment (TME) signals9 also influence malignant cell state",
+   "note": "",
+   "site": "nature.com",
+   "source": "https://www.nature.com/articles/s41586-026-11234-8#Sec1-content:~:text=Genetic%20heterogeneity1%2C2%20and%20tumour%20microenvironment%20(TME)%20signals9%20also%20influence%20malignant%20cell%20state",
+   "tags": [
+    "GBM Cell States",
+    "Tumor Microenvironment"
+   ],
+   "images": 0
+  },
+  {
+   "i": 7,
+   "id": "40f0932cac3881268d74cbba9a5d6ef5",
+   "url": "https://app.notion.com/p/40f0932cac3881268d74cbba9a5d6ef5",
+   "highlight": "their single-cell transcriptional profiles can be mapped onto an axis between developmental-like (dev-like) and injury response-associated gene expression programs4,8",
+   "note": "سلول‌های سرطانی از نظر برنامهٔ بیان ژن در یک طیف قرار می‌گیرند.<br /><br />در یک سمت، سلول‌هایی با ویژگی‌های developmental-like داریم و در سمت دیگر، سلول‌هایی با برنامه‌های injury-response.<br /><br />بنابراین این دو حالت لزوماً دو جمعیت کاملاً مجزا نیستند؛ ممکن است حالت‌های میانی نیز وجود داشته باشند.<br />Transcriptional profile: الگوی بیان ژن یک سلول؛ یعنی کدام ژن‌ها و با چه شدتی RNA تولید می‌کنند.<br /><br /><br /><br />Developmental-like (Dev-like): برنامهٔ بیان ژنی مشابه سلول‌های مراحل رشد و تکامل سیستم عصبی، مانند neural progenitors. این شباهت به معنی تبدیل واقعی سلول سرطانی به یک سلول طبیعی دوران جنینی نیست.",
+   "site": "nature.com",
+   "source": "https://www.nature.com/articles/s41586-026-11234-8#Sec1-content:~:text=their%20single%2Dcell%20transcriptional%20profiles%20can%20be,and%20injury%20response%2Dassociated%20gene%20expression%20programs4%2C8",
+   "tags": [
+    "GBM Cell States",
+    "Tumor Microenvironment"
+   ],
+   "images": 0
+  },
+  {
+   "i": 8,
+   "id": "40f0932cac3881d4b929dd2910a5e351",
+   "url": "https://app.notion.com/p/40f0932cac3881d4b929dd2910a5e351",
+   "highlight": "What we knowGBM دارای cellular-state heterogeneity است.سلول‌های بدخیم plasticity دارند.حالت‌های سلولی بین بیماران فراوانی متفاوتی دارند.What we don't knowچه عواملی باعث ایجاد این حالت‌ها می‌شوند؟سلول‌ها چه مسیرهایی را طی می‌کنند؟آیا این مسیرها بین بیماران مشترک‌اند؟What the authors want to establishآیا یک trajectory مشترک، قابل شناسایی و قابل دست‌کاری در گلیوبلاستوما وجود دارد؟",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6aec55ff-1484-83ed-b895-357139d1d6df#root:~:text=What%20we%20knowGBM%20%D8%AF%D8%A7%D8%B1%D8%A7%DB%8C%20cellular%2Dstate%20heterogeneity,%D9%82%D8%A7%D8%A8%D9%84%20%D8%AF%D8%B3%D8%AA%E2%80%8C%DA%A9%D8%A7%D8%B1%DB%8C%20%D8%AF%D8%B1%20%DA%AF%D9%84%DB%8C%D9%88%D8%A8%D9%84%D8%A7%D8%B3%D8%AA%D9%88%D9%85%D8%A7%20%D9%88%D8%AC%D9%88%D8%AF%20%D8%AF%D8%A7%D8%B1%D8%AF%D8%9F",
+   "tags": [
+    "GBM Cell States"
+   ],
+   "images": 0
+  },
+  {
+   "i": 9,
+   "id": "40f0932cac388163b5a5cfd9129f2bd2",
+   "url": "https://app.notion.com/p/40f0932cac388163b5a5cfd9129f2bd2",
+   "highlight": "patient-derived xenografts have shown that malignant cells can transition across cellular states, indicating their plasticity2,6",
+   "note": "",
+   "site": "nature.com",
+   "source": "https://www.nature.com/articles/s41586-026-11234-8#Sec1-content:~:text=patient%2Dderived%20xenografts%20have%20shown%20that%20malignant,across%20cellular%20states%2C%20indicating%20their%20plasticity2%2C6",
+   "tags": [
+    "GBM Cell States"
+   ],
+   "images": 0
+  },
+  {
+   "i": 10,
+   "id": "40f0932cac3881c6bc10c2c721f06f67",
+   "url": "https://app.notion.com/p/40f0932cac3881c6bc10c2c721f06f67",
+   "highlight": "These states are suggested to vary in abundance across tumours and stratify GBs into subtypes",
+   "note": "",
+   "site": "nature.com",
+   "source": "https://www.nature.com/articles/s41586-026-11234-8#Sec1-content:~:text=These%20states%20are%20suggested%20to%20vary,tumours%20and%20stratify%20GBs%20into%20subtypes",
+   "tags": [
+    "GBM Cell States"
+   ],
+   "images": 0
+  },
+  {
+   "i": 11,
+   "id": "40f0932cac38812c99d5f4b40da4582b",
+   "url": "https://app.notion.com/p/40f0932cac38812c99d5f4b40da4582b",
+   "highlight": "Developmental-like → Astrocyte progenitor-like → Gliosis → Hypoxia",
+   "note": "In Glioblastoma<br />https://chatgpt.com/c/6aec55ff-1484-83ed-b895-357139d1d6df",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6aec55ff-1484-83ed-b895-357139d1d6df#root:~:text=Developmental%2Dlike%20%E2%86%92%20Astrocyte%20progenitor%2Dlike%20%E2%86%92%20Gliosis%20%E2%86%92%20Hypoxia",
+   "tags": [
+    "GBM Cell States"
+   ],
+   "images": 0
+  },
+  {
+   "i": 12,
+   "id": "40f0932cac388147b8f7d8b487b375df",
+   "url": "https://app.notion.com/p/40f0932cac388147b8f7d8b487b375df",
+   "highlight": "We identify that glioblastoma heterogeneity is driven by spatially patterned transitions of cancer cells from developmental-like states towards those defined by a glial injury response and hypoxia",
+   "note": "",
+   "site": "nature.com",
+   "source": "https://www.nature.com/articles/s41586-026-11234-8#Abs1-content:~:text=We%20identify%20that%20glioblastoma%20heterogeneity%20is,a%20glial%20injury%20response%20and%20hypoxia",
+   "tags": [
+    "GBM Cell States",
+    "Tumor Microenvironment"
+   ],
+   "images": 0
+  },
+  {
+   "i": 13,
+   "id": "40f0932cac3881ba8d3ec4ea5f8573e7",
+   "url": "https://app.notion.com/p/40f0932cac3881ba8d3ec4ea5f8573e7",
+   "highlight": "Cancer cells show highly heterogeneous and plastic states in glioblastoma",
+   "note": "",
+   "site": "nature.com",
+   "source": "https://www.nature.com/articles/s41586-026-11234-8#Abs1-content:~:text=Cancer%20cells%20show%20highly%20heterogeneous%20and%20plastic%20states%20in%20glioblastoma",
+   "tags": [
+    "GBM Cell States"
+   ],
+   "images": 0
+  },
+  {
+   "i": 14,
+   "id": "3f70932cac388144b00cca256cf74463",
+   "url": "https://app.notion.com/p/3f70932cac388144b00cca256cf74463",
+   "highlight": "identifiable causal structure learning framework",
+   "note": "",
+   "site": "nature.com",
+   "source": "https://www.nature.com/articles/s41467-026-69856-5#Sec1-content:~:text=identifiable%20causal%20structure%20learning%20framework",
+   "tags": [
+    "Spatial Transcriptomics",
+    "Computational Methods"
+   ],
+   "images": 0
+  },
+  {
+   "i": 15,
+   "id": "3f70932cac38817bb32bcc3f6bce631b",
+   "url": "https://app.notion.com/p/3f70932cac38817bb32bcc3f6bce631b",
+   "highlight": "A cell’s gene expression profile simultaneously encodes information about its intrinsic characteristics and extrinsic tissue microenvironment",
+   "note": "",
+   "site": "nature.com",
+   "source": "https://www.nature.com/articles/s41467-026-69856-5#Sec1-content:~:text=A%20cell%E2%80%99s%20gene%20expression%20profile%20simultaneously,intrinsic%20characteristics%20and%20extrinsic%20tissue%20microenvironment",
+   "tags": [
+    "Tumor Microenvironment",
+    "Spatial Transcriptomics"
+   ],
+   "images": 0
+  },
+  {
+   "i": 16,
+   "id": "3f40932cac3881b981d6dee028a21d52",
+   "url": "https://app.notion.com/p/3f40932cac3881b981d6dee028a21d52",
+   "highlight": "sequencing used for cell phenotype identification",
+   "note": "",
+   "site": "nature.com",
+   "source": "https://www.nature.com/articles/s41467-026-69677-6#Sec1-content:~:text=sequencing%20used%20for%20cell%20phenotype%20identification",
+   "tags": [
+    "Spatial Transcriptomics"
+   ],
+   "images": 0
+  },
+  {
+   "i": 17,
+   "id": "3f40932cac388108b9f6ecbbf0ea8121",
+   "url": "https://app.notion.com/p/3f40932cac388108b9f6ecbbf0ea8121",
+   "highlight": "In spatial transcriptomics",
+   "note": "When analyzing tumor tissue such as GBM, you may encounter these NK-associated markers:<br />- NCAM1 → CD56 protein<br />- FCGR3A → CD16a protein<br />- NKG7, GNLY, KLRD1 → commonly associated with NK/cytotoxic immune populations<br />- CD3D, CD3E → help distinguish T cells from conventional NK cells",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6ac89a6e-2364-83eb-8a0d-d08efea9c8b1#:~:text=In%20spatial%20transcriptomics",
+   "tags": [
+    "Spatial Transcriptomics"
+   ],
+   "images": 0
+  },
+  {
+   "i": 18,
+   "id": "3f40932cac3881da9dded59395840d9c",
+   "url": "https://app.notion.com/p/3f40932cac3881da9dded59395840d9c",
+   "highlight": "NK cells vs. CD8+ T cells",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6ac89a6e-2364-83eb-8a0d-d08efea9c8b1#:~:text=NK%20cells%20vs.%20CD8%2B%20T%20cells",
+   "tags": [
+    "Cell Types & Immunology"
+   ],
+   "images": 1
+  },
+  {
+   "i": 19,
+   "id": "3f30932cac388177acacd40781993c8a",
+   "url": "https://app.notion.com/p/3f30932cac388177acacd40781993c8a",
+   "highlight": "Giotto Analyzer starts by identifying different cell types that are present in a spatial transcriptomic or proteomic dataset.",
+   "note": "",
+   "site": "link.springer.com",
+   "source": "https://link.springer.com/article/10.1186/s13059-021-02286-2#Sec2-content:~:text=Giotto%20Analyzer%20starts%20by%20identifying%20different,a%20spatial%20transcriptomic%20or%20proteomic%20dataset.",
+   "tags": [
+    "Spatial Transcriptomics"
+   ],
+   "images": 0
+  },
+  {
+   "i": 20,
+   "id": "3f30932cac388135a711ce8b5c944ef0",
+   "url": "https://app.notion.com/p/3f30932cac388135a711ce8b5c944ef0",
+   "highlight": "Most tissues consist of multiple cell types that operate together to perform their functions",
+   "note": "",
+   "site": "link.springer.com",
+   "source": "https://link.springer.com/article/10.1186/s13059-021-02286-2#Sec1-content:~:text=Most%20tissues%20consist%20of%20multiple%20cell,operate%20together%20to%20perform%20their%20functions",
+   "tags": [
+    "Spatial Transcriptomics"
+   ],
+   "images": 0
+  },
+  {
+   "i": 21,
+   "id": "3f00932cac3881a5a8d7d845f08f7c97",
+   "url": "https://app.notion.com/p/3f00932cac3881a5a8d7d845f08f7c97",
+   "highlight": "To address these challenges, we developed resolVI, a probabilistic framework for the representation of ST data while accounting for errors in segmentation and quantification. Instead of tackling the problem de novo, resolVI operates downstream of any algorithm for segmentation and quantification, taking initial estimates of gene expression in cells as its input. At its basis is the realization that diffusion of signals is an artifact that should be characterized and then controlled for.",
+   "note": "خیلی ساده، این پاراگراف می‌گوید:<br /><br />\\*\\*ResolVI قرار نیست خودش از اول سلول‌ها را پیدا کند یا segmentation انجام دهد.\\*\\* اول یک روش دیگر می‌آید سلول‌ها را segmentation می‌کند و برای هر سلول یک gene-expression profile اولیه می‌سازد. بعد \\*\\*ResolVI روی خروجی آن می‌نشیند و سعی می‌کند اشتباهات را اصلاح کند.\\*\\* \\[Nature\\](https://www.nature.com/articles/s41592-026-03212-9?utm\\_source=chatgpt.com)<br /><br />مثلاً ورودی اولیه ممکن است این باشد:<br /><br />\\`\\`\\`text<br />Cell A:<br />Gene1 = 20<br />Gene2 = 15<br />Gene3 = 8<br />\\`\\`\\`<br /><br />اما ResolVI می‌گوید:<br /><br />\\*\\*«صبر کن؛ همه‌ی این 8 تا Gene3 لزوماً واقعاً متعلق به Cell A نیستند. شاید بخشی از آن از سلول کناری آمده باشد یا background باشد.»\\*\\*<br /><br />ایده‌ی اصلی ResolVI این است که expression مشاهده‌شده را تقریباً به سه قسمت تقسیم کند:<br /><br />\\`\\`\\`text<br />Observed expression<br />       =<br />واقعاً متعلق به این سلول<br />       +<br />سیگنال اشتباهی از سلول‌های اطراف<br />       +<br />background<br />\\`\\`\\`<br /><br />به بخش دوم همان چیزی می‌گویند که مقاله آن را \\*\\*diffusion artifact\\*\\* می‌نامد. ResolVI سعی می‌کند اول بفهمد این artifact چقدر است و از کدام همسایه‌ها آمده، بعد اثرش را از representation و expression سلول کنترل کند. \\[Nature\\](https://www.nature.com/articles/s41592-026-03212-9?utm\\_source=chatgpt.com)<br /><br />پس عبارت:<br /><br />> \\*\\*“diffusion of signals is an artifact that should be characterized and then controlled for”\\*\\*<br /><br />خیلی ساده یعنی:<br /><br />\\*\\*وقتی RNA مربوط به سلول‌های دیگر قاطی expression یک سلول شده، نباید آن را biology واقعی فرض کنیم؛ باید مقدار این آلودگی را مدل کنیم و اثرش را حذف/کنترل کنیم.\\*\\*<br /><br />بنابراین pipeline تقریباً این است:<br /><br />\\*\\*Raw ST → segmentation → initial cell expression → ResolVI → cleaner estimate of true cell expression\\*\\*<br /><br />و نکته‌ی مهم: \\*\\*ResolVI segmentation algorithm نیست؛ یک downstream correction/modeling method است.\\*\\*",
+   "site": "nature.com",
+   "source": "https://www.nature.com/articles/s41592-026-03212-9?utm_source=chatgpt.com#Sec1-content:~:text=To%20address%20these%20challenges%2C%20we%20developed,be%20characterized%20and%20then%20controlled%20for.",
+   "tags": [
+    "Spatial Transcriptomics"
+   ],
+   "images": 0
+  },
+  {
+   "i": 22,
+   "id": "3f00932cac3881cfbb57f01156220b1b",
+   "url": "https://app.notion.com/p/3f00932cac3881cfbb57f01156220b1b",
+   "highlight": "This so-called diffusion phenomenon may result from leakage of RNA molecules owing to issues with tissue handling or from overlap of cells in the third (perpendicular to the profiled plane) dimension, which is normally profiled at a low resolution and to a restricted (normally tens of microns) width.",
+   "note": "فرض کن دو سلول کنار هم داریم: A و B.<br />RNAای که واقعاً متعلق به سلول A است، ممکن است در داده طوری دیده شود که انگار داخل سلول B قرار دارد.<br />این دو دلیل اصلی دارد:<br />1. RNA واقعاً کمی جابه‌جا شده<br />   موقع آماده‌کردن بافت، RNA از سلول A نشت کرده و نزدیک سلول B رفته.<br />2. سلول‌ها در عمق روی هم افتاده‌اند<br />   بافت سه‌بعدی است، ولی ما بیشتر یک تصویر دوبعدی از آن می‌بینیم. ممکن است سلول A بالای سلول B باشد و وقتی از بالا نگاه می‌کنیم، RNAهای A داخل محدوده B دیده شوند.",
+   "site": "nature.com",
+   "source": "https://www.nature.com/articles/s41592-026-03212-9?utm_source=chatgpt.com#Sec1-content:~:text=This%20so%2Dcalled%20diffusion%20phenomenon%20may%20result,restricted%20(normally%20tens%20of%20microns)%20width.",
+   "tags": [
+    "Spatial Transcriptomics"
+   ],
+   "images": 0
+  },
+  {
+   "i": 23,
+   "id": "3f00932cac3881a2bcb4cd395caee330",
+   "url": "https://app.notion.com/p/3f00932cac3881a2bcb4cd395caee330",
+   "highlight": "Technologies for high-resolution ST are broadly divided in two: one set of methods relies on RNA sequencing (RNA-seq) of RNA bound to submicrometer spatially barcoded spots, and the other relies on imaging individually tagged RNA molecules",
+   "note": "",
+   "site": "nature.com",
+   "source": "https://www.nature.com/articles/s41592-026-03212-9?utm_source=chatgpt.com#Sec1-content:~:text=Technologies%20for%20high%2Dresolution%20ST%20are%20broadly,on%20imaging%20individually%20tagged%20RNA%20molecules",
+   "tags": [
+    "Spatial Transcriptomics"
+   ],
+   "images": 1
+  },
+  {
+   "i": 24,
+   "id": "3ee0932cac3881a5bd52e7e59c8be0dc",
+   "url": "https://app.notion.com/p/3ee0932cac3881a5bd52e7e59c8be0dc",
+   "highlight": "Different proteins can contain related domains.Protein domains can therefore be reused in different protein architectures.Exons can correspond approximately to individual protein domains or parts of domains.This organization can facilitate rearrangement of functional protein modules.",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6ac153c3-80fc-83ed-9fa8-414be064fa73#root:~:text=Different%20proteins%20can%20contain%20related%20domains.Protein,facilitate%20rearrangement%20of%20functional%20protein%20modules.",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 25,
+   "id": "3ee0932cac3881699a3ad519f937f988",
+   "url": "https://app.notion.com/p/3ee0932cac3881699a3ad519f937f988",
+   "highlight": "One proposed advantage of introns is:They allow eukaryotic organisms to evolve new genes relatively readily.One mechanism discussed is:Exon duplication.Gene regions corresponding to useful protein modules can be:Duplicated.Recombined.Rearranged.Introns create intervening sequence space where recombination can occur without necessarily disrupting coding sequence.",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6ac153c3-80fc-83ed-9fa8-414be064fa73#root:~:text=One%20proposed%20advantage%20of%20introns%20is%3AThey,occur%20without%20necessarily%20disrupting%20coding%20sequence.",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 26,
+   "id": "3ee0932cac3881029b4be0337c2fd978",
+   "url": "https://app.notion.com/p/3ee0932cac3881029b4be0337c2fd978",
+   "highlight": "Two major advantages discussed are:Helping the evolution of new genes/protein architectures.Increasing biological complexity through alternative splicing.",
+   "note": "15\\. Why have introns?",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6ac153c3-80fc-83ed-9fa8-414be064fa73#root:~:text=Two%20major%20advantages%20discussed%20are%3AHelping%20the,architectures.Increasing%20biological%20complexity%20through%20alternative%20splicing.",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 27,
+   "id": "3ee0932cac3881bea410dbfa6376e7f9",
+   "url": "https://app.notion.com/p/3ee0932cac3881bea410dbfa6376e7f9",
+   "highlight": "Base pair (bp):The unit used in the lecture to describe DNA length.A typical human gene in the lecture is described as approximately:23,000 bp long.The dystrophin gene is approximately:2.2 million bp long.",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6ac153c3-80fc-83ed-9fa8-414be064fa73#root:~:text=Base%20pair%20(bp)%3AThe%20unit%20used%20in,gene%20is%20approximately%3A2.2%20million%20bp%20long.",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 28,
+   "id": "3ee0932cac3881e99580d57c70806981",
+   "url": "https://app.notion.com/p/3ee0932cac3881e99580d57c70806981",
+   "highlight": "The cell must determine:Where each intron starts.Where each intron ends.Exactly where RNA should be cut.Which remaining RNA regions should be joined.",
+   "note": "in 9. RNA splicing",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6ac153c3-80fc-83ed-9fa8-414be064fa73#root:~:text=The%20cell%20must%20determine%3AWhere%20each%20intron,remaining%20RNA%20regions%20should%20be%20joined.",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 29,
+   "id": "3ee0932cac388154b53cedfb68d2aa29",
+   "url": "https://app.notion.com/p/3ee0932cac388154b53cedfb68d2aa29",
+   "highlight": "8\\. Pre-mRNA processingThe lecture describes several major processing steps.The pre-mRNA receives a 7-methylguanosine cap.The RNA is cleaved at its 3′ end.A poly-A tail is then added to the 3′ end.Introns in the middle of the RNA are removed by splicing.The lecture metaphorically describes the splicing machinery as:Molecular scissors and tape.The machinery:Cuts out introns.Joins the remaining RNA regions together.After processing:The mature mRNA moves toward the nuclear envelope.It is exported from the nucleus.It can then be translated into protein.",
+   "note": "اینجا داستان اینه که وقتی DNA اول به RNA کپی می‌شود، RNA هنوز \\*\\*نسخه‌ی نهایی نیست\\*\\*. بهش می‌گوییم \\*\\*pre-mRNA\\*\\*.<br /><br />قبل از اینکه از nucleus خارج شود و ribosome آن را بخواند، چند تا «ادیت» رویش انجام می‌شود. این مجموعه می‌شود \\*\\*pre-mRNA processing\\*\\*. \\[PubMed\\](https://pubmed.ncbi.nlm.nih.gov/24617759/?utm\\_source=chatgpt.com)<br /><br />فرض کن اول این را داریم:<br /><br />\\`5' — exon — intron — exon — intron — exon — 3'\\`<br /><br />سه کار اصلی انجام می‌شود:<br /><br />1. \\*\\*5′ cap اضافه می‌شود\\*\\*  <br />به ابتدای RNA یک مولکول تغییر‌یافته به نام \\*\\*7-methylguanosine\\*\\* وصل می‌شود.<br /><br />\\`CAP — RNA\\`<br /><br />این cap به پایداری RNA، خروج از nucleus و بعداً شروع translation کمک می‌کند. \\[PubMed\\](https://pubmed.ncbi.nlm.nih.gov/27317694/?utm\\_source=chatgpt.com)<br /><br />2. \\*\\*Splicing انجام می‌شود\\*\\*  <br />قسمت‌های اضافی یعنی \\*\\*introns\\*\\* بریده می‌شوند و \\*\\*exons\\*\\* به هم وصل می‌شوند:<br /><br />قبل:<br />\\`exon 1 — intron — exon 2 — intron — exon 3\\`<br /><br />بعد:<br />\\`exon 1 — exon 2 — exon 3\\`<br /><br />برای همین lecture گفته \\*\\*scissors + tape\\*\\*:<br />\\*\\*scissors = بریدن intronها\\*\\*  <br />\\*\\*tape = چسباندن exonها به هم\\*\\*. \\[PubMed\\](https://pubmed.ncbi.nlm.nih.gov/21084389/?utm\\_source=chatgpt.com)<br /><br />3. \\*\\*3′ end بریده می‌شود و Poly-A tail اضافه می‌شود\\*\\*  <br />انتهای RNA در یک نقطه‌ی مشخص cleave می‌شود، بعد تعداد زیادی \\*\\*A = adenine\\*\\* پشت سر هم اضافه می‌شود:<br /><br />\\`RNA — AAAAAAAAAAAAA\\`<br /><br />این همان \\*\\*poly-A tail\\*\\* است و در پایداری، export و translation RNA نقش دارد. \\[PubMed\\](https://pubmed.ncbi.nlm.nih.gov/24243805/?utm\\_source=chatgpt.com)<br /><br />در نهایت:<br /><br />\\*\\*DNA → pre-mRNA → processing → mature mRNA → خروج از nucleus → ribosome → protein\\*\\*<br /><br />پس فقط این تصویر را نگه دار:<br /><br />\\*\\*pre-mRNA = نسخه‌ی خام RNA\\*\\*  <br />↓  <br />\\*\\*cap بزن + intronها را حذف کن + poly-A tail اضافه کن\\*\\*  <br />↓  <br />\\*\\*mature mRNA = نسخه‌ی آماده برای protein production\\*\\*<br /><br />یک نکته: این مراحل الزاماً کاملاً پشت‌سرهم نیستند؛ بخش زیادی از processing می‌تواند \\*\\*همزمان با transcription\\*\\* اتفاق بیفتد. \\[PubMed\\](https://pubmed.ncbi.nlm.nih.gov/23440351/?utm\\_source=chatgpt.com)",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6ac153c3-80fc-83ed-9fa8-414be064fa73#root:~:text=8.%20Pre%2DmRNA%20processingThe%20lecture%20describes%20several,can%20then%20be%20translated%20into%20protein.",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 30,
+   "id": "3ee0932cac3881738f58e3d29e89ef6c",
+   "url": "https://app.notion.com/p/3ee0932cac3881738f58e3d29e89ef6c",
+   "highlight": "When a eukaryotic gene is turned on:The entire gene is initially transcribed.",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6ac153c3-80fc-83ed-9fa8-414be064fa73#root:~:text=When%20a%20eukaryotic%20gene%20is%20turned%20on%3AThe%20entire%20gene%20is%20initially%20transcribed.",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 31,
+   "id": "3ee0932cac38810f951ccdf79fd47c31",
+   "url": "https://app.notion.com/p/3ee0932cac38810f951ccdf79fd47c31",
+   "highlight": "This allows one gene to produce multiple RNA and protein forms.",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6ac153c3-80fc-83ed-9fa8-414be064fa73#root:~:text=This%20allows%20one%20gene%20to%20produce%20multiple%20RNA%20and%20protein%20forms.",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 32,
+   "id": "3ee0932cac3881209260dda9f99e62ee",
+   "url": "https://app.notion.com/p/3ee0932cac3881209260dda9f99e62ee",
+   "highlight": "Different combinations of exons can be retained through alternative splicing.",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6ac153c3-80fc-83ed-9fa8-414be064fa73#root:~:text=Different%20combinations%20of%20exons%20can%20be%20retained%20through%20alternative%20splicing.",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 33,
+   "id": "3ee0932cac3881d28748d0aa35c87951",
+   "url": "https://app.notion.com/p/3ee0932cac3881d28748d0aa35c87951",
+   "highlight": "Exons are joined together after introns are removed.",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6ac153c3-80fc-83ed-9fa8-414be064fa73#root:~:text=Exons%20are%20joined%20together%20after%20introns%20are%20removed.",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 34,
+   "id": "3ee0932cac3881ad8d97cdaea4dfa4f1",
+   "url": "https://app.notion.com/p/3ee0932cac3881ad8d97cdaea4dfa4f1",
+   "highlight": "Some introns can be extremely large.",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6ac153c3-80fc-83ed-9fa8-414be064fa73#root:~:text=Some%20introns%20can%20be%20extremely%20large.",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 35,
+   "id": "3ee0932cac388193aa10eb19e10403e1",
+   "url": "https://app.notion.com/p/3ee0932cac388193aa10eb19e10403e1",
+   "highlight": "Introns can be much longer than exons.",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6ac153c3-80fc-83ed-9fa8-414be064fa73#root:~:text=Introns%20can%20be%20much%20longer%20than%20exons.",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 36,
+   "id": "3ee0932cac3881728bd4dbe795e9a8c0",
+   "url": "https://app.notion.com/p/3ee0932cac3881728bd4dbe795e9a8c0",
+   "highlight": "Split genesAs a eukaryotic gene is transcribed:The RNA molecule coming from DNA becomes progressively longer.",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6ac153c3-80fc-83ed-9fa8-414be064fa73#root:~:text=Split%20genesAs%20a%20eukaryotic%20gene%20is,coming%20from%20DNA%20becomes%20progressively%20longer.",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 37,
+   "id": "3ee0932cac388191bdffeaf4cc2a0b48",
+   "url": "https://app.notion.com/p/3ee0932cac388191bdffeaf4cc2a0b48",
+   "highlight": "in eukaryotes:Ribosomes do not directly access nuclear DNA.",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6ac153c3-80fc-83ed-9fa8-414be064fa73#root:~:text=in%20eukaryotes%3ARibosomes%20do%20not%20directly%20access%20nuclear%20DNA.",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 38,
+   "id": "3ee0932cac388166a33ade58023153ff",
+   "url": "https://app.notion.com/p/3ee0932cac388166a33ade58023153ff",
+   "highlight": "In eukaryotic cells:DNA is located inside the nucleus.Ribosomes are mainly outside the nucleus in the cytoplasm.Ribosomes can also be seen associated with the rough endoplasmic reticulum (rough ER).",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6ac153c3-80fc-83ed-9fa8-414be064fa73#root:~:text=In%20eukaryotic%20cells%3ADNA%20is%20located%20inside,the%20rough%20endoplasmic%20reticulum%20(rough%20ER).",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 39,
+   "id": "3ee0932cac38813e8d86fe78a917c031",
+   "url": "https://app.notion.com/p/3ee0932cac38813e8d86fe78a917c031",
+   "highlight": "Eukaryotic cells are described as:Much larger than bacteria.More internally complex than bacteria.",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6ac153c3-80fc-83ed-9fa8-414be064fa73#root:~:text=Eukaryotic%20cells%20are%20described%20as%3AMuch%20larger%20than%20bacteria.More%20internally%20complex%20than%20bacteria.",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 40,
+   "id": "3ee0932cac3881d8a07ed45df1a682de",
+   "url": "https://app.notion.com/p/3ee0932cac3881d8a07ed45df1a682de",
+   "highlight": "A white blood cell is given as an example of a eukaryotic cell.",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6ac153c3-80fc-83ed-9fa8-414be064fa73#root:~:text=A%20white%20blood%20cell%20is%20given,an%20example%20of%20a%20eukaryotic%20cell.",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 41,
+   "id": "3ee0932cac3881b59c7ae7e8bbb58d6e",
+   "url": "https://app.notion.com/p/3ee0932cac3881b59c7ae7e8bbb58d6e",
+   "highlight": "A bacterial cell is an example of a prokaryotic cell.",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6ac153c3-80fc-83ed-9fa8-414be064fa73#root:~:text=A%20bacterial%20cell%20is%20an%20example%20of%20a%20prokaryotic%20cell.",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 42,
+   "id": "3ee0932cac38811e96caea426194f517",
+   "url": "https://app.notion.com/p/3ee0932cac38811e96caea426194f517",
+   "highlight": "In bacteria:DNA can be transcribed into RNA.Ribosomes can associate with the RNA while transcription is occurring.Protein production can therefore occur directly from the newly produced RNA.",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6ac153c3-80fc-83ed-9fa8-414be064fa73#root:~:text=In%20bacteria%3ADNA%20can%20be%20transcribed%20into,directly%20from%20the%20newly%20produced%20RNA.",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 43,
+   "id": "3ee0932cac388186913ddbc7a6fda79e",
+   "url": "https://app.notion.com/p/3ee0932cac388186913ddbc7a6fda79e",
+   "highlight": "Translation changes information from:RNA sequence → protein sequence",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6ac153c3-80fc-83ed-9fa8-414be064fa73#root:~:text=Translation%20changes%20information%20from%3ARNA%20sequence%20%E2%86%92%20protein%20sequence",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 44,
+   "id": "3ee0932cac3881b6926dc78a561e251d",
+   "url": "https://app.notion.com/p/3ee0932cac3881b6926dc78a561e251d",
+   "highlight": "Transcription therefore changes information from:DNA sequence → RNA sequence.",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6ac153c3-80fc-83ed-9fa8-414be064fa73#root:~:text=Transcription%20therefore%20changes%20information%20from%3ADNA%20sequence%20%E2%86%92%20RNA%20sequence.",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 45,
+   "id": "3ee0932cac388173876bd30dd3da5450",
+   "url": "https://app.notion.com/p/3ee0932cac388173876bd30dd3da5450",
+   "highlight": "Image from chatgpt.com",
+   "note": "Why sequence RNA (versus DNA)?",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6ac0c541-1b20-83eb-963b-47f79887a070",
+   "tags": [
+    "Research Methods"
+   ],
+   "images": 1
+  },
+  {
+   "i": 46,
+   "id": "3ee0932cac3881fa8769dc8ed13604d7",
+   "url": "https://app.notion.com/p/3ee0932cac3881fa8769dc8ed13604d7",
+   "highlight": "RNAseq",
+   "note": "",
+   "site": "youtube.com",
+   "source": "https://www.youtube.com/watch?v=vyqN17_GkyI",
+   "tags": [
+    "Research Methods"
+   ],
+   "images": 1
+  },
+  {
+   "i": 47,
+   "id": "3ee0932cac388195a2d1fa1caa5276db",
+   "url": "https://app.notion.com/p/3ee0932cac388195a2d1fa1caa5276db",
+   "highlight": "Image from youtube.com",
+   "note": "",
+   "site": "youtube.com",
+   "source": "https://www.youtube.com/watch?v=08h3-05Y9JY",
+   "tags": [
+    "RNA_seq"
+   ],
+   "images": 1
+  },
+  {
+   "i": 48,
+   "id": "3ee0932cac3881c895d5c601e2890516",
+   "url": "https://app.notion.com/p/3ee0932cac3881c895d5c601e2890516",
+   "highlight": "Image from chatgpt.com",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6ac0c541-1b20-83eb-963b-47f79887a070",
+   "tags": [
+    "Research Methods"
+   ],
+   "images": 1
+  },
+  {
+   "i": 49,
+   "id": "3ee0932cac38812fa280c6ad46bde93d",
+   "url": "https://app.notion.com/p/3ee0932cac38812fa280c6ad46bde93d",
+   "highlight": "Gene Expression\\_ DNA to Protein.png",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6ac0c541-1b20-83eb-963b-47f79887a070",
+   "tags": [
+    "Biology"
+   ],
+   "images": 1
+  },
+  {
+   "i": 50,
+   "id": "3ee0932cac38810d8a62c5132910a149",
+   "url": "https://app.notion.com/p/3ee0932cac38810d8a62c5132910a149",
+   "highlight": "Classical RNA-seq protocols convert RNA to cDNA and fragment RNA or cDNA before sequencing",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6ac0d8e5-014c-83eb-8c95-0ed8fff77a23#root:~:text=Classical%20RNA%2Dseq%20protocols%20convert%20RNA%20to,fragment%20RNA%20or%20cDNA%20before%20sequencing",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 51,
+   "id": "3ee0932cac38816da77bdf23be828b07",
+   "url": "https://app.notion.com/p/3ee0932cac38816da77bdf23be828b07",
+   "highlight": "you usually do not directly read an entire mRNA molecule from beginning to end. Instead, you observe lots of short pieces and computationally reconstruct what was present. This is the classical RNA-seq workflow described in Wang et al. and Garber et al",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6ac0d8e5-014c-83eb-8c95-0ed8fff77a23#root:~:text=you%20usually%20do%20not%20directly%20read,et%20al.%20and%20Garber%20et%20al",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 52,
+   "id": "3ee0932cac3881949774e8a0eb8d7649",
+   "url": "https://app.notion.com/p/3ee0932cac3881949774e8a0eb8d7649",
+   "highlight": "goal of RNA seek is really to characterize these mature mRNA molecules",
+   "note": "",
+   "site": "youtube.com",
+   "source": "https://www.youtube.com/watch?v=08h3-05Y9JY#segments-container:~:text=goal%20of%20RNA%20seek%20is%20really%20to%20characterize%20these%20mature%20mRNA%20molecules",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 53,
+   "id": "3ee0932cac388120a4ffd030790205fa",
+   "url": "https://app.notion.com/p/3ee0932cac388120a4ffd030790205fa",
+   "highlight": "When the RNA copy is complete, it snakes out into the outer part of the cell",
+   "note": "6\\. Mature mRNA goes to the cytoplasm<br />After appropriate processing, the mature mRNA is exported from the nucleus into the cytoplasm.",
+   "site": "dnalc.cshl.edu",
+   "source": "https://dnalc.cshl.edu/resources/3d/central-dogma.html#tab-2:~:text=When%20the%20RNA%20copy%20is%20complete%2C,the%20outer%20part%20of%20the%20cell",
+   "tags": [
+    "Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 54,
+   "id": "3ee0932cac38818b9202e4798d47a3fc",
+   "url": "https://app.notion.com/p/3ee0932cac38818b9202e4798d47a3fc",
+   "highlight": "The spliceosome then brings the exons on either side of the intron very close together, ready to be cut",
+   "note": "",
+   "site": "dnalc.cshl.edu",
+   "source": "https://dnalc.cshl.edu/resources/3d/central-dogma.html#tab-2:~:text=The%20spliceosome%20then%20brings%20the%20exons,close%20together%2C%20ready%20to%20be%20cut",
+   "tags": [
+    "Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 55,
+   "id": "3ee0932cac3881bda2bccb842b6991f3",
+   "url": "https://app.notion.com/p/3ee0932cac3881bda2bccb842b6991f3",
+   "highlight": "6\\. Mature mRNA goes to the cytoplasm After appropriate processing, the mature mRNA is exported from the nucleus into the cytoplasm. So when the text says: “snakes out into the outer part of the cell” it means roughly: nucleus → cytoplasm Now the RNA can be read by a ribosome.",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6ac0c541-1b20-83eb-963b-47f79887a070#:~:text=6.%20Mature%20mRNA%20goes%20to%20the,can%20be%20read%20by%20a%20ribosome.",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 56,
+   "id": "3ee0932cac3881f887f2e887b797af6b",
+   "url": "https://app.notion.com/p/3ee0932cac3881f887f2e887b797af6b",
+   "highlight": "6\\. Mature mRNA goes to the cytoplasm After appropriate processing, the mature mRNA is exported from the nucleus into the cytoplasm.",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6ac0c541-1b20-83eb-963b-47f79887a070#:~:text=6.%20Mature%20mRNA%20goes%20to%20the,from%20the%20nucleus%20into%20the%20cytoplasm.",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 57,
+   "id": "3ee0932cac388191abebc625faa8c1f4",
+   "url": "https://app.notion.com/p/3ee0932cac388191abebc625faa8c1f4",
+   "highlight": "When the cell wants to express a protein-coding gene, RNA polymerase II transcribes it.",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6ac0c541-1b20-83eb-963b-47f79887a070#:~:text=When%20the%20cell%20wants%20to%20express,gene%2C%20RNA%20polymerase%20II%20transcribes%20it.",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 58,
+   "id": "3ee0932cac3881e59f26f94711018a21",
+   "url": "https://app.notion.com/p/3ee0932cac3881e59f26f94711018a21",
+   "highlight": "DNA is a long sequence made from four bases: A, C, G, T The two DNA strands form a double helix, with approximately: A ↔ T C ↔ G",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6ac0c541-1b20-83eb-963b-47f79887a070#:~:text=DNA%20is%20a%20long%20sequence%20made,A%20%E2%86%94%20T%20C%20%E2%86%94%20G",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 59,
+   "id": "3ee0932cac3881558dc6fc0e1d4e6053",
+   "url": "https://app.notion.com/p/3ee0932cac3881558dc6fc0e1d4e6053",
+   "highlight": "DNA → pre-mRNA → mature mRNA → protein",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6ac0c541-1b20-83eb-963b-47f79887a070#:~:text=DNA%20%E2%86%92%20pre%2DmRNA%20%E2%86%92%20mature%20mRNA%20%E2%86%92%20protein",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 60,
+   "id": "3ed0932cac38817ab401d44ab998fa71",
+   "url": "https://app.notion.com/p/3ed0932cac38817ab401d44ab998fa71",
+   "highlight": "The DNA double helix contains two linear sequences of the letters A C G and T, which carry coded instructions.",
+   "note": "",
+   "site": "dnalc.cshl.edu",
+   "source": "https://dnalc.cshl.edu/resources/3d/central-dogma.html#tab-2:~:text=The%20DNA%20double%20helix%20contains%20two,and%20T%2C%20which%20carry%20coded%20instructions.",
+   "tags": [
+    "Biology"
+   ],
+   "images": 5
+  },
+  {
+   "i": 61,
+   "id": "3ec0932cac388122ad9ef00b90a87d25",
+   "url": "https://app.notion.com/p/3ec0932cac388122ad9ef00b90a87d25",
+   "highlight": "Genomics: what DNA do I have? Epigenomics: which parts of that DNA are in what regulatory/chromatin state? Transcriptomics: which genes are being transcribed into RNA? Proteomics: which proteins are actually present?",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6abe1b8e-3e18-83ed-9803-f297962ebe1a",
+   "tags": [
+    "Genomics & Epigenetics"
+   ],
+   "images": 0
+  },
+  {
+   "i": 62,
+   "id": "3ec0932cac388111b7d4dc0493509b31",
+   "url": "https://app.notion.com/p/3ec0932cac388111b7d4dc0493509b31",
+   "highlight": "methylation",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6abe1b8e-3e18-83ed-9803-f297962ebe1a",
+   "tags": [
+    "Genomics & Epigenetics"
+   ],
+   "images": 0
+  },
+  {
+   "i": 63,
+   "id": "3ec0932cac38819aa1e7f478a29c1e90",
+   "url": "https://app.notion.com/p/3ec0932cac38819aa1e7f478a29c1e90",
+   "highlight": "The reason multimodal spatial data are useful is exactly that each modality contains information the others do not",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6abe1b8e-3e18-83ed-9803-f297962ebe1a#root:~:text=The%20reason%20multimodal%20spatial%20data%20are,contains%20information%20the%20others%20do%20not",
+   "tags": [
+    "Genomics & Epigenetics"
+   ],
+   "images": 0
+  },
+  {
+   "i": 64,
+   "id": "3ec0932cac388116b5fcc8183cb3b4ae",
+   "url": "https://app.notion.com/p/3ec0932cac388116b5fcc8183cb3b4ae",
+   "highlight": "RNA tells you what is being transcribed, ATAC tells you what chromatin is accessible, protein tells you what protein is present, and imaging tells you morphology.",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6abe1b8e-3e18-83ed-9803-f297962ebe1a#root:~:text=RNA%20tells%20you%20what%20is%20being,present%2C%20and%20imaging%20tells%20you%20morphology.",
+   "tags": [
+    "Genomics & Epigenetics"
+   ],
+   "images": 0
+  },
+  {
+   "i": 65,
+   "id": "3e90932cac388169ab39cfbf5d587ee6",
+   "url": "https://app.notion.com/p/3e90932cac388169ab39cfbf5d587ee6",
+   "highlight": "Nicheformer generalizes prior tokenization strategies22 by encoding sample covariates across technology modalities, enabling a unified framework for multimodal learning, opening up new possibilities for downstream tasks. We additionally enable learning multispecies embeddings with Nicheformer by defining orthologous genes across humans and mice",
+   "note": "خیلی ساده یعنی:<br /><br />\\*\\*Nicheformer روش Geneformer را برای تبدیل یک سلول به tokenها گسترش داده است.\\*\\*<br /><br />در Geneformer تقریباً ورودی این شکلی است:<br /><br />\\`\\`\\`text<br />Cell<br />↓<br />Gene A<br />Gene B<br />Gene C<br />...<br />\\`\\`\\`<br /><br />ژن‌ها بر اساس میزان expression رتبه‌بندی می‌شوند. Geneformer این ایده‌ی rank-based tokenization را برای single-cell استفاده کرده بود. :chatgpt-content-reference\\{index=\"0\"\\}<br /><br />Nicheformer علاوه بر ژن‌ها، چند \\*\\*context token\\*\\* هم اضافه می‌کند:<br /><br />\\`\\`\\`text<br />Human<br />Spatial<br />Xenium<br />Gene A<br />Gene B<br />Gene C<br />...<br />\\`\\`\\`<br /><br />یعنی مدل علاوه بر expression می‌فهمد:<br /><br />- این سلول \\*\\*human است یا mouse\\*\\*<br />- داده \\*\\*spatial است یا dissociated single-cell\\*\\*<br />- با چه تکنولوژی‌ای گرفته شده: Xenium، MERFISH، CosMx و غیره<br /><br />خود مقاله صراحتاً می‌گوید این context tokenها برای \\*\\*species، modality و technology\\*\\* اضافه شده‌اند. :chatgpt-content-reference\\{index=\"1\"\\}<br /><br />پس آن جمله می‌گوید:<br /><br />> \\*\\*ما روش tokenization قبلی را توسعه دادیم تا مدل بتواند داده‌های حاصل از تکنولوژی‌های مختلف را داخل یک مدل واحد یاد بگیرد.\\*\\*<br /><br />و \\*\\*multimodal\\*\\* در این قسمت بیشتر یعنی ترکیب \\*\\*spatial transcriptomics + dissociated scRNA-seq و assayهای مختلف\\*\\*؛ نه مثلاً image + RNA + protein. :chatgpt-content-reference\\{index=\"2\"\\}",
+   "site": "nature.com",
+   "source": "https://www.nature.com/articles/s41592-025-02814-z#Sec2-content:~:text=Nicheformer%20generalizes%20prior%20tokenization%20strategies22%20by,orthologous%20genes%20across%20humans%20and%20mice",
+   "tags": [
+    "ML & Foundation Models"
+   ],
+   "images": 0
+  },
+  {
+   "i": 66,
+   "id": "3e90932cac3881c6b50cc1aa4e2ea750",
+   "url": "https://app.notion.com/p/3e90932cac3881c6b50cc1aa4e2ea750",
+   "highlight": "Geneformer22, scGPT21 and UCE23 pretrained on dissociated data alone, f",
+   "note": "",
+   "site": "nature.com",
+   "source": "https://www.nature.com/articles/s41592-025-02814-z#Sec1-content:~:text=Geneformer22%2C%20scGPT21%20and%20UCE23%20pretrained%20on%20dissociated%20data%20alone%2C%20f",
+   "tags": [
+    "ML & Foundation Models"
+   ],
+   "images": 0
+  },
+  {
+   "i": 67,
+   "id": "3e90932cac388137b286c4659a010260",
+   "url": "https://app.notion.com/p/3e90932cac388137b286c4659a010260",
+   "highlight": "Nicheformer is able to learn a joint representation of single-cell and spatial genomics.",
+   "note": "",
+   "site": "nature.com",
+   "source": "https://www.nature.com/articles/s41592-025-02814-z#Sec1-content:~:text=Nicheformer%20is%20able%20to%20learn%20a,representation%20of%20single%2Dcell%20and%20spatial%20genomics.",
+   "tags": [
+    "ML & Foundation Models"
+   ],
+   "images": 0
+  },
+  {
+   "i": 68,
+   "id": "3e90932cac3881319819cbcd2b7efb24",
+   "url": "https://app.notion.com/p/3e90932cac3881319819cbcd2b7efb24",
+   "highlight": "They rely on large datasets, usually in the order of tens of millions of cells, for pretraining",
+   "note": "",
+   "site": "nature.com",
+   "source": "https://www.nature.com/articles/s41592-025-02814-z#Sec1-content:~:text=They%20rely%20on%20large%20datasets%2C%20usually,of%20millions%20of%20cells%2C%20for%20pretraining",
+   "tags": [
+    "ML & Foundation Models"
+   ],
+   "images": 0
+  },
+  {
+   "i": 69,
+   "id": "3e90932cac3881b5a5cce55dc0d6f424",
+   "url": "https://app.notion.com/p/3e90932cac3881b5a5cce55dc0d6f424",
+   "highlight": "These models differ in tokenization and learning strategies, yet most of them leverage the transformer architecture with self-attention",
+   "note": "Foundation models<br />",
+   "site": "nature.com",
+   "source": "https://www.nature.com/articles/s41592-025-02814-z#Sec1-content:~:text=These%20models%20differ%20in%20tokenization%20and,leverage%20the%20transformer%20architecture%20with%20self%2Dattention",
+   "tags": [
+    "ML & Foundation Models"
+   ],
+   "images": 0
+  },
+  {
+   "i": 70,
+   "id": "3e90932cac38811ea126f8aeaeecbc84",
+   "url": "https://app.notion.com/p/3e90932cac38811ea126f8aeaeecbc84",
+   "highlight": "scRNA-seq) requires cell dissociation, losing information about the cellular microenvironment and hindering a complete understanding of molecular variation4",
+   "note": "",
+   "site": "nature.com",
+   "source": "https://www.nature.com/articles/s41592-025-02814-z#Sec1-content:~:text=scRNA%2Dseq)%20requires%20cell%20dissociation%2C%20losing%20information,a%20complete%20understanding%20of%20molecular%20variation4",
+   "tags": [
+    "ML & Foundation Models"
+   ],
+   "images": 0
+  },
+  {
+   "i": 71,
+   "id": "3e90932cac3881cb8f7fcd7deda12d38",
+   "url": "https://app.notion.com/p/3e90932cac3881cb8f7fcd7deda12d38",
+   "highlight": "3\\. DNA sequencing / copy-number profiling اینجا دیگر RNA را نمی‌خوانی؛ DNA را بررسی می‌کنی. مثلاً ممکن است ببینی: EGFR amplification CDKN2A deletion PTEN mutation Chromosome 7 gain Chromosome 10 loss",
+   "note": "این اطلاعات بیشتر درباره genotype است تا cell state.<br />یعنی به سؤالاتی مثل این جواب می‌دهد:<br />چه mutationsی در tumor وجود دارند؟<br /><br />کدام chromosome regions gain/loss شده‌اند؟<br /><br />آیا دو نمونه احتمالاً cloneهای مرتبط دارند؟<br /><br />اما اینکه یک gene amplification دارد به این معنی نیست که assay مستقیماً به تو گفته باشد gene فعال است.<br />DNA:<br />EGFR amplification<br /><br />با:<br />RNA:<br />EGFR expression high",
+   "site": "127.0.0.1",
+   "source": "http://127.0.0.1:5500/docs/datasets/FIELD_GUIDE.html#care",
+   "tags": [
+    "Research Methods"
+   ],
+   "images": 0
+  },
+  {
+   "i": 72,
+   "id": "3e80932cac388163b96ed9aaa0fa223e",
+   "url": "https://app.notion.com/p/3e80932cac388163b96ed9aaa0fa223e",
+   "highlight": "14\\. Probe-based FFPE در assayهای probe-based، تو sequencing آزاد transcript را نداری. Probe می‌گوید: آیا target من اینجاست یا نه؟ مثلاً: probe ───────── EGFR RNA در نتیجه معمولاً یک genome-wide: spliced matrix + unspliced matrix نداری. پس conventional RNA velocity عملاً substrate لازم را ندارد.",
+   "note": "",
+   "site": "claude.ai",
+   "source": "https://claude.ai/artifact/4fQnF88bpMWPjaExt6xP8D",
+   "tags": [
+    "Research Methods"
+   ],
+   "images": 0
+  },
+  {
+   "i": 73,
+   "id": "3e80932cac388108ac0fd0fb22b8c0fd",
+   "url": "https://app.notion.com/p/3e80932cac388108ac0fd0fb22b8c0fd",
+   "highlight": "MES خودش یک چیز واحد نیست. دو flavor مهم داریم: MES-Hyp Hyp = hypoxia یعنی MES همراه با programme کمبود اکسیژن. این cells بیشتر در: hypoxic region + macrophages + low oxygen دیده می‌شوند.",
+   "note": "",
+   "site": "claude.ai",
+   "source": "https://claude.ai/artifact/4fQnF88bpMWPjaExt6xP8D",
+   "tags": [
+    "GBM"
+   ],
+   "images": 0
+  },
+  {
+   "i": 74,
+   "id": "3e80932cac38814e8dedded0b0b5eca4",
+   "url": "https://app.notion.com/p/3e80932cac38814e8dedded0b0b5eca4",
+   "highlight": "MES تا حد زیادی یک programme مربوط به stress / injury / hypoxia / inflammation هم هست.",
+   "note": "",
+   "site": "claude.ai",
+   "source": "https://claude.ai/artifact/4fQnF88bpMWPjaExt6xP8D",
+   "tags": [
+    "Therapy & Drug Response"
+   ],
+   "images": 0
+  },
+  {
+   "i": 75,
+   "id": "3e80932cac38813db675f07424e94689",
+   "url": "https://app.notion.com/p/3e80932cac38813db675f07424e94689",
+   "highlight": "79% of first recurrences are local / in-field یعنی وقتی تومور برای اولین بار برمی‌گردد، در حدود 79٪ موارد reported recurrence در همان محدوده‌ی قبلی یا داخل میدان radiotherapy دیده می‌شود؛ نه اینکه لزوماً جای کاملاً جدیدی در مغز ایجاد شود. Meta-analysis سال 2026 شامل 107 مطالعه و 10,529 بیمار، 79.2% local/in-field enhancing involvement گزارش کرد. Springer Link",
+   "note": "",
+   "site": "claude.ai",
+   "source": "https://claude.ai/artifact/4fQnF88bpMWPjaExt6xP8D",
+   "tags": [
+    "Therapy & Drug Response"
+   ],
+   "images": 0
+  },
+  {
+   "i": 76,
+   "id": "3e80932cac3881c8a9bded61b8200180",
+   "url": "https://app.notion.com/p/3e80932cac3881c8a9bded61b8200180",
+   "highlight": "Spatial NT-seq did this on Visium in mouse brain. It has never been done in a tumour.",
+   "note": "",
+   "site": "1da8558f-a0c7-48d1-ae8d-5a112817d6c2.frame.claudeusercontent.com",
+   "source": "https://1da8558f-a0c7-48d1-ae8d-5a112817d6c2.frame.claudeusercontent.com/_f/1790421442-f5b3/#primer-9:~:text=Spatial%20NT%2Dseq%20did%20this%20on%20Visium,never%20been%20done%20in%20a%20tumour.",
+   "tags": [
+    "Therapy & Drug Response"
+   ],
+   "images": 0
+  },
+  {
+   "i": 77,
+   "id": "3e80932cac3881cbb2b0fb9fe5852d93",
+   "url": "https://app.notion.com/p/3e80932cac3881cbb2b0fb9fe5852d93",
+   "highlight": "f a cell holds more unspliced RNA than the steady-state balance predicts, the gene is switching on; if less, switching off. Combining genes gives each cell a direction of change",
+   "note": "",
+   "site": "1da8558f-a0c7-48d1-ae8d-5a112817d6c2.frame.claudeusercontent.com",
+   "source": "https://1da8558f-a0c7-48d1-ae8d-5a112817d6c2.frame.claudeusercontent.com/_f/1790421442-f5b3/#primer-9:~:text=f%20a%20cell%20holds%20more%20unspliced,each%20cell%20a%20direction%20of%20change",
+   "tags": [
+    "Therapy & Drug Response"
+   ],
+   "images": 0
+  },
+  {
+   "i": 78,
+   "id": "3e80932cac3881ef93e5c3d07a172355",
+   "url": "https://app.notion.com/p/3e80932cac3881ef93e5c3d07a172355",
+   "highlight": "Proportions at two time points cannot separate these stories. You need further measurements: lineage (which cell became what), rates of death and division, and malignant calls anchored to DNA.",
+   "note": "",
+   "site": "1da8558f-a0c7-48d1-ae8d-5a112817d6c2.frame.claudeusercontent.com",
+   "source": "https://1da8558f-a0c7-48d1-ae8d-5a112817d6c2.frame.claudeusercontent.com/_f/1790421442-f5b3/#primer-9:~:text=Proportions%20at%20two%20time%20points%20cannot,and%20malignant%20calls%20anchored%20to%20DNA.",
+   "tags": [
+    "Therapy & Drug Response"
+   ],
+   "images": 0
+  },
+  {
+   "i": 79,
+   "id": "3e80932cac3881a99be4f2b19bcc475a",
+   "url": "https://app.notion.com/p/3e80932cac3881a99be4f2b19bcc475a",
+   "highlight": "وقتی scRNA-seq داریم، اغلب cancer cells را از روی ردّ CNVهای سرطانی در gene expression شناسایی می‌کنیم؛ مثلاً chr7 gain + chr10 loss در GBM. اما چون gene expression می‌تواند به دلایل غیرژنتیکی مثل hypoxia یا cell cycle تغییر کند، این inference ممکن است اشتباه باشد. DNA sequencing همان tumor یک مرجع مستقل و محکم‌تر برای مشخص کردن copy-number alterations می‌دهد. و برای پروژه‌ای که روی تغییر cell states مثل MES در primary vs recurrence کار می‌کند، این خیلی مهم است: اگر malignant/non-malignant call را فقط از RNA بسازی، ممکن است تغییر state را با تغییر identity اشتباه بگیری.",
+   "note": "",
+   "site": "claude.ai",
+   "source": "https://claude.ai/artifact/4fQnF88bpMWPjaExt6xP8D",
+   "tags": [
+    "Therapy & Drug Response"
+   ],
+   "images": 0
+  },
+  {
+   "i": 80,
+   "id": "3e80932cac3881b5b771fa944cd0553a",
+   "url": "https://app.notion.com/p/3e80932cac3881b5b771fa944cd0553a",
+   "highlight": "3\\. ولی scRNA-seq که DNA را اندازه نمی‌گیرد! دقیقاً نکته همین است. scRNA-seq به ما می‌دهد:",
+   "note": "scRNA-seq به ما می‌دهد:<br />how much RNA from each gene<br /><br />نه تعداد واقعی chromosomeها.<br />پس ابزارهایی مثل inferCNV سعی می‌کنند از روی RNA حدس بزنند DNA چه وضعیتی دارد.<br />ایده‌شان این است:<br />اگر chromosome 7 یک copy اضافه داشته باشد، تعداد زیادی از geneهای روی chromosome 7 ممکن است به طور میانگین کمی بیشتر expressed شوند.",
+   "site": "claude.ai",
+   "source": "https://claude.ai/artifact/4fQnF88bpMWPjaExt6xP8D",
+   "tags": [
+    "Therapy & Drug Response"
+   ],
+   "images": 0
+  },
+  {
+   "i": 81,
+   "id": "3e80932cac3881d38061d9e519e44396",
+   "url": "https://app.notion.com/p/3e80932cac3881d38061d9e519e44396",
+   "highlight": "1\\. Copy number یعنی چی؟ هر سلول طبیعی انسان معمولاً از هر chromosome دو نسخه دارد:",
+   "note": "یکی از مادر، یکی از پدر.<br />Cancer cells معمولاً DNAشان به‌هم‌ریخته است و ممکن است بعضی chromosomeها را زیاد یا کم کنند.<br />در GBM یک pattern بسیار رایج این است:<br />Chromosome 7  → 3 copies   ↑ gain<br />Chromosome 10 → 1 copy     ↓ loss<br />به این‌ها copy-number alterations (CNA/CNV) می‌گوییم. Gain of chromosome 7 و loss of chromosome 10 از alterationهای کلاسیک GBM هستند، ولی در تک‌تک GBMها الزاماً هر دو دقیقاً به همین شکل وجود ندارند. Patel et al. در single-cell GBM هم از همین pattern برای جدا کردن malignant cells استفاده کردند. PubMed",
+   "site": "claude.ai",
+   "source": "https://claude.ai/artifact/4fQnF88bpMWPjaExt6xP8D",
+   "tags": [
+    "Therapy & Drug Response"
+   ],
+   "images": 0
+  },
+  {
+   "i": 82,
+   "id": "3e80932cac38819aace8e0033c4dbe2f",
+   "url": "https://app.notion.com/p/3e80932cac38819aace8e0033c4dbe2f",
+   "highlight": "6\\. چرا dexamethasone برای research مشکل ایجاد می‌کند؟ چون فقط swelling را تغییر نمی‌دهد. Steroidها می‌توانند روی: - immune cells - inflammatory signaling - transcription - metabolism - tumor-cell programs اثر بگذارند. مثلاً dexamethasone می‌تواند immune responses را suppress کند و مطالعات experimental نشان داده‌اند که می‌تواند transcriptional programs در glioblastoma cells را نیز تغییر دهد. OUP Academic بنابراین فرض کن این دو sample را داری: Patient A: no dexamethasone Patient B: high-dose dexamethasone بعد RNA-seq انجام می‌دهی و می‌بینی: Gene X: Patient A = low Patient B = high ممکن است فکر کنی: biology تومور فرق دارد. ولی شاید بخشی از difference فقط به خاطر: dexamethasone exposure باشد. به چنین چیزی می‌گوییم confounder / hidden variable. یعنی متغیری که اگر حواست به آن نباشد، ممکن است نتیجه را اشتباه تفسیر کنی.",
+   "note": "",
+   "site": "google.com",
+   "source": "https://www.google.com/search?q=swelling+%2F+edema&sca_esv=54dc793dbd0950c5&rlz=1C5CHFA_enDE1188DE1188&sxsrf=APpeQnt1WH4TI9YihoOi2oAv-UNRNRQESQ%3A1790506468755&ei=5PW4avHBLcvNkdUP47XjwQQ&biw=946&bih=821&uact=5&oq=swelling+%2F+edema&gs_lp=Egxnd3Mtd2l6LXNlcnAiEHN3ZWxsaW5nIC8gZWRlbWEyBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yCBAAGBYYHhgKSPgJUJ8DWJ8DcAJ4AZABAJgBY6ABY6oBATG4AQPIAQD4AQL4AQGYAgGgAmmYAwCIBgGSBwMwLjGgB5sFsgcDMC4xuAdpwgcDMi0xyAcFgAgB&sclient=gws-wiz-serp",
+   "tags": [
+    "Therapy & Drug Response"
+   ],
+   "images": 0
+  },
+  {
+   "i": 83,
+   "id": "3e80932cac388132a306d4545451fee1",
+   "url": "https://app.notion.com/p/3e80932cac388132a306d4545451fee1",
+   "highlight": "5\\. Dexamethasone چیست؟ GBM می‌تواند باعث swelling / edema اطراف تومور شود. یعنی مایع در بافت مغز جمع می‌شود: Tumour ↓ leaky vessels ↓ brain edema ↓ pressure / headache / neurological symptoms Dexamethasone یک corticosteroid قوی است که می‌تواند این edema را کاهش دهد؛ به همین دلیل در بیماران symptomatic بسیار رایج است. اما همه‌ی بیماران لزوماً dexamethasone نمی‌گیرند و guidelines توصیه می‌کنند در صورت نبود علائم لازم، از مصرف غیرضروری اجتناب شود. OUP Academic",
+   "note": "",
+   "site": "claude.ai",
+   "source": "https://claude.ai/artifact/4fQnF88bpMWPjaExt6xP8D",
+   "tags": [
+    "GBM"
+   ],
+   "images": 0
+  },
+  {
+   "i": 84,
+   "id": "3e80932cac38814f8564d6c45d76339e",
+   "url": "https://app.notion.com/p/3e80932cac38814f8564d6c45d76339e",
+   "highlight": "TMZ = DNA را خراب می‌کند. MGMT = خرابی TMZ را تعمیر می‌کند. MGMT methylated = تعمیر کمتر → TMZ مؤثرتر.",
+   "note": "",
+   "site": "claude.ai",
+   "source": "https://claude.ai/artifact/4fQnF88bpMWPjaExt6xP8D",
+   "tags": [
+    "GBM"
+   ],
+   "images": 0
+  },
+  {
+   "i": 85,
+   "id": "3e80932cac38812daf1eec4eccb60f5d",
+   "url": "https://app.notion.com/p/3e80932cac38812daf1eec4eccb60f5d",
+   "highlight": "2\\. Temozolomide چیست؟ Temozolomide یک chemotherapy drug است. ایده‌ی بسیار ساده: Tumour cell DNA ↓ Temozolomide adds chemical damage ↓ DNA becomes harder to copy correctly ↓ cell may die / stop proliferating TMZ نوعی DNA-alkylating agent است؛ یعنی روی DNA تغییرات شیمیایی ایجاد می‌کند. Nature اما سلول یک سیستم تعمیر DNA هم دارد. اینجاست که MGMT وارد داستان می‌شود.",
+   "note": "",
+   "site": "claude.ai",
+   "source": "https://claude.ai/artifact/4fQnF88bpMWPjaExt6xP8D",
+   "tags": [
+    "Therapy & Drug Response"
+   ],
+   "images": 0
+  },
+  {
+   "i": 86,
+   "id": "3e80932cac388158a368d045fd9dd8e5",
+   "url": "https://app.notion.com/p/3e80932cac388158a368d045fd9dd8e5",
+   "highlight": "1\\. Stupp protocol چیست؟ از 2005 یک رژیم درمانی استاندارد برای بسیاری از بیماران GBM به نام Stupp protocol استفاده می‌شود. اصلش این است: 1. Surgery ↓ 2. Radiotherapy + Temozolomide ↓ 3. Temozolomide alone اول جراح تا جایی که بدون آسیب جدی به مغز امکان دارد تومور را برمی‌دارد. به این می‌گویند: maximal safe resection یعنی هدف «هرچه بیشتر بردار» نیست؛ هدف این است: تا جای ممکن tumor بردار، ولی functionهای مهم مغز را حفظ کن. بعد معمولاً حدود ۶ هفته radiotherapy انجام می‌شود و همزمان بیمار دارویی به نام Temozolomide (TMZ) می‌گیرد. بعد از آن معمولاً TMZ به‌تنهایی در چرخه‌های ۲۸روزه ادامه پیدا می‌کند؛ پروتکل کلاسیک شش cycle دارد. e-bnr.org",
+   "note": "",
+   "site": "claude.ai",
+   "source": "https://claude.ai/artifact/4fQnF88bpMWPjaExt6xP8D",
+   "tags": [
+    "Therapy & Drug Response"
+   ],
+   "images": 0
+  },
+  {
+   "i": 87,
+   "id": "3e80932cac388117afbfcb2175793446",
+   "url": "https://app.notion.com/p/3e80932cac388117afbfcb2175793446",
+   "highlight": "خلاصه‌ی خیلی کوتاه برای حفظ کردن محور اصلی: Distance from blood vessels → oxygen level → cell behaviour نزدیک necrosis: - hypoxia - MES-like cells - macrophages لبه‌ی تومور: - tumour cells mixed with normal brain - interaction with neurons niche: - یک neighborhood سلولی - از داده infer می‌شود - روش‌های مختلف برای پیدا کردنش خیلی با هم توافق ندارند اگر خواستی، من می‌تونم همین را برایت به صورت یک شکل خیلی ساده ASCII هم بکشم که کاملاً توی ذهنت بماند.",
+   "note": "",
+   "site": "google.com",
+   "source": "https://www.google.com/search?sca_esv=54dc793dbd0950c5&rlz=1C5CHFA_enDE1188DE1188&sxsrf=APpeQnugDI-TdWVc-0msfnu2j-RJyluetQ:1790505705377&q=ARI+%3D+Adjusted+Rand+Index&source=lnms&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8c4u0nXx4bEIpwm1lnNH832VTJOOCxW_fyN-Q_ezyf8gKjm3rhh_G8jdZ2Q6tji4z8Mva6cfvBj5rpPch2IC955IbzrbwHf6tkbFbd-nuFdbKth9Y-58t5LtnYgTA4TWDFYCUNl4d7F9XBAwiEq2T2c7SNgrvMxYiRBXL4fnQnnTOewx28&sa=X&ved=2ahUKEwiL3KXEyY6XAxUZQvEDHdOVORMQ0pQJegQIDRAB&biw=946&bih=821&dpr=2",
+   "tags": [
+    "Tumor Microenvironment"
+   ],
+   "images": 0
+  },
+  {
+   "i": 88,
+   "id": "3e80932cac3881309bc3d115cdbf5204",
+   "url": "https://app.notion.com/p/3e80932cac3881309bc3d115cdbf5204",
+   "highlight": "\\[necrosis\\] ↓ \\[hypoxic zone\\] ↓ \\[tumour bulk\\] ↓ \\[better-vascularised zone / near vessels\\] ↓ \\[invasive edge\\] ↓ \\[normal brain\\]",
+   "note": "",
+   "site": "claude.ai",
+   "source": "https://claude.ai/artifact/4fQnF88bpMWPjaExt6xP8D",
+   "tags": [
+    "Tumor Microenvironment"
+   ],
+   "images": 0
+  },
+  {
+   "i": 89,
+   "id": "3e80932cac3881e1b438e5f679c5f4b5",
+   "url": "https://app.notion.com/p/3e80932cac3881e1b438e5f679c5f4b5",
+   "highlight": "\\[necrosis\\] ↓ \\[hypoxic zone\\] ↓ \\[tumour bulk\\] ↓ \\[better-vascularised zone / near vessels\\] ↓ \\[invasive edge\\] ↓ \\[normal brain\\]",
+   "note": "",
+   "site": "claude.ai",
+   "source": "https://claude.ai/artifact/4fQnF88bpMWPjaExt6xP8D",
+   "tags": [
+    "Tumor Microenvironment"
+   ],
+   "images": 0
+  },
+  {
+   "i": 90,
+   "id": "3e80932cac3881bc8701eef6b4cd7dff",
+   "url": "https://app.notion.com/p/3e80932cac3881bc8701eef6b4cd7dff",
+   "highlight": "near vessels = better oxygen far from vessels = hypoxia very far / severe = necrosis",
+   "note": "",
+   "site": "claude.ai",
+   "source": "https://claude.ai/artifact/4fQnF88bpMWPjaExt6xP8D",
+   "tags": [
+    "Tumor Microenvironment"
+   ],
+   "images": 0
+  },
+  {
+   "i": 91,
+   "id": "3e80932cac388193aa53f205676d7e47",
+   "url": "https://app.notion.com/p/3e80932cac388193aa53f205676d7e47",
+   "highlight": "near vessels = better oxygen far from vessels = hypoxia very far / severe = necrosis",
+   "note": "",
+   "site": "claude.ai",
+   "source": "https://claude.ai/artifact/4fQnF88bpMWPjaExt6xP8D",
+   "tags": [
+    "Tumor Microenvironment"
+   ],
+   "images": 0
+  },
+  {
+   "i": 92,
+   "id": "3e80932cac388148b3cccb40525ef914",
+   "url": "https://app.notion.com/p/3e80932cac388148b3cccb40525ef914",
+   "highlight": "blood vessel → oxygen high far away → oxygen low",
+   "note": "",
+   "site": "claude.ai",
+   "source": "https://claude.ai/artifact/4fQnF88bpMWPjaExt6xP8D",
+   "tags": [
+    "Tumor Microenvironment"
+   ],
+   "images": 0
+  },
+  {
+   "i": 93,
+   "id": "3e80932cac38810ab424f8e7841a40ab",
+   "url": "https://app.notion.com/p/3e80932cac38810ab424f8e7841a40ab",
+   "highlight": "Hypoxia یعنی کمبود اکسیژن.",
+   "note": "",
+   "site": "claude.ai",
+   "source": "https://claude.ai/artifact/4fQnF88bpMWPjaExt6xP8D",
+   "tags": [
+    "Tumor Microenvironment"
+   ],
+   "images": 0
+  },
+  {
+   "i": 94,
+   "id": "3e80932cac3881248f16f40c1802d522",
+   "url": "https://app.notion.com/p/3e80932cac3881248f16f40c1802d522",
+   "highlight": "Oxygen organises much of it. Far from vessels, cells run short of oxygen (hypoxia) and die (necrosis)",
+   "note": "",
+   "site": "1da8558f-a0c7-48d1-ae8d-5a112817d6c2.frame.claudeusercontent.com",
+   "source": "https://1da8558f-a0c7-48d1-ae8d-5a112817d6c2.frame.claudeusercontent.com/_f/1790421442-f5b3/#primer-4:~:text=Oxygen%20organises%20much%20of%20it.%20Far,of%20oxygen%20(hypoxia)%20and%20die%20(necrosis)",
+   "tags": [
+    "Tumor Microenvironment"
+   ],
+   "images": 0
+  },
+  {
+   "i": 95,
+   "id": "3e80932cac3881c2a144ce456c0075a2",
+   "url": "https://app.notion.com/p/3e80932cac3881c2a144ce456c0075a2",
+   "highlight": "Image from claude.ai",
+   "note": "",
+   "site": "claude.ai",
+   "source": "https://claude.ai/artifact/4fQnF88bpMWPjaExt6xP8D",
+   "tags": [
+    "Tumor Microenvironment"
+   ],
+   "images": 1
+  },
+  {
+   "i": 96,
+   "id": "3e80932cac388111afdac1e894a9efea",
+   "url": "https://app.notion.com/p/3e80932cac388111afdac1e894a9efea",
+   "highlight": "Neuron → sends signal Astrocyte → supports neurons/environment Oligodendrocyte → makes myelin around axons Microglia → resident immune cell of brain",
+   "note": "",
+   "site": "claude.ai",
+   "source": "https://claude.ai/artifact/4fQnF88bpMWPjaExt6xP8D",
+   "tags": [
+    "Tumor Microenvironment"
+   ],
+   "images": 0
+  },
+  {
+   "i": 97,
+   "id": "3e80932cac38815db364c34b9f547360",
+   "url": "https://app.notion.com/p/3e80932cac38815db364c34b9f547360",
+   "highlight": "Oligodendrocytes",
+   "note": "",
+   "site": "claude.ai",
+   "source": "https://claude.ai/artifact/4fQnF88bpMWPjaExt6xP8D",
+   "tags": [
+    "Tumor Microenvironment"
+   ],
+   "images": 1
+  },
+  {
+   "i": 98,
+   "id": "3e80932cac388188bff6c51f9ebcd7d6",
+   "url": "https://app.notion.com/p/3e80932cac388188bff6c51f9ebcd7d6",
+   "highlight": "GBM tissue │ ├── malignant tumour cells │ ├── immune cells │ ├── macrophages │ ├── microglia │ └── T cells │ ├── blood-vessel cells │ └── normal brain cells ├── neurons ├── astrocytes └── oligodendrocytes",
+   "note": "",
+   "site": "claude.ai",
+   "source": "https://claude.ai/artifact/4fQnF88bpMWPjaExt6xP8D",
+   "tags": [
+    "Tumor Microenvironment"
+   ],
+   "images": 1
+  },
+  {
+   "i": 99,
+   "id": "3e80932cac38814a974bfdffcb82458b",
+   "url": "https://app.notion.com/p/3e80932cac38814a974bfdffcb82458b",
+   "highlight": "NPC-like → looks like neural progenitor OPC-like → looks like oligodendrocyte precursor AC-like → looks like astrocyte MES-like → looks like stressed / wounded / inflammatory tissue",
+   "note": "",
+   "site": "claude.ai",
+   "source": "https://claude.ai/artifact/4fQnF88bpMWPjaExt6xP8D",
+   "tags": [
+    "Tumor Microenvironment"
+   ],
+   "images": 0
+  },
+  {
+   "i": 100,
+   "id": "3e80932cac388115a98ce892b9541236",
+   "url": "https://app.notion.com/p/3e80932cac388115a98ce892b9541236",
+   "highlight": "مطالعه‌ی Linnarsson lab در 2026 نشان داد که برنامه‌ی MES-like اختصاصی tumor cells نیست. بعضی non-malignant cells، مثل astrocytes، هم وقتی در معرض hypoxia یا blood plasma قرار گرفتند، بخشی از همین gene program را روشن کردند. این نشان می‌دهد MES-like حداقل تا حدی می‌تواند یک general tissue reaction to injury باشد، نه فقط یک cancer-specific identity.",
+   "note": "",
+   "site": "claude.ai",
+   "source": "https://claude.ai/artifact/4fQnF88bpMWPjaExt6xP8D",
+   "tags": [
+    "GBM Cell States"
+   ],
+   "images": 0
+  },
+  {
+   "i": 101,
+   "id": "3e80932cac388106914dc410d048834a",
+   "url": "https://app.notion.com/p/3e80932cac388106914dc410d048834a",
+   "highlight": "MES-like genes are a general tissue wound response",
+   "note": "",
+   "site": "claude.ai",
+   "source": "https://claude.ai/artifact/4fQnF88bpMWPjaExt6xP8D",
+   "tags": [
+    "GBM Cell States"
+   ],
+   "images": 0
+  },
+  {
+   "i": 102,
+   "id": "3e80932cac38813a9dc0f78443f15ba8",
+   "url": "https://app.notion.com/p/3e80932cac38813a9dc0f78443f15ba8",
+   "highlight": "افزایش MES-like بعد از therapy در مطالعات مختلف گزارش شده، از جمله در recurrent GBM.",
+   "note": "",
+   "site": "claude.ai",
+   "source": "https://claude.ai/artifact/4fQnF88bpMWPjaExt6xP8D",
+   "tags": [
+    "GBM Cell States"
+   ],
+   "images": 0
+  },
+  {
+   "i": 103,
+   "id": "3e80932cac38815ba4c4f11ebbf39de9",
+   "url": "https://app.notion.com/p/3e80932cac38815ba4c4f11ebbf39de9",
+   "highlight": "AC-like AC = Astrocyte Astrocyte یکی از سلول‌های اصلی پشتیبان مغز است. بعضی malignant cells برنامه‌ی ژنی شبیه astrocyte دارند، بنابراین می‌گویند: AC-like این حالت اغلب با EGFR amplification/activation ارتباط دارد. PubMed",
+   "note": "",
+   "site": "claude.ai",
+   "source": "https://claude.ai/artifact/4fQnF88bpMWPjaExt6xP8D",
+   "tags": [
+    "GBM Cell States"
+   ],
+   "images": 0
+  },
+  {
+   "i": 104,
+   "id": "3e80932cac38818bab25f0ee7e37b04c",
+   "url": "https://app.notion.com/p/3e80932cac38818bab25f0ee7e37b04c",
+   "highlight": "OPC = Oligodendrocyte Precursor Cell OPC یک سلول طبیعی مغز است که بعداً می‌تواند تبدیل به oligodendrocyte شود؛ همان سلولی که myelin می‌سازد. بعضی tumor cellهای GBM از نظر gene expression شبیه OPC هستند. این حالت با تغییرات PDGFRA ارتباط دارد. PubMed",
+   "note": "OPC-like: resembles oligodendrocyte precursor cells; PDGFRA.<br />",
+   "site": "claude.ai",
+   "source": "https://claude.ai/artifact/4fQnF88bpMWPjaExt6xP8D",
+   "tags": [
+    "GBM Cell States"
+   ],
+   "images": 0
+  },
+  {
+   "i": 105,
+   "id": "3e80932cac38815e8c52e46a97e73fa8",
+   "url": "https://app.notion.com/p/3e80932cac38815e8c52e46a97e73fa8",
+   "highlight": "NPC-like NPC = Neural Progenitor Cell یعنی gene-expression آن سلول سرطانی شبیه یک سلول اولیه‌ی عصبی است؛ سلولی که هنوز کاملاً بالغ نشده و می‌تواند سلول‌های عصبی مختلف بسازد. این حالت با CDK4 amplification بیشتر دیده می‌شود. amplification یعنی سلول به‌جای مثلاً دو نسخه از یک gene، تعداد زیادی copy از آن gene دارد.",
+   "note": "",
+   "site": "claude.ai",
+   "source": "https://claude.ai/artifact/4fQnF88bpMWPjaExt6xP8D",
+   "tags": [
+    "GBM Cell States"
+   ],
+   "images": 0
+  },
+  {
+   "i": 106,
+   "id": "3e80932cac3881e792abd87c453bca4a",
+   "url": "https://app.notion.com/p/3e80932cac3881e792abd87c453bca4a",
+   "highlight": "IDH = یک ماشین شیمیایی طبیعی داخل سلول. IDH mutation = نقشه‌ی ساخت این ماشین عوض شده، پس ماشین محصول غیرعادی 2-HG می‌سازد.",
+   "note": "",
+   "site": "claude.ai",
+   "source": "https://claude.ai/artifact/4fQnF88bpMWPjaExt6xP8D",
+   "tags": [
+    "Genomics & Epigenetics"
+   ],
+   "images": 0
+  },
+  {
+   "i": 107,
+   "id": "3e80932cac38810ab266db4025102a66",
+   "url": "https://app.notion.com/p/3e80932cac38810ab266db4025102a66",
+   "highlight": "نکته‌ی مهم: IDH خودش سرطان نیست. IDH یک enzyme طبیعی در سلول است. چیزی که مهم است این است که gene آن mutated هست یا نه.",
+   "note": "",
+   "site": "claude.ai",
+   "source": "https://claude.ai/artifact/4fQnF88bpMWPjaExt6xP8D",
+   "tags": [
+    "Genomics & Epigenetics"
+   ],
+   "images": 0
+  },
+  {
+   "i": 108,
+   "id": "3e80932cac38814fb73fd81fc1677222",
+   "url": "https://app.notion.com/p/3e80932cac38814fb73fd81fc1677222",
+   "highlight": "حالا mutation یعنی متن DNA آن gene تغییر کرده.",
+   "note": "ولی mutation باعث شود دستور کمی تغییر کند و protein ساخته‌شده رفتار دیگری داشته باشد.<br />در IDH-mutant glioma، mutation در IDH1 یا IDH2 باعث می‌شود enzyme یک فعالیت جدید پیدا کند و مقدار زیادی ماده‌ای به نام 2-hydroxyglutarate (2-HG) بسازد. این ماده می‌تواند تنظیم geneها و differentiation سلول را تغییر دهد و در شکل‌گیری glioma نقش دارد.",
+   "site": "claude.ai",
+   "source": "https://claude.ai/artifact/4fQnF88bpMWPjaExt6xP8D",
+   "tags": [
+    "Genomics & Epigenetics"
+   ],
+   "images": 0
+  },
+  {
+   "i": 109,
+   "id": "3e80932cac3881448548d59193baf998",
+   "url": "https://app.notion.com/p/3e80932cac3881448548d59193baf998",
+   "highlight": "حالا IDH در اصل اسم یک protein/enzyme است. سلول برای ساختن این enzyme، ژن‌هایی به نام IDH1 و IDH2 دارد. این enzyme به واکنش‌های شیمیایی معمول سلول و metabolism کمک می‌کند.",
+   "note": "Cell<br /> ↓<br />DNA<br /> ↓<br />IDH1 gene<br /> ↓<br />IDH protein<br /> ↓<br />does a metabolic chemical reaction",
+   "site": "claude.ai",
+   "source": "https://claude.ai/artifact/4fQnF88bpMWPjaExt6xP8D",
+   "tags": [
+    "Genomics & Epigenetics"
+   ],
+   "images": 0
+  },
+  {
+   "i": 110,
+   "id": "3e80932cac3881118a10fe7bc0f4663b",
+   "url": "https://app.notion.com/p/3e80932cac3881118a10fe7bc0f4663b",
+   "highlight": "Visium: many cells → one spot → mixed RNA Xenium/CosMx/MERFISH: individual RNA molecules visible in space → assign them to segmented cells",
+   "note": "",
+   "site": "claude.ai",
+   "source": "https://claude.ai/artifact/4fQnF88bpMWPjaExt6xP8D",
+   "tags": [
+    "Spatial Transcriptomics"
+   ],
+   "images": 0
+  },
+  {
+   "i": 111,
+   "id": "3e80932cac38815685bfde0e08249a2b",
+   "url": "https://app.notion.com/p/3e80932cac38815685bfde0e08249a2b",
+   "highlight": "scRNA-seq: one cell → one gene-expression profile ولی جای سلول از بین می‌رود. Visium: one small area containing several cells → one mixed gene-expression profile",
+   "note": "هر ○ یک spot است. در Visium کلاسیک، قطر هر spot حدود 55 µm است و مرکز spotها حدود 100 µm از هم فاصله دارد. PubMed Central (PMC)<br />حالا چون یک سلول معمولاً خیلی کوچک‌تر از 55 µm است، داخل محدوده‌ی یک spot ممکن است چند سلول باشند:",
+   "site": "claude.ai",
+   "source": "https://claude.ai/artifact/4fQnF88bpMWPjaExt6xP8D",
+   "tags": [
+    "Spatial Transcriptomics"
+   ],
+   "images": 0
+  },
+  {
+   "i": 112,
+   "id": "3e70932cac38815eb59af826725a556e",
+   "url": "https://app.notion.com/p/3e70932cac38815eb59af826725a556e",
+   "highlight": "No human glioblastoma dataset below the 100 µm Visium spot observes introns. That single chemistry fact rules out velocity-style methods at cellular resolution in GBM.",
+   "note": "",
+   "site": "claude.ai",
+   "source": "https://claude.ai/artifact/4fQnF88bpMWPjaExt6xP8D",
+   "tags": [
+    "Spatial Transcriptomics"
+   ],
+   "images": 0
+  },
+  {
+   "i": 113,
+   "id": "3e20932cac3881f188afe6cf12c68281",
+   "url": "https://app.notion.com/p/3e20932cac3881f188afe6cf12c68281",
+   "highlight": "Early 2000s (Original Concept): Sparse autoencoders (SAEs) originally emerged in the mid-to-late 2000s as an extension of standard 1980s autoencoders. Influential foundational work introducing sparsity penalties (like L1 regularization) to autoencoders was published by Andrew Ng and researchers at Stanford University during this decade",
+   "note": "",
+   "site": "google.com",
+   "source": "https://www.google.com/search?q=sparse+autoencoders+publish+year&rlz=1C5CHFA_enDE1188DE1188&oq=sparse+autoencoders+publish+year&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQIRigATIHCAIQIRiPAtIBCDgwMDhqMGo3qAIAsAIA&sourceid=chrome&source=chrome.ob&ie=UTF-8#m-x-content:~:text=Early%202000s%20(Original%20Concept)%3A%20Sparse%20autoencoders,at%20Stanford%20University%20during%20this%20decade",
+   "tags": [
+    "ML & Foundation Models"
+   ],
+   "images": 0
+  },
+  {
+   "i": 114,
+   "id": "3e20932cac3881dcaad4d6c414b9d8b5",
+   "url": "https://app.notion.com/p/3e20932cac3881dcaad4d6c414b9d8b5",
+   "highlight": "Cell type vs cell state — type is a stable identity (neuron, macrophage). State is a changeable condition (dividing, stressed, low-oxygen, migrating). GBM research is mostly about states.",
+   "note": "",
+   "site": "app.notion.com",
+   "source": "https://app.notion.com/p/3e20932cac38802e8d47d71b4c1d8aa0#3e20932cac3880438f99f488a9d88eb4:~:text=Cell%20type%20vs%20cell%20state%20%E2%80%94,GBM%20research%20is%20mostly%20about%20states.",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 115,
+   "id": "3e20932cac388130a930f22f27f2250c",
+   "url": "https://app.notion.com/p/3e20932cac388130a930f22f27f2250c",
+   "highlight": "Gene expression — how much RNA a cell makes from each gene. The profile across \\\\\\~20,000 genes is the cell's fingerprint.",
+   "note": "",
+   "site": "app.notion.com",
+   "source": "https://app.notion.com/p/3e20932cac38802e8d47d71b4c1d8aa0#3e20932cac3880438f99f488a9d88eb4:~:text=Gene%20expression%20%E2%80%94%20how%20much%20RNA,%5C~20%2C000%20genes%20is%20the%20cell's%20fingerprint.",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 116,
+   "id": "3e20932cac3881d18aafd1ff4ea1f1c1",
+   "url": "https://app.notion.com/p/3e20932cac3881d18aafd1ff4ea1f1c1",
+   "highlight": "Exons matter clinically. EGFR has 28 exons. The GBM variant EGFRvIII is missing exons 2–7, producing a receptor that signals without its trigger.",
+   "note": "یدد",
+   "site": "app.notion.com",
+   "source": "https://app.notion.com/p/3e20932cac38802e8d47d71b4c1d8aa0#3e20932cac3880438f99f488a9d88eb4:~:text=Exons%20matter%20clinically.%20EGFR%20has%2028,receptor%20that%20signals%20without%20its%20trigger.",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 117,
+   "id": "3e20932cac3881cfb7e9cda4ef7a43f9",
+   "url": "https://app.notion.com/p/3e20932cac3881cfb7e9cda4ef7a43f9",
+   "highlight": "Genes are mostly introns. EGFR's protein is 1,210 amino acids, so only \\\\\\~3,600 of its \\\\\\~238,000 DNA letters code for protein (about 1.5%). The rest is largely introns — the source of the unspliced reads velocity uses.",
+   "note": "",
+   "site": "app.notion.com",
+   "source": "https://app.notion.com/p/3e20932cac38802e8d47d71b4c1d8aa0#3e20932cac3880438f99f488a9d88eb4:~:text=Genes%20are%20mostly%20introns.%20EGFR's%20protein,of%20the%20unspliced%20reads%20velocity%20uses.",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 118,
+   "id": "3e20932cac3881eba8fbf40586fb59bb",
+   "url": "https://app.notion.com/p/3e20932cac3881eba8fbf40586fb59bb",
+   "highlight": "Genes are mostly introns",
+   "note": "",
+   "site": "app.notion.com",
+   "source": "https://app.notion.com/p/3e20932cac38802e8d47d71b4c1d8aa0#3e20932cac3880438f99f488a9d88eb4:~:text=Genes%20are%20mostly%20introns",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 119,
+   "id": "3e20932cac38816598e4dc91bca8f5fa",
+   "url": "https://app.notion.com/p/3e20932cac38816598e4dc91bca8f5fa",
+   "highlight": "GENCODE = a reference annotation of the genome. It tells you where genes are located on chromosomes: chromosome, start position, end position, exon structure, transcript IDs, etc. So for example it can say: “EGFR is on chromosome 7, from position X to Y.” GENCODE is one of the major reference gene-annotation projects for human and mouse genomes",
+   "note": "",
+   "site": "app.notion.com",
+   "source": "https://app.notion.com/p/3e20932cac38802e8d47d71b4c1d8aa0#3e20932cac3880438f99f488a9d88eb4",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 120,
+   "id": "3e20932cac388116b27be5fd58328e62",
+   "url": "https://app.notion.com/p/3e20932cac388116b27be5fd58328e62",
+   "highlight": "Unspliced means \"just made\"; spliced means \"has been around a while\"",
+   "note": "",
+   "site": "app.notion.com",
+   "source": "https://app.notion.com/p/3e20932cac38802e8d47d71b4c1d8aa0#main:~:text=Unspliced%20means%20%22just%20made%22%3B%20spliced%20means%20%22has%20been%20around%20a%20while%22",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 121,
+   "id": "3e20932cac38816993d8ce63c8d6c19b",
+   "url": "https://app.notion.com/p/3e20932cac38816993d8ce63c8d6c19b",
+   "highlight": "Genes alternate between exons (kept) and introns (cut out)",
+   "note": "",
+   "site": "app.notion.com",
+   "source": "https://app.notion.com/p/3e20932cac38802e8d47d71b4c1d8aa0#main:~:text=Genes%20alternate%20between%20exons%20(kept)%20and%20introns%20(cut%20out)",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 122,
+   "id": "3e20932cac38810a9f28c22fd8b19a75",
+   "url": "https://app.notion.com/p/3e20932cac38810a9f28c22fd8b19a75",
+   "highlight": "Genes alternate between exons (kept) and introns (cut out).",
+   "note": "",
+   "site": "app.notion.com",
+   "source": "https://app.notion.com/p/3e20932cac38802e8d47d71b4c1d8aa0#main:~:text=Genes%20alternate%20between%20exons%20(kept)%20and%20introns%20(cut%20out).",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 123,
+   "id": "3e20932cac38816e8afdf403a9f5ea50",
+   "url": "https://app.notion.com/p/3e20932cac38816e8afdf403a9f5ea50",
+   "highlight": "Introns can also contain regulatory sequences and influence transcription, RNA stability, export, and expression level.",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6ab120bb-1130-83eb-a3a4-edc8a436e41f#thread:~:text=Introns%20can%20also%20contain%20regulatory%20sequences,RNA%20stability%2C%20export%2C%20and%20expression%20level.",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 124,
+   "id": "3e20932cac3881dd8f89f8ede975cffa",
+   "url": "https://app.notion.com/p/3e20932cac3881dd8f89f8ede975cffa",
+   "highlight": "In single-cell RNA-seq, unspliced RNA often reflects more recent transcription, while spliced RNA represents more processed transcripts. This distinction is used in methods such as RNA velocity.",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6ab120bb-1130-83eb-a3a4-edc8a436e41f#thread:~:text=In%20single%2Dcell%20RNA%2Dseq%2C%20unspliced%20RNA%20often,in%20methods%20such%20as%20RNA%20velocity.",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 125,
+   "id": "3e20932cac3881f0af5fe83da48c08cc",
+   "url": "https://app.notion.com/p/3e20932cac3881f0af5fe83da48c08cc",
+   "highlight": "DNA → unspliced RNA → splicing → spliced RNA → protein",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6ab120bb-1130-83eb-a3a4-edc8a436e41f#thread:~:text=DNA%20%E2%86%92%20unspliced%20RNA%20%E2%86%92%20splicing%20%E2%86%92%20spliced%20RNA%20%E2%86%92%20protein",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 126,
+   "id": "3e20932cac388165b8f5ef161a8fd76f",
+   "url": "https://app.notion.com/p/3e20932cac388165b8f5ef161a8fd76f",
+   "highlight": "Every cell carries the same DNA; what differs is which genes each cell is using right now. Almost every question in this PhD is a version of: which genes are active in which cell, where, and how is that changing?",
+   "note": "",
+   "site": "app.notion.com",
+   "source": "https://app.notion.com/p/3e20932cac38802e8d47d71b4c1d8aa0#main:~:text=Every%20cell%20carries%20the%20same%20DNA%3B,where%2C%20and%20how%20is%20that%20changing%3F",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 127,
+   "id": "3e00932cac3881e2aba9e8280fbb352f",
+   "url": "https://app.notion.com/p/3e00932cac3881e2aba9e8280fbb352f",
+   "highlight": "Multimodal single-cell omics",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6aad6190-c56c-83ed-bca3-3e91f450bd9c#thread:~:text=remains%20very%20open.-,Multimodal%20single%2Dcell%20omics,-I%20found%20early",
+   "tags": [
+    "SAE"
+   ],
+   "images": 0
+  },
+  {
+   "i": 128,
+   "id": "3e00932cac388153b6d9e85175bbbfbf",
+   "url": "https://app.notion.com/p/3e00932cac388153b6d9e85175bbbfbf",
+   "highlight": "scGPT and Geneformer atlasesA larger study trained Top-K SAEs across all layers and found pathway-related features, but little evidence for genuine regulatory logic. Kendiukhov 2026, arXiv:2603.02952Relevant, but currently a preprint.",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6aad6190-c56c-83ed-bca3-3e91f450bd9c#thread:~:text=scGPT%20and%20Geneformer%20atlasesA%20larger%20study,2026%2C%20arXiv%3A2603.02952Relevant%2C%20but%20currently%20a%20preprint.",
+   "tags": [
+    "ML & Foundation Models"
+   ],
+   "images": 0
+  },
+  {
+   "i": 129,
+   "id": "3e00932cac388155a855fb1c044e6d38",
+   "url": "https://app.notion.com/p/3e00932cac388155a855fb1c044e6d38",
+   "highlight": "Single-cell foundation modelsKendiukhov trained SAEs on scGPT residual-stream activations and recovered interpretable immune cell-type programs, including feature-ablation experiments. Kendiukhov 2026, Journal of Biomedical Informatics; PMID 42155660; DOI 10.1016/j.jbi.2026.105056Yes—peer reviewed. A generic “SAE on scGPT to identify cell types” project is already taken.",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6aad6190-c56c-83ed-bca3-3e91f450bd9c#thread:~:text=Single%2Dcell%20foundation%20modelsKendiukhov%20trained%20SAEs%20on,cell%20types%E2%80%9D%20project%20is%20already%20taken.",
+   "tags": [
+    "SAE"
+   ],
+   "images": 0
+  },
+  {
+   "i": 130,
+   "id": "3df0932cac3881c09768ed819b43d741",
+   "url": "https://app.notion.com/p/3df0932cac3881c09768ed819b43d741",
+   "highlight": "AT1 vs AT2 you mean alveolar type 1 and alveolar type 2 epithelial cells in the lung",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6aad1329-db28-83eb-9382-53ba29fb98c9#thread:~:text=AT1%20vs%20AT2%20you%20mean%20alveolar,2%20epithelial%20cells%20in%20the%20lung",
+   "tags": [
+    "Computational Methods"
+   ],
+   "images": 0
+  },
+  {
+   "i": 131,
+   "id": "3df0932cac3881448d8cd80eb12e2562",
+   "url": "https://app.notion.com/p/3df0932cac3881448d8cd80eb12e2562",
+   "highlight": "SOLO takes the already-trained scVI model and uses its learned representation of the cells. Then it creates artificial doublets by combining pairs of observed cells and uses those as examples of what doublets should look like. Bernstein et al. describe SOLO as using the VAE representation followed by a neural-network classifier trained to distinguish simulated doublets from observed cells.",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6aad1329-db28-83eb-9382-53ba29fb98c9#thread:~:text=SOLO%20takes%20the%20already%2Dtrained%20scVI%20model,distinguish%20simulated%20doublets%20from%20observed%20cells.",
+   "tags": [
+    "Computational Methods"
+   ],
+   "images": 0
+  },
+  {
+   "i": 132,
+   "id": "3df0932cac38818cb5d9dd7bb517398d",
+   "url": "https://app.notion.com/p/3df0932cac38818cb5d9dd7bb517398d",
+   "highlight": "The differnece of AE and VAE",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6aad3c0c-0e64-83eb-af54-fa4fd712774e#thread-bottom",
+   "tags": [
+    "Computational Methods"
+   ],
+   "images": 1
+  },
+  {
+   "i": 133,
+   "id": "3df0932cac388177aea1edd1eabd659b",
+   "url": "https://app.notion.com/p/3df0932cac388177aea1edd1eabd659b",
+   "highlight": "AE",
+   "note": "",
+   "site": "medium.com",
+   "source": "https://medium.com/geekculture/variational-autoencoder-vae-9b8ce5475f68",
+   "tags": [
+    "AE"
+   ],
+   "images": 1
+  },
+  {
+   "i": 134,
+   "id": "3df0932cac38810f9e1bc7d9a718cce8",
+   "url": "https://app.notion.com/p/3df0932cac38810f9e1bc7d9a718cce8",
+   "highlight": "As shown in the figure, x is a matrix which can becomes a low-dimensional matrix c through a transformation W . Because this process is linear, the transpose of W can be used to restore an x hat. PCA is to find a W through SVD (singular value decomposition) so that the matrices x and x hat be as consistent as possible.",
+   "note": "",
+   "site": "medium.com",
+   "source": "https://medium.com/geekculture/variational-autoencoder-vae-9b8ce5475f68#fcd4:~:text=As%20shown%20in%20the%20figure%2C%20x,hat%20be%20as%20consistent%20as%20possible.",
+   "tags": [
+    "AE"
+   ],
+   "images": 0
+  },
+  {
+   "i": 135,
+   "id": "3df0932cac388160aeaaf7f9cbe3030a",
+   "url": "https://app.notion.com/p/3df0932cac388160aeaaf7f9cbe3030a",
+   "highlight": "This process of transcribing the information in DNA to mRNA is called Transcription, which is catalyzed by the enzyme, RNA polymerase.",
+   "note": "",
+   "site": "microbenotes.com",
+   "source": "https://microbenotes.com/messenger-rna/#post-41229:~:text=This%20process%20of%20transcribing%20the%20information,catalyzed%20by%20the%20enzyme%2C%20RNA%20polymerase.",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 136,
+   "id": "3df0932cac3881ed9c67feff59f8cf3b",
+   "url": "https://app.notion.com/p/3df0932cac3881ed9c67feff59f8cf3b",
+   "highlight": "The information in DNA cannot be translated directly to proteins, it must be transcribed into this RNA form, called mRNA that now encodes for specific proteins.",
+   "note": "",
+   "site": "microbenotes.com",
+   "source": "https://microbenotes.com/messenger-rna/#post-41229:~:text=The%20information%20in%20DNA%20cannot%20be,that%20now%20encodes%20for%20specific%20proteins.",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 137,
+   "id": "3df0932cac388193acbde19b34a863c9",
+   "url": "https://app.notion.com/p/3df0932cac388193acbde19b34a863c9",
+   "highlight": "Generated image: From DNA to Protein: Gene Expression",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6aacf46e-5278-83eb-ad22-ad3d8d2a1517#image-a4a0819d-1b9b-4db0-8f17-6e5c799ff649",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 1
+  },
+  {
+   "i": 138,
+   "id": "3df0932cac3881c38713eebb0ddecda4",
+   "url": "https://app.notion.com/p/3df0932cac3881c38713eebb0ddecda4",
+   "highlight": "DNA sequencing allows researchers to identify a gene’s location, function, and regulation.",
+   "note": "",
+   "site": "",
+   "source": "https://www.sc-best-practices.org/introduction/scrna-seq/",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  },
+  {
+   "i": 139,
+   "id": "3df0932cac3881d4a3d6fbf396f2ab66",
+   "url": "https://app.notion.com/p/3df0932cac3881d4a3d6fbf396f2ab66",
+   "highlight": "GBM-Space. از ۱۲ تومور مختلف، ۹۷ برش بافتی",
+   "note": "",
+   "site": "chatgpt.com",
+   "source": "https://chatgpt.com/c/6aa6edcf-98d8-83eb-8692-d92c38e3ac09",
+   "tags": [
+    "Spatial Transcriptomics"
+   ],
+   "images": 0
+  },
+  {
+   "i": 140,
+   "id": "3df0932cac38818ba22cfc06e625c573",
+   "url": "https://app.notion.com/p/3df0932cac38818ba22cfc06e625c573",
+   "highlight": "Genes contain the instructions for producing proteins that perform various functions to keep the cell alive and functioning",
+   "note": "",
+   "site": "microbenotes.com",
+   "source": "https://microbenotes.com/gene-expression/",
+   "tags": [
+    "RNA Biology"
+   ],
+   "images": 0
+  }
+ ]
+}
