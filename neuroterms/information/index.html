@@ -162,4 +162,4 @@ $("quizSize").onchange=startQuiz;$("restartQuiz").onclick=startQuiz;$("nextQuiz"
 $("reviewMissed").onclick=()=>{if(!qMissed.length){setMode("cards");return}mode="cards";["cards","quiz","critical","library"].forEach(n=>{$(n).classList.toggle("hidden",n!=="cards");$("nav-"+n).classList.toggle("active",n==="cards")});startCards(shuffle(qMissed))};
 $("criticalStart").onclick=()=>{const a=criticalLessons();makeQuiz(a)};$("criticalCards").onclick=()=>{mode="cards";["cards","quiz","critical","library"].forEach(n=>{$(n).classList.toggle("hidden",n!=="cards");$("nav-"+n).classList.toggle("active",n==="cards")});startCards(shuffle(criticalLessons()))};
 $("search").oninput=renderLibrary;$("close").onclick=()=>$("dialog").close();init();
-</script></body></html>
+</script><script src="./deep.js" defer></script></body></html>
