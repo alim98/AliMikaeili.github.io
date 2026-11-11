@@ -20,7 +20,9 @@
    "label": "Wilkinson, Charenton & Nagai, Annu Rev Biochem (2020)",
    "url": "https://doi.org/10.1146/annurev-biochem-091719-064225"
   },
-  "status": "qualified"
+  "status": "qualified",
+  "decisionRule": "Compare annotated exon boundaries with protein-domain coordinates; correspondence may exist for some exons but is not a general one-to-one mapping.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "bio-1",
@@ -44,7 +46,9 @@
    "label": "Wilkinson, Charenton & Nagai, Annu Rev Biochem (2020)",
    "url": "https://doi.org/10.1146/annurev-biochem-091719-064225"
   },
-  "status": "qualified"
+  "status": "qualified",
+  "decisionRule": "Look for homologous coding modules in different gene architectures and recombination boundaries; this supports a possible exon-shuffling history, not the purpose of all introns.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "bio-2",
@@ -67,7 +71,9 @@
    "label": "Wilkinson, Charenton & Nagai, Annu Rev Biochem (2020)",
    "url": "https://doi.org/10.1146/annurev-biochem-091719-064225"
   },
-  "status": "qualified"
+  "status": "qualified",
+  "decisionRule": "Compute genomic span from chromosome coordinates, then sum coding-sequence bases; the difference includes introns and other noncoding transcript regions.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "bio-3",
@@ -91,7 +97,9 @@
    "label": "Wilkinson, Charenton & Nagai, Annu Rev Biochem (2020)",
    "url": "https://doi.org/10.1146/annurev-biochem-091719-064225"
   },
-  "status": "background"
+  "status": "background",
+  "decisionRule": "Inspect the 5′ splice-site, branch-point, polypyrimidine tract and 3′ splice-site context; isoform choice also depends on RNA-binding regulators.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "bio-4",
@@ -114,7 +122,9 @@
    "label": "Wilkinson, Charenton & Nagai, Annu Rev Biochem (2020)",
    "url": "https://doi.org/10.1146/annurev-biochem-091719-064225"
   },
-  "status": "background"
+  "status": "background",
+  "decisionRule": "Inspect a Pol II primary transcript for 5′ cap, spliced exon junctions, and 3′ cleavage/poly(A) tail; some modifications occur co-transcriptionally.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "bio-5",
@@ -138,7 +148,9 @@
    "label": "Wilkinson, Charenton & Nagai, Annu Rev Biochem (2020)",
    "url": "https://doi.org/10.1146/annurev-biochem-091719-064225"
   },
-  "status": "background"
+  "status": "background",
+  "decisionRule": "Nascent RNA is attached to transcription machinery and may contain incompletely synthesized downstream sequence; mature processed transcripts are different molecules/states.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "bio-6",
@@ -162,7 +174,9 @@
    "label": "Wilkinson, Charenton & Nagai, Annu Rev Biochem (2020)",
    "url": "https://doi.org/10.1146/annurev-biochem-091719-064225"
   },
-  "status": "background"
+  "status": "background",
+  "decisionRule": "Compare exon–exon junction reads and transcript models across conditions; distinct junction combinations indicate isoforms but not necessarily different proteins.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "bio-7",
@@ -189,7 +203,9 @@
    "label": "Wilkinson, Charenton & Nagai, Annu Rev Biochem (2020)",
    "url": "https://doi.org/10.1146/annurev-biochem-091719-064225"
   },
-  "status": "background"
+  "status": "background",
+  "decisionRule": "Use transcript-specific exon/intron annotations; an exon can be coding or untranslated and an intron may be longer than the entire CDS.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "bio-8",
@@ -213,7 +229,9 @@
    "label": "Wilkinson, Charenton & Nagai, Annu Rev Biochem (2020)",
    "url": "https://doi.org/10.1146/annurev-biochem-091719-064225"
   },
-  "status": "qualified"
+  "status": "qualified",
+  "decisionRule": "Check cellular compartment: nuclear Pol II transcribes many coding genes, whereas cytoplasmic or rough-ER ribosomes translate exported mRNAs; mitochondrial genes are exceptions.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "bio-9",
@@ -238,7 +256,9 @@
    "label": "Wilkinson, Charenton & Nagai, Annu Rev Biochem (2020)",
    "url": "https://doi.org/10.1146/annurev-biochem-091719-064225"
   },
-  "status": "background"
+  "status": "background",
+  "decisionRule": "Ask whether a membrane-bound nucleus exists, rather than classifying an organism solely by cell size.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "bio-10",
@@ -261,7 +281,9 @@
    "label": "Wilkinson, Charenton & Nagai, Annu Rev Biochem (2020)",
    "url": "https://doi.org/10.1146/annurev-biochem-091719-064225"
   },
-  "status": "background"
+  "status": "background",
+  "decisionRule": "Detect ribosomes bound to nascent bacterial mRNA while transcription is ongoing; compartmental separation usually prevents this for nuclear genes in eukaryotes.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "bio-11",
@@ -284,7 +306,9 @@
    "label": "Stark et al., Nat Rev Genet (2019)",
    "url": "https://doi.org/10.1038/s41576-019-0150-2"
   },
-  "status": "background"
+  "status": "background",
+  "decisionRule": "Look for ribosomal decoding of mRNA codons into amino-acid sequence; transcription instead polymerizes RNA from a DNA template.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "bio-12",
@@ -308,7 +332,9 @@
    "label": "Stark et al., Nat Rev Genet (2019)",
    "url": "https://doi.org/10.1038/s41576-019-0150-2"
   },
-  "status": "background"
+  "status": "background",
+  "decisionRule": "Identify RNA polymerase copying a DNA template into RNA; distinguish the product from translated polypeptide made by ribosomes.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "bio-13",
@@ -324,18 +350,25 @@
   "takeaway": "RNA-seq measures expressed transcripts instead of directly measuring DNA sequence variation.",
   "explanation": "Two cells sharing a genotype can have distinct transcriptomes.",
   "caution": "The image-only highlights cannot be checked from their text; this lesson uses the substantive RNA-seq question from the Note field.",
-  "question": "Why use RNA-seq when DNA is already known?",
+  "question": "You need to distinguish EGFR amplification from high EGFR transcription in GBM. Which assay combination is most informative?",
   "options": [
-   "To estimate transcriptional output in the sample",
-   "To read every protein directly",
-   "To map blood oxygen directly"
+   "DNA copy-number profiling for amplification plus RNA-seq for expression",
+   "Only RNA-seq, because transcript counts count DNA copies",
+   "Only H&E morphology, because morphology directly resolves EGFR amplification"
   ],
   "correct": 0,
   "reference": {
    "label": "Stark et al., Nat Rev Genet (2019)",
    "url": "https://doi.org/10.1038/s41576-019-0150-2"
   },
-  "status": "qualified"
+  "status": "qualified",
+  "decisionRule": "If you need expression level or isoforms, measure RNA; if you need sequence variants or copy number, assay DNA. Neither readout directly measures enzyme activity.",
+  "auditVersion": "evidence-first-v2",
+  "optionFeedback": [
+   "Correct: genomic copy number and RNA output are distinct measurements.",
+   "Incorrect: RNA expression may change without DNA gain and copy-number gain need not proportionally elevate RNA.",
+   "Incorrect: histology can characterize tissue but does not directly quantify EGFR gene copies."
+  ]
  },
  {
   "id": "bio-14",
@@ -360,7 +393,9 @@
    "label": "Stark et al., Nat Rev Genet (2019)",
    "url": "https://doi.org/10.1038/s41576-019-0150-2"
   },
-  "status": "verified"
+  "status": "verified",
+  "decisionRule": "Identify whether the library yields short cDNA-derived fragments, long native RNA reads, or another chemistry; fragment coverage biases transcript abundance estimates.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "bio-15",
@@ -385,7 +420,9 @@
    "label": "Wilkinson, Charenton & Nagai, Annu Rev Biochem (2020)",
    "url": "https://doi.org/10.1146/annurev-biochem-091719-064225"
   },
-  "status": "background"
+  "status": "background",
+  "decisionRule": "For a nuclear-encoded coding mRNA, check proper processing and export through nuclear pores; splicing alone does not guarantee translation.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "bio-16",
@@ -408,7 +445,9 @@
    "label": "Wilkinson, Charenton & Nagai, Annu Rev Biochem (2020)",
    "url": "https://doi.org/10.1146/annurev-biochem-091719-064225"
   },
-  "status": "background"
+  "status": "background",
+  "decisionRule": "To identify a Pol II transcription product, use a protein-coding gene or other known Pol II RNA, not a Pol I rRNA precursor or Pol III tRNA.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "bio-17",
@@ -432,7 +471,9 @@
    "label": "Wilkinson, Charenton & Nagai, Annu Rev Biochem (2020)",
    "url": "https://doi.org/10.1146/annurev-biochem-091719-064225"
   },
-  "status": "background"
+  "status": "background",
+  "decisionRule": "On an antiparallel DNA duplex, A pairs with T and C with G. RNA uses U instead of T; isolated single strands need not be paired.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "bio-18",
@@ -457,7 +498,9 @@
    "label": "Stark et al., Nat Rev Genet (2019)",
    "url": "https://doi.org/10.1038/s41576-019-0150-2"
   },
-  "status": "qualified"
+  "status": "qualified",
+  "decisionRule": "Check whether the gene encodes an mRNA translated into protein versus a functional noncoding RNA. Reverse-transcribed RNA-to-DNA is a known exception to a simple cartoon.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "bio-19",
@@ -469,18 +512,25 @@
   "takeaway": "DNA sequence, chromatin state, RNA abundance and protein abundance capture different aspects of molecular biology.",
   "explanation": "A tumor sample can have stable genotype but changing expression and protein levels.",
   "caution": "No single layer gives a complete readout of cell function.",
-  "question": "Which measurement directly assesses transcript abundance?",
+  "question": "One tumor compartment is ATAC-high at an enhancer but RNA-low for the nearby gene. What follows?",
   "options": [
-   "RNA-seq",
-   "DNA copy-number profiling",
-   "H&E staining alone"
+   "Accessible chromatin and transcription are distinct readouts; do not infer that the gene must be expressed",
+   "The enhancer must be bound by a specific transcription factor",
+   "The gene must produce more protein than ATAC-low cells"
   ],
   "correct": 0,
   "reference": {
    "label": "Stuart & Satija, Nat Rev Genet (2019)",
    "url": "https://doi.org/10.1038/s41576-019-0093-7"
   },
-  "status": "background"
+  "status": "background",
+  "decisionRule": "DNA-seq: variant/copy calls; ATAC-seq: accessibility; RNA-seq: transcript counts; proteomics: protein abundance. These are not interchangeable outputs.",
+  "auditVersion": "evidence-first-v2",
+  "optionFeedback": [
+   "Correct: accessibility, transcript abundance and protein abundance must be assessed separately.",
+   "Incorrect: an accessible site is not proof of binding by a particular transcription factor.",
+   "Incorrect: neither ATAC accessibility nor proximity guarantees protein expression."
+  ]
  },
  {
   "id": "bio-20",
@@ -492,18 +542,25 @@
   "takeaway": "Covalent DNA methylation can correlate with gene regulation depending on genomic location and cellular context.",
   "explanation": "Promoter methylation is one possible mechanism associated with altered transcription.",
   "caution": "Methylation does not silence every nearby gene or define protein abundance.",
-  "question": "Why is 'methylation always represses transcription' incorrect?",
+  "question": "A CpG in an intragenic region is hypermethylated, while RNA expression rises. How should the result be handled?",
   "options": [
-   "Effects depend on genomic and cellular context",
-   "Methylation is not a chemical modification",
-   "Every methylation mark causes cell death"
+   "Analyze the position and regulatory context rather than assuming all methylation represses genes",
+   "Discard the RNA result because methylation always silences",
+   "Assume the CpG has no function because it is not a promoter"
   ],
   "correct": 0,
   "reference": {
    "label": "DNA methylation review — PubMed",
    "url": "https://pubmed.ncbi.nlm.nih.gov/?term=DNA+methylation+regulation+review"
   },
-  "status": "qualified"
+  "status": "qualified",
+  "decisionRule": "Compare methylation at promoters, enhancers and gene bodies with measured transcription; genomic position and cellular context change the association.",
+  "auditVersion": "evidence-first-v2",
+  "optionFeedback": [
+   "Correct: the relation between DNA methylation and expression varies with locus and biological setting.",
+   "Incorrect: promoter silencing is common but methylation is not uniformly repressive across genomic elements.",
+   "Incorrect: intragenic methylation can be functional; lack of promoter position is not proof of irrelevance."
+  ]
  },
  {
   "id": "bio-21",
@@ -527,7 +584,9 @@
    "label": "Stuart & Satija, Nat Rev Genet (2019)",
    "url": "https://doi.org/10.1038/s41576-019-0093-7"
   },
-  "status": "background"
+  "status": "background",
+  "decisionRule": "Distinguish observed accessibility peaks from measured RNA and proteins. ATAC does not prove TF binding; RNA does not directly quantify protein.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "bio-22",
@@ -550,7 +609,9 @@
    "label": "Stark et al., Nat Rev Genet (2019)",
    "url": "https://doi.org/10.1038/s41576-019-0150-2"
   },
-  "status": "qualified"
+  "status": "qualified",
+  "decisionRule": "Evaluate whether a cell type call is supported by multiple lineage markers, batch/ambient controls, and orthogonal identity evidence; single-cell RNA counts may drop out.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "bio-23",
@@ -574,7 +635,9 @@
    "label": "Wilkinson, Charenton & Nagai, Annu Rev Biochem (2020)",
    "url": "https://doi.org/10.1146/annurev-biochem-091719-064225"
   },
-  "status": "qualified"
+  "status": "qualified",
+  "decisionRule": "Calculate genomic end−start span versus total CDS length from a specific transcript annotation; large introns usually explain much of the gap.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "bio-24",
@@ -587,18 +650,25 @@
   "takeaway": "Unspliced and spliced RNA counts can inform kinetic models of transcription and processing.",
   "explanation": "RNA velocity uses relative spliced/unspliced abundances and model assumptions to estimate expression dynamics.",
   "caution": "'Unspliced = newly made; spliced = old' is an oversimplification, not a per-molecule age measurement.",
-  "question": "Can a spliced read be assigned a precise age from splicing alone?",
+  "question": "Two GBM cell groups have different unspliced-to-spliced ratios for a gene. Which result would justify claiming one group will differentiate into the other?",
   "options": [
-   "No; age depends on kinetics and context",
-   "Yes, it always predates every unspliced molecule",
-   "Yes, each splice removes one hour"
+   "A longitudinal lineage or perturbation experiment supporting that transition, not the ratio alone",
+   "A larger unspliced-to-spliced ratio in the first group",
+   "A velocity arrow pointing between clusters, regardless of model fit"
   ],
   "correct": 0,
   "reference": {
    "label": "La Manno et al., Nature (2018)",
    "url": "https://doi.org/10.1038/s41586-018-0414-6"
   },
-  "status": "corrected"
+  "status": "corrected",
+  "decisionRule": "Spliced/unspliced counts can enter a kinetic RNA-velocity model, but a single splice event cannot date a molecule or prove future state transitions.",
+  "auditVersion": "evidence-first-v2",
+  "optionFeedback": [
+   "Correct: kinetic RNA velocity can suggest dynamics but direct lineage or longitudinal evidence is needed for the stronger fate claim.",
+   "Incorrect: RNA processing kinetics differ among genes and populations; a ratio alone is not a demonstrated trajectory.",
+   "Incorrect: visualization of a fitted velocity vector is model-based; it does not substitute for measured transitions."
+  ]
  },
  {
   "id": "bio-25",
@@ -621,7 +691,9 @@
    "label": "Wilkinson, Charenton & Nagai, Annu Rev Biochem (2020)",
    "url": "https://doi.org/10.1146/annurev-biochem-091719-064225"
   },
-  "status": "background"
+  "status": "background",
+  "decisionRule": "Find conserved motifs, enhancers or splice-regulatory sequences inside introns; absence of annotation does not prove absence of function.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "bio-26",
@@ -644,7 +716,9 @@
    "label": "Stuart & Satija, Nat Rev Genet (2019)",
    "url": "https://doi.org/10.1038/s41576-019-0093-7"
   },
-  "status": "corrected"
+  "status": "corrected",
+  "decisionRule": "Compare tumor and matched normal DNA for somatic mutations and aneuploidy; identical germline sequence does not mean identical somatic genomes.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "bio-27",
@@ -668,7 +742,9 @@
    "label": "Stark et al., Nat Rev Genet (2019)",
    "url": "https://doi.org/10.1038/s41576-019-0150-2"
   },
-  "status": "corrected"
+  "status": "corrected",
+  "decisionRule": "Check whether a transcript has a coding ORF and translation evidence. Many annotated genes instead produce noncoding functional RNAs.",
+  "auditVersion": "evidence-first-v2"
  },
  {
   "id": "bio-28",
@@ -691,6 +767,8 @@
    "label": "Stuart & Satija, Nat Rev Genet (2019)",
    "url": "https://doi.org/10.1038/s41576-019-0093-7"
   },
-  "status": "corrected"
+  "status": "corrected",
+  "decisionRule": "Sequencing detects sequence/variants; functional claims about a variant require mechanistic, expression or perturbation evidence rather than annotation alone.",
+  "auditVersion": "evidence-first-v2"
  }
 ]
