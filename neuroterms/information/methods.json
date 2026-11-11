@@ -1,0 +1,628 @@
+[
+ {
+  "id": "method-0",
+  "ids": [
+   14
+  ],
+  "category": "Computational Methods",
+  "title": "Celcomen and causal disentanglement",
+  "takeaway": "Celcomen is a 2026 spatial modeling framework intended to disentangle cell-intrinsic and microenvironmental contributions to expression.",
+  "explanation": "A model tries to separate variation driven by own cell properties from environmental contributions.",
+  "caution": "The word 'causal' in a model name does not independently validate interventions or identifiability assumptions.",
+  "question": "What strengthens a claim of causal disentanglement?",
+  "options": [
+   "Perturbation/identifiability tests and appropriate counterfactual validation",
+   "A UMAP with clear clusters",
+   "A high test-set correlation alone"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Megas et al., Celcomen, Nat Commun (2026), PMID 41851134",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/41851134/"
+  },
+  "status": "qualified"
+ },
+ {
+  "id": "method-1",
+  "ids": [
+   15
+  ],
+  "category": "Tumor Microenvironment",
+  "title": "Intrinsic versus extrinsic expression signals",
+  "takeaway": "A cell's measured RNA profile may reflect both its identity or internal state and signals arising from its microenvironment.",
+  "explanation": "Two genetically similar cells in different niches may have different transcriptional responses.",
+  "caution": "Associations cannot always cleanly separate environmental effects from intrinsic state without additional design.",
+  "question": "Which is an extrinsic influence?",
+  "options": [
+   "A secreted factor from a neighbor",
+   "A tumor cell's own DNA copy number",
+   "A stable inherited mutation only"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Megas et al., Celcomen, Nat Commun (2026), PMID 41851134",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/41851134/"
+  },
+  "status": "qualified"
+ },
+ {
+  "id": "method-2",
+  "ids": [
+   16
+  ],
+  "category": "Experimental Methods",
+  "title": "Spatial Perturb-Seq links perturbation and location",
+  "takeaway": "Spatial Perturb-Seq combines molecular perturbation information with cell-expression and spatial measurements in intact tissue.",
+  "explanation": "An in vivo barcoded CRISPR perturbation in mouse brain is read out with spatial transcriptomic platforms.",
+  "caution": "The 2026 experimental validation described mouse brain; do not generalize to human GBM without new data.",
+  "question": "Which observation is more causal than mere co-localization?",
+  "options": [
+   "A controlled perturbation and spatially resolved downstream readout",
+   "Two cells expressing complementary ligands",
+   "A colorful neighborhood plot"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Shen et al., Spatial Perturb-Seq, Nat Commun (2026)",
+   "url": "https://doi.org/10.1038/s41467-026-69677-6"
+  },
+  "status": "verified"
+ },
+ {
+  "id": "method-3",
+  "ids": [
+   17,
+   18
+  ],
+  "category": "Cell Types & Immunology",
+  "title": "Distinguishing NK and CD8 T cells",
+  "takeaway": "NK cells and cytotoxic T cells can share cytotoxic markers but differ in lineage-associated transcripts and protein markers.",
+  "explanation": "NKG7 and GNLY may occur in cytotoxic populations; CD3 genes support T-cell identity.",
+  "caution": "Marker panels and context matter; NKG7 alone is not a definitive NK-cell label.",
+  "question": "Which marker group helps distinguish T cells from conventional NK cells?",
+  "options": [
+   "CD3D/CD3E",
+   "NKG7 alone",
+   "GNLY alone"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Stuart & Satija, Nat Rev Genet (2019)",
+   "url": "https://doi.org/10.1038/s41576-019-0093-7"
+  },
+  "status": "qualified"
+ },
+ {
+  "id": "method-4",
+  "ids": [
+   19
+  ],
+  "category": "Spatial Transcriptomics",
+  "title": "Giotto is a spatial-analysis toolbox",
+  "takeaway": "Giotto implements methods for characterizing tissue composition, spatial expression patterns and cellular interactions.",
+  "explanation": "A researcher can analyze and visualize spatial transcriptomic or proteomic tissue data.",
+  "caution": "Its inferred interactions are computational associations rather than automatically demonstrated signaling.",
+  "question": "What task is explicitly in Giotto's scope?",
+  "options": [
+   "Spatial expression and cell-neighborhood analyses",
+   "Measuring DNA mutations without sequencing",
+   "Performing clinical irradiation"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Dries et al., Giotto, Genome Biol (2021), PMID 33685491",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/33685491/"
+  },
+  "status": "verified"
+ },
+ {
+  "id": "method-5",
+  "ids": [
+   20
+  ],
+  "category": "Cell Biology",
+  "title": "Tissues are multicellular systems",
+  "takeaway": "Many tissues contain multiple cell types whose collective organization contributes to function.",
+  "explanation": "A tissue section includes diverse cellular compartments and extracellular structures.",
+  "caution": "Cell-type proportions alone do not fully characterize multicellular function.",
+  "question": "What is lost when only cell-type counts are retained?",
+  "options": [
+   "Spatial organization and some functional context",
+   "The existence of cell types",
+   "The measured sample identity"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Dries et al., Giotto, Genome Biol (2021), PMID 33685491",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/33685491/"
+  },
+  "status": "background"
+ },
+ {
+  "id": "method-6",
+  "ids": [
+   21
+  ],
+  "category": "Computational Methods",
+  "title": "ResolVI follows segmentation",
+  "takeaway": "ResolVI is a probabilistic correction model applied to initial expression counts and spatial positions produced by an upstream quantification/segmentation pipeline.",
+  "explanation": "A segmentation algorithm assigns molecules to cells; ResolVI models expression affected by misassignment and nuisance variation.",
+  "caution": "ResolVI does not segment raw microscopy images de novo and depends on the quality of initial cell estimates.",
+  "question": "What is the input to ResolVI?",
+  "options": [
+   "Initially quantified cell expression and spatial context",
+   "Only raw histology pixels",
+   "Patient survival time alone"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Ergen & Yosef, ResolVI, Nat Methods (2026)",
+   "url": "https://doi.org/10.1038/s41592-026-03212-9"
+  },
+  "status": "verified"
+ },
+ {
+  "id": "method-7",
+  "ids": [
+   22
+  ],
+  "category": "Spatial Transcriptomics",
+  "title": "Spurious RNA mixing has multiple causes",
+  "takeaway": "Apparent RNA in one cell may include molecules misassigned from neighbors through segmentation, tissue leakage or three-dimensional overlap.",
+  "explanation": "A neuron-associated transcript may be falsely counted in a nearby microglial segment.",
+  "caution": "A correction model's outputs are estimated, not direct ground-truth molecular ownership.",
+  "question": "Why might a neuronal marker appear inside a segmented microglial cell?",
+  "options": [
+   "Molecule misassignment or overlapping geometry",
+   "A proven transdifferentiation event",
+   "A guaranteed mutation in the marker gene"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Ergen & Yosef, ResolVI, Nat Methods (2026)",
+   "url": "https://doi.org/10.1038/s41592-026-03212-9"
+  },
+  "status": "verified"
+ },
+ {
+  "id": "method-8",
+  "ids": [
+   23
+  ],
+  "category": "Spatial Transcriptomics",
+  "title": "Spatial RNA platforms have distinct readouts",
+  "takeaway": "High-resolution spatial assays may capture barcoded RNA for sequencing or visualize individual labeled RNA molecules by imaging.",
+  "explanation": "Sequencing-based spots and imaging-based molecular coordinates yield different error models.",
+  "caution": "The spot-based versus imaging-based distinction is broad; platforms vary in chemistry, panel breadth and resolution.",
+  "question": "What differentiates imaging-based molecule-resolved assays?",
+  "options": [
+   "Individual probe-labeled RNA molecules are localized optically",
+   "They always sequence intact whole genomes",
+   "They necessarily have no segmentation errors"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Ergen & Yosef, ResolVI, Nat Methods (2026)",
+   "url": "https://doi.org/10.1038/s41592-026-03212-9"
+  },
+  "status": "verified"
+ },
+ {
+  "id": "method-9",
+  "ids": [
+   65
+  ],
+  "category": "ML & Foundation Models",
+  "title": "Nicheformer jointly pretrains on dissociated and spatial cells",
+  "takeaway": "Nicheformer is a transformer-based foundation model trained across spatial and dissociated single-cell datasets.",
+  "explanation": "A shared representation can transfer some information about local tissue contexts.",
+  "caution": "An embedding is a learned prediction tool; it is not direct observation of hidden cell neighborhoods.",
+  "question": "What is distinctive about Nicheformer's pretraining?",
+  "options": [
+   "It includes spatial and dissociated single-cell data",
+   "It is trained only on bulk histology",
+   "It requires patient-specific radiation labels"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Tejada-Lapuerta et al., Nicheformer, Nat Methods (2025)",
+   "url": "https://doi.org/10.1038/s41592-025-02814-z"
+  },
+  "status": "verified"
+ },
+ {
+  "id": "method-10",
+  "ids": [
+   66,
+   69
+  ],
+  "category": "ML & Foundation Models",
+  "title": "Single-cell transformers need more than architecture names",
+  "takeaway": "Foundation models such as scGPT, Geneformer and Nicheformer employ learned cell representations but differ in tokenization and objectives.",
+  "explanation": "A model can tokenize gene identities, expression ranks and contextual variables differently.",
+  "caution": "Shared attention architecture does not guarantee transferable biological mechanisms.",
+  "question": "What must be compared to assess two cell foundation models?",
+  "options": [
+   "Tokenization, training data, objectives and evaluation",
+   "Only the word 'transformer' in the title",
+   "Only the number of layers"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Tejada-Lapuerta et al., Nicheformer, Nat Methods (2025)",
+   "url": "https://doi.org/10.1038/s41592-025-02814-z"
+  },
+  "status": "qualified"
+ },
+ {
+  "id": "method-11",
+  "ids": [
+   67,
+   70
+  ],
+  "category": "Single-cell Omics",
+  "title": "Dissociated profiling loses coordinates",
+  "takeaway": "Conventional dissociated scRNA-seq offers cell-resolved expression but discards original within-tissue cell coordinates.",
+  "explanation": "Spatial transcriptomics retains location, with technology-dependent resolution.",
+  "caution": "A cell's original niche cannot be uniquely reconstructed from its dissociated expression alone.",
+  "question": "What is the central information loss of standard scRNA-seq dissociation?",
+  "options": [
+   "Original tissue-neighborhood coordinates",
+   "RNA counts per captured cell",
+   "Ability to identify genes"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Tejada-Lapuerta et al., Nicheformer, Nat Methods (2025)",
+   "url": "https://doi.org/10.1038/s41592-025-02814-z"
+  },
+  "status": "verified"
+ },
+ {
+  "id": "method-12",
+  "ids": [
+   68
+  ],
+  "category": "ML & Foundation Models",
+  "title": "Scale does not establish biological generalization",
+  "takeaway": "Nicheformer was pretrained on SpatialCorpus-110M, combining over 57 million dissociated and 53 million spatially resolved cells.",
+  "explanation": "Large multi-tissue corpora permit broad representation learning.",
+  "caution": "Dataset size is not a substitute for out-of-distribution evaluation or causal tests.",
+  "question": "What does 110M describe for Nicheformer?",
+  "options": [
+   "Approximate total cells in its curated pretraining corpus",
+   "110 million genes in each cell",
+   "Number of patient interventions"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Tejada-Lapuerta et al., Nicheformer, Nat Methods (2025)",
+   "url": "https://doi.org/10.1038/s41592-025-02814-z"
+  },
+  "status": "verified"
+ },
+ {
+  "id": "method-13",
+  "ids": [
+   71
+  ],
+  "category": "Genomics & Epigenetics",
+  "title": "DNA-anchored malignant classification",
+  "takeaway": "DNA-level alterations can provide stronger direct evidence of cancer lineage than expression-based CNV inference.",
+  "explanation": "Tumor cells with somatic changes can be distinguished from nonmalignant populations.",
+  "caution": "Not every cancer cell carries every selected marker; DNA evidence quality and clonal heterogeneity matter.",
+  "question": "Which is most direct for detecting a chromosome gain?",
+  "options": [
+   "A calibrated DNA copy-number assay",
+   "One overexpressed gene",
+   "A cell's spatial coordinates"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "GBM spatial atlas, Nature (2026)",
+   "url": "https://doi.org/10.1038/s41586-026-11234-8"
+  },
+  "status": "qualified"
+ },
+ {
+  "id": "method-14",
+  "ids": [
+   72
+  ],
+  "category": "Spatial Transcriptomics",
+  "title": "Targeted FFPE probes are panel-limited",
+  "takeaway": "Probe-based spatial RNA assays detect preselected transcript targets in preserved tissue, including FFPE-compatible workflows.",
+  "explanation": "A targeted panel can map selected genes with high spatial resolution.",
+  "caution": "No probe for a transcript means it will not be directly quantified; assay processing and segmentation affect results.",
+  "question": "Can a targeted 500-gene panel directly measure every transcriptome gene?",
+  "options": [
+   "No, only its measured targets",
+   "Yes, every unmeasured gene becomes ground truth",
+   "Yes, RNA velocity is automatic"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Ergen & Yosef, ResolVI, Nat Methods (2026)",
+   "url": "https://doi.org/10.1038/s41592-026-03212-9"
+  },
+  "status": "background"
+ },
+ {
+  "id": "method-15",
+  "ids": [
+   110,
+   111
+  ],
+  "category": "Spatial Transcriptomics",
+  "title": "Visium spots versus molecule-level imaging",
+  "takeaway": "Classic Visium aggregates expression over spots that can contain multiple cells; Xenium, CosMx and MERFISH locate targeted individual RNA molecules.",
+  "explanation": "A cell-segmentation step can assign imaged molecules to cellular regions.",
+  "caution": "Molecule-level imaging still has panel, detection, assignment and 3D-overlap limitations.",
+  "question": "What is a typical difference between classic Visium and Xenium?",
+  "options": [
+   "Visium spots may aggregate cells, Xenium localizes individual molecules",
+   "Xenium always measures every gene without panels",
+   "Visium directly yields exact cell boundaries"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Ståhl et al., spatial transcriptomics, Science (2016)",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/27365449/"
+  },
+  "status": "qualified"
+ },
+ {
+  "id": "method-16",
+  "ids": [
+   112
+  ],
+  "category": "Critical Reading",
+  "title": "An absolute GBM intron claim is not established",
+  "takeaway": "The saved statement that no sub-100-µm human GBM dataset observes introns is too broad to accept without a systematic platform- and dataset-level audit.",
+  "explanation": "Whether spliced/unspliced counts are usable depends on chemistry, assay processing, raw data access and annotation.",
+  "caution": "Could not verify with peer-reviewed sources that RNA velocity at cell resolution is categorically impossible for all GBM spatial data.",
+  "question": "What would be required to rule out a specific velocity analysis?",
+  "options": [
+   "Inspect raw chemistry/read structure and intron quantifiability for the dataset",
+   "Infer absence from spot diameter alone",
+   "Assume all imaging platforms measure full transcriptomes"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "La Manno et al., RNA velocity, Nature (2018)",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/30089906/"
+  },
+  "status": "unverified"
+ },
+ {
+  "id": "method-17",
+  "ids": [
+   113
+  ],
+  "category": "ML & Foundation Models",
+  "title": "Sparse autoencoders are not a new 2026 invention",
+  "takeaway": "Sparse coding and sparsity-regularized autoencoders predate the modern use of SAEs to interpret transformer representations.",
+  "explanation": "SAEs encourage relatively sparse feature activations that can sometimes be interpretable.",
+  "caution": "The exact historical attribution in the note was not systematically verified; a particular variant's novelty needs precise citation.",
+  "question": "What makes an autoencoder 'sparse' in this context?",
+  "options": [
+   "An objective/constraint encouraging limited feature activation",
+   "Its encoder must have zero weights",
+   "Every latent feature must represent one gene"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Kendiukhov, J Biomed Inform (2026), PMID 42155660",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42155660/"
+  },
+  "status": "qualified"
+ },
+ {
+  "id": "method-18",
+  "ids": [
+   114
+  ],
+  "category": "Cell Biology",
+  "title": "Cell type and cell state are different analytical levels",
+  "takeaway": "Cell type captures a relatively persistent identity, while state captures context-dependent activity or condition.",
+  "explanation": "A microglial cell retains lineage identity while adopting an activated inflammatory state.",
+  "caution": "Type/state separation is an analytical abstraction, and plasticity can blur some categories.",
+  "question": "Which is more naturally a cell state?",
+  "options": [
+   "Actively dividing",
+   "Oligodendrocyte lineage",
+   "Neuron lineage"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "GBM spatial atlas, Nature (2026)",
+   "url": "https://doi.org/10.1038/s41586-026-11234-8"
+  },
+  "status": "background"
+ },
+ {
+  "id": "method-19",
+  "ids": [
+   119
+  ],
+  "category": "Genomics",
+  "title": "GENCODE is genome annotation",
+  "takeaway": "GENCODE provides reference gene and transcript annotation, including coordinates, exon structure and transcript identifiers.",
+  "explanation": "An RNA-seq pipeline uses transcript annotation when assigning reads.",
+  "caution": "Annotations are version- and genome-build-dependent, and they do not by themselves establish true expression.",
+  "question": "What does GENCODE supply?",
+  "options": [
+   "Gene/transcript coordinates and exon annotations",
+   "Measured protein abundance in a sample",
+   "Patient-specific radiation dose"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Stuart & Satija, Nat Rev Genet (2019)",
+   "url": "https://doi.org/10.1038/s41576-019-0093-7"
+  },
+  "status": "background"
+ },
+ {
+  "id": "method-20",
+  "ids": [
+   127
+  ],
+  "category": "Single-cell Omics",
+  "title": "Multimodal single-cell measurements",
+  "takeaway": "Single-cell multi-omics assays or integrations combine RNA with other measurements such as chromatin accessibility or proteins.",
+  "explanation": "Paired modalities can characterize a cell more richly than RNA alone.",
+  "caution": "Not every 'multimodal' paper assays all modalities in the same cells; paired versus integrated data differ.",
+  "question": "What should a methods paper clarify?",
+  "options": [
+   "Whether modalities are measured in the same cell or integrated across samples",
+   "Only the figure colors",
+   "Only the species label"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Stuart & Satija, Nat Rev Genet (2019)",
+   "url": "https://doi.org/10.1038/s41576-019-0093-7"
+  },
+  "status": "qualified"
+ },
+ {
+  "id": "method-21",
+  "ids": [
+   128
+  ],
+  "category": "ML & Foundation Models",
+  "title": "A preprint is not the same as peer-reviewed validation",
+  "takeaway": "A 2026 arXiv note proposes Top-K SAE analyses across scGPT and Geneformer representations.",
+  "explanation": "Preprints can motivate replication or competitive-method searches.",
+  "caution": "The specific arXiv claim has not been independently checked as peer reviewed; its findings must be labeled provisional.",
+  "question": "What evidence is needed before calling a preprint peer reviewed?",
+  "options": [
+   "Publication and review status of the exact version",
+   "A large model parameter count",
+   "A citation in a chat response"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Kendiukhov, J Biomed Inform (2026), PMID 42155660",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42155660/"
+  },
+  "status": "unverified"
+ },
+ {
+  "id": "method-22",
+  "ids": [
+   129
+  ],
+  "category": "ML & Foundation Models",
+  "title": "SAEs on scGPT already have peer-reviewed precedent",
+  "takeaway": "Kendiukhov (2026, Journal of Biomedical Informatics) examined sparse autoencoders for interpreting single-cell foundation-model representations.",
+  "explanation": "A new SAE-for-scGPT project should compare against prior interpretable-feature analyses.",
+  "caution": "Peer review of the underlying study does not mean any future SAE result is biologically causal.",
+  "question": "What does this publication affect most directly?",
+  "options": [
+   "The novelty claim of a generic SAE-on-scGPT cell-type project",
+   "The number of chromosomes in GBM",
+   "Whether RNA is double stranded"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Kendiukhov, J Biomed Inform (2026), PMID 42155660",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42155660/"
+  },
+  "status": "verified"
+ },
+ {
+  "id": "method-23",
+  "ids": [
+   130
+  ],
+  "category": "Cell Types & Immunology",
+  "title": "AT1 and AT2 are lung epithelial cell types",
+  "takeaway": "Alveolar type 1 (AT1) and type 2 (AT2) cells are different alveolar epithelial populations.",
+  "explanation": "AT2 cells synthesize pulmonary surfactant; AT1 cells contribute to the thin gas-exchange interface.",
+  "caution": "Their markers and differentiation relationships are context-dependent; they are not brain glia.",
+  "question": "Which alveolar type produces surfactant?",
+  "options": [
+   "AT2",
+   "AT1 exclusively",
+   "Endothelial pericytes"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Stuart & Satija, Nat Rev Genet (2019)",
+   "url": "https://doi.org/10.1038/s41576-019-0093-7"
+  },
+  "status": "background"
+ },
+ {
+  "id": "method-24",
+  "ids": [
+   131
+  ],
+  "category": "Computational Methods",
+  "title": "Solo detects potential doublets",
+  "takeaway": "Solo uses a VAE representation of single-cell RNA data and a classifier trained with simulated doublets.",
+  "explanation": "An observed droplet containing two cells may be classified by comparison with artificial doublets.",
+  "caution": "Solo estimates doublet likelihood; classifications are not perfect proof of one or two real captured cells.",
+  "question": "What training contrast does Solo exploit?",
+  "options": [
+   "Simulated doublets versus observed cells",
+   "Histology labels versus protein arrays",
+   "Tumor DNA versus blood oxygen"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Bernstein et al., Solo, Cell Syst (2020), PMID 32592658",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/32592658/"
+  },
+  "status": "verified"
+ },
+ {
+  "id": "method-25",
+  "ids": [
+   132,
+   133
+  ],
+  "category": "Statistics & ML",
+  "title": "AE versus VAE",
+  "takeaway": "An autoencoder learns a deterministic representation and reconstruction; a variational autoencoder fits a probabilistic latent-variable model with regularization.",
+  "explanation": "VAEs use an approximate posterior and a generative likelihood, whereas a basic AE minimizes reconstruction loss.",
+  "caution": "Both families have many architectures; an AE is not necessarily linear and a VAE is not guaranteed to model biological causation.",
+  "question": "What distinguishes a basic VAE from a standard AE?",
+  "options": [
+   "A probabilistic latent-variable objective including KL regularization",
+   "A requirement for spatial coordinates",
+   "No encoder at all"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Stuart & Satija, Nat Rev Genet (2019)",
+   "url": "https://doi.org/10.1038/s41576-019-0093-7"
+  },
+  "status": "background"
+ },
+ {
+  "id": "method-26",
+  "ids": [
+   134
+  ],
+  "category": "Statistics & ML",
+  "title": "Linear autoencoders and PCA",
+  "takeaway": "Under specific objectives and constraints, a linear autoencoder can recover the principal subspace of PCA.",
+  "explanation": "SVD finds orthogonal principal components that explain variance of centered data.",
+  "caution": "Not every linear autoencoder returns the unique PCA loadings or uses the transpose of its encoder matrix.",
+  "question": "Which claim is suitably qualified?",
+  "options": [
+   "Linear AEs can span the PCA subspace under appropriate assumptions",
+   "Every AE is exactly PCA",
+   "PCA always trains a nonlinear decoder"
+  ],
+  "correct": 0,
+  "reference": {
+   "label": "Linear autoencoders and PCA — scientific reference search",
+   "url": "https://scholar.google.com/scholar?q=linear+autoencoders+principal+component+analysis"
+  },
+  "status": "qualified"
+ }
+]
