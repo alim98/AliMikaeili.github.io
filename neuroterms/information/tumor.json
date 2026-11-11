@@ -387,6 +387,35 @@
    "Correct: a proportion change can reflect cell-state transitions, differential survival, proliferation, sampling or mixtures.",
    "Incorrect: the difference in proportions is not a fraction of cells proven to have switched.",
    "Incorrect: pre-existing MES-like cells may preferentially survive or expand."
+  ],
+  "contrastLabels": [
+   "Cell-state conversion",
+   "Differential selection"
+  ],
+  "contrast": [
+   {
+    "feature": "Mechanism",
+    "left": "An individual malignant lineage changes its transcriptional state",
+    "right": "Pre-existing subpopulations survive/proliferate at different rates"
+   },
+   {
+    "feature": "Can a two-timepoint proportion establish it?",
+    "left": "No",
+    "right": "No"
+   },
+   {
+    "feature": "Needed evidence",
+    "left": "Clone-resolved lineage tracking or controlled conversion assay",
+    "right": "Clone-resolved survival/proliferation and state abundance"
+   }
+  ],
+  "contrastTitle": "How to tell them apart",
+  "workedExamples": [
+   {
+    "profile": "MES-like proportion 20% → 40% following RT, different tissue regions sampled",
+    "answer": "State enrichment is observed, mechanism unresolved",
+    "why": "Regional sampling, selection and switching all remain possible without lineage and survival data."
+   }
   ]
  },
  {
@@ -419,6 +448,40 @@
    "Correct: DNA-based assays measure genomic gains/losses rather than using expression as a surrogate.",
    "Incorrect: RNA-derived regional expression patterns can be affected by state and technical effects.",
    "Incorrect: embedding distance does not prove a specific genomic alteration."
+  ],
+  "contrastLabels": [
+   "RNA-inferred copy number",
+   "DNA-measured copy number"
+  ],
+  "contrast": [
+   {
+    "feature": "Underlying assay",
+    "left": "Expression changes across chromosomal neighborhoods",
+    "right": "Direct genomic reads, FISH, array or other DNA copy measurements"
+   },
+   {
+    "feature": "Interpretation",
+    "left": "Model-dependent surrogate; affected by state/technical noise",
+    "right": "More direct evidence of DNA copy gains or losses"
+   },
+   {
+    "feature": "Failure mode",
+    "left": "Expression shift without actual DNA copy change",
+    "right": "Coverage, tumor purity, mosaicism and assay resolution"
+   }
+  ],
+  "contrastTitle": "How to tell them apart",
+  "workedExamples": [
+   {
+    "profile": "chr7-wide RNA upregulation without DNA data",
+    "answer": "RNA-inferred CNV candidate only",
+    "why": "Global expression shifts can arise from copy number or non-genetic effects; validate with genomic measurements."
+   },
+   {
+    "profile": "DNA FISH shows extra chr7 copies in a malignant region",
+    "answer": "Direct evidence of genomic gain in those tested cells",
+    "why": "FISH interrogates DNA rather than inferring copy changes from transcription."
+   }
   ]
  },
  {
@@ -476,7 +539,29 @@
   },
   "status": "verified",
   "decisionRule": "Separate TMZ-induced O6-methylguanine and other lesions from MGMT-specific direct reversal. Promoter methylation is a biomarker, not a direct functional assay of every lesion.",
-  "auditVersion": "evidence-first-v2"
+  "auditVersion": "evidence-first-v2",
+  "contrastLabels": [
+   "Temozolomide (TMZ)",
+   "MGMT DNA repair"
+  ],
+  "contrast": [
+   {
+    "feature": "Role",
+    "left": "Alkylating drug causing multiple DNA adduct types",
+    "right": "Enzyme that directly reverses certain O6-alkylguanine lesions"
+   },
+   {
+    "feature": "Observed effect",
+    "left": "Can impair replication or lead to cell death in context",
+    "right": "Can reduce persistence of a subset of TMZ-induced lesions"
+   },
+   {
+    "feature": "What promoter methylation means",
+    "left": "Not a direct measure of drug delivery",
+    "right": "Biomarker associated with altered MGMT expression, not proof of zero protein"
+   }
+  ],
+  "contrastTitle": "How to tell them apart"
  },
  {
   "id": "tumor-18",
@@ -539,7 +624,29 @@
    "Correct: abnormal vascular function and demand can decouple 2D vessel distance from actual oxygen availability.",
    "Incorrect: observing a nearby vessel does not falsify independently measured low oxygen.",
    "Incorrect: endothelial staining does not assess perfusion or local oxygen transport."
-  ]
+  ],
+  "contrastLabels": [
+   "Distance to a vessel",
+   "Actual tissue oxygen state"
+  ],
+  "contrast": [
+   {
+    "feature": "Measured readout",
+    "left": "2D/3D geometry of stained vasculature",
+    "right": "Oxygen probes, validated perfusion/oxygen measurements or constrained proxies"
+   },
+   {
+    "feature": "What drives the relation",
+    "left": "Diffusion distance, vessel patency, flow and demand",
+    "right": "Local oxygen supply versus consumption"
+   },
+   {
+    "feature": "Common error",
+    "left": "Assume every vessel is equally perfused",
+    "right": "Infer precise pO2 solely from a hypoxia-associated gene signature"
+   }
+  ],
+  "contrastTitle": "How to tell them apart"
  },
  {
   "id": "tumor-20",
@@ -615,7 +722,29 @@
   },
   "status": "verified",
   "decisionRule": "Classify malignant cells by independent genetic evidence, then score NPC/OPC/AC/MES programs; similarity to a normal cell type is not proof of that lineage.",
-  "auditVersion": "evidence-first-v2"
+  "auditVersion": "evidence-first-v2",
+  "contrastLabels": [
+   "Malignant expression state",
+   "Normal brain cell identity"
+  ],
+  "contrast": [
+   {
+    "feature": "Definition",
+    "left": "A transcriptional program in a genetically malignant cell",
+    "right": "Normal neural/glial cell lineage"
+   },
+   {
+    "feature": "What marker overlap means",
+    "left": "Similarity to NPC/OPC/AC/MES-like programs",
+    "right": "Possibly reactive state or shared developmental genes"
+   },
+   {
+    "feature": "What validates malignancy",
+    "left": "Tumor-specific genomic alterations or suitable orthogonal evidence",
+    "right": "Normal genetic context, tissue/lineage markers"
+   }
+  ],
+  "contrastTitle": "How to tell them apart"
  },
  {
   "id": "tumor-23",
@@ -751,7 +880,29 @@
   },
   "status": "qualified",
   "decisionRule": "Distinguish EGFR gene amplification (copy-number gain) from EGFRvIII deletion-derived transcript/protein. They can coexist but neither implies the other in every tumor.",
-  "auditVersion": "evidence-first-v2"
+  "auditVersion": "evidence-first-v2",
+  "contrastLabels": [
+   "EGFR amplification",
+   "EGFRvIII"
+  ],
+  "contrast": [
+   {
+    "feature": "Molecular event",
+    "left": "Increased DNA copy number of an EGFR locus",
+    "right": "Transcript/protein isoform with a specific extracellular-domain deletion"
+   },
+   {
+    "feature": "Assay evidence",
+    "left": "DNA CNV assay or FISH",
+    "right": "Deletion-specific junction RNA/protein or corresponding genomic evidence"
+   },
+   {
+    "feature": "Relationship",
+    "left": "Can occur without EGFRvIII",
+    "right": "Can coexist with amplification; not synonymous with it"
+   }
+  ],
+  "contrastTitle": "How to tell them apart"
  },
  {
   "id": "tumor-28",
@@ -776,6 +927,28 @@
   },
   "status": "verified",
   "decisionRule": "Use 12 as the independent tumor count when analyzing patient-level replication; 97 sections are repeated spatial samples nested within those tumors.",
-  "auditVersion": "evidence-first-v2"
+  "auditVersion": "evidence-first-v2",
+  "contrastLabels": [
+   "Independent tumors/patients",
+   "Multiple tissue sections"
+  ],
+  "contrast": [
+   {
+    "feature": "Unit count in the cited GBM atlas",
+    "left": "12 tumors",
+    "right": "97 Visium sections"
+   },
+   {
+    "feature": "Statistical independence",
+    "left": "Patient/tumor-level biological replication",
+    "right": "Repeated sections nested within tumors"
+   },
+   {
+    "feature": "Common error",
+    "left": "Assuming only 12 measurements total",
+    "right": "Treating 97 sections as 97 independent patients"
+   }
+  ],
+  "contrastTitle": "How to tell them apart"
  }
 ]
