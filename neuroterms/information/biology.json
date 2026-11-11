@@ -12,8 +12,8 @@
   "question": "Why is a one-exon–one-domain rule unsafe?",
   "options": [
    "The correspondence varies among genes",
-   "Every exon encodes exactly one domain",
-   "Domains exist only in bacteria"
+   "A protein domain always spans the same number of exons",
+   "Each exon must fold into a complete independently functioning protein domain"
   ],
   "correct": 0,
   "reference": {
@@ -38,8 +38,8 @@
   "question": "What is defensible about exon shuffling?",
   "options": [
    "It is an evolutionary mechanism, not an exclusive explanation for introns",
-   "All modern genes are produced by it",
-   "Introns are invariably useless"
+   "Exon shuffling explains the origin of every intron",
+   "Exon rearrangement can only occur after introns are removed from the genome"
   ],
   "correct": 0,
   "reference": {
@@ -63,8 +63,8 @@
   "question": "Why can gene span be much longer than the translated coding sequence?",
   "options": [
    "Introns and untranslated/regulatory regions occupy genomic space",
-   "Each amino acid requires thousands of bases",
-   "Every base is translated"
+   "Coding sequence alone determines a gene's genomic start-to-end span",
+   "Untranslated regions contribute to span, but introns never do"
   ],
   "correct": 0,
   "reference": {
@@ -195,8 +195,8 @@
   "question": "What remains after canonical intron excision?",
   "options": [
    "Joined exonic RNA segments",
-   "All original introns only",
-   "A duplicated DNA chromosome"
+   "Canonical splicing preserves all introns while removing some exons",
+   "Canonical splicing joins introns and discards intervening exons"
   ],
   "correct": 0,
   "reference": {
@@ -221,8 +221,8 @@
   "question": "Why are nuclear gene transcription and ribosomal translation spatially separated?",
   "options": [
    "The nucleus separates nuclear DNA from many ribosomes",
-   "Ribosomes translate DNA directly",
-   "All ribosomes reside inside the nucleus"
+   "Protein-coding DNA is translated directly in the nucleus",
+   "All translation takes place within the nucleus before export"
   ],
   "correct": 0,
   "reference": {
@@ -248,8 +248,8 @@
   "question": "What most directly distinguishes eukaryotes?",
   "options": [
    "A membrane-bound nucleus",
-   "Being larger than one micrometre",
-   "Having no ribosomes"
+   "The presence of any linear chromosome, whether or not enclosed",
+   "Large cell size and high DNA content alone"
   ],
   "correct": 0,
   "reference": {
@@ -273,8 +273,8 @@
   "question": "What permits transcription–translation coupling in bacteria?",
   "options": [
    "No nuclear envelope separates the processes",
-   "The RNA becomes DNA first",
-   "All bacterial mRNA must be exported from a nucleus"
+   "A bacterial nucleus temporarily opens during translation",
+   "Bacteria splice every transcript before cytoplasmic export"
   ],
   "correct": 0,
   "reference": {
@@ -298,8 +298,8 @@
   "question": "What is directly decoded during translation?",
   "options": [
    "mRNA codons",
-   "A histology image",
-   "DNA methylation marks"
+   "Codons in nuclear DNA directly, without an mRNA intermediate",
+   "The protein sequence itself, before new peptide bonds form"
   ],
   "correct": 0,
   "reference": {
@@ -490,8 +490,8 @@
   "question": "Which statement avoids overgeneralizing the central dogma?",
   "options": [
    "Some RNAs function without being translated",
-   "All RNAs become proteins",
-   "DNA is directly read by human ribosomes"
+   "Every functional RNA is eventually translated into a protein",
+   "Only mature mRNA can have a biological role"
   ],
   "correct": 0,
   "reference": {
@@ -683,8 +683,8 @@
   "question": "Which statement is supported?",
   "options": [
    "Some introns contain functional regulatory information",
-   "All introns are transcriptionally silent waste",
-   "Every intron encodes a protein domain"
+   "All introns are functionless once an RNA is spliced",
+   "Intronic regulation is possible only after the intron becomes protein"
   ],
   "correct": 0,
   "reference": {
@@ -759,8 +759,8 @@
   "question": "What can DNA sequencing directly establish?",
   "options": [
    "Nucleotide sequence and detectable variants",
-   "All gene functions experimentally",
-   "All protein-protein interactions"
+   "Gene function, from sequence similarity alone without validation",
+   "Gene activity in a specific tissue from genomic sequence alone"
   ],
   "correct": 0,
   "reference": {
