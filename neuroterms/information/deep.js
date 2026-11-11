@@ -45,7 +45,7 @@ const button=node("button");button.id="nav-deep";button.innerHTML='<span class="
 const section=node("section",undefined,"hidden");section.id="deep";section.innerHTML='<div class="row"><div><h2>Deep learning lab</h2><p class="sub">Explain, transfer, connect and revisit information without answer cues.</p></div><span class="chip" id="deepStats">Loading…</span></div><div class="deep-toolbar"><button data-deep="explain" class="on">Write to explain</button><button data-deep="case">Research cases</button><button data-deep="pair">Connect concepts</button><button data-deep="source">141 polished records</button><button data-deep="plan">Study plan</button></div><div id="deepContent"></div>';
 document.querySelector(".main").appendChild(section);
 let mode="explain";
-function setActive(which){mode=which;section.querySelectorAll("[data-deep]").forEach(b=>b.classList.toggle("on",b.dataset.deep===which));render()}
+function setActive(which){mode=which;if(which==="case")caseAnswered=false;section.querySelectorAll("[data-deep]").forEach(b=>b.classList.toggle("on",b.dataset.deep===which));render()}
 function activate(){["cards","quiz","critical","library"].forEach(n=>{$(n).classList.add("hidden");$("nav-"+n).classList.remove("active")});$("deep").classList.remove("hidden");button.classList.add("active");setActive(mode)}
 button.onclick=activate;
 ["cards","quiz","critical","library"].forEach(n=>$("nav-"+n).addEventListener("click",()=>{section.classList.add("hidden");button.classList.remove("active")}));
