@@ -73,3 +73,7 @@
 @media(max-width:560px){.pbtns{gap:6px}.pbtn{font-size:19px;padding:11px 2px 8px}.pbtn small{font-size:9.5px}.pwall{grid-template-columns:1fr}}
 .pbtn:disabled{opacity:1}.pbtn.dim{opacity:.35!important}
 .pwall .chip{border-radius:10px;text-align:left}.chip .pl-end{text-decoration-thickness:2px;text-underline-offset:2px}
+/* ≈ almost · 🌱 preview of a new word */
+.answer-feedback.almost{display:block;background:#fff6e5;color:#8a5a12}.vdiff mark{background:#ffd98a;color:inherit;border-radius:3px;padding:0 1px}
+#previewBox{display:none}#quizBox.previewing #previewBox{display:block}#quizBox.previewing>.question,#quizBox.previewing>#answerForm,#quizBox.previewing>#feedback,#quizBox.previewing>.actions,#quizBox.previewing>.kbd{display:none}
+.vpreview{margin-top:26px;text-align:center}.vptag{font-size:12px;font-weight:800;color:var(--green);letter-spacing:.3px}.vpde{font-size:clamp(32px,5.5vw,50px);font-weight:800;letter-spacing:-1px;margin:12px 0 2px;overflow-wrap:anywhere}.vpen{color:var(--muted);font-size:17px;margin-bottom:16px}.vpreview .vtip{text-align:left}.vpreview .actions{margin-top:18px}

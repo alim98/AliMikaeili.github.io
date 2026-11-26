@@ -10,12 +10,12 @@
      uid      unique id                     ts       time, ms since 1970
      day      local date YYYY-MM-DD         session  study session (new after 30 min idle)
      section  vocab | gender | plural | reading | verbs | talk | days | home | stats
-     action   answer | hint | listen | lookup | open-text | archive | restore |
+     action   answer | hint | listen | lookup | open-text | archive | restore | preview (🌱 new word shown) |
               list-add | list-remove | setting | nav
      mode     en-de/de-en · singular/plural (gender) · pattern/write/sing (plural) · quiz · table/swap · answer/ask/build · abbr/next/prev/en/am/listen/order
      item     id of the card / sentence      label    readable name of it
      prompt   what you were asked            given    what you answered
-     expected the correct answer             result   correct | wrong | revealed | skipped
+     expected the correct answer             result   correct | almost (right word, small slip) | wrong | revealed | skipped
      ms       time from seeing the question to answering
      hints    hints used before answering    errors   mistake categories, e.g. ["wrong article"]
      details  extra info (lesson, rule, per-person verb results, tips, …)
@@ -123,13 +123,13 @@ function vocabErr(given,c,target){
   if(bd>0&&bd<=typoLimit(body(best).length))errs.push('spelling');
   return {errors:errs.length?errs:['wrong word']};
 }
-function vocabAnswer(c,dir,result,given){
+function vocabAnswer(c,dir,result,given,info){
   const target=dir==='en-de'?'de':'en';
   const prev=EV.filter(e=>e.action==='answer'&&e.section==='vocab'&&e.item===c.id);
   let errors,mixed;
-  if(result==='wrong'){const r=vocabErr(given||'',c,target);errors=r.errors;mixed=r.mixed;}
+  if(result==='wrong'){const r=vocabErr(given||'',c,target);errors=r.errors;mixed=r.mixed;}else if(result==='almost')errors=[(info&&info.kind)||'almost'];
   answer({section:'vocab',mode:dir,item:c.id,label:c.de,prompt:dir==='en-de'?c.en:c.de,given:String(given||'').trim(),expected:target==='de'?c.de:c.en,result,errors,
-    details:{topic:labels[c.cat]||c.cat,lesson:(LESSONS[c.les]||{}).label,mixedWith:mixed,strictCaps:$('caseStrict').checked}});
+    details:{topic:labels[c.cat]||c.cat,lesson:(LESSONS[c.les]||{}).label,mixedWith:mixed,strictCaps:$('caseStrict').checked,typo:!!(info&&info.typo)}});
   if(result!=='skipped')pastNote(prev,c);
 }
 function pastNote(prev,c){
@@ -201,11 +201,11 @@ function daysAnswer(it,ok,val,note,helped){
 /* settings changes, listening and navigation are logged centrally */
 document.addEventListener('change',e=>{const t=e.target;if(!t||!t.id||!t.closest||!t.closest('.layout')||t.closest('#tabStats,#tabHome')||t.id==='importFile')return;
   if(t.type==='checkbox'||t.tagName==='SELECT')add({section:secNow(),action:'setting',item:t.id,given:t.type==='checkbox'?String(t.checked):t.value});},true);
-const LISTEN='#speakBtn,#gSpeak,#pSpeak,#vSay,#tSay,#dSayBtn,#rdPlay,.rsay,button.chip,.speak-mini:not(.arch)';
+const LISTEN='#speakBtn,#pvSay,#gSpeak,#pSpeak,#vSay,#tSay,#dSayBtn,#rdPlay,.rsay,button.chip,.speak-mini:not(.arch)';
 document.addEventListener('click',e=>{const b=e.target.closest&&e.target.closest('button');if(!b||!b.closest('.layout,#wpop')||b.closest('#tabStats,#tabHome'))return;const d=b.dataset;
   if(d.mode||d.order||d.vmode||d.tmode||d.pmode){add({section:secNow(),action:'setting',item:d.mode?'direction':d.order?'card order':d.vmode?'verb exercise':d.pmode?'plural exercise':'talk exercise',given:d.mode||d.order||d.vmode||d.pmode||d.tmode});return;}
   if(!b.matches(LISTEN))return;
-  let c=null;try{c={speakBtn:()=>current&&{item:current.id,label:current.de},gSpeak:()=>gCur&&{item:gCur.id,label:gCur.word},pSpeak:()=>pCur&&{item:pCur.id,label:pCur.art+' '+pCur.sg},vSay:()=>vCur&&{item:vCur.id,label:vCur.inf},tSay:()=>tCur&&{item:tCur.key,label:tCur.prompt},dSayBtn:()=>dCur&&{item:dCur.type+'|'+dCur.q,label:dCur.ans},rdPlay:()=>rdText&&{item:rdText.id,label:rdText.title}}[b.id]?.();}catch(err){}
+  let c=null;try{c={speakBtn:()=>current&&{item:current.id,label:current.de},pvSay:()=>current&&{item:current.id,label:current.de},gSpeak:()=>gCur&&{item:gCur.id,label:gCur.word},pSpeak:()=>pCur&&{item:pCur.id,label:pCur.art+' '+pCur.sg},vSay:()=>vCur&&{item:vCur.id,label:vCur.inf},tSay:()=>tCur&&{item:tCur.key,label:tCur.prompt},dSayBtn:()=>dCur&&{item:dCur.type+'|'+dCur.q,label:dCur.ans},rdPlay:()=>rdText&&{item:rdText.id,label:rdText.title}}[b.id]?.();}catch(err){}
   add({section:secNow(),action:'listen',...(c||{label:(b.getAttribute('aria-label')||b.title||b.textContent||'').replace(/^(Pronounce|Listen to)\s*/,'')})});},true);
 
 /* ---------------- navigation: hash routes, scroll, sticky bar ---------------- */
@@ -225,7 +225,7 @@ window.addEventListener('hashchange',()=>{const t=fromHash();if(t&&t!==secNow())
 
 /* ---------------- analysis helpers ---------------- */
 const answers=(from=0)=>EV.filter(e=>e.action==='answer'&&e.result!=='skipped'&&e.ts>=from);
-const isOk=e=>e.result==='correct';
+const isOk=e=>e.result==='correct'||e.result==='almost';
 function studyTime(list){const by={};let t=0;for(let i=1;i<list.length;i++){const g=list[i].ts-list[i-1].ts;if(g>0&&g<=10*60e3){const x=Math.min(g,5*60e3);t+=x;const s=list[i].section;by[s]=(by[s]||0)+x;}}return {t,by};}
 function fmtDur(ms){const m=Math.round(ms/60e3);if(m<1)return ms>15e3?'<1 min':'0 min';if(m<60)return m+' min';return Math.floor(m/60)+' h '+pad(m%60)+' min';}
 function ago(ts){if(!ts)return 'never';const s=(Date.now()-ts)/1e3;if(s<60)return 'just now';if(s<3600)return Math.round(s/60)+' min ago';if(dayOf(ts)===dayOf(Date.now()))return Math.round(s/3600)+' h ago';const d=Math.round((startOfDay(Date.now())-startOfDay(ts))/DAYMS);if(d===1)return 'yesterday';if(d<14)return d+' days ago';return new Date(ts).toLocaleDateString();}
@@ -247,12 +247,12 @@ function weakWords(){
   });
   return out.sort((a,b)=>b.score-a.score);
 }
-function example(e,cat,html=true){if(!e||e.result!=='wrong')return '';let g=e.given,x=e.expected,pre='';
+function example(e,cat,html=true){if(!e||(e.result!=='wrong'&&e.result!=='almost'))return '';let g=e.given,x=e.expected,pre='';
   if(e.mode==='table'&&e.details&&Array.isArray(e.details.cells)){const c=e.details.cells.find(c=>!c.ok&&(!cat||c.person+' form'===cat))||e.details.cells.find(c=>!c.ok);if(c){g=c.given||'—';x=c.expected;pre=c.person+': ';}}
   if(!g)return '';return html?`e.g. ${H(pre)}<span class="pw">${H(g)}</span> → <span class="pr">${H(x)}</span>`:` (e.g. ${pre}“${g}” instead of “${x}”)`;}
 function patterns(){
   const m={};
-  EV.forEach(e=>{if(e.action!=='answer'||(e.result!=='wrong'&&e.result!=='revealed'))return;
+  EV.forEach(e=>{if(e.action!=='answer'||(e.result!=='wrong'&&e.result!=='revealed'&&e.result!=='almost'))return;
     const cats=e.result==='revealed'?['gave up (revealed)']:(e.errors&&e.errors.length?e.errors:['other']);
     cats.forEach(c=>{const k=e.section+'|'+c;const p=m[k]||(m[k]={sec:e.section,cat:c,n:0,last:null});p.n++;p.last=e;});});
   return Object.values(m).sort((a,b)=>b.n-a.n);
@@ -455,13 +455,13 @@ function renderWeak(){
 
 function evText(e){
   if(e.action==='answer')return H(e.prompt||e.label||e.item||'');
-  const map={hint:'💡 hint',listen:'🔊 listened',lookup:'🔎 looked up',nav:'opened section','open-text':'📖 opened text',setting:'⚙ setting',archive:'🗃 archived',restore:'↩ restored','list-add':'★ added to list','list-remove':'removed from list'};
+  const map={preview:'🌱 new word shown',hint:'💡 hint',listen:'🔊 listened',lookup:'🔎 looked up',nav:'opened section','open-text':'📖 opened text',setting:'⚙ setting',archive:'🗃 archived',restore:'↩ restored','list-add':'★ added to list','list-remove':'removed from list'};
   return `<span class="note" style="display:inline">${H(map[e.action]||e.action)}</span> ${H(e.action==='setting'?`${e.item} = ${e.given}`:e.action==='lookup'?`${e.label} = ${e.expected||'?'}`:e.action==='nav'?SEC[e.section]?.n||'':(e.label||e.item||'')+(e.details&&e.details.list?` (${e.details.list})`:''))}`;
 }
 function resBadge(e){
   if(e.action!=='answer')return '';
   const h=e.hints?` <span class="note" style="display:inline">· ${e.hints} hint${e.hints>1?'s':''}</span>`:'';
-  return {correct:'<span class="res ok">✓ correct</span>',wrong:'<span class="res bad">✗ wrong</span>',revealed:'<span class="res mid">👁 revealed</span>',skipped:'<span class="res na">⏭ skipped</span>'}[e.result]+h;
+  return {correct:'<span class="res ok">✓ correct</span>',almost:'<span class="res mid">≈ almost</span>',wrong:'<span class="res bad">✗ wrong</span>',revealed:'<span class="res mid">👁 revealed</span>',skipped:'<span class="res na">⏭ skipped</span>'}[e.result]+h;
 }
 function renderHistory(){
   const box=$('pgHist');if(!box)return;
