@@ -116,7 +116,19 @@ const TPAIRS=[
 {t:'people',les:'Nov 24',q:['Was ist Christiane Seidel von Beruf?','Was macht Christiane Seidel beruflich?'],qen:"What is Christiane Seidel's job?",cue:'Schauspielerin',a:['Sie ist Schauspielerin.','Christiane Seidel ist Schauspielerin.','Sie ist Schauspielerin von Beruf.'],aen:'She is an actress.',ap:'Christiane Seidel ist Schauspielerin.',hl:'Schauspielerin'},
 {t:'people',les:'Nov 24',q:['Welche Sprachen spricht Christiane Seidel?','Was spricht Christiane Seidel?'],qen:'Which languages does Christiane Seidel speak?',cue:'Deutsch, Dänisch, Englisch',a:['Sie spricht Deutsch, Dänisch und Englisch.','Christiane Seidel spricht Deutsch, Dänisch und Englisch.'],aen:'She speaks German, Danish and English.',ap:'Christiane Seidel spricht Deutsch, Dänisch und Englisch.',hl:'Deutsch, Dänisch und Englisch'},
 {t:'people',les:'Nov 24',q:['Woher kommt Ana Paula Morais?'],qen:'Where does Ana Paula Morais come from?',cue:'Brasilien',a:['Sie kommt aus Brasilien.','Ana Paula Morais kommt aus Brasilien.'],aen:'She comes from Brazil.',ap:'Ana Paula Morais kommt aus Brasilien.',hl:'aus Brasilien'},
-{t:'people',les:'Nov 24',q:['Wo wohnt Ana Paula Morais?'],qen:'Where does Ana Paula Morais live?',cue:'Berlin',a:['Sie wohnt in Berlin.','Ana Paula Morais wohnt in Berlin.'],aen:'She lives in Berlin.',ap:'Ana Paula Morais wohnt in Berlin.',hl:'in Berlin'}
+{t:'people',les:'Nov 24',q:['Wo wohnt Ana Paula Morais?'],qen:'Where does Ana Paula Morais live?',cue:'Berlin',a:['Sie wohnt in Berlin.','Ana Paula Morais wohnt in Berlin.'],aen:'She lives in Berlin.',ap:'Ana Paula Morais wohnt in Berlin.',hl:'in Berlin'},
+/* 🆕 Nov 26: saying no – nicht or kein? */
+{t:'neg',les:'Nov 26',q:['Spielst du gut Gitarre?'],qen:'Do you play the guitar well?',cue:'✘ Nein',a:['Nein, ich spiele nicht gut Gitarre.'],aen:'No, I do not play the guitar well.'},
+{t:'neg',les:'Nov 26',q:['Treibt Luis gern Sport?'],qen:'Does Luis like doing sports?',cue:'✘ Nein',a:['Nein, er treibt nicht gern Sport.','Nein, Luis treibt nicht gern Sport.'],aen:'No, he does not like doing sports.',ap:'Nein, Luis treibt nicht gern Sport.'},
+{t:'neg',les:'Nov 26',q:['Ist ein Studium ein Hobby?'],qen:'Is a degree course a hobby?',cue:'✘ Nein',a:['Nein, ein Studium ist kein Hobby.','Nein, das ist kein Hobby.'],aen:'No, a degree course is not a hobby.'},
+{t:'neg',les:'Nov 26',q:['Ist das ein Problem?'],qen:'Is that a problem?',cue:'✘ Nein',a:['Nein, das ist kein Problem.'],aen:'No, that is no problem.'},
+{t:'neg',les:'Nov 26',q:['Tanzt du gern?'],qen:'Do you like dancing?',cue:'✘ Nein',a:['Nein, ich tanze nicht gern.'],aen:'No, I do not like dancing.'},
+{t:'neg',les:'Nov 26',q:['Ist das schön?'],qen:'Is that nice?',cue:'✘ Nein',a:['Nein, das ist nicht schön.'],aen:'No, that is not nice.'},
+{t:'neg',les:'Nov 26',q:['Hast du eine Brille?'],qen:'Do you have glasses?',cue:'✘ Nein',a:['Nein, ich habe keine Brille.'],aen:'No, I do not have glasses.'},
+{t:'neg',les:'Nov 26',q:['Hast du eine Schere?'],qen:'Do you have a pair of scissors?',cue:'✘ Nein',a:['Nein, ich habe keine Schere.'],aen:'No, I do not have scissors.'},
+{t:'neg',les:'Nov 26',q:['Wo ist der Radiergummi?'],qen:'Where is the eraser?',cue:'🤷 no idea',a:['Ich habe keine Ahnung.','Keine Ahnung.'],aen:'I have no idea.',noAsk:1},
+{t:'neg',les:'Nov 26',q:['Was machst du am liebsten?'],qen:'What do you like doing most?',cue:'tanzen',a:['Am liebsten tanze ich.','Ich tanze am liebsten.'],aen:'Most of all I like dancing.'},
+{t:'neg',les:'Nov 26',q:['Was macht Yu am liebsten?'],qen:'What does Yu like doing most?',cue:'zeichnen',a:['Am liebsten zeichnet sie.','Sie zeichnet am liebsten.','Am liebsten zeichnet Yu.','Yu zeichnet am liebsten.'],aen:'Most of all she likes drawing.',ap:'Am liebsten zeichnet Yu.'},
 ];
 /* "Ist das ein …? – Nein, das ist kein …, das ist ein …" (Nov 18, page 19) for nouns you know */
 function tEinPairs(){const ind=a=>a==='die'?'eine':'ein',out=[];
@@ -130,4 +142,13 @@ out.push({t:'ein',les:'Nov 18',q:[wq],qen:wqen,cue:A[1],a:[`Das ist ${a}.`],aen:
 GR.forEach((A,i)=>{const B=GR[(i+1)%GR.length];
 out.push({t:'ein',les:'Nov 18',q:[`Sind das ${A[0]}?`],qen:`Are those ${A[1]}?`,cue:`✘ Nein → ${B[0]}`,a:[`Nein, das sind keine ${A[0]}, das sind ${B[0]}.`,`Nein, das sind keine ${A[0]}. Das sind ${B[0]}.`,`Nein, das sind ${B[0]}.`],aen:`No, those are not ${A[1]}, those are ${B[1]}.`});
 out.push({t:'ein',les:'Nov 18',q:['Wer ist das?','Wer sind sie?','Wer sind das?'],qen:'Who is that?',cue:A[0],a:[`Das sind ${A[0]}.`],aen:`Those are ${A[1]}.`,hl:A[0]});});
+/* 🆕 Nov 26: classroom objects – singular and plural */
+const CL=[['der','Stuhl','a chair'],['der','Tisch','a table'],['die','Lampe','a lamp'],['die','Tafel','a board'],['der','Kuli','a ballpoint pen'],['der','Bleistift','a pencil'],['das','Lineal','a ruler'],['das','Heft','a notebook'],['die','Schere','a pair of scissors'],['der','Radiergummi','an eraser'],['das','Mäppchen','a pencil case'],['die','Tasche','a bag']];
+CL.forEach((A,i)=>{const B=CL[(i+5)%CL.length],a=ind(A[0])+' '+A[1],b=ind(B[0])+' '+B[1],ane=A[2].replace(/^an? /,'');
+out.push({t:'ein',les:'Nov 26',q:[`Ist das ${a}?`],qen:`Is that ${A[2]}?`,cue:`✘ Nein → ${B[1]}`,a:[`Nein, das ist k${a}, das ist ${b}.`,`Nein, das ist k${a}. Das ist ${b}.`,`Nein, das ist ${b}.`],aen:`No, that is not ${A[2]}, that is ${B[2]}.`});
+out.push({t:'ein',les:'Nov 26',q:['Was ist das?'],qen:'What is that?',cue:A[1],a:[`Das ist ${a}.`],aen:`That is ${A[2]}.`,hl:a});});
+const CP=[['Stühle','chairs','Tische','tables'],['Lampen','lamps','Tafeln','boards'],['Kulis','ballpoint pens','Bleistifte','pencils'],['Hefte','notebooks','Bücher','books'],['Scheren','pairs of scissors','Lineale','rulers'],['Taschen','bags','Rucksäcke','backpacks']];
+CP.forEach(([A,Aen,B,Ben])=>{
+out.push({t:'ein',les:'Nov 26',q:[`Sind das ${A}?`],qen:`Are those ${Aen}?`,cue:`✘ Nein → ${B}`,a:[`Nein, das sind keine ${A}, das sind ${B}.`,`Nein, das sind keine ${A}. Das sind ${B}.`,`Nein, das sind ${B}.`],aen:`No, those are not ${Aen}, those are ${Ben}.`});
+out.push({t:'ein',les:'Nov 26',q:['Was ist das?','Was sind das?'],qen:'What is that?',cue:`${B} (plural)`,a:[`Das sind ${B}.`],aen:`Those are ${Ben}.`,hl:B});});
 return out;}

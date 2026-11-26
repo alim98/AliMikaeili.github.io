@@ -3,7 +3,7 @@
 */
 /* ===== der · die · das trainer ===== */
 const ARTS=['der','die','das'];
-const gNouns=(()=>{const seen=new Set(),out=[];vocabulary.forEach(c=>{if(c.cat==='places')return;const m=c.de.match(/^(der|die|das) (\p{Lu}\p{L}*)$/u);if(!m)return;const plural=G_PLURAL.has(c.de);const key=c.de+(plural?'/pl':'');if(seen.has(key))return;seen.add(key);const ok=new Set([m[1]]);c.deAlt.forEach(a=>{const x=a.match(/^(der|die|das) (.+)$/);if(x&&x[2]===m[2])ok.add(x[1]);});out.push({id:c.id,art:m[1],word:m[2],ok:[...ok],en:c.en,cat:c.cat,plural});});return out;})();
+const gNouns=(()=>{const seen=new Set(),out=[];vocabulary.forEach(c=>{if(c.cat==='places')return;const m=c.de.match(/^(der|die|das) (\p{Lu}(?:[\p{L}-]*\p{L})?)$/u);if(!m)return;const plural=G_PLURAL.has(c.de);const key=c.de+(plural?'/pl':'');if(seen.has(key))return;seen.add(key);const ok=new Set([m[1]]);c.deAlt.forEach(a=>{const x=a.match(/^(der|die|das) (.+)$/);if(x&&x[2]===m[2])ok.add(x[1]);});out.push({id:c.id,art:m[1],word:m[2],ok:[...ok],en:c.en,cat:c.cat,plural});});return out;})();
 const gById=Object.fromEntries(gNouns.map(n=>[n.id,n]));
 const VERBSET=new Set(vocabulary.filter(c=>c.cat==='verbs').map(c=>c.de));
 function isMale(n){return /\b(male|man|husband|gentleman|boyfriend|Mr)\b/i.test(n.en)&&!/female|woman/i.test(n.en);}
@@ -43,7 +43,7 @@ let gFilter='all',gQueue=[],gIdx=0,gCur=null,gDone=false,gTimer=null;
 try{gFilter=localStorage.getItem(gKey+'-filter')||'all';}catch(e){}
 function gPool(){const f=gFilter;let L=gNouns.filter(n=>!isArch(n.id));if(f==='new')return L.filter(n=>!gLearned(n.id));if(f==='mistakes')return L.filter(n=>(gProg.byId[n.id]?.w||0)>0&&!gLearned(n.id));if(f.startsWith('cat:'))return L.filter(n=>n.cat===f.slice(4));if(f.startsWith('rule:'))return L.filter(n=>ruleOf(n)?.id===f.slice(5));if(f.startsWith('art:'))return L.filter(n=>n.art===f.slice(4));return L;}
 function gOptions(){const sel=byId('gFilter');const L=gNouns.filter(n=>!isArch(n.id));const opts=[['all',`All nouns (${L.length})`],['new',`Not learned yet (${L.filter(n=>!gLearned(n.id)).length})`],['mistakes',`My mistakes (${L.filter(n=>(gProg.byId[n.id]?.w||0)>0&&!gLearned(n.id)).length})`]];
-[['nouns','Nouns'],['jobs','Jobs & professions'],['personal','Personal info'],['leisure','Uni & free time']].forEach(([c,l])=>{const k=L.filter(n=>n.cat===c).length;if(k)opts.push(['cat:'+c,`Topic: ${l} (${k})`]);});
+[['nouns','Nouns'],['classroom','Classroom & office'],['jobs','Jobs & professions'],['personal','Personal info'],['leisure','Uni & free time']].forEach(([c,l])=>{const k=L.filter(n=>n.cat===c).length;if(k)opts.push(['cat:'+c,`Topic: ${l} (${k})`]);});
 RULES.forEach(r=>{const k=L.filter(n=>ruleOf(n)===r).length;if(k>=2)opts.push(['rule:'+r.id,`Rule: ${r.id==='comp'?'compound nouns':r.lab+(r.art?' → '+r.art:'')} (${k})`]);});
 sel.replaceChildren(...opts.map(([v,t])=>{const o=document.createElement('option');o.value=v;o.textContent=t;return o;}));if(!opts.some(o=>o[0]===gFilter))gFilter='all';sel.value=gFilter;}
 function gNewRound(){const P=gPool();const a=shuffle(P.filter(n=>!gLearned(n.id)).map(n=>n.id)),b=shuffle(P.filter(n=>gLearned(n.id)).map(n=>n.id));gQueue=a.concat(b);gIdx=0;gShow();}
@@ -55,10 +55,10 @@ const r=gProg.byId[gCur.id];byId('gLearnPill').textContent=gLearned(gCur.id)?'�
 function gAnswer(art){if(gDone||!gCur)return;gDone=true;const n=gCur,ok=n.ok.includes(art),r=gRec(n.id),was=gLearned(n.id);gProg.total++;if(ok){gProg.correct++;gProg.streak++;r.c++;r.s++;}else{gProg.streak=0;r.w++;r.s=0;gQueue.splice(Math.min(gIdx+4,gQueue.length),0,n.id);}gSave();LOG.gender(n,art,ok);
 document.querySelectorAll('.gbtn').forEach(b=>{b.disabled=true;const a=b.dataset.art;if(n.ok.includes(a))b.classList.add('right');else if(a===art)b.classList.add('wrong');else b.classList.add('dim');});
 const w=byId('gWord');w.innerHTML=artSpan(n.art,n.word)+(n.plural?' <span class="pltag">plural</span>':'');w.classList.add(ok?'pop':'shake');
-const t=tipHTML(n);const fb=byId('gFb');fb.className='gfb show '+(ok?'good':'bad');fb.innerHTML=`<div class="gres">${ok?(gLearned(n.id)&&!was?'🎉 Learned! 3 in a row.':'✓ Right!'):`✗ It's <b>${artSpan(n.art,n.word)}</b>`+(n.ok.length>1?` (also: ${n.ok.filter(a=>a!==n.art).join(', ')})`:'')}</div><div class="tip ${t.cls}">${t.html}</div>`;
+const t=tipHTML(n);const fb=byId('gFb');fb.className='gfb show '+(ok?'good':'bad');fb.innerHTML=`<div class="gres">${ok?(gLearned(n.id)&&!was?'🎉 Learned! 3 in a row.':'✓ Right!'):`✗ It's <b>${artSpan(n.art,n.word)}</b>`+(n.ok.length>1?` (also: ${n.ok.filter(a=>a!==n.art).join(', ')})`:'')}</div><div class="tip ${t.cls}">${t.html}</div>`+(typeof plLine==='function'?plLine(n.id):'');
 byId('gNext').disabled=false;byId('gNext').focus();gStats();const r2=gProg.byId[n.id];byId('gLearnPill').textContent=gLearned(n.id)?'✓ Learned':`${r2.s}/${G_LEARN} in a row`;byId('gLearnPill').className='pill '+(gLearned(n.id)?'good':(ok?'':'bad'));
 if(byId('gSay').checked)speak(n.art+' '+n.word);if(ok&&byId('gAuto').checked&&!t.cls)gTimer=setTimeout(gNext,1600);renderWall();}
-function gNext(){if(!gDone)return;clearTimeout(gTimer);gIdx++;if(gIdx>=gQueue.length){toast('Round done – starting a new one.');gOptions();gNewRound();}else gShow();}
+function gNext(){if(!gDone)return;clearTimeout(gTimer);gIdx++;if(gIdx>=gQueue.length){toast('Round done – starting a new one.');gOptions();gNewRound();}else gShow();showTop(byId('gWord'));}
 function setGFilter(v){gFilter=v;try{localStorage.setItem(gKey+'-filter',v);}catch(e){}gOptions();gNewRound();}
 function renderGRules(){const root=byId('gRules');root.replaceChildren();const L=gNouns.filter(n=>!isArch(n.id));
 const card=(r)=>{const ms=L.filter(n=>ruleOf(n)===r);if(!ms.length)return null;const d=document.createElement('div');d.className='rule';const top=document.createElement('div');top.className='rtop';top.innerHTML=`<span class="rlab">${esc(r.lab)}</span><span class="rstr">${r.str}</span>`;d.append(top);const ex=document.createElement('div');ex.className='rex';

@@ -75,7 +75,7 @@ if(dHintLv===0){dHintLv=1;if(it.type==='next'||it.type==='prev'){dDrawWeek(it.fr
 else{dHintLv=2;fb.innerHTML=`<b lang="de">${esc(a.slice(0,Math.ceil(a.length*.6)))}…</b>`;byId('dHintBtn').disabled=true;}
 byId('dIn').focus();}
 function dReveal(){if(dDone||!dCur)return;if(dCur.type==='order'){byId('dTiles').querySelectorAll('.dtile').forEach(b=>{const i=DAYS.findIndex(x=>b.textContent.endsWith(x[0]));b.disabled=true;b.classList.add('done');b.textContent=`${i+1}. ${DAYS[i][0]}`;});dFinish(false,'','The German week starts on Monday: Montag, Dienstag, Mittwoch, Donnerstag, Freitag, Samstag, Sonntag.');}else dFinish(false,'','');}
-function dNextQ(){if(!dDone)return;dIdx++;if(dIdx>=dQueue.length){toast(`Round done – ${dRoundOk} correct. New round!`);dNewRound();}else dShow();}
+function dNextQ(){if(!dDone)return;dIdx++;if(dIdx>=dQueue.length){toast(`Round done – ${dRoundOk} correct. New round!`);dNewRound();}else dShow();showTop(byId('dTask'));}
 function dSayFn(){if(!dCur)return;if(dDone)speak(dCur.type==='order'?DAYS.map(x=>x[0]).join(', '):(dCur.sol||dCur.ans));else if(dCur.say)speak(dCur.say);}
 function dUpdateTop(){const n=dQueue.length;byId('dCount').textContent=n?`${Math.min(dIdx+1,n)} / ${n}`:'';byId('dFill').style.width=n?(100*(dIdx+(dDone?1:0))/n)+'%':'0%';byId('dScore').textContent=`🔥 ${dProg.streak}`;dStatsRender();}
 function dStatsRender(){const p=dProg;byId('dStats').textContent=p.total?`${p.total} answers · ${Math.round(100*p.correct/p.total)}% correct · best streak ${p.best||0}`:'No answers yet – your results per day show up here.';

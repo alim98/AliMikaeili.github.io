@@ -90,12 +90,13 @@ const EX=(()=>{
   return {find,mark,isSentence,corpus:()=>corpus||(corpus=build())};
 })();
 
-function addExample(){
-  if(!current)return;
-  const list=EX.find(current);if(!list.length)return;
+function addExample(){   // returns the example shown (or null), so it can be read aloud
+  if(!current)return null;
+  const list=EX.find(current);if(!list.length)return null;
   const r=progress.byId[current.id],e=list[(((r&&r.seen)||1)-1)%list.length];
   const d=document.createElement('div');d.className='tip vtip vex';
   d.innerHTML=`<span class="vtag">Example</span><div class="vexrow"><button type="button" class="speak-mini" aria-label="Listen to ${esc(e.de)}" title="Listen">🔊</button><div><div class="vexde" lang="de">${EX.mark(current,e.de)}</div><div class="vexen">${esc(e.en)}</div></div></div>`;
   d.querySelector('button').addEventListener('click',()=>speak(e.de));
   byId('feedback').appendChild(d);
+  return e;
 }

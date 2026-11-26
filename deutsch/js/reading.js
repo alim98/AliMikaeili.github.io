@@ -4,6 +4,7 @@
 
 /* ===== Reading ===== */
 const VMAP={};vocabulary.forEach(v=>{if(v.cat==='sentences'||v.cat==='forms')return;const m=v.de.match(/^(der|die|das) (\p{L}+)$/u);if(m){const k=lc(m[2]);if(!VMAP[k])VMAP[k]={head:v.de,en:v.en,art:m[1]};return;}if(!/\s/.test(v.de)){const k=lc(v.de.replace(/[.!?]/g,''));if(!VMAP[k])VMAP[k]={head:v.de,en:v.en};}});
+PLURALS.forEach(([sg,pl])=>{const k=lc(pl),b=VMAP[lc(sg.replace(/^(der|die|das) /,''))];if(!VMAP[k])VMAP[k]={head:'die '+pl,en:'plural of '+sg+(b?' – '+b.en:''),art:'die'};});   // Stühle → plural of der Stuhl
 function lookup(tok){const k=lc(tok).replace('’',"'");if(GLOSS[k])return {head:tok,en:GLOSS[k]};if(NAMES.includes(k))return {head:tok,en:'(name)'};return VMAP[k]||null;}
 const rdKey=storeKey+'-reading';let rdProg={};try{const p=JSON.parse(localStorage.getItem(rdKey)||'{}');if(p&&typeof p==='object')rdProg=p;}catch(e){}
 function rdSave(){try{localStorage.setItem(rdKey,JSON.stringify(rdProg));}catch(e){}}

@@ -9,10 +9,10 @@
    Event fields (only the ones that apply are stored):
      uid      unique id                     ts       time, ms since 1970
      day      local date YYYY-MM-DD         session  study session (new after 30 min idle)
-     section  vocab | gender | reading | verbs | talk | days | home | stats
+     section  vocab | gender | plural | reading | verbs | talk | days | home | stats
      action   answer | hint | listen | lookup | open-text | archive | restore |
               list-add | list-remove | setting | nav
-     mode     en-de/de-en · singular/plural · quiz · table/swap · answer/ask/build · abbr/next/prev/en/am/listen/order
+     mode     en-de/de-en · singular/plural (gender) · pattern/write/sing (plural) · quiz · table/swap · answer/ask/build · abbr/next/prev/en/am/listen/order
      item     id of the card / sentence      label    readable name of it
      prompt   what you were asked            given    what you answered
      expected the correct answer             result   correct | wrong | revealed | skipped
@@ -26,8 +26,8 @@ const KEY='deutsch-practice-a11-2026-v1';            // same as storeKey in the 
 const LS_EV=KEY+'-events',DBNAME=KEY+'-history',STORE='events';
 const BACKUP_KEY='deutsch-practice-last-backup';      // outside KEY so an import doesn't overwrite it
 const SESSION_GAP=30*60e3,DAYMS=864e5;
-const SECTIONS=['vocab','gender','reading','verbs','talk','days'];
-const SEC={home:{i:'🏠',n:'Home'},vocab:{i:'📚',n:'Vocabulary'},gender:{i:'🎨',n:'der · die · das'},reading:{i:'📖',n:'Reading'},verbs:{i:'🔁',n:'Verbs'},talk:{i:'💬',n:'Ask & answer'},days:{i:'📅',n:'Wochentage'},stats:{i:'📊',n:'My progress'}};
+const SECTIONS=['vocab','gender','plural','reading','verbs','talk','days'];
+const SEC={home:{i:'🏠',n:'Home'},vocab:{i:'📚',n:'Vocabulary'},gender:{i:'🎨',n:'der · die · das'},plural:{i:'👥',n:'Plural'},reading:{i:'📖',n:'Reading'},verbs:{i:'🔁',n:'Verbs'},talk:{i:'💬',n:'Ask & answer'},days:{i:'📅',n:'Wochentage'},stats:{i:'📊',n:'My progress'}};
 const C_OK='#1f9d6a',C_BAD='#b4323f';                 // validated pair (colour-blind safe on white)
 const $=id=>document.getElementById(id);
 const H=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -147,6 +147,9 @@ function genderAnswer(n,chosen,ok){
   answer({section:'gender',mode:n.plural?'plural':'singular',item:n.id,label:n.word,prompt:n.word,given:chosen,expected:n.art,result:ok?'correct':'wrong',
     errors:ok?undefined:[`${n.art}-word → ${chosen}`],details:{meaning:n.en,rule:r?ruleName(r):'no rule – learn by heart',exception:!!(r&&r.art&&r.id!=='comp'&&!n.ok.includes(r.art))}});
 }
+function pluralAnswer(p,mode,given,expected,result,errors,details){
+  answer({section:'plural',mode,item:p.id,label:p.art+' '+p.sg,prompt:mode==='sing'?'die '+p.pl:p.art+' '+p.sg,given:String(given||'').trim(),expected,result,errors,details});
+}
 function readingAnswer(t,qi,oi){const q=t.q[qi],o=q.t==='tf'?['True','False']:q.o;answer({section:'reading',mode:'quiz',item:t.id+'#'+(qi+1),label:t.title,prompt:q.q,given:o[oi],expected:o[q.a],result:oi===q.a?'correct':'wrong',errors:oi===q.a?undefined:['comprehension'],details:{text:t.id,question:q.en}});}
 function readingLookup(word,L){add({section:'reading',action:'lookup',item:String(word).toLocaleLowerCase('de'),label:word,expected:L?L.en:'',details:{text:(typeof rdText!=='undefined'&&rdText)?rdText.id:undefined}});}
 function verbTable(v,parts,nOk){
@@ -198,15 +201,15 @@ function daysAnswer(it,ok,val,note,helped){
 /* settings changes, listening and navigation are logged centrally */
 document.addEventListener('change',e=>{const t=e.target;if(!t||!t.id||!t.closest||!t.closest('.layout')||t.closest('#tabStats,#tabHome')||t.id==='importFile')return;
   if(t.type==='checkbox'||t.tagName==='SELECT')add({section:secNow(),action:'setting',item:t.id,given:t.type==='checkbox'?String(t.checked):t.value});},true);
-const LISTEN='#speakBtn,#gSpeak,#vSay,#tSay,#dSayBtn,#rdPlay,.rsay,button.chip,.speak-mini:not(.arch)';
+const LISTEN='#speakBtn,#gSpeak,#pSpeak,#vSay,#tSay,#dSayBtn,#rdPlay,.rsay,button.chip,.speak-mini:not(.arch)';
 document.addEventListener('click',e=>{const b=e.target.closest&&e.target.closest('button');if(!b||!b.closest('.layout,#wpop')||b.closest('#tabStats,#tabHome'))return;const d=b.dataset;
-  if(d.mode||d.order||d.vmode||d.tmode){add({section:secNow(),action:'setting',item:d.mode?'direction':d.order?'card order':d.vmode?'verb exercise':'talk exercise',given:d.mode||d.order||d.vmode||d.tmode});return;}
+  if(d.mode||d.order||d.vmode||d.tmode||d.pmode){add({section:secNow(),action:'setting',item:d.mode?'direction':d.order?'card order':d.vmode?'verb exercise':d.pmode?'plural exercise':'talk exercise',given:d.mode||d.order||d.vmode||d.pmode||d.tmode});return;}
   if(!b.matches(LISTEN))return;
-  let c=null;try{c={speakBtn:()=>current&&{item:current.id,label:current.de},gSpeak:()=>gCur&&{item:gCur.id,label:gCur.word},vSay:()=>vCur&&{item:vCur.id,label:vCur.inf},tSay:()=>tCur&&{item:tCur.key,label:tCur.prompt},dSayBtn:()=>dCur&&{item:dCur.type+'|'+dCur.q,label:dCur.ans},rdPlay:()=>rdText&&{item:rdText.id,label:rdText.title}}[b.id]?.();}catch(err){}
+  let c=null;try{c={speakBtn:()=>current&&{item:current.id,label:current.de},gSpeak:()=>gCur&&{item:gCur.id,label:gCur.word},pSpeak:()=>pCur&&{item:pCur.id,label:pCur.art+' '+pCur.sg},vSay:()=>vCur&&{item:vCur.id,label:vCur.inf},tSay:()=>tCur&&{item:tCur.key,label:tCur.prompt},dSayBtn:()=>dCur&&{item:dCur.type+'|'+dCur.q,label:dCur.ans},rdPlay:()=>rdText&&{item:rdText.id,label:rdText.title}}[b.id]?.();}catch(err){}
   add({section:secNow(),action:'listen',...(c||{label:(b.getAttribute('aria-label')||b.title||b.textContent||'').replace(/^(Pronounce|Listen to)\s*/,'')})});},true);
 
 /* ---------------- navigation: hash routes, scroll, sticky bar ---------------- */
-const TABS=['home','vocab','gender','reading','verbs','talk','days','stats'];
+const TABS=['home','vocab','gender','plural','reading','verbs','talk','days','stats'];
 let navFirst=true;
 const fromHash=()=>{const m=location.hash.match(/^#\/?([a-z]+)/);return m&&TABS.includes(m[1])?m[1]:null;};
 function navAfter(t){
@@ -257,6 +260,8 @@ function patterns(){
 function mixups(){const m={};EV.forEach(e=>{const x=e.details&&e.details.mixedWith;if(e.section!=='vocab'||!x)return;const k=e.item+'>'+x.id;const p=m[k]||(m[k]={e,x,n:0});p.n++;p.e=e;});return Object.values(m).sort((a,b)=>b.n-a.n);}
 function genderMatrix(){const M={};ARTS.forEach(a=>{M[a]={der:0,die:0,das:0};});EV.forEach(e=>{if(e.section==='gender'&&e.action==='answer'&&M[e.expected]&&e.given in M[e.expected])M[e.expected][e.given]++;});return M;}
 function genderRules(){const rs={};gNouns.forEach(n=>{const r=gProg.byId[n.id];if(!r||!(r.c+r.w))return;const ru=ruleOf(n),k=ru?ruleName(ru):'No rule – learn by heart';const o=rs[k]||(rs[k]={k,c:0,w:0});o.c+=r.c||0;o.w+=r.w||0;});return Object.values(rs).filter(r=>r.w).sort((a,b)=>b.w-a.w);}
+function pluralMix(){const m={};EV.forEach(e=>{const d=e.details;if(e.section!=='plural'||e.action!=='answer'||e.result!=='wrong'||!d||!d.chosen||!d.pattern)return;const k=d.pattern+' → '+d.chosen;(m[k]||(m[k]={k,n:0})).n++;});return Object.values(m).sort((a,b)=>b.n-a.n);}
+const pluralWorst=()=>P_ITEMS.filter(p=>(pProg.by[p.id]?.w||0)>0).sort((a,b)=>pProg.by[b.id].w-pProg.by[a.id].w);
 function verbPersons(){const m={};VPRON.forEach(p=>{m[p]={p,n:0,w:0};});EV.forEach(e=>{if(e.section!=='verbs'||e.action!=='answer')return;const d=e.details||{};if(e.mode==='table'&&Array.isArray(d.cells))d.cells.forEach(x=>{if(m[x.person]){m[x.person].n++;if(!x.ok)m[x.person].w++;}});else if(e.mode==='swap'&&m[d.person]){m[d.person].n++;if(!isOk(e)&&(e.errors||[]).some(x=>/form$/.test(x)))m[d.person].w++;}});return Object.values(m);}
 function verbFamilies(){const m={};vList.forEach(v=>{const r=vProg.byId[v.id];if(!r||!r.w)return;vFams(v.inf).forEach(f=>{const k=VFAM[f].t;m[k]=(m[k]||0)+r.w;});});return Object.entries(m).sort((a,b)=>b[1]-a[1]);}
 function errorCounts(sec){const m={};EV.forEach(e=>{if(e.section===sec&&e.action==='answer'&&e.result==='wrong')(e.errors||['other']).forEach(c=>{m[c]=(m[c]||0)+1;});});return Object.entries(m).sort((a,b)=>b[1]-a[1]);}
@@ -267,6 +272,7 @@ function secMetric(s){
   switch(s){
     case 'vocab':{const act=vocabulary.filter(c=>!isArch(c.id));let b=0;act.forEach(c=>DIRS.forEach(d=>{if(isBanked(c.id,d))b++;}));return {p:act.length?b/(2*act.length):0,t:`${b} of ${2*act.length} directions banked`};}
     case 'gender':{const L=gNouns.filter(n=>!isArch(n.id)),k=L.filter(n=>gLearned(n.id)).length;return {p:L.length?k/L.length:0,t:`${k} of ${L.length} nouns learned`};}
+    case 'plural':{const L=P_ITEMS.filter(p=>!isArch(p.id)),k=L.filter(p=>pLearned(p.id)).length;return {p:L.length?k/L.length:0,t:`${k} of ${L.length} plurals learned`};}
     case 'reading':{const k=TEXTS.filter(t=>rdProg[t.id]&&rdProg[t.id].best===t.q.length).length;return {p:k/TEXTS.length,t:`${k} of ${TEXTS.length} texts fully understood`};}
     case 'verbs':{const L=vList.filter(v=>!isArch(v.id)),k=L.filter(v=>vMastered(v.id)).length;return {p:L.length?k/L.length:0,t:`${k} of ${L.length} verbs mastered`};}
     case 'talk':{const k=T_ITEMS.filter(it=>tProg.by[it.key]&&tProg.by[it.key].last!=='bad').length;return {p:k/T_ITEMS.length,t:`${k} of ${T_ITEMS.length} sentences done`};}
@@ -274,7 +280,7 @@ function secMetric(s){
   }
   return {p:0,t:''};
 }
-const SECDESC={vocab:'Translate words and phrases EN ⇄ DE. 8 correct answers in one direction bank it 🏦.',gender:'Choose der, die or das – with the rule behind each noun. 3 in a row = learned.',reading:'Short texts made from your own vocabulary. Tap any word to see what it means.',verbs:'Conjugate verbs (ich, du, er …) and rewrite sentences for a new person.',talk:'Answer questions, ask questions and build sentences – where does the verb go?',days:'Montag to Sonntag: short forms, next and previous day, am + day, listening.'};
+const SECDESC={vocab:'Translate words and phrases EN ⇄ DE. 8 correct answers in one direction bank it 🏦.',gender:'Choose der, die or das – with the rule behind each noun. 3 in a row = learned.',plural:'The 8 plural forms: pick the pattern, write the plural, or go back to the singular. 3 in a row = learned.',reading:'Short texts made from your own vocabulary. Tap any word to see what it means.',verbs:'Conjugate verbs (ich, du, er …) and rewrite sentences for a new person.',talk:'Answer questions, ask questions and build sentences – where does the verb go?',days:'Montag to Sonntag: short forms, next and previous day, am + day, listening.'};
 
 /* ---------------- shortcuts into the trainers ---------------- */
 function vocabTopic(t){topic=t;byId('category').value=t;setTab('vocab');newRound();}
@@ -295,6 +301,9 @@ function recs(){
   if(fresh)R.push({p:7,i:'🆕',t:`${fresh} new word${fresh>1?'s':''} from ${LESSONS[L].label}`,d:'From your newest lesson – not practiced yet.',go:()=>vocabTopic('les:'+L)});
   const gm=gNouns.filter(n=>!isArch(n.id)&&(gProg.byId[n.id]?.w||0)>0&&!gLearned(n.id)).length;
   if(gm)R.push({p:6,i:'🎨',t:`${gm} der/die/das mistake${gm>1?'s':''} to fix`,d:'Nouns whose article you got wrong.',go:()=>{setTab('gender');setGFilter('mistakes');}});
+  const pm=P_ITEMS.filter(p=>!isArch(p.id)&&pOpen(p)).length;
+  if(pm)R.push({p:6,i:'👥',t:`${pm} plural mistake${pm>1?'s':''} to fix`,d:'Nouns whose plural you got wrong.',go:()=>{setTab('plural');pSetFilter('mistakes');}});
+  else if(!pProg.total)R.push({p:6.5,i:'👥',t:'New: the 8 plural forms',d:`Practise the plural patterns from your worksheet – ${P_ITEMS.length} nouns.`,go:()=>{setTab('plural');pSetFilter('sheet');}});
   const tm=T_ITEMS.filter(it=>tProg.by[it.key]?.last==='bad').length;
   if(tm)R.push({p:6,i:'💬',t:`${tm} sentence${tm>1?'s':''} to fix in Ask & answer`,d:'Sentences you got wrong last time.',go:practiceTalk});
   const wd=DAYS.filter((_,i)=>{const r=dProg.by[i];return r&&r.w>0&&r.w*2>r.c;}).map(x=>x[0]);
@@ -356,6 +365,7 @@ function renderProgress(){
 function act(a){
   if(a==='weak'){const W=weakWords().slice(0,15);if(W.length)practiceList('⚠ Weak spots',W.map(w=>w.c.id));}
   else if(a==='gender'){setTab('gender');setGFilter('mistakes');}
+  else if(a==='plural'){setTab('plural');pSetFilter('mistakes');}
   else if(a==='verbs'){setTab('verbs');vSetFilter('new');}
   else if(a==='talk')practiceTalk();
   else if(a==='days')setTab('days');
@@ -428,6 +438,8 @@ function renderWeak(){
   const GM=genderMatrix(),gTot=ARTS.reduce((s,a)=>s+ARTS.reduce((t,b)=>t+GM[a][b],0),0),GR=genderRules().slice(0,6);
   const cell=(a,b)=>{const row=ARTS.reduce((t,x)=>t+GM[a][x],0),v=GM[a][b],sh=row?v/row:0;if(a===b)return `<td style="background:#eef7f2;color:var(--green)" title="${a}: ${v} correct">${v}</td>`;const al=v?.12+.7*sh:0;return `<td style="background:rgba(53,95,218,${al.toFixed(2)});color:${al>.5?'#fff':'#19243b'}" title="Answer was ${a}, you chose ${b}: ${v}×">${v||'·'}</td>`;};
   C.push(card('🎨 der · die · das','Which articles you confuse, and which rules trip you up.',(gTot?`<h4>Answer was → you chose</h4><table class="cm"><tr><th></th>${ARTS.map(b=>`<th class="art-${b}">${b}</th>`).join('')}</tr>${ARTS.map(a=>`<tr><th class="art-${a}" style="text-align:right">${a}</th>${ARTS.map(b=>cell(a,b)).join('')}</tr>`).join('')}</table>`:'')+(GR.length?`<h4>Rules with the most mistakes</h4>${barRows(GR.map(r=>({l:r.k,v:r.w,s:`${pct(r.c,r.c+r.w)} correct`})))}`:'')+(gTot||GR.length?`<div class="datarow"><button class="secondary" type="button" data-act="gender">▶ Practice my article mistakes</button></div>`:none('No article practice recorded yet.'))));
+  const PA=accBy('plural',e=>e.details&&e.details.pattern).filter(x=>x.n>=2),PX=pluralMix().slice(0,6),PE=errorCounts('plural').slice(0,6),PW=pluralWorst().slice(0,10),openP=P_ITEMS.filter(pOpen).length;
+  C.push(card('👥 Plural','Which plural patterns trip you up.',(PA.length?`<h4>Patterns, weakest first</h4>${barRows(PA.slice(0,5).map(x=>({l:x.k,v:Math.round(100*x.ok/x.n),s:`${x.n} answers`})),v=>v+'%')}`:'')+(PX.length?`<h4>The pattern was → you chose</h4>${barRows(PX.map(x=>({l:x.k,v:x.n})))}`:'')+(PE.length?`<h4>Mistake types</h4>${barRows(PE.map(([k,v])=>({l:k,v})))}`:'')+(PW.length?`<h4>Nouns with the most mistakes</h4><div class="chips">${PW.map(p=>`<button type="button" class="chip vchip" data-item="plural|${H(p.id)}" title="${H(p.art+' '+p.sg+' → die '+p.pl)}">${H(p.sg)} → ${H(p.pl)} ×${pProg.by[p.id].w}</button>`).join('')}</div>`:'')+(openP?`<div class="datarow"><button class="secondary" type="button" data-act="plural">▶ Practice my ${openP} plural mistake${openP>1?'s':''}</button></div>`:'')+(!PA.length&&!PE.length&&!PW.length?none('No plural practice recorded yet.'):'')));
   const VP=verbPersons().filter(p=>p.n),VF=verbFamilies().slice(0,5),VW=vList.filter(v=>(vProg.byId[v.id]?.w||0)>0).sort((a,b)=>vProg.byId[b.id].w-vProg.byId[a.id].w).slice(0,8);
   C.push(card('🔁 Verbs','Where your conjugation mistakes happen.',(VP.length?`<h4>Mistakes by person</h4>${barRows(VP.map(p=>({l:p.p,v:p.w,s:`${pct(p.n-p.w,p.n)} correct of ${p.n}`})))}`:'')+(VF.length?`<h4>Verb families (all time)</h4>${barRows(VF.map(([k,v])=>({l:k,v})))}`:'')+(VW.length?`<h4>Verbs with the most wrong forms</h4><div class="chips">${VW.map(v=>`<button type="button" class="chip vchip" data-item="verbs|${v.id}" title="${H(v.en)}">${H(v.inf)} ×${vProg.byId[v.id].w}</button>`).join('')}</div>`:'')+(VP.length||VW.length?`<div class="datarow"><button class="secondary" type="button" data-act="verbs">▶ Practice verbs not mastered</button></div>`:none('No verb practice recorded yet.'))));
   const TE=errorCounts('talk').slice(0,8),TP=accBy('talk',e=>e.details&&e.details.pattern).filter(x=>x.n>=3),openT=T_ITEMS.filter(it=>tProg.by[it.key]?.last==='bad').length;
@@ -476,7 +488,7 @@ function renderData(){
 
 /* ---------------- dialog: full history of one item ---------------- */
 function dlg(html){let d=$('lgDlg');if(!d)return null;d.innerHTML=html;if(!d.open){try{d.showModal();}catch(e){d.setAttribute('open','');}}d.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>d.close()));return d;}
-const VOCAB_SPACE=['vocab','gender','verbs'];
+const VOCAB_SPACE=['vocab','gender','plural','verbs'];
 function openItem(sec,item){
   item=String(item);
   const same=VOCAB_SPACE.includes(sec)?e=>VOCAB_SPACE.includes(e.section)&&e.item===item:e=>e.section===sec&&e.item===item;
@@ -487,6 +499,7 @@ function openItem(sec,item){
     const r=progress.byId[c.id];
     if(r)facts.push(`Vocabulary (all time): seen <b>${seenCount(c.id)}</b>× · ✓ ${r.correct||0} · ✗ ${r.wrong||0}`+DIRS.map(d=>{const s=dstate(c.id,d);return ` · ${DIRNAME[d]}: ${s.banked?'🏦 banked, next reminder '+H(new Date(s.due).toLocaleDateString()):`${s.c||0}/${bankTarget(s)} correct`}`;}).join('')+(r.needsReview?' · <span class="res bad">on your mistakes list</span>':''));
     const g=gProg.byId[c.id];if(g&&(g.c||g.w))facts.push(`der · die · das: ✓ ${g.c} · ✗ ${g.w}${gLearned(c.id)?' · learned':''}`);
+    const pp=P_BY[c.id];if(pp){const r=pProg.by[c.id];facts.push(`Plural: die ${H(pp.pl)} (${H(PPAT[pp.n].lab)})`+(r&&(r.c||r.w)?` · ✓ ${r.c} · ✗ ${r.w}${pLearned(c.id)?' · learned':''}`:''));}
     const v=vProg.byId[c.id];if(v&&(v.c))facts.push(`Verb tables: ${v.c} checked · ${v.w} wrong forms${vMastered(c.id)?' · mastered':''}`);
     if(isArch(c.id))facts.push('🗃 In the Archive (taken out of practice)');
     const inL=lists.filter(l=>l.ids.includes(c.id)).map(l=>l.name);if(inL.length)facts.push('Lists: '+inL.map(H).join(', '));
@@ -529,6 +542,10 @@ function reportText(){
   const MX=mixups().slice(0,10);if(MX.length){Lr.push('','## Words mixed up','');MX.forEach(m=>Lr.push(`- “${m.e.prompt}” → wrote “${m.e.given}” (that is ${m.e.mode==='en-de'?m.x.en:m.x.de}) ×${m.n}`));}
   const GR=genderRules().slice(0,8);if(GR.length){Lr.push('','## der · die · das – rules with mistakes (all time)','');GR.forEach(r=>Lr.push(`- ${r.k}: ✗ ${r.w}, ${pct(r.c,r.c+r.w)} correct`));}
   const GM=genderMatrix();Lr.push('','Article confusion (answer → chosen): '+ARTS.flatMap(a=>ARTS.filter(b=>b!==a&&GM[a][b]).map(b=>`${a}→${b} ×${GM[a][b]}`)).join(', ')||'none recorded');
+  const PA=accBy('plural',e=>e.details&&e.details.pattern);if(PA.length){Lr.push('','## Plural – patterns (recorded answers, weakest first)','');PA.forEach(x=>Lr.push(`- ${x.k}: ${x.ok} of ${x.n} correct`));}
+  const PX=pluralMix();if(PX.length)Lr.push('','Plural mix-ups (pattern → chosen): '+PX.map(x=>`${x.k} ×${x.n}`).join(', '));
+  const PE=errorCounts('plural');if(PE.length)Lr.push('','Plural mistake types: '+PE.map(([k,v])=>`${k} ×${v}`).join(', '));
+  const PW=pluralWorst().slice(0,12);if(PW.length)Lr.push('','Plurals with the most mistakes (all time): '+PW.map(p=>`${p.art} ${p.sg} → die ${p.pl} ✗${pProg.by[p.id].w}`).join(', '));
   const VP=verbPersons().filter(p=>p.n);if(VP.length){Lr.push('','## Verbs – mistakes by person','');VP.forEach(p=>Lr.push(`- ${p.p}: ✗ ${p.w} of ${p.n} (${pct(p.n-p.w,p.n)} correct)`));}
   const VF=verbFamilies();if(VF.length)Lr.push('','Verb families with wrong forms (all time): '+VF.map(([k,v])=>`${k} ×${v}`).join(', '));
   const TE=errorCounts('talk');if(TE.length){Lr.push('','## Ask & answer – mistake types','');TE.forEach(([k,v])=>Lr.push(`- ${k}: ${v}`));}
@@ -548,7 +565,7 @@ function showReport(){
 function sEnter(){renderProgress();if(!ready)whenReady(()=>{if(secNow()==='stats')renderProgress();});}
 
 /* ---------------- public API (used by the trainers) ---------------- */
-window.LOG={add,shown,hint,vocab:vocabAnswer,gender:genderAnswer,reading:readingAnswer,lookup:readingLookup,verbTable,verbSwap,talk:talkAnswer,days:daysAnswer,
+window.LOG={add,shown,hint,vocab:vocabAnswer,gender:genderAnswer,plural:pluralAnswer,reading:readingAnswer,lookup:readingLookup,verbTable,verbSwap,talk:talkAnswer,days:daysAnswer,
   exportEvents:async()=>{await readyP();return EV.slice();},importEvents,markExported:()=>{try{localStorage.setItem(BACKUP_KEY,String(Date.now()));}catch(e){}},
   all:()=>EV,info:()=>({store,events:EV.length,ready})};
 window.NAV={initial:()=>fromHash()||'home',after:navAfter};

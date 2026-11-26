@@ -212,6 +212,40 @@ studieren:['I study','you study (singular)','he studies','we study','you study (
 });
 addForms([['wohnen',['wohne','wohnst','wohnt','wohnen','wohnt','wohnen']],['studieren',['studiere','studierst','studiert','studieren','studiert','studieren']]]);
 add('days',[['heute','today'],['vor','before (der Tag vor Montag)',[],['before']]]);
+lesson('Nov 26');
+/* ---- Added Nov 26 (worksheets "Im Klassenzimmer / im Büro", classroom objects, "8 Plural Forms"; handwritten notes: nicht / kein, am liebsten).
+        Plurals of these nouns are in data/grammar.js (PLURALS) for the 👥 Plural trainer. Append only. ---- */
+add('classroom',[
+['das Klassenzimmer','classroom',[],['class room','schoolroom']],['das Büro','office'],
+['der Schwamm','sponge (for the board)',[],['sponge','board sponge']],['die Kreide','chalk'],['der Beamer','projector',['der Projektor'],['video projector','beamer']],['der CD-Player','CD player',['der CD-Spieler'],['CD-player']],['die CD','CD',[],['compact disc']],
+['die Schere','scissors (singular in German)',[],['scissors','a pair of scissors','pair of scissors']],['der Stift','pen / pencil (any writing tool)',[],['pen','pencil','writing tool']],['die Tasche','bag / pocket',[],['bag','pocket','handbag']],['die Jacke','jacket'],['die Landkarte','map',['die Karte']],
+['das Mäppchen','pencil case'],['der Radiergummi','eraser / rubber',[],['eraser','rubber']],['die Fernbedienung','remote control',[],['remote','TV remote']],['das Papier','paper'],['die Übung','exercise / practice',[],['exercise','practice','practise','drill']],['das Kärtchen','small card (e.g. name card)',[],['card','small card','little card','index card','name card']],
+['der Füller','fountain pen',[],['fountain-pen']],['das Lineal','ruler'],['der Kugelschreiber','ballpoint pen',['der Kuli'],['ballpoint','ball-point pen','pen','biro']],['der Kuli','ballpoint pen (short for Kugelschreiber)',['der Kugelschreiber'],['ballpoint pen','ballpoint','pen','biro']],
+['das Handy','mobile phone',['das Mobiltelefon'],['cell phone','cellphone','mobile','smartphone','phone']],['das Mobiltelefon','mobile phone (formal word)',['das Handy'],['mobile phone','mobile telephone','cell phone']],['der Rucksack','backpack / rucksack',[],['backpack','rucksack']],['die E-Mail','email',[],['e-mail','mail']],['der Kalender','calendar',[],['diary']],
+['der Marker','marker (pen)',[],['marker','highlighter','felt-tip pen']],['der Locher','hole punch',[],['hole puncher','paper punch','puncher']],['die Büroklammer','paper clip',[],['paperclip','clip']],['der Termin','appointment',[],['date','meeting']],['der Unterricht','lessons / class (teaching)',[],['lesson','lessons','class','classes','teaching','instruction']],['die Pause','break',[],['pause','rest']],['die Uhr','clock / watch',[],['clock','watch']],
+['die Hausaufgabe','homework (one task)',[],['homework','assignment']],['das Diktat','dictation'],['der Test','test',[],['exam','quiz']],['der Kopierer','photocopier',[],['copier','copy machine','photocopy machine']],
+['der Stuhl','chair'],['die Lampe','lamp',[],['light']],['die Tafel','board (blackboard)',[],['board','blackboard','chalkboard','whiteboard']],['die Maus','mouse',[],['computer mouse']],['der Papierkorb','wastepaper basket',[],['wastebasket','waste paper basket','wastepaper bin','paper bin','bin','trash can','waste basket']],['die Heizung','heating / radiator',[],['heating','radiator','heater']],['die Tür','door'],['die Wand','wall'],
+['das Waschbecken','sink / washbasin',[],['sink','washbasin','wash basin','basin']],['die Decke','ceiling / blanket',[],['ceiling','blanket']],['der Fußboden','floor',['der Boden'],['ground']],['das Kabel','cable',[],['wire','cord','lead']],['der Stecker','plug'],['die Steckdose','socket / outlet',[],['socket','outlet','power socket','power outlet','wall socket','plug socket']],['der Lichtschalter','light switch',[],['switch','lightswitch']],
+['das Lernplakat','learning poster',[],['poster','study poster','learning-poster']],['der Videorekorder','video recorder (VCR)',[],['video recorder','VCR','video cassette recorder']],['der Fernseher','TV / television set',[],['TV','television','television set','TV set','telly']],['der Projektor','projector',['der Beamer']],['der Bleistift','pencil'],['das Taschentuch','tissue / handkerchief',[],['tissue','handkerchief','hanky']],['der Becher','mug / cup',[],['mug','cup','beaker']],['der Ordner','folder / ring binder',[],['folder','binder','ring binder','file']],['das Bild','picture / image',[],['picture','image','painting']],['die Straße','street / road',[],['street','road']]
+]);
+add('everyday',[
+['am liebsten','most of all / like best (gern → lieber → am liebsten)',[],['most of all','like best','like most','best','most']],['die Ahnung','idea / clue',[],['idea','clue','notion']],['keine Ahnung','no idea',[],['no clue','I have no idea']]
+]);
+add('leisure',[['die Gitarre','guitar'],['Gitarre spielen','to play the guitar',[],['to play guitar','play the guitar','play guitar']]]);
+add('articles',[
+['ein Schwamm','a sponge'],['kein Schwamm','no sponge',[],['not a sponge']],['eine Schere','a pair of scissors',[],['scissors','some scissors']],['keine Schere','no scissors',[],['no pair of scissors','not a pair of scissors']],['ein Lineal','a ruler'],['kein Lineal','no ruler',[],['not a ruler']],
+['Stühle','chairs (plural – no article)',[],['chairs']],['keine Stühle','no chairs (kein → keine in the plural)',[],['no chairs','not any chairs']]
+]);
+add('sentences',[
+['Was machst du gern, lieber und am liebsten?','What do you like doing, what do you prefer, and what do you like most?',[],['What do you like to do, what do you prefer and what do you like most?','What do you like, prefer and like most?']],
+['Am liebsten tanze ich.','Most of all I like dancing.',['Ich tanze am liebsten.'],['I like dancing most of all.','I like dancing best.','I like to dance most of all.','Most of all I like to dance.']],
+['Ich tanze nicht.',"I don't dance.",[],['I do not dance.']],['Das ist nicht schön.',"That's not nice.",[],['That is not nice.','That is not beautiful.',"That isn't nice."]],
+['Yu spielt nicht gut Gitarre.',"Yu doesn't play the guitar well.",[],['Yu does not play the guitar well.','Yu does not play guitar well.',"Yu doesn't play guitar well."]],
+['Ein Studium ist kein Hobby.','A degree course is not a hobby.',[],['Studying is not a hobby.','A degree is not a hobby.','University is not a hobby.']],
+['Luis treibt nicht gern Sport.',"Luis doesn't like doing sports.",[],['Luis does not like doing sports.','Luis does not like doing sport.',"Luis doesn't like sports.","Luis doesn't like sport."]],
+['Das ist kein Problem.','That is no problem.',[],["That's no problem.",'That is not a problem.',"That's not a problem.",'No problem.']],['Ich habe keine Ahnung.','I have no idea.',[],["I've got no idea.",'I have no clue.']],
+['Das ist ein Stuhl. Das sind zwei Stühle.','That is a chair. Those are two chairs.',[],['This is a chair. These are two chairs.']],['Im Plural ist der Artikel immer die.','In the plural, the article is always die.',[],['In the plural the article is always die.']]
+]);
 /* ---- end of lessons: keep the lines below last ---- */
 vocabulary.forEach(c=>{let k=0;LESSONS.forEach((L,i)=>{if(Number(c.id)>=L.start)k=i;});c.les=k;});
-const labels={verbs:'Verb',nouns:'Noun',everyday:'Everyday',greetings:'Greeting',pronouns:'Pronoun',numbers:'Number',places:'Place',jobs:'Job',personal:'Personal',leisure:'Uni & free time',articles:'Article',sentences:'Sentence',forms:'Verb form',days:'Days & time'};
+const labels={verbs:'Verb',nouns:'Noun',everyday:'Everyday',greetings:'Greeting',pronouns:'Pronoun',numbers:'Number',places:'Place',jobs:'Job',personal:'Personal',leisure:'Uni & free time',articles:'Article',sentences:'Sentence',forms:'Verb form',days:'Days & time',classroom:'Classroom & office'};
