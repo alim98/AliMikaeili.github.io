@@ -9,10 +9,11 @@
    Event fields (only the ones that apply are stored):
      uid      unique id                     ts       time, ms since 1970
      day      local date YYYY-MM-DD         session  study session (new after 30 min idle)
-     section  vocab | gender | plural | reading | verbs | talk | days | home | stats
+     section  vocab | gender | plural | reading | verbs | talk | days | heute | home | stats
+              (answers given in 🎯 Heute are logged under their trainer's section, with details.via = 'heute')
      action   answer | hint | listen | lookup | open-text | archive | restore | preview (🌱 new word shown) |
               list-add | list-remove | setting | nav
-     mode     en-de/de-en · singular/plural (gender) · pattern/write/sing (plural) · quiz · table/swap · answer/ask/build · abbr/next/prev/en/am/listen/order
+     mode     en-de/de-en · singular/plural (gender) · pattern/write/sing (plural) · quiz · table/swap/form (verbs) · answer/ask/build · abbr/next/prev/en/am/listen/order
      item     id of the card / sentence      label    readable name of it
      prompt   what you were asked            given    what you answered
      expected the correct answer             result   correct | almost (right word, small slip) | wrong | revealed | skipped
@@ -27,7 +28,7 @@ const LS_EV=KEY+'-events',DBNAME=KEY+'-history',STORE='events';
 const BACKUP_KEY='deutsch-practice-last-backup';      // outside KEY so an import doesn't overwrite it
 const SESSION_GAP=30*60e3,DAYMS=864e5;
 const SECTIONS=['vocab','gender','plural','reading','verbs','talk','days'];
-const SEC={home:{i:'🏠',n:'Home'},vocab:{i:'📚',n:'Vocabulary'},gender:{i:'🎨',n:'der · die · das'},plural:{i:'👥',n:'Plural'},reading:{i:'📖',n:'Reading'},verbs:{i:'🔁',n:'Verbs'},talk:{i:'💬',n:'Ask & answer'},days:{i:'📅',n:'Wochentage'},stats:{i:'📊',n:'My progress'}};
+const SEC={home:{i:'🏠',n:'Home'},vocab:{i:'📚',n:'Vocabulary'},heute:{i:'🎯',n:'Heute'},gender:{i:'🎨',n:'der · die · das'},plural:{i:'👥',n:'Plural'},reading:{i:'📖',n:'Reading'},verbs:{i:'🔁',n:'Verbs'},talk:{i:'💬',n:'Ask & answer'},days:{i:'📅',n:'Wochentage'},stats:{i:'📊',n:'My progress'}};
 const C_OK='#1f9d6a',C_BAD='#b4323f';                 // validated pair (colour-blind safe on white)
 const $=id=>document.getElementById(id);
 const H=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -102,7 +103,10 @@ const lastExport=()=>{try{return Number(localStorage.getItem(BACKUP_KEY))||0;}ca
 /* ---------------- what gets logged ---------------- */
 function shown(sec){cur[sec]={t:Date.now(),hints:0};}
 function hint(sec,item){if(cur[sec])cur[sec].hints++;add({section:sec,action:'hint',item:item==null?undefined:String(item)});}
-function answer(o){const c=cur[o.section];return add({section:o.section,action:'answer',mode:o.mode,item:o.item==null?undefined:String(o.item),label:o.label,prompt:o.prompt,given:o.given,expected:o.expected,result:o.result,ms:c?Date.now()-c.t:undefined,hints:c?c.hints:undefined,errors:o.errors,details:o.details});}
+let VIA=null;   // set by 🎯 Heute while it records an answer
+function answer(o){const c=cur[o.section];const e=add({section:o.section,action:'answer',mode:o.mode,item:o.item==null?undefined:String(o.item),label:o.label,prompt:o.prompt,given:o.given,expected:o.expected,result:o.result,ms:c?Date.now()-c.t:undefined,hints:c?c.hints:undefined,errors:o.errors,details:VIA?{...(o.details||{}),via:VIA}:o.details});
+  try{if(ready&&typeof SRS!=='undefined')SRS.onAnswer(e);}catch(err){console.error(err);}   // keep the 🎯 review schedule up to date
+  return e;}
 
 const typoLimit=n=>n<=4?1:n<=8?2:3;
 /* edit distance where swapping two neighbouring letters counts as one typo (Name → Naem) */
@@ -164,6 +168,9 @@ function verbSwap(sw,val,ok){
   answer({section:'verbs',mode:'swap',item:v?v.id:sw.inf,label:sw.inf,prompt:vSentence(sw.t,sw.from,sw.inf)+' → '+sw.to.l,given:val,expected:sw.exp,result:ok?'correct':'wrong',
     errors:ok?undefined:[hasForm?'rest of the sentence':person+' form'],details:{person,verbForm:f,family:vFams(sw.inf).map(x=>VFAM[x].t)}});
 }
+function verbForm(v,i,given,expected,result,errors){
+  answer({section:'verbs',mode:'form',item:v.id,label:v.inf,prompt:v.inf+' – '+VPRON[i],given:String(given||'').trim(),expected,result,errors,details:{person:VPRON[i],verbForm:expected,family:vFams(v.inf).map(f=>VFAM[f].t)}});
+}
 const TPN={st:'statement',inv:'starts with another word',w:'W-question',yn:'yes/no question',jn:'Ja / Nein answer'};
 function talkCats(tips){
   const out=new Set();
@@ -209,7 +216,7 @@ document.addEventListener('click',e=>{const b=e.target.closest&&e.target.closest
   add({section:secNow(),action:'listen',...(c||{label:(b.getAttribute('aria-label')||b.title||b.textContent||'').replace(/^(Pronounce|Listen to)\s*/,'')})});},true);
 
 /* ---------------- navigation: hash routes, scroll, sticky bar ---------------- */
-const TABS=['home','vocab','gender','plural','reading','verbs','talk','days','stats'];
+const TABS=['home','heute','vocab','gender','plural','reading','verbs','talk','days','stats'];
 let navFirst=true;
 const fromHash=()=>{const m=location.hash.match(/^#\/?([a-z]+)/);return m&&TABS.includes(m[1])?m[1]:null;};
 function navAfter(t){
@@ -262,7 +269,7 @@ function genderMatrix(){const M={};ARTS.forEach(a=>{M[a]={der:0,die:0,das:0};});
 function genderRules(){const rs={};gNouns.forEach(n=>{const r=gProg.byId[n.id];if(!r||!(r.c+r.w))return;const ru=ruleOf(n),k=ru?ruleName(ru):'No rule – learn by heart';const o=rs[k]||(rs[k]={k,c:0,w:0});o.c+=r.c||0;o.w+=r.w||0;});return Object.values(rs).filter(r=>r.w).sort((a,b)=>b.w-a.w);}
 function pluralMix(){const m={};EV.forEach(e=>{const d=e.details;if(e.section!=='plural'||e.action!=='answer'||e.result!=='wrong'||!d||!d.chosen||!d.pattern)return;const k=d.pattern+' → '+d.chosen;(m[k]||(m[k]={k,n:0})).n++;});return Object.values(m).sort((a,b)=>b.n-a.n);}
 const pluralWorst=()=>P_ITEMS.filter(p=>(pProg.by[p.id]?.w||0)>0).sort((a,b)=>pProg.by[b.id].w-pProg.by[a.id].w);
-function verbPersons(){const m={};VPRON.forEach(p=>{m[p]={p,n:0,w:0};});EV.forEach(e=>{if(e.section!=='verbs'||e.action!=='answer')return;const d=e.details||{};if(e.mode==='table'&&Array.isArray(d.cells))d.cells.forEach(x=>{if(m[x.person]){m[x.person].n++;if(!x.ok)m[x.person].w++;}});else if(e.mode==='swap'&&m[d.person]){m[d.person].n++;if(!isOk(e)&&(e.errors||[]).some(x=>/form$/.test(x)))m[d.person].w++;}});return Object.values(m);}
+function verbPersons(){const m={};VPRON.forEach(p=>{m[p]={p,n:0,w:0};});EV.forEach(e=>{if(e.section!=='verbs'||e.action!=='answer')return;const d=e.details||{};if(e.mode==='table'&&Array.isArray(d.cells))d.cells.forEach(x=>{if(m[x.person]){m[x.person].n++;if(!x.ok)m[x.person].w++;}});else if((e.mode==='swap'||e.mode==='form')&&m[d.person]){m[d.person].n++;if(!isOk(e)&&(e.errors||[]).some(x=>/form$/.test(x)))m[d.person].w++;}});return Object.values(m);}
 function verbFamilies(){const m={};vList.forEach(v=>{const r=vProg.byId[v.id];if(!r||!r.w)return;vFams(v.inf).forEach(f=>{const k=VFAM[f].t;m[k]=(m[k]||0)+r.w;});});return Object.entries(m).sort((a,b)=>b[1]-a[1]);}
 function errorCounts(sec){const m={};EV.forEach(e=>{if(e.section===sec&&e.action==='answer'&&e.result==='wrong')(e.errors||['other']).forEach(c=>{m[c]=(m[c]||0)+1;});});return Object.entries(m).sort((a,b)=>b[1]-a[1]);}
 function accBy(sec,key){const m={};EV.forEach(e=>{if(e.section!==sec||e.action!=='answer'||e.result==='skipped')return;const k=key(e);if(!k)return;const o=m[k]||(m[k]={k,n:0,ok:0});o.n++;if(isOk(e))o.ok++;});return Object.values(m).sort((a,b)=>a.ok/a.n-b.ok/b.n);}
@@ -271,10 +278,10 @@ function slowItems(){const g={};EV.forEach(e=>{if(e.action!=='answer'||!isOk(e)|
 function secMetric(s){
   switch(s){
     case 'vocab':{const act=vocabulary.filter(c=>!isArch(c.id));let b=0;act.forEach(c=>DIRS.forEach(d=>{if(isBanked(c.id,d))b++;}));return {p:act.length?b/(2*act.length):0,t:`${b} of ${2*act.length} directions banked`};}
-    case 'gender':{const L=gNouns.filter(n=>!isArch(n.id)),k=L.filter(n=>gLearned(n.id)).length;return {p:L.length?k/L.length:0,t:`${k} of ${L.length} nouns learned`};}
-    case 'plural':{const L=P_ITEMS.filter(p=>!isArch(p.id)),k=L.filter(p=>pLearned(p.id)).length;return {p:L.length?k/L.length:0,t:`${k} of ${L.length} plurals learned`};}
+    case 'gender':{const L=gNouns,k=L.filter(n=>gLearned(n.id)).length;return {p:L.length?k/L.length:0,t:`${k} of ${L.length} nouns learned`};}
+    case 'plural':{const L=P_ITEMS,k=L.filter(p=>pLearned(p.id)).length;return {p:L.length?k/L.length:0,t:`${k} of ${L.length} plurals learned`};}
     case 'reading':{const k=TEXTS.filter(t=>rdProg[t.id]&&rdProg[t.id].best===t.q.length).length;return {p:k/TEXTS.length,t:`${k} of ${TEXTS.length} texts fully understood`};}
-    case 'verbs':{const L=vList.filter(v=>!isArch(v.id)),k=L.filter(v=>vMastered(v.id)).length;return {p:L.length?k/L.length:0,t:`${k} of ${L.length} verbs mastered`};}
+    case 'verbs':{const L=vList,k=L.filter(v=>vMastered(v.id)).length;return {p:L.length?k/L.length:0,t:`${k} of ${L.length} verbs mastered`};}
     case 'talk':{const k=T_ITEMS.filter(it=>tProg.by[it.key]&&tProg.by[it.key].last!=='bad').length;return {p:k/T_ITEMS.length,t:`${k} of ${T_ITEMS.length} sentences done`};}
     case 'days':{const s=DAYS.filter((_,i)=>{const r=dProg.by[i];return r&&r.c>=3&&r.w*2<=r.c;}).length;return {p:s/7,t:dProg.total?`${pct(dProg.correct,dProg.total)} correct · ${s} of 7 days strong`:'not started yet'};}
   }
@@ -299,16 +306,16 @@ function recs(){
   if(weak.length>=5)R.push({p:8,i:'⚠️',t:`Practice your ${weak.length} weakest words`,d:'Ranked by mistakes, accuracy and how recently you got them wrong.',go:()=>practiceList('⚠ Weak spots',weak.map(w=>w.c.id))});
   const L=LESSONS.length-1,fresh=vocabulary.filter(c=>c.les===L&&!isArch(c.id)&&!seenCount(c.id)).length;
   if(fresh)R.push({p:7,i:'🆕',t:`${fresh} new word${fresh>1?'s':''} from ${LESSONS[L].label}`,d:'From your newest lesson – not practiced yet.',go:()=>vocabTopic('les:'+L)});
-  const gm=gNouns.filter(n=>!isArch(n.id)&&(gProg.byId[n.id]?.w||0)>0&&!gLearned(n.id)).length;
+  const gm=gNouns.filter(n=>(gProg.byId[n.id]?.w||0)>0&&!gLearned(n.id)).length;
   if(gm)R.push({p:6,i:'🎨',t:`${gm} der/die/das mistake${gm>1?'s':''} to fix`,d:'Nouns whose article you got wrong.',go:()=>{setTab('gender');setGFilter('mistakes');}});
-  const pm=P_ITEMS.filter(p=>!isArch(p.id)&&pOpen(p)).length;
+  const pm=P_ITEMS.filter(pOpen).length;
   if(pm)R.push({p:6,i:'👥',t:`${pm} plural mistake${pm>1?'s':''} to fix`,d:'Nouns whose plural you got wrong.',go:()=>{setTab('plural');pSetFilter('mistakes');}});
   else if(!pProg.total)R.push({p:6.5,i:'👥',t:'New: the 8 plural forms',d:`Practise the plural patterns from your worksheet – ${P_ITEMS.length} nouns.`,go:()=>{setTab('plural');pSetFilter('sheet');}});
   const tm=T_ITEMS.filter(it=>tProg.by[it.key]?.last==='bad').length;
   if(tm)R.push({p:6,i:'💬',t:`${tm} sentence${tm>1?'s':''} to fix in Ask & answer`,d:'Sentences you got wrong last time.',go:practiceTalk});
   const wd=DAYS.filter((_,i)=>{const r=dProg.by[i];return r&&r.w>0&&r.w*2>r.c;}).map(x=>x[0]);
   if(wd.length)R.push({p:5,i:'📅',t:'Practice the weekdays you mix up',d:wd.join(', '),go:()=>setTab('days')});
-  const vn=vList.filter(v=>!isArch(v.id)&&!vMastered(v.id)).length;
+  const vn=vList.filter(v=>!vMastered(v.id)).length;
   if(vn)R.push({p:4,i:'🔁',t:`${vn} verb${vn>1?'s':''} not mastered yet`,d:'Fill in the whole table twice in a row without a mistake.',go:()=>{setTab('verbs');vSetFilter('new');}});
   const nt=TEXTS.find(t=>!rdProg[t.id]||rdProg[t.id].best<t.q.length);
   if(nt)R.push({p:3,i:'📖',t:`Read “${nt.title}”`,d:rdProg[nt.id]?`Best score so far: ${rdProg[nt.id].best} / ${nt.q.length}.`:'A short text made from your own vocabulary.',go:()=>{setTab('reading');rdOpen(nt);}});
@@ -326,10 +333,12 @@ function renderHome(){
   const tA=answers(startOfDay(+now)),tOk=tA.filter(isOk).length,st=streak(),goal=goalGet(),lt=lastTrainer();
   const tm=studyTime(EV.filter(e=>e.day===today)).t,last=lastBySection();
   homeRecs=recs().slice(0,5);
+  let HC=null;try{if(typeof SRS!=='undefined'&&SRS.ensure())HC=SRS.counts();}catch(err){console.error(err);}
   root.innerHTML=`<section class="panel hhero"><div class="hhead"><div><div class="eyebrow">${H(now.toLocaleDateString('de-DE',{weekday:'long',day:'numeric',month:'long'}))}</div><h2>${hr<11?'Guten Morgen':hr<18?'Guten Tag':'Guten Abend'}! 👋</h2></div>
 <button class="primary" type="button" data-go="${lt}">Continue: ${SEC[lt].i} ${H(SEC[lt].n)} →</button></div>
 <div class="htiles">${tile(tA.length,'Answers today')}${tile(tA.length?pct(tOk,tA.length):'—','Correct today')}${tile(fmtDur(tm),'≈ Study time today')}${tile((st.n||0)+(st.n?' 🔥':''),st.today||!st.n?'Day streak':'Day streak – practice today to keep it')}</div>
 <div class="hgoal"><span>Daily goal: <b>${Math.min(tA.length,goal)} / ${goal}</b> answers${tA.length>=goal?' ✓ done – great work!':''}</span><div class="meter" role="progressbar" aria-label="Daily goal" aria-valuemin="0" aria-valuemax="${goal}" aria-valuenow="${Math.min(tA.length,goal)}"><div style="width:${Math.min(100,100*tA.length/goal)}%"></div></div><select id="hGoal" aria-label="Daily goal">${[20,40,60,100,150].map(g=>`<option value="${g}"${g===goal?' selected':''}>${g} a day</option>`).join('')}</select></div></section>
+${HC?`<section class="panel hheute"><div><div class="eyebrow">🎯 Heute – today's session</div><b>${HC.due?`${HC.due} review${HC.due>1?'s':''} due`:'No reviews due'}${HC.fix?` · ${HC.fix} to fix`:''} · ${HC.newToday} new</b><small>One mixed session from all your trainers: words, articles, plurals, verb forms.</small></div><button class="primary" type="button" data-go="heute">▶ Start Heute</button></section>`:''}
 <section class="panel hnext"><h2 class="sectionhead">What to do next</h2><div class="hrecs">${homeRecs.length?homeRecs.map((r,i)=>`<button class="hrec" type="button" data-rec="${i}"><span class="ico" aria-hidden="true">${r.i}</span><span><b>${H(r.t)}</b><small>${H(r.d)}</small></span><span class="go" aria-hidden="true">→</span></button>`).join(''):'<p class="empty-s">Nothing urgent – pick any section below. 🎉</p>'}</div></section>
 <h2 class="hsec">Your sections</h2><div class="hcards">${SECTIONS.map(s=>{const m=secMetric(s);return `<button class="hcard" type="button" data-go="${s}"><div class="hctop"><span class="hcico" aria-hidden="true">${SEC[s].i}</span><b>${H(SEC[s].n)}</b></div><p>${H(SECDESC[s])}</p><div class="meter"><div style="width:${Math.round(100*m.p)}%"></div></div><div class="hcmeta"><span>${H(m.t)}</span><span>${last[s]?'last: '+H(ago(last[s])):''}</span></div></button>`;}).join('')}
 <button class="hcard" type="button" data-go="stats"><div class="hctop"><span class="hcico" aria-hidden="true">📊</span><b>My progress</b></div><p>Weak spots, your typical mistakes, every answer you gave, and backups of your learning history.</p><div class="hcmeta"><span>${EV.length.toLocaleString()} actions recorded</span></div></button></div>`;
@@ -429,6 +438,8 @@ let rsT=null;window.addEventListener('resize',()=>{clearTimeout(rsT);rsT=setTime
 
 function renderWeak(){
   const box=$('pgWeak');if(!box)return;const C=[];
+  try{if(typeof SRS!=='undefined'&&SRS.ensure()){const HC=SRS.counts(),T={v:'📚 Translations',g:'🎨 Articles',p:'👥 Plurals',f:'🔁 Verb forms'};
+    C.push(card('🎯 Review schedule','Everything you have practised, by stage: 🌱 learning (back within a day) · 📅 reviewing · 🏦 known (next review a month or more away).',`<div class="tscroll"><table class="stable"><tr><th>Kind</th><th class="n">🌱 learning</th><th class="n">📅 reviewing</th><th class="n">🏦 known</th><th class="n">due now</th></tr>${Object.keys(T).filter(t=>HC.byType[t]).map(t=>{const b=HC.byType[t];return `<tr><td>${T[t]}</td><td class="n">${b.learning}</td><td class="n">${b.review}</td><td class="n">${b.known}</td><td class="n">${b.due}</td></tr>`;}).join('')}</table></div><p class="note" style="margin-top:8px">Reviews remembered (last 30 days): <b>${HC.rev.n?pct(HC.rev.ok,HC.rev.n):'—'}</b> – target 85% · due tomorrow <b>${HC.tomorrow}</b> · next 7 days <b>${HC.week}</b></p><div class="datarow"><button class="primary" type="button" data-go="heute">▶ Start Heute</button></div>`,'wide'));}}catch(err){console.error(err);}
   const W=weakWords().slice(0,15);
   C.push(card('📚 Words to focus on','Ranked by mistakes, accuracy and recent errors.',W.length?`<div class="tscroll"><table class="stable"><tr><th>German</th><th>English</th><th class="n">✓</th><th class="n">✗</th><th class="hide-s">What you wrote</th></tr>${W.map(w=>`<tr class="click" data-item="vocab|${w.c.id}"><td><b>${H(w.c.de)}</b>${w.needs?' <span class="res bad" title="On your mistakes list">•</span>':''}</td><td>${H(w.c.en)}</td><td class="n">${w.cor}</td><td class="n">${w.wr}</td><td class="hide-s">${w.wrongs.map(([g,k])=>`<span class="pw">${H(g)}</span>${k>1?'×'+k:''}`).join(' ')||'<span class="note">—</span>'}</td></tr>`).join('')}</table></div><div class="datarow"><button class="primary" type="button" data-act="weak">▶ Practice these ${W.length} words</button></div>`:none('No weak words yet – keep practicing! 🎉'),'wide'));
   const PT=patterns().slice(0,10);
@@ -475,7 +486,7 @@ function renderHistList(){
   if(q)L=L.filter(e=>[e.label,e.prompt,e.given,e.expected,e.item].some(v=>v!=null&&String(v).toLocaleLowerCase('de').includes(q)));
   const total=L.length;L=L.slice(-P.hn).reverse();
   if(!total){el.innerHTML=none(EV.length?'Nothing matches these filters.':'No history yet – go practice and come back! Every answer is saved automatically.');return;}
-  el.innerHTML=`<div class="tscroll"><table class="stable"><tr><th>When</th><th class="hide-s">Section</th><th>Question</th><th>You wrote</th><th class="hide-s">Correct answer</th><th>Result</th><th class="n hide-s">Time</th></tr>${L.map(e=>{const clickable=e.item&&(e.action==='answer'||e.action==='hint');return `<tr${clickable?` class="click" data-item="${H(e.section+'|'+e.item)}"`:''}><td class="when">${H(fmtWhen(e.ts))}</td><td class="hide-s">${SEC[e.section]?SEC[e.section].i+' '+H(SEC[e.section].n):H(e.section)}${e.mode&&e.action==='answer'?` <span class="note" style="display:inline">${H(e.mode)}</span>`:''}</td><td>${evText(e)}</td><td>${e.action==='answer'?(e.result==='correct'?H(e.given):e.given?`<span class="pw">${H(e.given)}</span>`:'<span class="note">—</span>'):''}</td><td class="hide-s">${e.action==='answer'?H(e.expected):''}</td><td>${resBadge(e)}</td><td class="n hide-s">${e.ms&&e.action==='answer'?fmtSec(e.ms):''}</td></tr>`;}).join('')}</table></div>
+  el.innerHTML=`<div class="tscroll"><table class="stable"><tr><th>When</th><th class="hide-s">Section</th><th>Question</th><th>You wrote</th><th class="hide-s">Correct answer</th><th>Result</th><th class="n hide-s">Time</th></tr>${L.map(e=>{const clickable=e.item&&(e.action==='answer'||e.action==='hint');return `<tr${clickable?` class="click" data-item="${H(e.section+'|'+e.item)}"`:''}><td class="when">${H(fmtWhen(e.ts))}</td><td class="hide-s">${SEC[e.section]?SEC[e.section].i+' '+H(SEC[e.section].n):H(e.section)}${e.mode&&e.action==='answer'?` <span class="note" style="display:inline">${H(e.mode)}</span>`:''}${e.details&&e.details.via==='heute'?' <span class="note" style="display:inline" title="Answered in 🎯 Heute">· 🎯</span>':''}</td><td>${evText(e)}</td><td>${e.action==='answer'?(e.result==='correct'?H(e.given):e.given?`<span class="pw">${H(e.given)}</span>`:'<span class="note">—</span>'):''}</td><td class="hide-s">${e.action==='answer'?H(e.expected):''}</td><td>${resBadge(e)}</td><td class="n hide-s">${e.ms&&e.action==='answer'?fmtSec(e.ms):''}</td></tr>`;}).join('')}</table></div>
 <p class="note" style="margin-top:8px">Showing ${L.length} of ${total.toLocaleString()}.${total>L.length?' <button class="linkbutton" type="button" data-act="more">Show more</button>':''}</p>`;
 }
 function renderData(){
@@ -501,7 +512,7 @@ function openItem(sec,item){
     const g=gProg.byId[c.id];if(g&&(g.c||g.w))facts.push(`der · die · das: ✓ ${g.c} · ✗ ${g.w}${gLearned(c.id)?' · learned':''}`);
     const pp=P_BY[c.id];if(pp){const r=pProg.by[c.id];facts.push(`Plural: die ${H(pp.pl)} (${H(PPAT[pp.n].lab)})`+(r&&(r.c||r.w)?` · ✓ ${r.c} · ✗ ${r.w}${pLearned(c.id)?' · learned':''}`:''));}
     const v=vProg.byId[c.id];if(v&&(v.c))facts.push(`Verb tables: ${v.c} checked · ${v.w} wrong forms${vMastered(c.id)?' · mastered':''}`);
-    if(isArch(c.id))facts.push('🗃 In the Archive (taken out of practice)');
+    if(isArch(c.id))facts.push('🗃 Archived: not asked as a translation any more (article, plural and verb forms still are)');
     const inL=lists.filter(l=>l.ids.includes(c.id)).map(l=>l.name);if(inL.length)facts.push('Lists: '+inL.map(H).join(', '));
   }else if(sec==='talk'){const it=T_ITEMS.find(x=>x.key===item);const last=all[all.length-1];title=it?(it.parts?it.acc[0]:it.prompt):(last&&last.prompt)||item;sub=it?`${SEC.talk.n} · ${it.mode}${it.acc?' · answer: '+it.acc[0]:''}`:SEC.talk.n;const r=tProg.by[item];if(r)facts.push(`All time: ✓ ${r.c} · ✗ ${r.w} · last result: ${r.last==='bad'?'<span class="res bad">wrong</span>':r.last==='help'?'correct with word tiles':'correct'}`);}
   else{const last=all[all.length-1];title=(last&&(last.label||last.prompt))||item;sub=SEC[sec]?SEC[sec].n:sec;}
@@ -546,6 +557,7 @@ function reportText(){
   const PX=pluralMix();if(PX.length)Lr.push('','Plural mix-ups (pattern → chosen): '+PX.map(x=>`${x.k} ×${x.n}`).join(', '));
   const PE=errorCounts('plural');if(PE.length)Lr.push('','Plural mistake types: '+PE.map(([k,v])=>`${k} ×${v}`).join(', '));
   const PW=pluralWorst().slice(0,12);if(PW.length)Lr.push('','Plurals with the most mistakes (all time): '+PW.map(p=>`${p.art} ${p.sg} → die ${p.pl} ✗${pProg.by[p.id].w}`).join(', '));
+  try{if(typeof SRS!=='undefined'&&SRS.ensure()){const HC=SRS.counts(),T={v:'Translations',g:'Articles',p:'Plurals',f:'Verb forms'};Lr.push('','## Review schedule (🎯 Heute)','','| Kind | Learning | Reviewing | Known | Due now |','|---|---:|---:|---:|---:|');Object.keys(T).filter(t=>HC.byType[t]).forEach(t=>{const b=HC.byType[t];Lr.push(`| ${T[t]} | ${b.learning} | ${b.review} | ${b.known} | ${b.due} |`);});Lr.push('',`Reviews remembered (last 30 days): ${HC.rev.n?pct(HC.rev.ok,HC.rev.n)+' of '+HC.rev.n:'none yet'} (target 85%). Due tomorrow: ${HC.tomorrow}, next 7 days: ${HC.week}.`);}}catch(err){}
   const VP=verbPersons().filter(p=>p.n);if(VP.length){Lr.push('','## Verbs – mistakes by person','');VP.forEach(p=>Lr.push(`- ${p.p}: ✗ ${p.w} of ${p.n} (${pct(p.n-p.w,p.n)} correct)`));}
   const VF=verbFamilies();if(VF.length)Lr.push('','Verb families with wrong forms (all time): '+VF.map(([k,v])=>`${k} ×${v}`).join(', '));
   const TE=errorCounts('talk');if(TE.length){Lr.push('','## Ask & answer – mistake types','');TE.forEach(([k,v])=>Lr.push(`- ${k}: ${v}`));}
@@ -565,7 +577,7 @@ function showReport(){
 function sEnter(){renderProgress();if(!ready)whenReady(()=>{if(secNow()==='stats')renderProgress();});}
 
 /* ---------------- public API (used by the trainers) ---------------- */
-window.LOG={add,shown,hint,vocab:vocabAnswer,gender:genderAnswer,plural:pluralAnswer,reading:readingAnswer,lookup:readingLookup,verbTable,verbSwap,talk:talkAnswer,days:daysAnswer,
+window.LOG={add,shown,hint,vocab:vocabAnswer,gender:genderAnswer,plural:pluralAnswer,verbForm,via:v=>{VIA=v||null;},ready:whenReady,reading:readingAnswer,lookup:readingLookup,verbTable,verbSwap,talk:talkAnswer,days:daysAnswer,
   exportEvents:async()=>{await readyP();return EV.slice();},importEvents,markExported:()=>{try{localStorage.setItem(BACKUP_KEY,String(Date.now()));}catch(e){}},
   all:()=>EV,info:()=>({store,events:EV.length,ready})};
 window.NAV={initial:()=>fromHash()||'home',after:navAfter};

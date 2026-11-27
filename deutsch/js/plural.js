@@ -64,7 +64,7 @@ function pRec(id){return pProg.by[id]||(pProg.by[id]={c:0,w:0,s:0});}
 function pLearned(id){return (pProg.by[id]?.s||0)>=P_LEARN;}
 const pOpen=p=>(pProg.by[p.id]?.w||0)>0&&!pLearned(p.id);
 let pQueue=[],pIdx=0,pCur=null,pDone=false,pTimer=null,pHintLv=0;
-function pList(){return P_ITEMS.filter(p=>!isArch(p.id));}
+function pList(){return P_ITEMS;}   // 🗃 Archive only takes a word out of translation practice, not out of this trainer
 function pPool(){const f=pFilter,L=pList();if(f==='new')return L.filter(p=>!pLearned(p.id));if(f==='mistakes')return L.filter(pOpen);if(f==='sheet')return L.filter(p=>p.sheet);if(f.startsWith('pat:'))return L.filter(p=>p.n===Number(f.slice(4)));if(f.startsWith('cat:'))return L.filter(p=>p.cat===f.slice(4));return L;}
 function pOptions(){const sel=byId('pFilter'),L=pList(),k=f=>L.filter(f).length;
 const o=[['all',`All nouns (${L.length})`],['new',`Not learned yet (${k(p=>!pLearned(p.id))})`],['mistakes',`My mistakes (${k(pOpen)})`],['sheet',`The worksheet “8 Plural Forms” (${k(p=>p.sheet)})`],['cat:classroom',`Classroom & office (${k(p=>p.cat==='classroom')})`]];
@@ -96,10 +96,10 @@ const fb=byId('pFb');fb.className='gfb show';fb.innerHTML=`<div class="tip">${h}
 function pErr(got,exp){if(got===exp-1&&(exp===6||exp===8))return 'forgot the umlaut';if(got===exp+1&&(exp===5||exp===7))return 'umlaut not needed';return 'wrong pattern';}
 function lev(a,b){const d=[];for(let i=0;i<=a.length;i++){d[i]=[i];for(let j=1;j<=b.length;j++)d[i][j]=i?Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1)):j;}return d[a.length][b.length];}
 /* record the answer, show the solution and the rule */
+/* record one plural answer (also used by 🎯 Heute) */
+function pScore(p,mode,ok,given,expected,result,errors,details){const r=pRec(p.id);pProg.total++;if(ok){pProg.correct++;pProg.streak++;r.c++;r.s++;}else{pProg.streak=0;r.w++;r.s=0;}pSave();LOG.plural(p,mode,given,expected,result,errors,{...details,pattern:PPAT[p.n].lab,singular:p.art+' '+p.sg,plural:'die '+p.pl,meaning:p.en,worksheet:p.sheet});}
 function pFinish(ok,given,expected,result,errors,details,note){
-const p=pCur,r=pRec(p.id),was=pLearned(p.id);pDone=true;pProg.total++;
-if(ok){pProg.correct++;pProg.streak++;r.c++;r.s++;}else{pProg.streak=0;r.w++;r.s=0;pQueue.splice(Math.min(pIdx+4,pQueue.length),0,p.id);}
-pSave();LOG.plural(p,pMode,given,expected,result,errors,{...details,pattern:PPAT[p.n].lab,singular:p.art+' '+p.sg,plural:'die '+p.pl,meaning:p.en,worksheet:p.sheet});
+const p=pCur,was=pLearned(p.id);pDone=true;pScore(p,pMode,ok,given,expected,result,errors,details);if(!ok)pQueue.splice(Math.min(pIdx+4,pQueue.length),0,p.id);
 const w=byId('pWord');w.className='gword pdone';w.innerHTML=`${artSpan(p.art,p.sg)} <span class="parrow">→</span> <b class="art-die">die</b> ${plMark(p)}`;void w.offsetWidth;w.classList.add(ok?'pop':'shake');
 document.querySelectorAll('.pbtn').forEach(b=>{const k=Number(b.dataset.pat);b.disabled=true;if(k===p.n)b.classList.add('right');else if(!b.classList.contains('wrong'))b.classList.add('dim');});
 byId('pIn').disabled=true;byId('pCheck').classList.add('hidden');byId('pHint').disabled=true;byId('pReveal').disabled=true;
@@ -113,15 +113,17 @@ function pPick(n){if(pDone||!pCur||pMode!=='pattern')return;const p=pCur,ok=n===
 document.querySelectorAll('.pbtn').forEach(b=>{if(Number(b.dataset.pat)===n&&!ok)b.classList.add('wrong');});
 let note='';if(!ok){const x=plApply(p.sg,n);note=x?`You chose <b>${esc(PPAT[n].lab)}</b>: that would make <span class="pw">die ${esc(x)}</span>.`:`You chose <b>${esc(PPAT[n].lab)}</b>, but ${esc(p.sg)} has no a, o or u in its last syllable to take an umlaut.`;}
 pFinish(ok,PPAT[n].lab,PPAT[p.n].lab,ok?'correct':'wrong',ok?undefined:[pErr(n,p.n)],{chosen:ok?undefined:PPAT[n].lab},note);}
-function pCheck(){if(pDone||!pCur)return;const p=pCur,raw=byId('pIn').value.trim().replace(/\s+/g,' ');if(!raw){toast('Type an answer or choose Show answer.');return;}
+/* check a written answer: mode write = the plural, sing = the singular with its article → {ok, errors, det, note, expected} */
+function plJudge(p,mode,raw){raw=String(raw).trim().replace(/\s+/g,' ');
 const m=raw.match(/^(der|die|das) (.+)$/i),art=m?lc(m[1]):'',word=(m?m[2]:raw).replace(/[.!]$/,'').trim(),same=(a,b)=>norm(a,1)===norm(b,1);
 const errors=[],det={};let ok,note='';
-if(pMode==='write'){const okW=same(word,p.pl),okA=!art||art==='die';ok=okW&&okA;
+if(mode==='write'){const okW=same(word,p.pl),okA=!art||art==='die';ok=okW&&okA;
   if(!okW){const got=plType(p.sg,word)||plType(p.sg,word.replace(/ae/g,'ä').replace(/oe/g,'ö').replace(/ue/g,'ü'));
     if(got&&got.n!==p.n){errors.push(pErr(got.n,p.n));det.chosen=PPAT[got.n].lab;note=errors[0]==='forgot the umlaut'?`The umlaut is missing: <b>${esc(p.pl)}</b>, not <span class="pw">${esc(word)}</span>.`:errors[0]==='umlaut not needed'?`No umlaut here: <b>${esc(p.pl)}</b>, not <span class="pw">${esc(word)}</span>.`:`You used pattern ${got.n} (<b>${esc(PPAT[got.n].lab)}</b>) – this noun takes <b>${esc(PPAT[p.n].lab)}</b>.`;}
     else if(lev(norm(word,1),norm(p.pl,1))<=(p.pl.length<=5?1:2)){errors.push('spelling');note='Almost – check the spelling.';}
     else errors.push('wrong plural');}
-  if(!okA){errors.push('wrong article');note+=(note?' ':'')+`In the plural the article is always <b class="art-die">die</b> – never ${esc(art)}.`;}}
+  if(!okA){errors.push('wrong article');note+=(note?' ':'')+`In the plural the article is always <b class="art-die">die</b> – never ${esc(art)}.`;}
+  if(ok&&!m)note='Tip: say it with the article – <b class="art-die">die</b> '+esc(p.pl)+'.';}
 else{const okW=same(word,p.sg),okA=p.arts.includes(art);ok=okW&&okA;
   if(!okW){if(same(word,p.pl)){errors.push('wrote the plural again');note=`That is still the plural. The singular is <b>${esc(p.sg)}</b>.`;}
     else if(same(P_UML(lc(word)),P_UML(lc(p.sg)))){errors.push('kept the umlaut');note=`The singular has no umlaut: <b>${esc(p.sg)}</b>.`;}
@@ -129,7 +131,9 @@ else{const okW=same(word,p.sg),okA=p.arts.includes(art);ok=okW&&okA;
     else errors.push('wrong singular');}
   if(!art){errors.push('missing article');note+=(note?' ':'')+`Add the article: <b class="art-${p.art}">${p.art}</b> ${esc(p.sg)}. The plural <b>die</b> never tells you the singular article.`;}
   else if(!okA){errors.push('wrong article');note+=(note?' ':'')+`It's <b class="art-${p.art}">${p.art}</b> ${esc(p.sg)}, not ${esc(art)}. The plural <b>die</b> never tells you the singular article.`;}}
-pFinish(ok,raw,pMode==='write'?'die '+p.pl:p.art+' '+p.sg,ok?'correct':'wrong',ok?undefined:errors,det,ok&&!m&&pMode==='write'?'Tip: say it with the article – <b class="art-die">die</b> '+esc(p.pl)+'.':note);}
+return {ok,errors:ok?undefined:errors,det,note,expected:mode==='write'?'die '+p.pl:p.art+' '+p.sg};}
+function pCheck(){if(pDone||!pCur)return;const raw=byId('pIn').value.trim().replace(/\s+/g,' ');if(!raw){toast('Type an answer or choose Show answer.');return;}
+const J=plJudge(pCur,pMode,raw);pFinish(J.ok,raw,J.expected,J.ok?'correct':'wrong',J.errors,J.det,J.note);}
 function pReveal(){if(pDone||!pCur)return;const p=pCur;pFinish(false,'',pMode==='write'?'die '+p.pl:pMode==='sing'?p.art+' '+p.sg:PPAT[p.n].lab,'revealed',undefined,{},'');}
 function pNext(){if(!pDone)return;clearTimeout(pTimer);pIdx++;if(pIdx>=pQueue.length){toast('Round done – starting a new one.');pOptions();pNewRound();}else pShow();showTop(byId('pWord'));}
 function pSetMode(m){if(!P_MODES[m])return;pMode=m;pSaveUI();document.querySelectorAll('[data-pmode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.pmode===m)));if(pDone)pNext();else pShow();}
