@@ -64,11 +64,12 @@ function pRec(id){return pProg.by[id]||(pProg.by[id]={c:0,w:0,s:0});}
 function pLearned(id){return (pProg.by[id]?.s||0)>=P_LEARN;}
 const pOpen=p=>(pProg.by[p.id]?.w||0)>0&&!pLearned(p.id);
 let pQueue=[],pIdx=0,pCur=null,pDone=false,pTimer=null,pHintLv=0;
-function pList(){return P_ITEMS;}   // 🗃 Archive only takes a word out of translation practice, not out of this trainer
-function pPool(){const f=pFilter,L=pList();if(f==='new')return L.filter(p=>!pLearned(p.id));if(f==='mistakes')return L.filter(pOpen);if(f==='sheet')return L.filter(p=>p.sheet);if(f.startsWith('pat:'))return L.filter(p=>p.n===Number(f.slice(4)));if(f.startsWith('cat:'))return L.filter(p=>p.cat===f.slice(4));return L;}
+function pList(){return P_ITEMS.filter(p=>!inArch('plural',p.id));}   // nouns 🗃 archived here are left out (js/archive.js); 📚 Vocabulary's archive does not touch this trainer
+function pPool(){const f=pFilter,L=pList();if(f==='archived')return P_ITEMS.filter(p=>inArch('plural',p.id));if(f==='new')return L.filter(p=>!pLearned(p.id));if(f==='mistakes')return L.filter(pOpen);if(f==='sheet')return L.filter(p=>p.sheet);if(f.startsWith('pat:'))return L.filter(p=>p.n===Number(f.slice(4)));if(f.startsWith('cat:'))return L.filter(p=>p.cat===f.slice(4));return L;}
 function pOptions(){const sel=byId('pFilter'),L=pList(),k=f=>L.filter(f).length;
 const o=[['all',`All nouns (${L.length})`],['new',`Not learned yet (${k(p=>!pLearned(p.id))})`],['mistakes',`My mistakes (${k(pOpen)})`],['sheet',`The worksheet “8 Plural Forms” (${k(p=>p.sheet)})`],['cat:classroom',`Classroom & office (${k(p=>p.cat==='classroom')})`]];
 for(let n=1;n<=8;n++)o.push(['pat:'+n,`Pattern ${n}: ${PPAT[n].lab} · ${PPAT[n].ex[0]} → die ${PPAT[n].ex[1]} (${k(p=>p.n===n)})`]);
+const na=archN('plural',id=>P_BY[id]);if(na)o.push(['archived',`🗃 Archived (${na})`]);
 sel.replaceChildren(...o.map(([v,t])=>{const e=document.createElement('option');e.value=v;e.textContent=t;return e;}));if(!o.some(x=>x[0]===pFilter))pFilter='all';sel.value=pFilter;}
 function pNewRound(){const P=pPool();pQueue=shuffle(P.filter(p=>!pLearned(p.id)).map(p=>p.id)).concat(shuffle(P.filter(p=>pLearned(p.id)).map(p=>p.id)));pIdx=0;pShow();}
 function pStats(){const L=pList(),k=L.filter(p=>pLearned(p.id)).length;byId('pLearned').textContent=`Learned ${k} / ${L.length}`;byId('pFill').style.width=(L.length?100*k/L.length:0)+'%';byId('pAcc').textContent=pProg.total?`Accuracy ${Math.round(100*pProg.correct/pProg.total)}% · ${pProg.total} answers`:'';byId('pStreakPill').textContent=`🔥 ${pProg.streak}`;}
@@ -77,7 +78,7 @@ function pSay(p){return `${p.art} ${p.sg}, die ${p.pl}`;}
 
 /* ===== one card ===== */
 function pShow(){clearTimeout(pTimer);const empty=!pQueue.length;byId('pQuiz').classList.toggle('hidden',empty);byId('pEmpty').classList.toggle('hidden',!empty);pStats();
-if(empty){pCur=null;byId('pEmptyDesc').textContent=pFilter==='mistakes'?'No open mistakes – nice! 🎉':pFilter==='new'?'Every noun is learned! 🎉 Choose “All nouns” to keep them fresh.':'No nouns match this choice.';return;}
+if(empty){pCur=null;byId('pEmptyDesc').textContent=pFilter==='archived'?'Nothing archived here. Use “🗃 Archive” on a noun you don\'t need.':pFilter==='mistakes'?'No open mistakes – nice! 🎉':pFilter==='new'?'Every noun is learned! 🎉 Choose “All nouns” to keep them fresh.':'No nouns match this choice.';return;}
 pCur=P_BY[pQueue[pIdx]];pDone=false;pHintLv=0;const p=pCur,sing=pMode==='sing';
 byId('pTask').textContent=`${P_MODES[pMode]} · card ${pIdx+1} of ${pQueue.length}`;
 const w=byId('pWord');w.className='gword';w.innerHTML=sing?`<b class="art-die">die</b> ${esc(p.pl)} <span class="pltag">plural</span>`:artSpan(p.art,p.sg);
@@ -87,7 +88,7 @@ byId('pForm').classList.toggle('hidden',pMode==='pattern');const inp=byId('pIn')
 byId('pInLabel').textContent=sing?'The singular, with its article':'The plural';byId('pCheck').classList.remove('hidden');
 const fb=byId('pFb');fb.className='gfb';fb.innerHTML='';byId('pNext').disabled=true;byId('pHint').disabled=false;byId('pReveal').disabled=false;
 byId('pKbd').textContent=pMode==='pattern'?'Keys 1–8 = pattern · Enter = next':'Enter = check · Enter again = next · ä ö ü can also be typed as ae oe ue';
-pPill();LOG.shown('plural');if(pMode!=='pattern'&&activeTab==='plural')setTimeout(()=>{if(!pDone&&pCur===p)inp.focus();},30);}
+pPill();archBtnSet(byId('pArch'),'plural',p.id);LOG.shown('plural');if(pMode!=='pattern'&&activeTab==='plural')setTimeout(()=>{if(!pDone&&pCur===p)inp.focus();},30);}
 function pHint(){if(pDone||!pCur)return;const p=pCur;pHintLv++;LOG.hint('plural',p.id);let h;
 if(pMode==='sing')h=`💡 This plural uses pattern ${p.n}: <b>${esc(PPAT[p.n].lab)}</b> (${esc(PPAT[p.n].name)}). Undo it to get the singular – and don't forget the article.`;
 else if(pHintLv===1)h='💡 '+plRule(p).t+' <span class="note" style="display:inline">(Rules have exceptions.)</span>';
@@ -136,20 +137,23 @@ function pCheck(){if(pDone||!pCur)return;const raw=byId('pIn').value.trim().repl
 const J=plJudge(pCur,pMode,raw);pFinish(J.ok,raw,J.expected,J.ok?'correct':'wrong',J.errors,J.det,J.note);}
 function pReveal(){if(pDone||!pCur)return;const p=pCur;pFinish(false,'',pMode==='write'?'die '+p.pl:pMode==='sing'?p.art+' '+p.sg:PPAT[p.n].lab,'revealed',undefined,{},'');}
 function pNext(){if(!pDone)return;clearTimeout(pTimer);pIdx++;if(pIdx>=pQueue.length){toast('Round done – starting a new one.');pOptions();pNewRound();}else pShow();showTop(byId('pWord'));}
+/* 🗃 archive / restore the current noun – only its plural questions, here and in 🎯 Heute */
+function pArchive(){if(!pCur)return;clearTimeout(pTimer);const p=pCur,on=!inArch('plural',p.id),f=pFilter,lab=p.art+' '+p.sg;setArch('plural',p.id,on,lab);archToast('plural',lab,on);
+archDrop(pQueue,pIdx,id=>id===p.id);pOptions();if(pFilter!==f||pIdx>=pQueue.length)pNewRound();else pShow();renderPWall();}
 function pSetMode(m){if(!P_MODES[m])return;pMode=m;pSaveUI();document.querySelectorAll('[data-pmode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.pmode===m)));if(pDone)pNext();else pShow();}
 function pSetFilter(v){pFilter=v;pSaveUI();pOptions();pNewRound();}
 function pEnter(){pOptions();document.querySelectorAll('[data-pmode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.pmode===pMode)));if(!pCur)pNewRound();else if(pMode!=='pattern'&&!pDone)setTimeout(()=>byId('pIn').focus(),50);renderPWall();document.activeElement?.blur?.();}
 /* the worksheet table: one column per pattern */
-function renderPWall(){if(activeTab!=='plural')return;const root=byId('pWall');root.replaceChildren();const L=pList();let k=0;
+function renderPWall(){if(activeTab!=='plural')return;const root=byId('pWall');root.replaceChildren();const L=P_ITEMS;let k=0,act=0;
 for(let n=1;n<=8;n++){const col=document.createElement('div');col.className='pcol';const items=L.filter(p=>p.n===n).sort((a,b)=>a.sg.localeCompare(b.sg,'de'));
 col.innerHTML=`<h3><span class="pnum">${n}</span> ${esc(PPAT[n].lab)} <small>${items.length}</small></h3><p class="ptyp">${esc(PPAT[n].typ)}</p>`;
-items.forEach(p=>{const b=document.createElement('button');b.type='button';const on=pLearned(p.id);if(on)k++;b.className='chip '+p.art+(on?' on':'');b.innerHTML=`${esc(p.sg)} → ${plMark(p)}`;b.title=`${p.art} ${p.sg} → die ${p.pl}${p.en?' – '+p.en:''}${on?' · learned':''}`;b.addEventListener('click',()=>speak(pSay(p)));col.append(b);});root.append(col);}
-byId('pWallCount').textContent=`${k} of ${L.length} learned`;}
+items.forEach(p=>{const b=document.createElement('button');b.type='button';const on=pLearned(p.id),ar=inArch('plural',p.id);if(!ar){act++;if(on)k++;}b.className='chip '+p.art+(on?' on':'')+(ar?' arch':'');b.innerHTML=`${esc(p.sg)} → ${plMark(p)}`;b.title=`${p.art} ${p.sg} → die ${p.pl}${p.en?' – '+p.en:''}${ar?' · 🗃 archived':on?' · learned':''}`;b.addEventListener('click',()=>speak(pSay(p)));col.append(b);});root.append(col);}
+byId('pWallCount').textContent=`${k} of ${act} learned`;}
 byId('pBtns').innerHTML=PPAT.slice(1).map((P,i)=>`<button type="button" class="pbtn" data-pat="${i+1}" title="${esc(P.name)} – e.g. ${esc(P.ex[0])} → die ${esc(P.ex[1])}">${esc(P.lab)}<small>${i+1} · ${esc(P.name)}</small></button>`).join('');
 document.querySelectorAll('.pbtn').forEach(b=>b.addEventListener('click',()=>pPick(Number(b.dataset.pat))));
 document.querySelectorAll('[data-pmode]').forEach(b=>b.addEventListener('click',()=>pSetMode(b.dataset.pmode)));
 byId('pForm').addEventListener('submit',e=>{e.preventDefault();if(pDone)pNext();else pCheck();});
-byId('pNext').addEventListener('click',pNext);byId('pHint').addEventListener('click',pHint);byId('pReveal').addEventListener('click',pReveal);
+byId('pNext').addEventListener('click',pNext);byId('pArch').addEventListener('click',pArchive);byId('pHint').addEventListener('click',pHint);byId('pReveal').addEventListener('click',pReveal);
 byId('pSpeak').addEventListener('click',()=>{if(pCur)speak(pDone?pSay(pCur):pMode==='sing'?'die '+pCur.pl:pCur.art+' '+pCur.sg);});
 byId('pFilter').addEventListener('change',e=>pSetFilter(e.target.value));
 ['pShowEn','pSay','pAuto'].forEach(k=>byId(k).addEventListener('change',()=>{pSaveUI();if(k==='pShowEn'&&pCur)byId('pMeaning').textContent=byId('pShowEn').checked?pCur.en:'';}));

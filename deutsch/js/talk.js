@@ -85,8 +85,9 @@ function tSave(){try{localStorage.setItem(tKey,JSON.stringify(tProg));}catch(e){
 let tMode='answer',tTopic='all',tQueue=[],tIdx=0,tCur=null,tDone=false,tHintLv=0,tSpoken=false,tSayText='',tRound={ok:0};
 try{const s=JSON.parse(localStorage.getItem(tKey+'-ui')||'{}');if(['answer','ask','build'].includes(s.mode))tMode=s.mode;if(typeof s.topic==='string')tTopic=s.topic;if(s.en===false)byId('tShowEn').checked=false;if(s.auto===true)byId('tAuto').checked=true;if(s.autoAns===true)byId('tAutoAns').checked=true;}catch(e){}
 function tSaveUI(){try{localStorage.setItem(tKey+'-ui',JSON.stringify({mode:tMode,topic:tTopic,en:byId('tShowEn').checked,auto:byId('tAuto').checked,autoAns:byId('tAutoAns').checked}));}catch(e){}}
-function tPool(){const L=T_ITEMS.filter(it=>it.mode===tMode);if(tTopic==='mistakes')return L.filter(it=>tProg.by[it.key]?.last==='bad');if(tTopic==='new')return L.filter(it=>it.les===T_NEWEST);if(tTopic==='all')return L;return L.filter(it=>it.t===tTopic);}
-function tOptions(){const sel=byId('tTopic');const nm=T_ITEMS.filter(it=>it.mode===tMode&&tProg.by[it.key]?.last==='bad').length;const o=[['all','Everything (mixed)'],['new',`🆕 Newest lesson (${T_NEWEST})`],['me','About me – name, country, languages…'],['free','Free time & uni'],['ein','Wer / Was ist das? – ein / kein · er / es / sie'],['people','Other people – ihr, er, sie (Olivia, Noah, Dana …)'],['neg','Saying no – nicht / kein · am liebsten'],['mistakes',`My mistakes (${nm})`]];sel.replaceChildren(...o.map(([v,t])=>{const e=document.createElement('option');e.value=v;e.textContent=t;return e;}));if(!o.some(x=>x[0]===tTopic))tTopic='all';sel.value=tTopic;}
+function tPool(){if(tTopic==='archived')return T_ITEMS.filter(it=>it.mode===tMode&&inArch('talk',it.key));const L=T_ITEMS.filter(it=>it.mode===tMode&&!inArch('talk',it.key));   // 🗃 archived questions are left out (js/archive.js)
+if(tTopic==='mistakes')return L.filter(it=>tProg.by[it.key]?.last==='bad');if(tTopic==='new')return L.filter(it=>it.les===T_NEWEST);if(tTopic==='all')return L;return L.filter(it=>it.t===tTopic);}
+function tOptions(){const sel=byId('tTopic');const nm=T_ITEMS.filter(it=>it.mode===tMode&&!inArch('talk',it.key)&&tProg.by[it.key]?.last==='bad').length,na=T_ITEMS.filter(it=>it.mode===tMode&&inArch('talk',it.key)).length;const o=[['all','Everything (mixed)'],['new',`🆕 Newest lesson (${T_NEWEST})`],['me','About me – name, country, languages…'],['free','Free time & uni'],['ein','Wer / Was ist das? – ein / kein · er / es / sie'],['people','Other people – ihr, er, sie (Olivia, Noah, Dana …)'],['neg','Saying no – nicht / kein · am liebsten'],['mistakes',`My mistakes (${nm})`]];if(na)o.push(['archived',`🗃 Archived (${na})`]);sel.replaceChildren(...o.map(([v,t])=>{const e=document.createElement('option');e.value=v;e.textContent=t;return e;}));if(!o.some(x=>x[0]===tTopic))tTopic='all';sel.value=tTopic;}
 function tNewRound(){const P=tPool();let q=[];
 if(tTopic==='mistakes')q=shuffle(P.slice()).slice(0,T_ROUND);
 else{const used=new Set();shuffle(P.filter(it=>tProg.by[it.key]?.last==='bad')).forEach(it=>{if(q.length<3&&!used.has(it.g)){q.push(it);used.add(it.g);}});
@@ -97,7 +98,7 @@ tQueue=q;tIdx=0;tRound={ok:0};tShow();}
 function tStats(){const acc=tProg.total?Math.round(100*tProg.correct/tProg.total)+'%':'—';const mist=Object.values(tProg.by).filter(r=>r.last==='bad').length;byId('tStats').innerHTML=`Answered <b>${tProg.total}</b> · accuracy <b>${acc}</b> · streak <b>${tProg.streak}</b><br>Open mistakes (all exercises): <b>${mist}</b>`;}
 function tSetEn(){const it=tCur;byId('tEn').textContent=it&&byId('tShowEn').checked&&!it.en?(it.parts?it.sEn:it.pEn)||'':'';}
 function tShow(){const empty=!tQueue.length;byId('tCard').classList.toggle('hidden',empty);byId('tEmpty').classList.toggle('hidden',!empty);tStats();
-if(empty){tCur=null;byId('tCount').textContent='';byId('tFill').style.width='0%';byId('tEmptyDesc').textContent=tTopic==='mistakes'?'No open mistakes here – nice! 🎉 Wrong answers from your rounds will show up in this list.':'There are no sentences for this choice yet.';return;}
+if(empty){tCur=null;byId('tCount').textContent='';byId('tFill').style.width='0%';byId('tEmptyDesc').textContent=tTopic==='archived'?'Nothing archived in this exercise. Use “🗃 Archive” under a question you don\'t need.':tTopic==='mistakes'?'No open mistakes here – nice! 🎉 Wrong answers from your rounds will show up in this list.':'There are no sentences for this choice yet.';return;}
 const it=tCur=tQueue[tIdx];tDone=false;tHintLv=0;tSpoken=false;
 byId('tTask').textContent=it.mode==='answer'?'Answer the question':it.mode==='ask'?'Write the question for this answer':it.parts?'Make a sentence from these parts':'Say it in German';
 const q=byId('tQ');q.className='tq'+(it.en?' isen':'');q.lang=it.en?'en':'de';
@@ -116,7 +117,7 @@ byId('tHintBox').classList.add('hidden');byId('tHintBox').innerHTML='';byId('tTi
 const fb=byId('tFb');fb.className='answer-feedback';fb.innerHTML='';
 byId('tSay').classList.toggle('hidden',!!(it.parts||it.en));byId('tSay').textContent='🔊 Listen';
 byId('tCount').textContent=`${tIdx+1} / ${tQueue.length}`;byId('tFill').style.width=(100*tIdx/tQueue.length)+'%';byId('tScore').textContent='✓ '+tRound.ok;
-LOG.shown('talk');if(byId('tAuto').checked&&!it.parts&&!it.en)speak(it.prompt);
+archBtnSet(byId('tArch'),'talk',it.key);LOG.shown('talk');if(byId('tAuto').checked&&!it.parts&&!it.en)speak(it.prompt);
 setTimeout(()=>inp.focus(),50);}
 function tSwitchHint(it){if(it.mode==='ask')return it.who?`<b>Person:</b> ${esc(TWHO[it.who])}`:'';if(it.mode!=='answer')return '';const q=tToks(it.prompt);if(q.includes('du'))return '<b>Person:</b> the question says <i>du</i> → answer with <b>ich</b>.';if(q.includes('ihr'))return '<b>Person:</b> the question says <i>ihr</i> → answer with <b>wir</b>.';if(q.slice(1).includes('Sie')||q.includes('Ihnen'))return '<b>Person:</b> formal <i>Sie</i> → answer with <b>ich</b>.';if(it.pron)return '<b>Pronoun:</b> der → er · das → es · die → sie · plural → sie';return '';}
 function tHint(){if(!tCur||tDone)return;LOG.hint('talk',tCur.key);const it=tCur;
@@ -153,6 +154,9 @@ byId('tForm').addEventListener('submit',e=>{e.preventDefault();if(tDone)tNext();
 byId('tHint').addEventListener('click',tHint);
 byId('tReveal').addEventListener('click',()=>{if(tCur&&!tDone)tFinish('',true);});
 byId('tNext').addEventListener('click',tNext);
+/* 🗃 archive / restore the current question (only this exact question in this exercise) */
+byId('tArch').addEventListener('click',()=>{if(!tCur)return;if(tRec){try{tRec.stop();}catch(e){}}const it=tCur,on=!inArch('talk',it.key),lab=it.parts?it.acc[0]:it.prompt,f=tTopic;setArch('talk',it.key,on,lab);archToast('talk',lab.length>60?lab.slice(0,57)+'…':lab,on);
+  archDrop(tQueue,tIdx,x=>x.key===it.key);tOptions();if(tTopic!==f){tNewRound();return;}if(tIdx>=tQueue.length){tOptions();tNewRound();}else{tShow();showTop(byId('tTask'));}});
 byId('tSay').addEventListener('click',()=>{if(tCur)speak(tDone?tSayText:tCur.prompt);});
 byId('tNew').addEventListener('click',()=>{tOptions();tNewRound();toast('New round.');});
 byId('tAllBtn').addEventListener('click',()=>{tTopic='all';tSaveUI();tOptions();tNewRound();});

@@ -91,3 +91,11 @@
 .hheute{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:18px;padding:18px 24px;border:1.5px solid #cfdcff;background:linear-gradient(180deg,#f7f9ff,#fff)}.hheute b{display:block;font-size:17px;margin-top:2px}.hheute small{display:block;color:var(--muted);font-size:12.5px}
 @media(max-width:560px){.hxstart{padding:20px 18px}.hxgo .seg{width:100%!important}.hxgo .primary{width:100%}}
 #tabHeute{max-width:880px;margin:0 auto}.hxfb.pv{background:transparent;padding:0}.hxvtab{width:auto;min-width:260px}.hxvtab td{text-align:left}
+
+/* 🗃 archive in every trainer (js/archive.js) */
+.archrow{text-align:center;margin-top:4px}.archrow .linkbutton,.hxstop .linkbutton{text-align:center}.archrow .linkbutton{color:var(--muted);font-weight:700}
+.chip.arch{opacity:.4!important;text-decoration:line-through}
+#hxArch{color:var(--muted)}
+.umbar{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:8px}.umbar button{min-width:36px;padding:4px 10px;border:1.5px solid #d5dcea;border-radius:9px;background:#fff;font-weight:800;font-size:15px;color:#33415c;cursor:pointer}.umbar button:hover{border-color:var(--blue);color:var(--blue)}.umtip{font-size:11px;color:#97a2b6}
+@media (max-width:560px){.umtip{display:none}}
+form:has(input[lang="en"]) .umbar{display:none}
